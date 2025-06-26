@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ComfAss - פתרון נוח וחדשני</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
-  <!-- AOS Animate On Scroll -->
+
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     body { font-family: 'Heebo', sans-serif; }
     .bg-animate {
@@ -20,6 +22,22 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+    .input-icon {
+      position: relative;
+    }
+    .input-icon input,
+    .input-icon textarea {
+      padding-left: 2.5rem;
+    }
+    .input-icon svg {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: #6b7280;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -30,11 +48,14 @@
       <img src="COMFASS LOGO No BackGround.png" alt="ComfAss Logo"
            class="mx-auto w-64 sm:w-72 md:w-80 lg:w-96 mb-4 drop-shadow-md"
            data-aos="zoom-in" data-aos-duration="800" />
-      <h1 class="text-4xl font-bold mb-3" data-aos="fade-up" data-aos-delay="200">מהפכת הנוחות כבר כאן</h1>
+      <h1 class="text-4xl font-bold mb-3" data-aos="fade-up" data-aos-delay="200">
+        מהפכת הנוחות כבר כאן
+      </h1>
       <p class="text-lg mb-6" data-aos="fade-up" data-aos-delay="400">
         הפתרון החדשני לישיבה ממושכת בארגונים, מוסדות וחיים סטודנטיאליים
       </p>
-      <a href="#contact" class="bg-white text-blue-600 font-bold py-2 px-6 rounded shadow-md hover:bg-blue-100 transition transform hover:scale-105"
+      <a href="#contact"
+         class="bg-white text-blue-600 font-bold py-2 px-6 rounded shadow-md hover:bg-blue-100 transition transform hover:scale-105"
          data-aos="zoom-in-up" data-aos-delay="600">
         בקש הצעת מחיר
       </a>
@@ -49,57 +70,86 @@
     </p>
   </section>
 
-  <!-- הפתרון -->
+  <!-- הצגת המוצר -->
   <section class="bg-gray-100 py-16 px-6 text-center" data-aos="fade-up" data-aos-duration="1200">
     <h2 class="text-2xl font-bold mb-4">הכירו את ComfAss</h2>
     <p class="text-gray-600 mb-6 max-w-xl mx-auto">
-      כרית ניידת, מתקפלת, ארגונומית, קלת משקל – פתרון אמיתי לסטודנטים ולעובדים. מתאימה לכל כיסא, תומכת בגב התחתון ומפחיתה כאב.
+      כרית ניידת, מתקפלת, ארגונומית, קלת משקל – פתרון אמיתי לסטודנטים ולעובדים.
     </p>
     <div class="w-full max-w-md mx-auto h-64 bg-white border border-gray-300 rounded-lg shadow-inner flex items-center justify-center text-gray-400">
       כאן תוצג תמונת המוצר
     </div>
   </section>
 
-  <!-- למה לבחור בנו -->
-  <section class="py-16 px-6 max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
-    <h2 class="text-2xl font-bold mb-4">למה לבחור בנו</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
-      <div class="flex items-center justify-center gap-3" data-aos="zoom-in" data-aos-delay="100">
-        <span class="text-2xl">✅</span> פיתוח ישראלי
+  <!-- יתרונות עם אייקונים -->
+  <section class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="text-2xl font-bold text-center mb-8">למה ComfAss?</h2>
+    <div class="space-y-6">
+      <div class="flex items-center space-x-4">
+        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 12H9v-2h2v2zm0-4H9V6h2v4z" />
+        </svg>
+        <span class="text-gray-700">פיתוח ישראלי איכותי</span>
       </div>
-      <div class="flex items-center justify-center gap-3" data-aos="zoom-in" data-aos-delay="200">
-        <span class="text-2xl">✅</span> מותאם למוסדות ואקדמיות
+      <div class="flex items-center space-x-4">
+        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-3a1 1 0 00-1 1v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8a1 1 0 00-1-1z" />
+        </svg>
+        <span class="text-gray-700">קלה, ניידת ומתקפלת</span>
       </div>
-      <div class="flex items-center justify-center gap-3" data-aos="zoom-in" data-aos-delay="300">
-        <span class="text-2xl">✅</span> אפשרות למיתוג אישי
+      <div class="flex items-center space-x-4">
+        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M5 3a1 1 0 000 2h1v12h8V5h1a1 1 0 100-2H5z" />
+        </svg>
+        <span class="text-gray-700">מתאימה לכל גוף ולכל כיסא</span>
       </div>
-      <div class="flex items-center justify-center gap-3" data-aos="zoom-in" data-aos-delay="400">
-        <span class="text-2xl">✅</span> קל, נייד ונוח לשימוש
+      <div class="flex items-center space-x-4">
+        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M3 4a1 1 0 011-1h4.586a1 1 0 01.707.293l1.414 1.414A1 1 0 0011.414 5H17a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V4z" />
+        </svg>
+        <span class="text-gray-700">ניתן למיתוג אישי עם לוגו</span>
       </div>
     </div>
   </section>
 
+  
   <!-- הסיפור שלנו -->
   <section class="bg-gray-50 py-16 px-6 max-w-4xl mx-auto text-center" data-aos="fade-right" data-aos-duration="1000">
-    <h2 class="text-2xl font-bold mb-4">מי אנחנו?</h2>
+    <h2 class="text-2xl font-bold mb-4">קצת עלינו</h2>
     <p class="text-gray-600 leading-relaxed">
-      שלושה סטודנטים בשנה השנייה להנדסה, שהבינו על עצמם מה זה לשבת שעות בלי תמיכה. במקום להתלונן, בנינו פתרון.  
+      שלושה סטודנטים בשנה השנייה להנדסה, שהבינו על עצמם מה זה לשבת שעות בלי תמיכה. במקום להתלונן, בנינו פתרון.
       ככה נולדה כרית ComfAss – חדשנות, אכפתיות ויזמות שפותרת כאב אמיתי.
     </p>
   </section>
 
-  <!-- טופס יצירת קשר -->
-  <section id="contact" class="py-20 px-6 max-w-xl mx-auto text-center" data-aos="zoom-in-up" data-aos-duration="1000">
-    <h2 class="text-2xl font-bold mb-4">צור קשר להזמנה סיטונאית</h2>
-    <form action="https://formspree.io/f/xjkrjbgw" method="POST" class="space-y-4">
-      <input type="text" name="name" placeholder="שם מלא" required class="w-full border p-3 rounded shadow-sm" />
-      <input type="email" name="email" placeholder="אימייל" required class="w-full border p-3 rounded shadow-sm" />
-      <input type="text" name="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded shadow-sm" />
-      <textarea name="message" placeholder="מה ברצונך להזמין?" rows="4" class="w-full border p-3 rounded shadow-sm"></textarea>
-      <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 transition">
-        שלח פנייה
-      </button>
-    </form>
+
+  <!-- יצירת קשר – מעודכן -->
+  <section id="contact" class="py-16 px-6 bg-gray-100" data-aos="fade-up" data-aos-duration="1000">
+    <div class="max-w-lg mx-auto">
+      <h2 class="text-2xl font-bold mb-6 text-center">📩 צור קשר להזמנה סיטונאית</h2>
+      <form action="https://formspree.io/f/xjkrjbgw" method="POST" class="space-y-4">
+        <div class="input-icon">
+          <input type="text" name="name" placeholder="שם מלא" required class="w-full border p-3 rounded-lg shadow-sm" />
+          <svg viewBox="0 0 20 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 10a4 4 0 100-8 4 4 0 000 8zm-6 8a6 6 0 0112 0H4z"/></svg>
+        </div>
+        <div class="input-icon">
+          <input type="email" name="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm" />
+          <svg viewBox="0 0 20 20"><path d="M2.94 6.94l6.364 6.364 6.364-6.364L18 8.517v7.483a1 1 0 01-1 1H3a1 1 0 01-1-1V8.517l.94-.94z"/><path d="M10 13.414L3.636 7.05l.707-.707L10 12l5.657-5.657.707.707L10 13.414z"/></svg>
+        </div>
+        <div class="input-icon">
+          <input type="text" name="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm" />
+          <svg viewBox="0 0 20 20"><path d="M4 3h12l1 14H3L4 3zm2 2v10h8V5H6z"/></svg>
+        </div>
+        <div class="input-icon">
+          <textarea name="message" placeholder="מה ברצונך להזמין?" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
+          <svg viewBox="0 0 20 20"><path d="M4 4h12v12H4V4zm2 2h8v8H6V6z"/></svg>
+        </div>
+        <button type="submit"
+                class="w-full bg-blue-600 text-white py-3 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
+          שלח פנייה
+        </button>
+      </form>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -107,9 +157,9 @@
     © 2025 ComfAss | כל הזכויות שמורות
   </footer>
 
-  <!-- AOS Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-
+  <script>
+    AOS.init({ once: true });
+  </script>
 </body>
 </html>
