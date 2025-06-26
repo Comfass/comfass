@@ -23,21 +23,23 @@
       100% { background-position: 0% 50%; }
     }
     .input-icon {
-      position: relative;
-    }
-    .input-icon input,
-    .input-icon textarea {
-      padding-left: 2.5rem;
-    }
-    .input-icon svg {
-      position: absolute;
-      top: 50%;
-      right: 1rem;
-      transform: translateY(-50%);
-      width: 1.2rem;
-      height: 1.2rem;
-      fill: #6b7280;
-    }
+    position: relative;
+    direction: rtl;
+  }
+  .input-icon input,
+  .input-icon textarea {
+    padding-right: 2.5rem; /* כיוון שמאל */
+  }
+  .input-icon svg {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: #6b7280;
+    pointer-events: none;
+  }
   </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -83,34 +85,35 @@
 
   <!-- יתרונות עם אייקונים -->
   <section class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
-    <h2 class="text-2xl font-bold text-center mb-8">למה ComfAss?</h2>
-    <div class="space-y-6">
-      <div class="flex items-center space-x-4">
-        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 12H9v-2h2v2zm0-4H9V6h2v4z" />
-        </svg>
-        <span class="text-gray-700">פיתוח ישראלי איכותי</span>
-      </div>
-      <div class="flex items-center space-x-4">
-        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-3a1 1 0 00-1 1v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8a1 1 0 00-1-1z" />
-        </svg>
-        <span class="text-gray-700">קלה, ניידת ומתקפלת</span>
-      </div>
-      <div class="flex items-center space-x-4">
-        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M5 3a1 1 0 000 2h1v12h8V5h1a1 1 0 100-2H5z" />
-        </svg>
-        <span class="text-gray-700">מתאימה לכל גוף ולכל כיסא</span>
-      </div>
-      <div class="flex items-center space-x-4">
-        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3 4a1 1 0 011-1h4.586a1 1 0 01.707.293l1.414 1.414A1 1 0 0011.414 5H17a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V4z" />
-        </svg>
-        <span class="text-gray-700">ניתן למיתוג אישי עם לוגו</span>
-      </div>
+  <h2 class="text-2xl font-bold text-center mb-8">למה ComfAss?</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div class="flex items-center space-x-3">
+      <svg class="w-6 h-6 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 12H9v-2h2v2zm0-4H9V6h2v4z" />
+      </svg>
+      <span class="text-gray-700">פיתוח ישראלי איכותי</span>
     </div>
-  </section>
+    <div class="flex items-center space-x-3">
+      <svg class="w-6 h-6 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-3a1 1 0 00-1 1v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8a1 1 0 00-1-1z" />
+      </svg>
+      <span class="text-gray-700">קלה, ניידת ומתקפלת</span>
+    </div>
+    <div class="flex items-center space-x-3">
+      <svg class="w-6 h-6 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M5 3a1 1 0 000 2h1v12h8V5h1a1 1 0 100-2H5z" />
+      </svg>
+      <span class="text-gray-700">מתאימה לכל גוף ולכל כיסא</span>
+    </div>
+    <div class="flex items-center space-x-3">
+      <svg class="w-6 h-6 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M3 4a1 1 0 011-1h4.586a1 1 0 01.707.293l1.414 1.414A1 1 0 0011.414 5H17a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V4z" />
+      </svg>
+      <span class="text-gray-700">ניתן למיתוג אישי עם לוגו</span>
+    </div>
+  </div>
+</section>
+
 
   
   <!-- הסיפור שלנו -->
