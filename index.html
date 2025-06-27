@@ -12,33 +12,19 @@
     body {
       font-family: 'Varela Round', sans-serif;
     }
-
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       font-family: 'Comfortaa', sans-serif;
     }
-
     .bg-animate {
       background: linear-gradient(270deg, #06b6d4, #3b82f6, #06b6d4);
       background-size: 600% 600%;
       animation: gradientShift 12s ease infinite;
     }
-
     @keyframes gradientShift {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-
     .ticker-container {
       overflow: hidden;
       position: relative;
@@ -47,40 +33,50 @@
       color: #fff;
       display: flex;
       align-items: center;
+      direction: ltr;
     }
-
     .ticker-content {
       white-space: nowrap;
       display: inline-block;
-      animation: scrollText 25s linear infinite;
+      animation: scrollLTR 25s linear infinite;
     }
-
-    @keyframes scrollText {
-      0% {
-        transform: translateX(100%);
-      }
-
-      100% {
-        transform: translateX(-100%);
-      }
+    @keyframes scrollLTR {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
-
     .wave-divider {
       display: block;
       height: 80px;
       margin-top: -1px;
     }
-
-    .input-icon svg {
-      display: none;
+    .transition-bounce {
+      transition: all 0.3s ease-in-out;
+    }
+    .transition-bounce:hover {
+      transform: scale(1.05);
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #0f172a;
+        color: #f8fafc;
+      }
+      .bg-animate {
+        background: linear-gradient(270deg, #0ea5e9, #2563eb, #0ea5e9);
+      }
+      .bg-gray-50, .bg-gray-100, .bg-white {
+        background-color: #1e293b !important;
+      }
+      .text-gray-800 { color: #f1f5f9 !important; }
+      .text-gray-700 { color: #e2e8f0 !important; }
+      .bg-gray-200 { background-color: #334155 !important; }
     }
   </style>
 </head>
 
-<body class="bg-white text-gray-800">
+<body class="bg-gray-50 text-gray-800">
   <section class="bg-animate text-white pt-12 pb-20 px-6">
     <div class="max-w-5xl mx-auto text-center">
-      <img src="COMFASS LOGO No BackGround.png" alt="ComfAss Logo" class="mx-auto w-64 sm:w-72 md:w-80 lg:w-96 mb-6 drop-shadow-lg" data-aos="zoom-in" data-aos-duration="800" />
+      <img src="COMFASS LOGO No BackGround.png" alt="ComfAss Logo" class="mx-auto w-72 sm:w-80 md:w-96 lg:w-[32rem] xl:w-[36rem] mb-6 drop-shadow-lg" data-aos="zoom-in" data-aos-duration="800" />
     </div>
   </section>
 
@@ -92,7 +88,7 @@
     <div class="max-w-5xl mx-auto">
       <h1 class="text-5xl font-bold mb-4 mt-6" data-aos="fade-up" data-aos-delay="200">מהפכת הנוחות כבר כאן</h1>
       <p class="text-xl mb-6 leading-relaxed" data-aos="fade-up" data-aos-delay="400">הפתרון החדשני לישיבה ממושכת בארגונים, מוסדות וחיים סטודנטיאליים</p>
-      <a href="#contact" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-md hover:bg-blue-100 transition transform hover:scale-105" data-aos="zoom-in-up" data-aos-delay="600">בקש הצעת מחיר</a>
+      <a href="#contact" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-md transition-bounce" data-aos="zoom-in-up" data-aos-delay="600">בקש הצעת מחיר</a>
     </div>
   </section>
 
@@ -100,41 +96,41 @@
     <path fill="#f9fafb" fill-opacity="1" d="M0,256L1440,96L1440,320L0,320Z"></path>
   </svg>
 
-  <section class="bg-gray-50 py-20 px-6 text-center">
+  <section class="py-20 px-6 text-center">
     <h2 class="text-3xl font-bold mb-4">הבעיה</h2>
     <p class="text-xl max-w-2xl mx-auto leading-relaxed">כולנו יושבים שעות בכיתה או בעבודה. הכיסאות פשוט לא נוחים – וזה משפיע על הבריאות, הריכוז והתפקוד היומיומי.</p>
   </section>
 
-  <section class="py-20 px-6 max-w-5xl mx-auto bg-white" data-aos="fade-up">
+  <section class="py-20 px-6 max-w-5xl mx-auto" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-center mb-12">למה ComfAss?</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
       <div class="flex items-start gap-4">
         <div class="text-blue-600 text-2xl">✔️</div>
-        <span class="text-xl text-gray-800">פיתוח ישראלי איכותי</span>
+        <span class="text-xl">פיתוח ישראלי איכותי</span>
       </div>
       <div class="flex items-start gap-4">
         <div class="text-blue-600 text-2xl">💼</div>
-        <span class="text-xl text-gray-800">קלה, ניידת ומתקפלת</span>
+        <span class="text-xl">קלה, ניידת ומתקפלת</span>
       </div>
       <div class="flex items-start gap-4">
         <div class="text-blue-600 text-2xl">🪑</div>
-        <span class="text-xl text-gray-800">מתאימה לכל גוף ולכל כיסא</span>
+        <span class="text-xl">מתאימה לכל גוף ולכל כיסא</span>
       </div>
       <div class="flex items-start gap-4">
         <div class="text-blue-600 text-2xl">🎨</div>
-        <span class="text-xl text-gray-800">ניתן למיתוג אישי עם לוגו</span>
+        <span class="text-xl">ניתן למיתוג אישי עם לוגו</span>
       </div>
     </div>
   </section>
 
-  <section class="py-20 px-6 bg-gray-50 text-center" data-aos="fade-up">
+  <section class="py-20 px-6 text-center" data-aos="fade-up">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold mb-6">מי אנחנו?</h2>
-      <p class="text-xl text-gray-700 leading-relaxed">שלושה סטודנטים בשנה השנייה להנדסה, שהבינו על עצמם מה זה לשבת שעות בלי תמיכה. במקום להתלונן, בנינו פתרון. ככה נולדה כרית ComfAss – חדשנות, אכפתיות ויזמות שפותרת כאב אמיתי.</p>
+      <p class="text-xl leading-relaxed">שלושה סטודנטים בשנה השנייה להנדסה, שהבינו על עצמם מה זה לשבת שעות בלי תמיכה. במקום להתלונן, בנינו פתרון. ככה נולדה כרית ComfAss – חדשנות, אכפתיות ויזמות שפותרת כאב אמיתי.</p>
     </div>
   </section>
 
-  <section id="contact" class="py-20 px-6 bg-gray-100" data-aos="fade-up" data-aos-duration="1000">
+  <section id="contact" class="py-20 px-6" data-aos="fade-up" data-aos-duration="1000">
     <div class="max-w-lg mx-auto">
       <h2 class="text-2xl font-bold mb-6 text-center">📩 צור קשר להזמנה סיטונאית</h2>
       <form id="contact-form" action="https://formspree.io/f/MY-ID" method="POST" onsubmit="return handleSubmit(event)" class="space-y-4 text-right">
@@ -142,7 +138,7 @@
         <input type="email" name="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm" />
         <input type="text" name="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm" />
         <textarea name="message" placeholder="מה ברצונך להזמין?" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
-        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">שלח פנייה</button>
+        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg shadow-lg transition-bounce">שלח פנייה</button>
       </form>
       <div id="thank-you" class="hidden text-center mt-6 text-green-600 font-bold text-lg">
         ✅ תודה! פנייתך התקבלה ונחזור אליך בהקדם 🙏
