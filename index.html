@@ -152,7 +152,7 @@
     <!-- טופס יצירת קשר -->
     <div>
       <h2 class="text-2xl font-bold mb-6 text-center md:text-right">📩 צור קשר להזמנה סיטונאית</h2>
-      <form id="contact-form" action="https://formspree.io/f/xgvyrwrd" method="POST" onsubmit="return handleSubmit(event)" class="space-y-4 text-right">
+      <form id="contact-form" action="https://formspree.io/f/MY-ID" method="POST" onsubmit="return handleSubmit(event)" class="space-y-4 text-right">
         <input type="text" name="name" placeholder="שם מלא" required class="w-full border p-3 rounded-lg shadow-sm" />
         <input type="email" name="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm" />
         <input type="text" name="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm" />
@@ -161,6 +161,13 @@
       </form>
       <div id="thank-you" class="hidden text-center mt-6 text-green-600 font-bold text-lg">
         ✅ תודה! פנייתך התקבלה ונחזור אליך בהקדם 🙏
+      </div>
+
+      <!-- כפתור להשארת תגובה -->
+      <div class="mt-10 text-center">
+        <a href="https://formspree.io/f/MY-ID" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-5 rounded-full transition-all duration-300 shadow">
+          ✍️ השאר חוות דעת משלך
+        </a>
       </div>
     </div>
 
@@ -206,6 +213,7 @@
     }, 500);
   }, 5000);
 </script>
+
 
 
   <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600" data-aos="fade-in">
