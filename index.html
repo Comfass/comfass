@@ -38,34 +38,51 @@
       fill: #6b7280;
       pointer-events: none;
     }
+    .ticker {
+      background-color: #1e293b;
+      color: #ffffff;
+      padding: 0.5rem;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: ticker 20s linear infinite;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800">
-  <!-- Hero Section -->
-  <section class="bg-animate text-white pt-16 pb-20 px-6">
+  <section class="bg-animate text-white pt-12 pb-20 px-6">
     <div class="max-w-5xl mx-auto text-center">
-      <img src="COMFASS LOGO No BackGround.png" alt="ComfAss Logo" class="mx-auto w-64 sm:w-72 md:w-80 lg:w-96 mb-6 drop-shadow-md" data-aos="zoom-in" data-aos-duration="800" />
-      <h1 class="text-4xl font-bold mb-4" data-aos="fade-up" data-aos-delay="200">מהפכת הנוחות כבר כאן</h1>
+      <img src="COMFASS LOGO No BackGround.png" alt="ComfAss Logo" class="mx-auto w-64 sm:w-72 md:w-80 lg:w-96 mb-4 drop-shadow-md" data-aos="zoom-in" data-aos-duration="800" />
+      <h1 class="text-4xl font-bold mb-3" data-aos="fade-up" data-aos-delay="200">מהפכת הנוחות כבר כאן</h1>
       <p class="text-lg mb-6" data-aos="fade-up" data-aos-delay="400">הפתרון החדשני לישיבה ממושכת בארגונים, מוסדות וחיים סטודנטיאליים</p>
-      <a href="#contact" class="bg-white text-blue-600 font-bold py-3 px-6 rounded shadow-md hover:bg-blue-100 transition transform hover:scale-105" data-aos="zoom-in-up" data-aos-delay="600">בקש הצעת מחיר</a>
+      <a href="#contact" class="bg-white text-blue-600 font-bold py-2 px-6 rounded shadow-md hover:bg-blue-100 transition transform hover:scale-105" data-aos="zoom-in-up" data-aos-delay="600">בקש הצעת מחיר</a>
     </div>
   </section>
 
-  <!-- Section: הבעיה -->
-  <section class="py-20 px-6 max-w-4xl mx-auto text-center bg-white" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-4">הבעיה</h2>
-    <p class="text-gray-600 text-lg">כולנו יושבים שעות בכיתה או בעבודה. הכיסאות פשוט לא נוחים – וזה משפיע על הבריאות, הריכוז והתפקוד היומיומי.</p>
-  </section>
+  <div class="ticker">
+    <span>✨ אתם יכולים להיות הלקוחות הראשונים של ComfAss! הצטרפו למהפכת הנוחות עוד היום ✨</span>
+  </div>
 
-  <!-- Section: הכירו את ComfAss -->
-  <section class="py-20 px-6 max-w-4xl mx-auto text-center bg-gray-50" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-4">הכירו את ComfAss</h2>
-    <p class="text-gray-700 mb-6 text-lg max-w-2xl mx-auto">כרית ניידת, מתקפלת, ארגונומית, קלת משקל – פתרון אמיתי לסטודנטים ולעובדים.</p>
-    <div class="w-full max-w-md mx-auto h-64 bg-white border border-gray-200 rounded-lg shadow flex items-center justify-center text-gray-400">
-      כאן תוצג תמונת המוצר
+  <section class="bg-gray-100 text-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-4">הכירו את <span class="text-blue-600">ComfAss</span></h2>
+      <p class="text-lg mb-8">כרית ניידת, מתקפלת, ארגונומית, קלת משקל – פתרון אמיתי לסטודנטים ולעובדים.</p>
+      <div class="mx-auto max-w-md h-48 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-md bg-white text-gray-400">
+        כאן תוצג תמונת המוצר
+      </div>
     </div>
   </section>
-
   <!-- Section: למה ComfAss -->
   <section class="py-20 px-6 max-w-5xl mx-auto bg-white" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-center mb-10">למה ComfAss?</h2>
