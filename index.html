@@ -39,24 +39,23 @@
       }
     }
 
-    .ticker {
-      background-color: #1e293b;
-      color: #ffffff;
-      padding: 0.5rem 0;
+    .ticker-container {
       overflow: hidden;
       position: relative;
+      height: 2.5rem;
+      background-color: #1e293b;
+      color: #fff;
+      display: flex;
+      align-items: center;
     }
 
-    .ticker span {
-      display: inline-block;
-      position: absolute;
+    .ticker-content {
       white-space: nowrap;
-      will-change: transform;
-      animation: tickerRight 20s linear infinite;
-      right: -100%;
+      display: inline-block;
+      animation: scrollText 25s linear infinite;
     }
 
-    @keyframes tickerRight {
+    @keyframes scrollText {
       0% {
         transform: translateX(100%);
       }
@@ -82,10 +81,16 @@
   <section class="bg-animate text-white pt-12 pb-20 px-6">
     <div class="max-w-5xl mx-auto text-center">
       <img src="COMFASS LOGO No BackGround.png" alt="ComfAss Logo" class="mx-auto w-64 sm:w-72 md:w-80 lg:w-96 mb-6 drop-shadow-lg" data-aos="zoom-in" data-aos-duration="800" />
-      <div class="ticker">
-        <span>✨ אתם יכולים להיות הלקוחות הראשונים של ComfAss! הצטרפו למהפכת הנוחות עוד היום ✨</span>
-      </div>
-      <h1 class="text-5xl font-bold mb-4 mt-10" data-aos="fade-up" data-aos-delay="200">מהפכת הנוחות כבר כאן</h1>
+    </div>
+  </section>
+
+  <div class="ticker-container">
+    <div class="ticker-content">✨ אתם יכולים להיות הלקוחות הראשונים של ComfAss! הצטרפו למהפכת הנוחות עוד היום ✨</div>
+  </div>
+
+  <section class="bg-animate text-white text-center py-12 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-5xl font-bold mb-4 mt-6" data-aos="fade-up" data-aos-delay="200">מהפכת הנוחות כבר כאן</h1>
       <p class="text-xl mb-6 leading-relaxed" data-aos="fade-up" data-aos-delay="400">הפתרון החדשני לישיבה ממושכת בארגונים, מוסדות וחיים סטודנטיאליים</p>
       <a href="#contact" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-md hover:bg-blue-100 transition transform hover:scale-105" data-aos="zoom-in-up" data-aos-delay="600">בקש הצעת מחיר</a>
     </div>
@@ -95,7 +100,7 @@
     <path fill="#f9fafb" fill-opacity="1" d="M0,256L1440,96L1440,320L0,320Z"></path>
   </svg>
 
-  <section class="bg-gray-50 py-16 px-6 text-center">
+  <section class="bg-gray-50 py-20 px-6 text-center">
     <h2 class="text-3xl font-bold mb-4">הבעיה</h2>
     <p class="text-xl max-w-2xl mx-auto leading-relaxed">כולנו יושבים שעות בכיתה או בעבודה. הכיסאות פשוט לא נוחים – וזה משפיע על הבריאות, הריכוז והתפקוד היומיומי.</p>
   </section>
@@ -129,10 +134,10 @@
     </div>
   </section>
 
-  <section id="contact" class="py-16 px-6 bg-gray-100" data-aos="fade-up" data-aos-duration="1000">
+  <section id="contact" class="py-20 px-6 bg-gray-100" data-aos="fade-up" data-aos-duration="1000">
     <div class="max-w-lg mx-auto">
       <h2 class="text-2xl font-bold mb-6 text-center">📩 צור קשר להזמנה סיטונאית</h2>
-      <form id="contact-form" action="https://formspree.io/f/xgvyrwrd" method="POST" onsubmit="return handleSubmit(event)" class="space-y-4 text-right">
+      <form id="contact-form" action="https://formspree.io/f/MY-ID" method="POST" onsubmit="return handleSubmit(event)" class="space-y-4 text-right">
         <input type="text" name="name" placeholder="שם מלא" required class="w-full border p-3 rounded-lg shadow-sm" />
         <input type="email" name="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm" />
         <input type="text" name="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm" />
