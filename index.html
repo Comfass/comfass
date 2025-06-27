@@ -39,26 +39,32 @@
       pointer-events: none;
     }
     .ticker {
-      background-color: #1e293b;
-      color: #ffffff;
-      overflow: hidden;
-      height: 2.5rem;
-      display: flex;
-      align-items: center;
-      white-space: nowrap;
-      direction: rtl;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #1e293b;
+  color: #ffffff;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  direction: rtl;
+}
+
+.ticker-text {
+  display: inline-block;
+  padding-right: 100%;
+  animation: ticker-scroll 15s linear infinite;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(100%);
   }
-   .ticker__wrap {
-      display: inline-flex;
-      animation: ticker-loop 20s linear infinite;
+  100% {
+    transform: translateX(-100%);
   }
-  .ticker__wrap span {
-      padding-inline: 2rem;
-  }
-    @keyframes ticker-loop {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-  }
+}
+
     section {
       padding-top: 5rem;
       padding-bottom: 5rem;
@@ -76,13 +82,11 @@
   </section>
 
   <div class="ticker">
-  <div class="ticker__wrap">
-    <span>✨ אתם יכולים להיות הלקוחות הראשונים של ComfAss! הצטרפו למהפכת הנוחות עוד היום ✨</span>
-    <span>✨ אתם יכולים להיות הלקוחות הראשונים של ComfAss! הצטרפו למהפכת הנוחות עוד היום ✨</span>
-  </div>
+  <span class="ticker-text">
+    ✨ אתם יכולים להיות הלקוחות הראשונים של ComfAss! הצטרפו למהפכת הנוחות עוד היום ✨
+  </span>
 </div>
-
-
+  
   <section class="bg-gray-100 text-center">
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-3xl font-bold mb-4">הכירו את <span class="text-blue-600">ComfAss</span></h2>
