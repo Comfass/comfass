@@ -61,6 +61,20 @@
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
+    .wave-bottom {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .wave-bottom svg {
+      display: block;
+      width: 100%;
+      height: 75px;
+    }
+    .wave-bottom.rotate-180 {
+      transform: rotate(180deg);
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -81,11 +95,15 @@
     </div>
   </section>
 
-  <!-- הפרדה אלגנטית -->
-  <div class="h-4 bg-gray-100"></div>
+  <!-- גל הפרדה מה-hero ללבן -->
+  <div class="wave-bottom">
+    <svg viewBox="0 0 1440 75" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C360,80 720,0 1080,60 C1240,80 1440,40 1440,40 L1440,75 L0,75 Z" fill="#ffffff"/>
+    </svg>
+  </div>
 
   <!-- Section: הכירו את המוצר -->
-  <section class="bg-gray-50 py-24 px-6 text-center" data-aos="fade-up">
+  <section class="bg-white py-24 px-6 text-center" data-aos="fade-up">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold mb-6">הכירו את <span class="text-blue-600">ComfAss</span></h2>
       <p class="text-lg text-gray-700 mb-8">כרית ניידת, מתקפלת, ארגונומית, קלת משקל – פתרון אמיתי לסטודנטים ולעובדים.</p>
@@ -95,19 +113,20 @@
     </div>
   </section>
 
-  <!-- הפרדה צבעונית -->
-  <div class="h-4 bg-white"></div>
+  <!-- גל הפוך אל אפור -->
+  <div class="wave-bottom rotate-180">
+    <svg viewBox="0 0 1440 75" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C360,80 720,0 1080,60 C1240,80 1440,40 1440,40 L1440,75 L0,75 Z" fill="#f7f9fb"/>
+    </svg>
+  </div>
 
   <!-- Section: הבעיה -->
-  <section class="bg-white py-24 px-6 text-center" data-aos="fade-up">
+  <section class="bg-gray-50 py-24 px-6 text-center" data-aos="fade-up">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold mb-6">הבעיה</h2>
       <p class="text-lg text-gray-700">כולנו יושבים שעות בכיתה או בעבודה. הכיסאות פשוט לא נוחים – וזה משפיע על הבריאות, הריכוז והתפקוד היומיומי.</p>
     </div>
   </section>
-
-  <!-- הפרדה אלגנטית -->
-  <div class="h-4 bg-gray-50"></div>
   <!-- Section: למה ComfAss -->
   <section class="py-20 px-6 max-w-5xl mx-auto bg-white" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-center mb-10">למה ComfAss?</h2>
