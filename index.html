@@ -148,11 +148,11 @@
   </section>
 
 <section id="contact" class="py-20 px-6 bg-gray-100" data-aos="fade-up" data-aos-duration="1000">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start md:items-stretch">
     <!-- טופס יצירת קשר -->
-    <div>
+    <div class="flex flex-col justify-center">
       <h2 class="text-2xl font-bold mb-6 text-center md:text-right">📩 צור קשר להזמנה סיטונאית</h2>
-      <form id="contact-form" action="https://formspree.io/f/MY_ID" method="POST" onsubmit="return handleSubmit(event)" class="space-y-4 text-right">
+      <form id="contact-form" action="https://formspree.io/f/xgvyrwrd" method="POST" onsubmit="return handleSubmit(event)" class="space-y-4 text-right">
         <input type="text" name="name" placeholder="שם מלא" required class="w-full border p-3 rounded-lg shadow-sm" />
         <input type="email" name="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm" />
         <input type="tel" name="phone" placeholder="מספר טלפון" required class="w-full border p-3 rounded-lg shadow-sm" />
@@ -165,8 +165,8 @@
       </div>
     </div>
 
-    <!-- חוות דעת -->
-    <div class="relative overflow-hidden bg-white rounded-lg shadow-md p-6">
+    <!-- חוות דעת עם כפתור פתיחה -->
+    <div class="flex flex-col justify-center bg-white rounded-lg shadow-md p-6">
       <h3 class="text-xl font-semibold mb-4 text-center text-gray-800">מה הלקוחות אומרים 💬</h3>
       <div id="testimonial-box" class="text-center text-gray-700 text-lg transition-opacity duration-700 ease-in-out">
         <div class="flex flex-col items-center">
@@ -190,7 +190,7 @@
   <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full relative">
     <button onclick="toggleReviewPopup()" class="absolute top-2 left-2 text-gray-500 hover:text-red-500 text-xl">✖</button>
     <h3 class="text-xl font-bold mb-4 text-center">השאר חוות דעת</h3>
-    <form id="review-form" action="https://formspree.io/f/MY_ID" method="POST" onsubmit="return handleReviewSubmit(event)" class="space-y-4">
+    <form id="review-form" action="https://formspree.io/f/mblyqgwq" method="POST" onsubmit="return handleReviewSubmit(event)" class="space-y-4">
       <input type="text" name="name" placeholder="שמך" required class="w-full border p-2 rounded" />
       <input type="email" name="email" placeholder="אימייל (לא יוצג)" required class="w-full border p-2 rounded" />
       <textarea name="message" placeholder="חוות דעת" rows="4" class="w-full border p-2 rounded" required></textarea>
