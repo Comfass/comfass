@@ -147,21 +147,66 @@
     </div>
   </section>
 
-  <section id="contact" class="py-20 px-6" data-aos="fade-up">
-    <div class="max-w-lg mx-auto">
-      <h2 class="text-2xl font-bold mb-6 text-center">📩 צור קשר להזמנה סיטונאית</h2>
-      <form id="contact-form" action="https://formspree.io/f/https://formspree.io/f/xgvyrwrd" method="POST" onsubmit="return handleSubmit(event)" class="space-y-4 text-right">
-        <input type="text" name="name" placeholder="שם מלא" required class="w-full border p-3 rounded-lg shadow-sm transition-bounce" />
-        <input type="email" name="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm transition-bounce" />
-        <input type="text" name="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm transition-bounce" />
-        <textarea name="message" placeholder="מה ברצונך להזמין?" rows="4" class="w-full border p-3 rounded-lg shadow-sm transition-bounce"></textarea>
-        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg shadow-lg transition-bounce">שלח פנייה</button>
+  <section id="contact" class="py-20 px-6 bg-gray-100" data-aos="fade-up" data-aos-duration="1000">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <!-- טופס יצירת קשר -->
+    <div>
+      <h2 class="text-2xl font-bold mb-6 text-center md:text-right">📩 צור קשר להזמנה סיטונאית</h2>
+      <form id="contact-form" action="https://formspree.io/f/xgvyrwrd" method="POST" onsubmit="return handleSubmit(event)" class="space-y-4 text-right">
+        <input type="text" name="name" placeholder="שם מלא" required class="w-full border p-3 rounded-lg shadow-sm" />
+        <input type="email" name="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm" />
+        <input type="text" name="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm" />
+        <textarea name="message" placeholder="מה ברצונך להזמין?" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
+        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">שלח פנייה</button>
       </form>
       <div id="thank-you" class="hidden text-center mt-6 text-green-600 font-bold text-lg">
         ✅ תודה! פנייתך התקבלה ונחזור אליך בהקדם 🙏
       </div>
     </div>
-  </section>
+
+    <!-- קרוסלת תגובות עם תמונה -->
+    <div class="relative overflow-hidden bg-white rounded-lg shadow-md p-6">
+      <h3 class="text-xl font-semibold mb-4 text-center text-gray-800">מה הלקוחות אומרים 💬</h3>
+      <div id="testimonial-box" class="text-center text-gray-700 text-lg transition-opacity duration-700 ease-in-out">
+        <div class="flex flex-col items-center">
+          <img id="testimonial-img" src="https://i.pravatar.cc/80?img=1" alt="avatar" class="w-16 h-16 rounded-full mb-2 shadow">
+          <div class="text-sm font-medium text-gray-800 mb-1" id="testimonial-name">רותם מ.</div>
+          <div class="flex gap-1 text-yellow-400 mb-2" id="stars-box">⭐⭐⭐⭐⭐</div>
+          <p id="testimonial-text">הכרית הזאת שינתה לי את הישיבה במשרד!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const testimonials = [
+    { name: "רותם מ.", text: "הכרית הזאת שינתה לי את הישיבה במשרד!", stars: 5, img: "https://i.pravatar.cc/80?img=1" },
+    { name: "מאיה ג.", text: "התלמידים יושבים מרוכזים יותר. תודה!", stars: 4, img: "https://i.pravatar.cc/80?img=2" },
+    { name: "שחר ל.", text: "הכי נוחה שניסיתי!", stars: 5, img: "https://i.pravatar.cc/80?img=3" },
+    { name: "דנה י.", text: "פתרון גאוני!", stars: 5, img: "https://i.pravatar.cc/80?img=4" },
+    { name: "תומר ש.", text: "פתרון מושלם לחדרי ישיבות", stars: 4, img: "https://i.pravatar.cc/80?img=5" }
+  ];
+  let current = 0;
+  setInterval(() => {
+    const box = document.getElementById('testimonial-box');
+    const text = document.getElementById('testimonial-text');
+    const stars = document.getElementById('stars-box');
+    const name = document.getElementById('testimonial-name');
+    const img = document.getElementById('testimonial-img');
+    box.style.opacity = 0;
+    setTimeout(() => {
+      const { text: t, stars: s, name: n, img: i } = testimonials[current];
+      text.textContent = t;
+      stars.textContent = '⭐'.repeat(s);
+      name.textContent = n;
+      img.src = i;
+      box.style.opacity = 1;
+      current = (current + 1) % testimonials.length;
+    }, 500);
+  }, 5000);
+</script>
+
 
   <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600" data-aos="fade-in">
   <div class="flex flex-col items-center gap-2">
