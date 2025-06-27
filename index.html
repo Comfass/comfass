@@ -5,12 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ComfAss - פתרון נוח וחדשני</title>
+  <meta name="description" content="ComfAss - הפתרון החדשני והנוח לישיבה ממושכת" />
+  <meta property="og:title" content="ComfAss - הפתרון הנוח שלך" />
+  <meta property="og:description" content="הצטרפו למהפכת הנוחות עם ComfAss - פתרון חדשני לישיבה ממושכת" />
+  <meta property="og:image" content="COMFASS LOGO.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="comfass-favicon.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Varela Round', sans-serif;
+      transition: background-color 0.5s ease, color 0.5s ease;
     }
     h1, h2, h3 {
       font-family: 'Comfortaa', sans-serif;
@@ -52,24 +59,21 @@
     .transition-bounce {
       transition: all 0.3s ease-in-out;
     }
-    .transition-bounce:hover {
+    .transition-bounce:hover, button:hover {
       transform: scale(1.05);
     }
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #0f172a;
-        color: #f8fafc;
-      }
-      .bg-animate {
-        background: linear-gradient(270deg, #0ea5e9, #2563eb, #0ea5e9);
-      }
-      .bg-gray-50, .bg-gray-100, .bg-white {
-        background-color: #1e293b !important;
-      }
-      .text-gray-800 { color: #f1f5f9 !important; }
-      .text-gray-700 { color: #e2e8f0 !important; }
-      .bg-gray-200 { background-color: #334155 !important; }
+    body.dark {
+      background-color: #0f172a;
+      color: #f8fafc;
     }
+    body.dark .bg-gray-50,
+    body.dark .bg-gray-100,
+    body.dark .bg-white {
+      background-color: #1e293b !important;
+    }
+    body.dark .text-gray-800 { color: #f1f5f9 !important; }
+    body.dark .text-gray-700 { color: #e2e8f0 !important; }
+    body.dark .bg-gray-200 { background-color: #334155 !important; }
   </style>
 </head>
 
@@ -86,9 +90,9 @@
 
   <section class="bg-animate text-white text-center py-12 px-6">
     <div class="max-w-5xl mx-auto">
-      <h1 class="text-5xl font-bold mb-4 mt-6" data-aos="fade-up" data-aos-delay="200">מהפכת הנוחות כבר כאן</h1>
-      <p class="text-xl mb-6 leading-relaxed" data-aos="fade-up" data-aos-delay="400">הפתרון החדשני לישיבה ממושכת בארגונים, מוסדות וחיים סטודנטיאליים</p>
-      <a href="#contact" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-md transition-bounce" data-aos="zoom-in-up" data-aos-delay="600">בקש הצעת מחיר</a>
+      <h1 class="text-5xl font-bold mb-4 mt-6" data-aos="fade-up">מהפכת הנוחות כבר כאן</h1>
+      <p class="text-xl mb-6 leading-relaxed" data-aos="fade-up" data-aos-delay="200">הפתרון החדשני לישיבה ממושכת בארגונים, מוסדות וחיים סטודנטיאליים</p>
+      <a href="#contact" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-md transition-bounce" data-aos="fade-up" data-aos-delay="400">בקש הצעת מחיר</a>
     </div>
   </section>
 
@@ -96,7 +100,7 @@
     <path fill="#f9fafb" fill-opacity="1" d="M0,256L1440,96L1440,320L0,320Z"></path>
   </svg>
 
-  <section class="py-20 px-6 text-center">
+  <section class="py-20 px-6 text-center" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-4">הבעיה</h2>
     <p class="text-xl max-w-2xl mx-auto leading-relaxed">כולנו יושבים שעות בכיתה או בעבודה. הכיסאות פשוט לא נוחים – וזה משפיע על הבריאות, הריכוז והתפקוד היומיומי.</p>
   </section>
@@ -130,14 +134,14 @@
     </div>
   </section>
 
-  <section id="contact" class="py-20 px-6" data-aos="fade-up" data-aos-duration="1000">
+  <section id="contact" class="py-20 px-6" data-aos="fade-up">
     <div class="max-w-lg mx-auto">
       <h2 class="text-2xl font-bold mb-6 text-center">📩 צור קשר להזמנה סיטונאית</h2>
       <form id="contact-form" action="https://formspree.io/f/MY-ID" method="POST" onsubmit="return handleSubmit(event)" class="space-y-4 text-right">
-        <input type="text" name="name" placeholder="שם מלא" required class="w-full border p-3 rounded-lg shadow-sm" />
-        <input type="email" name="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm" />
-        <input type="text" name="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm" />
-        <textarea name="message" placeholder="מה ברצונך להזמין?" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
+        <input type="text" name="name" placeholder="שם מלא" required class="w-full border p-3 rounded-lg shadow-sm transition-bounce" />
+        <input type="email" name="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm transition-bounce" />
+        <input type="text" name="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm transition-bounce" />
+        <textarea name="message" placeholder="מה ברצונך להזמין?" rows="4" class="w-full border p-3 rounded-lg shadow-sm transition-bounce"></textarea>
         <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg shadow-lg transition-bounce">שלח פנייה</button>
       </form>
       <div id="thank-you" class="hidden text-center mt-6 text-green-600 font-bold text-lg">
@@ -153,11 +157,15 @@
   <audio id="bg-music" loop>
     <source src="Dreams in the Clouds.mp3" type="audio/mpeg">
   </audio>
-  <button onclick="toggleMusic()" id="music-btn" class="fixed bottom-4 left-4 w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition text-xl z-50" title="נגן מוזיקה">🔊</button>
+  <div class="fixed bottom-20 left-4 flex flex-col gap-3 z-50">
+    <button onclick="toggleTheme()" id="theme-btn" class="w-12 h-12 rounded-full bg-gray-800 text-white flex items-center justify-center shadow-lg hover:bg-gray-900 transition text-xl" title="מצב כהה/בהיר">🌓</button>
+    <button onclick="toggleMusic()" id="music-btn" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition text-xl" title="נגן מוזיקה">🔊</button>
+  </div>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ once: true });
+    AOS.init({ once: false });
+
     const music = document.getElementById('bg-music');
     const btn = document.getElementById('music-btn');
     let playing = false;
@@ -171,6 +179,7 @@
       }
       playing = !playing;
     }
+
     function handleSubmit(event) {
       event.preventDefault();
       const form = document.getElementById('contact-form');
@@ -190,12 +199,18 @@
       }).catch(() => alert('שגיאה בחיבור לשרת'));
       return false;
     }
-  </script>
-  <script>
-    nl_pos = "br";
-    nl_compact = "1";
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    }
+
+    // Load saved theme
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') document.body.classList.add('dark');
+    })();
   </script>
   <script src="https://comfass.github.io/comfass/nagishli.js?v=2.3" charset="utf-8" defer></script>
 </body>
-
 </html>
