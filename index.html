@@ -146,8 +146,7 @@
       <p class="text-xl leading-relaxed">שלושה סטודנטים בשנה השנייה להנדסה, שהבינו על עצמם מה זה לשבת שעות בלי תמיכה. במקום להתלונן, בנינו פתרון. ככה נולדה כרית ComfAss – חדשנות, אכפתיות ויזמות שפותרת כאב אמיתי.</p>
     </div>
   </section>
-
-  <section id="contact" class="py-20 px-6 bg-gray-100" data-aos="fade-up" data-aos-duration="1000">
+<section id="contact" class="py-20 px-6 bg-gray-100" data-aos="fade-up" data-aos-duration="1000">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
     <!-- טופס יצירת קשר -->
     <div>
@@ -157,14 +156,37 @@
         <input type="email" name="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm" />
         <input type="text" name="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm" />
         <textarea name="message" placeholder="מה ברצונך להזמין?" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
-        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">שלח פנייה</button>
+        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
+          שלח פנייה
+        </button>
       </form>
       <div id="thank-you" class="hidden text-center mt-6 text-green-600 font-bold text-lg">
         ✅ תודה! פנייתך התקבלה ונחזור אליך בהקדם 🙏
       </div>
+    </div>
 
-      <!-- POPUP Modal לחוות דעת -->
-<div id="review-popup" class="fixed inset-0 z-50 bg-black bg-opacity-50 hidden items-center justify-center">
+    <!-- חוות דעת עם כפתור פתיחה -->
+    <div class="relative overflow-hidden bg-white rounded-lg shadow-md p-6">
+      <h3 class="text-xl font-semibold mb-4 text-center text-gray-800">מה הלקוחות אומרים 💬</h3>
+      <div id="testimonial-box" class="text-center text-gray-700 text-lg transition-opacity duration-700 ease-in-out">
+        <div class="flex flex-col items-center">
+          <img id="testimonial-img" src="https://i.pravatar.cc/80?img=1" alt="avatar" class="w-16 h-16 rounded-full mb-2 shadow" />
+          <div class="text-sm font-medium text-gray-800 mb-1" id="testimonial-name">רותם מ.</div>
+          <div class="flex gap-1 text-yellow-400 mb-2" id="stars-box">⭐⭐⭐⭐⭐</div>
+          <p id="testimonial-text">הכרית הזאת שינתה לי את הישיבה במשרד!</p>
+        </div>
+      </div>
+      <div class="mt-6 text-center">
+        <button onclick="toggleReviewPopup()" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-5 rounded-full transition-all duration-300 shadow">
+          ✍️ השאר חוות דעת משלך
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POPUP Modal לחוות דעת -->
+<div id="review-popup" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center">
   <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full relative">
     <button onclick="toggleReviewPopup()" class="absolute top-2 left-2 text-gray-500 hover:text-red-500 text-xl">✖</button>
     <h3 class="text-xl font-bold mb-4 text-center">השאר חוות דעת</h3>
@@ -180,6 +202,8 @@
         <label><input type="radio" name="rating" value="4"> ⭐⭐⭐⭐</label>
         <label><input type="radio" name="rating" value="5"> ⭐⭐⭐⭐⭐</label>
       </div>
+
+      <input type="hidden" name="submittedFrom" value="review-popup" />
 
       <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">שליחה</button>
     </form>
@@ -218,6 +242,30 @@
     }).catch(() => alert('שגיאה בחיבור לשרת'));
     return false;
   }
+
+  const testimonials = [
+    { name: 'רותם מ.', text: 'הכרית הזאת שינתה לי את הישיבה במשרד!', stars: 5, img: 'https://i.pravatar.cc/80?img=1' },
+    { name: 'מאיה ג.', text: 'התלמידים יושבים מרוכזים יותר. תודה!', stars: 4, img: 'https://i.pravatar.cc/80?img=2' },
+    { name: 'שחר ל.', text: 'הכי נוחה שניסיתי!', stars: 5, img: 'https://i.pravatar.cc/80?img=3' }
+  ];
+  let current = 0;
+  setInterval(() => {
+    const box = document.getElementById('testimonial-box');
+    const text = document.getElementById('testimonial-text');
+    const stars = document.getElementById('stars-box');
+    const name = document.getElementById('testimonial-name');
+    const img = document.getElementById('testimonial-img');
+    box.style.opacity = 0;
+    setTimeout(() => {
+      const { text: t, stars: s, name: n, img: i } = testimonials[current];
+      text.textContent = t;
+      stars.textContent = '⭐'.repeat(s);
+      name.textContent = n;
+      img.src = i;
+      box.style.opacity = 1;
+      current = (current + 1) % testimonials.length;
+    }, 500);
+  }, 5000);
 </script>
 
   <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600" data-aos="fade-in">
