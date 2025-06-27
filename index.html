@@ -20,113 +20,51 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    .input-icon {
-      position: relative;
-      direction: rtl;
-    }
-    .input-icon input,
-    .input-icon textarea {
-      padding-right: 2.5rem;
-    }
-    .input-icon svg {
-      position: absolute;
-      top: 50%;
-      left: 1rem;
-      transform: translateY(-50%);
-      width: 1.2rem;
-      height: 1.2rem;
-      fill: #6b7280;
-      pointer-events: none;
-    }
     .ticker {
-      position: relative;
+      background-color: #1e293b;
+      color: #ffffff;
+      padding: 0.5rem;
       overflow: hidden;
       white-space: nowrap;
-      background-color: #0f172a;
-      color: #facc15;
-      height: 2.5rem;
-      display: flex;
-      align-items: center;
-      font-size: 1.1rem;
-      z-index: 50;
-      font-weight: bold;
-      box-shadow: 0 0 10px #facc15;
+      direction: rtl;
     }
-    .ticker-text {
+    .ticker span {
       display: inline-block;
       padding-right: 100%;
-      animation: ticker-scroll 25s linear infinite;
+      animation: ticker 18s linear infinite;
     }
-    @keyframes ticker-scroll {
+    @keyframes ticker {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
-    }
-    .wave-bottom {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
-    }
-    .wave-bottom svg {
-      display: block;
-      width: 100%;
-      height: 75px;
-    }
-    .wave-bottom.rotate-180 {
-      transform: rotate(180deg);
     }
   </style>
 </head>
 <body class="bg-white text-gray-800">
-  <!-- טיקר עליון -->
-  <div class="ticker">
-    <span class="ticker-text">
-      ✨ אתם יכולים להיות הלקוחות הראשונים של ComfAss! הצטרפו למהפכת הנוחות עוד היום ✨
-    </span>
-  </div>
-
-  <!-- Hero -->
-  <section class="bg-animate text-white pt-20 pb-24 px-6">
+  <section class="bg-animate text-white pt-12 pb-20 px-6">
     <div class="max-w-5xl mx-auto text-center">
-      <img src="COMFASS LOGO No BackGround.png" alt="ComfAss Logo" class="mx-auto w-64 sm:w-72 md:w-80 lg:w-96 mb-6 drop-shadow-md" data-aos="zoom-in" data-aos-duration="800" />
-      <h1 class="text-4xl font-bold mb-4" data-aos="fade-up" data-aos-delay="200">מהפכת הנוחות כבר כאן</h1>
-      <p class="text-lg mb-8" data-aos="fade-up" data-aos-delay="400">הפתרון החדשני לישיבה ממושכת בארגונים, מוסדות וחיים סטודנטיאליים</p>
-      <a href="#contact" class="bg-white text-blue-600 font-bold py-3 px-6 rounded shadow-md hover:bg-blue-100 transition transform hover:scale-105" data-aos="zoom-in-up" data-aos-delay="600">בקש הצעת מחיר</a>
+      <img src="COMFASS LOGO No BackGround.png" alt="ComfAss Logo" class="mx-auto w-64 sm:w-72 md:w-80 lg:w-96 mb-4 drop-shadow-md" data-aos="zoom-in" data-aos-duration="800" />
+      <h1 class="text-4xl font-bold mb-3" data-aos="fade-up" data-aos-delay="200">מהפכת הנוחות כבר כאן</h1>
+      <p class="text-lg mb-6" data-aos="fade-up" data-aos-delay="400">הפתרון החדשני לישיבה ממושכת בארגונים, מוסדות וחיים סטודנטיאליים</p>
+      <a href="#contact" class="bg-white text-blue-600 font-bold py-2 px-6 rounded shadow-md hover:bg-blue-100 transition transform hover:scale-105" data-aos="zoom-in-up" data-aos-delay="600">בקש הצעת מחיר</a>
     </div>
   </section>
+  <div class="ticker">
+    <span>✨ אתם יכולים להיות הלקוחות הראשונים של ComfAss! הצטרפו למהפכת הנוחות עוד היום ✨</span>
+  </div>
 
-  <!-- גל הפרדה מה-hero ללבן -->
-  <div class="wave-bottom">
-    <svg viewBox="0 0 1440 75" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,30 C360,80 720,0 1080,60 C1240,80 1440,40 1440,40 L1440,75 L0,75 Z" fill="#ffffff"/>
+  <!-- גל מעבר לבן -> אפור עם גובה מינימלי ושקיפות עדינה -->
+  <div class="-mt-1">
+    <svg viewBox="0 0 1440 320" class="w-full h-[50px]" preserveAspectRatio="none">
+      <path fill="#f8fafc" fill-opacity="1" d="M0,224L60,192C120,160,240,96,360,90.7C480,85,600,139,720,144C840,149,960,107,1080,96C1200,85,1320,107,1380,117.3L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
     </svg>
   </div>
 
-  <!-- Section: הכירו את המוצר -->
-  <section class="bg-white py-24 px-6 text-center" data-aos="fade-up">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold mb-6">הכירו את <span class="text-blue-600">ComfAss</span></h2>
-      <p class="text-lg text-gray-700 mb-8">כרית ניידת, מתקפלת, ארגונומית, קלת משקל – פתרון אמיתי לסטודנטים ולעובדים.</p>
-      <div class="mx-auto max-w-md h-48 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg bg-white text-gray-400">
-        כאן תוצג תמונת המוצר
-      </div>
-    </div>
+  <section class="bg-gray-50 py-16 px-6 text-center">
+    <h2 class="text-2xl font-bold mb-4">הבעיה</h2>
+    <p class="text-lg max-w-2xl mx-auto">כולנו יושבים שעות בכיתה או בעבודה. הכיסאות פשוט לא נוחים – וזה משפיע על הבריאות, הריכוז והתפקוד היומיומי.</p>
   </section>
-
-  <!-- גל הפוך אל אפור -->
-  <div class="wave-bottom rotate-180">
-    <svg viewBox="0 0 1440 75" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,30 C360,80 720,0 1080,60 C1240,80 1440,40 1440,40 L1440,75 L0,75 Z" fill="#f7f9fb"/>
-    </svg>
-  </div>
-
-  <!-- Section: הבעיה -->
-  <section class="bg-gray-50 py-24 px-6 text-center" data-aos="fade-up">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold mb-6">הבעיה</h2>
-      <p class="text-lg text-gray-700">כולנו יושבים שעות בכיתה או בעבודה. הכיסאות פשוט לא נוחים – וזה משפיע על הבריאות, הריכוז והתפקוד היומיומי.</p>
-    </div>
-  </section>
+</body>
+</html>
   <!-- Section: למה ComfAss -->
   <section class="py-20 px-6 max-w-5xl mx-auto bg-white" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-center mb-10">למה ComfAss?</h2>
