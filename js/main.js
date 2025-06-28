@@ -1,37 +1,26 @@
-// js/main.js
-
-import './popup.js';
+// main.js
+import { toggleReviewPopup, initReviewForm } from './review.js';
+import { handleSubmit } from './submit.js';
 import './rating.js';
-import './review.js';
 import './testimonial.js';
 import './theme-music.js';
 import './validation.js';
 import './contact.js';
-import './submit.js';
 
-import { initReviewForm, toggleReviewPopup } from './review.js';
-
+// מריץ את כל ההאזנות כאשר הדף מוכן
 document.addEventListener("DOMContentLoaded", () => {
   initReviewForm();
 
-  // כפתור פתיחה
   document.querySelectorAll('[data-popup="review"]').forEach(btn => {
     btn.addEventListener("click", toggleReviewPopup);
   });
 
-  // כפתור סגירה
   document.querySelectorAll('[data-close="review"]').forEach(btn => {
     btn.addEventListener("click", toggleReviewPopup);
   });
-});
 
-
-import { handleSubmit } from './submit.js';
-
-document.addEventListener('DOMContentLoaded', () => {
-  const contactForm = document.getElementById('contact-form');
+  const contactForm = document.getElementById("contact-form");
   if (contactForm) {
-    contactForm.addEventListener('submit', handleSubmit);
+    contactForm.addEventListener("submit", handleSubmit);
   }
 });
-
