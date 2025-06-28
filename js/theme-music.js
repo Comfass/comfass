@@ -1,55 +1,43 @@
 // js/theme-music.js
 
-function toggleTheme() {
-  const html = document.documentElement;
-  const icon = document.getElementById('theme-icon');
-
-  html.classList.toggle('dark');
-  const isDark = html.classList.contains('dark');
-
-  // שמירה על המצב בזיכרון הדפדפן
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+export function toggleTheme() {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
 
   // החלפת סמל
-  icon.textContent = isDark ? '☀️' : '🌙';
+  const icon = document.getElementById('theme-icon');
+  if (icon) {
+    icon.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+  }
 }
 
-// כשנכנסים לדף: נטען ערך קודם אם קיים
-(function () {
+// מפעיל את המצב השמור
+document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem('theme');
-  const html = document.documentElement;
-  const icon = document.getElementById('theme-icon');
-
   if (savedTheme === 'dark') {
-    html.classList.add('dark');
+    document.body.classList.add('dark');
+    const icon = document.getElementById('theme-icon');
     if (icon) icon.textContent = '☀️';
-  } else {
-    html.classList.remove('dark');
-    if (icon) icon.textContent = '🌙';
   }
-})();
-
-// load saved theme
-(function () {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') document.body.classList.add('dark');
-})();
+});
 
 // music setup
-const music = document.getElementById('bg-music');
-const musicBtn = document.getElementById('music-btn');
-let playing = false;
+export function toggleMusic() {
+  const music = document.getElementById('bg-music');
+  const icon = document.getElementById('music-icon');
+  const path = document.getElementById('icon-path');
 
-function toggleMusic() {
-  if (playing) {
-    music.pause();
-    iconPath.setAttribute('d', 'M9 19V6l12-2v13'); // Play icon
-  } else {
+  if (!music || !icon || !path) return;
+
+  if (music.paused) {
     music.play();
-    iconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // Pause icon
+    path.setAttribute('d', 'M9 19V6l12-2v13'); // Play Icon
+  } else {
+    music.pause();
+    path.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // X icon (pause-style)
   }
-  playing = !playing;
 }
+
 
 
 // attach listeners after DOM is ready
