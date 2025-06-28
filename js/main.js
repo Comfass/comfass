@@ -1,6 +1,7 @@
 // main.js
 import { toggleReviewPopup, initReviewForm } from './review.js';
 import { handleSubmit } from './submit.js';
+import { attachValidationListeners } from './validation.js';
 import './rating.js';
 import './testimonial.js';
 import './theme-music.js';
@@ -23,3 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.addEventListener("submit", handleSubmit);
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // לטופס צור קשר
+  attachValidationListeners('#contact-form [name="phone"]', '#contact-form [name="email"]');
+
+  // לטופס חוות דעת
+  attachValidationListeners('#review-form [name="phone"]', '#review-form [name="email"]');
+});
+
