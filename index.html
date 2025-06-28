@@ -8,98 +8,19 @@
   <meta name="description" content="ComfAss - הפתרון החדשני והנוח לישיבה ממושכת" />
   <meta property="og:title" content="ComfAss - הפתרון הנוח שלך" />
   <meta property="og:description" content="הצטרפו למהפכת הנוחות עם ComfAss - פתרון חדשני לישיבה ממושכת" />
-  <meta property="og:image" content="https://comfass.com/comfass-logo.jpg" />
+  <meta property="og:image" content="https://comfass.com/img/comfass-logo.jpg" />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="https://comfass.com/comfass-logo.jpg" type="image/jpeg">
+  <link rel="icon" href="https://comfass.com/img/comfass-logo.jpg" type="image/jpeg">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Varela Round', sans-serif;
-      transition: background-color 0.5s ease, color 0.5s ease;
-    }
-    h1, h2, h3 {
-      font-family: 'Comfortaa', sans-serif;
-    }
-    .bg-animate {
-      background: linear-gradient(270deg, #06b6d4, #3b82f6, #06b6d4);
-      background-size: 600% 600%;
-      animation: gradientShift 12s ease infinite;
-    }
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .ticker-container {
-      overflow: hidden;
-      position: relative;
-      height: 2.5rem;
-      background-color: #1e293b;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      direction: ltr;
-    }
-    .ticker-content {
-      white-space: nowrap;
-      display: inline-block;
-      animation: scrollLTR 25s linear infinite;
-    }
-    @keyframes scrollLTR {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    .wave-divider {
-      display: block;
-      height: 80px;
-      margin-top: -1px;
-    }
-    .transition-bounce {
-      transition: all 0.3s ease-in-out;
-    }
-    .transition-bounce:hover, button:hover {
-      transform: scale(1.05);
-    }
-    body.dark {
-      background-color: #0f172a;
-      color: #f8fafc;
-    }
-    body.dark .bg-gray-50,
-    body.dark .bg-gray-100,
-    body.dark .bg-white {
-      background-color: #1e293b !important;
-    }
-    body.dark .text-gray-800 { color: #f1f5f9 !important; }
-    body.dark .text-gray-700 { color: #e2e8f0 !important; }
-    body.dark .bg-gray-200 { background-color: #334155 !important; }
-
-     .star-rating {
-    direction: rtl;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-  }
-  .star {
-    font-size: 1.75rem;
-    color: #e5e7eb;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  .star:hover {
-    transform: scale(1.1);
-  }
-  .star.selected {
-    color: #facc15;
-  }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-gray-50 text-gray-800">
   <section class="bg-animate text-white pt-12 pb-20 px-6">
     <div class="max-w-5xl mx-auto text-center">
-      <img src="COMFASS LOGO No BackGround.png" alt="ComfAss Logo" class="mx-auto w-72 sm:w-80 md:w-96 lg:w-[32rem] xl:w-[36rem] mb-6 drop-shadow-lg" data-aos="zoom-in" data-aos-duration="800" />
+      <img src="img/COMFASS-LOGO-No-BackGround.png" alt="ComfAss Logo" class="mx-auto w-72 sm:w-80 md:w-96 lg:w-[32rem] xl:w-[36rem] mb-6 drop-shadow-lg" data-aos="zoom-in" data-aos-duration="800" />
     </div>
   </section>
 
@@ -114,10 +35,6 @@
       <a href="#contact" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-md transition-bounce" data-aos="fade-up" data-aos-delay="400">בקש הצעת מחיר</a>
     </div>
   </section>
-
-  <svg class="wave-divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path fill="#f9fafb" fill-opacity="1" d="M0,256L1440,96L1440,320L0,320Z"></path>
-  </svg>
 
  <section class="py-20 px-6 text-center" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-4">הבעיה</h2>
@@ -230,190 +147,30 @@
     <div id="review-thankyou" class="hidden text-center mt-4 text-green-600 font-bold">✅ תודה על חוות הדעת!</div>
   </div>
 </div>
-
-<script>
-  const testimonials = [
-    { name: 'רותם מ.', text: 'הכרית הזאת שינתה לי את הישיבה במשרד!', stars: 5, img: 'https://i.pravatar.cc/80?img=1' },
-    { name: 'מאיה ג.', text: 'התלמידים יושבים מרוכזים יותר. תודה!', stars: 4, img: 'https://i.pravatar.cc/80?img=2' },
-    { name: 'שחר ל.', text: 'הכי נוחה שניסיתי!', stars: 5, img: 'https://i.pravatar.cc/80?img=3' }
-  ];
-  let current = 0;
-  setInterval(() => {
-    const box = document.getElementById('testimonial-box');
-    const text = document.getElementById('testimonial-text');
-    const stars = document.getElementById('stars-box');
-    const name = document.getElementById('testimonial-name');
-    const img = document.getElementById('testimonial-img');
-    box.style.opacity = 0;
-    setTimeout(() => {
-      const { text: t, stars: s, name: n, img: i } = testimonials[current];
-      text.textContent = t;
-      stars.textContent = '⭐'.repeat(s);
-      name.textContent = n;
-      img.src = i;
-      box.style.opacity = 1;
-      current = (current + 1) % testimonials.length;
-    }, 500);
-  }, 5000);
-  </script>
-  
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const stars = document.querySelectorAll("#star-rating .star");
-    const ratingInput = document.getElementById("rating-input");
-    let currentRating = 0;
-
-    stars.forEach(star => {
-      star.addEventListener("click", () => {
-        const selectedRating = parseInt(star.dataset.value);
-        currentRating = currentRating === selectedRating ? 0 : selectedRating;
-        ratingInput.value = currentRating;
-        updateStars(currentRating);
-      });
-
-      star.addEventListener("mouseover", () => {
-        updateStars(parseInt(star.dataset.value));
-      });
-
-      star.addEventListener("mouseout", () => {
-        updateStars(currentRating);
-      });
-    });
-
-    function updateStars(rating) {
-      stars.forEach(star => {
-        const val = parseInt(star.dataset.value);
-        star.classList.toggle("selected", val <= rating);
-      });
-    }
-  });
-  function toggleReviewPopup() {
-    const popup = document.getElementById('review-popup');
-    const form = document.getElementById('review-form');
-    const thankyou = document.getElementById('review-thankyou');
-    form.reset();
-    thankyou.classList.add('hidden');
-    popup.classList.toggle('hidden');
-    popup.classList.toggle('flex');
-  }
-
-  function handleReviewSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const data = new FormData(form);
-    const thankyou = document.getElementById('review-thankyou');
-    fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        form.reset();
-        thankyou.classList.remove('hidden');
-        setTimeout(() => toggleReviewPopup(), 2000);
-      } else {
-        alert('אירעה שגיאה בשליחה');
-      }
-    }).catch(() => alert('שגיאה בחיבור לשרת'));
-    return false;
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const phoneInput = document.querySelector('[name="phone"]');
-    const emailInput = document.querySelector('[name="email"]');
-
-    const israelPhonePattern = /^(\+972|0)([23489]|5[0-9])-?\d{7}$/;
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    function validateInput(input, isValid) {
-      input.classList.remove("border-gray-300", "border-red-500", "border-green-500");
-      input.classList.add(isValid ? "border-green-500" : "border-red-500");
-    }
-
-    phoneInput.addEventListener("input", () => {
-      const valid = israelPhonePattern.test(phoneInput.value.trim());
-      validateInput(phoneInput, valid);
-    });
-
-    emailInput.addEventListener("input", () => {
-      const valid = emailPattern.test(emailInput.value.trim());
-      validateInput(emailInput, valid);
-    });
-  });
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const form = document.getElementById('contact-form');
-    const thankYou = document.getElementById('thank-you');
-    const data = new FormData(form);
-    const phone = form.querySelector('[name="phone"]').value.trim();
-
-    const israelPhonePattern = /^(\+972|0)([23489]|5[0-9])-?\d{7}$/;
-    if (!israelPhonePattern.test(phone)) {
-      alert('יש להזין מספר טלפון ישראלי תקין');
-      return false;
-    }
-
-    fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        form.reset();
-        form.style.display = 'none';
-        thankYou.classList.remove('hidden');
-      } else {
-        alert('הייתה שגיאה בשליחה, נסה שוב מאוחר יותר');
-      }
-    }).catch(() => alert('שגיאה בחיבור לשרת'));
-    return false;
-  }
-</script>
-
   <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600" data-aos="fade-in">
   <div class="flex flex-col items-center gap-2">
     <p>© 2025 ComfAss | כל הזכויות שמורות</p>
     <p class="text-xs text-gray-500">עיצוב הלוגו נוצר באהבה על ידי ז'נה קולצ'ין</p>
     <a href="#" title="ComfAss Home">
-      <img src="https://comfass.com/comfass-logo.jpg" alt="ComfAss Logo Small" class="w-28 opacity-80 hover:opacity-100 transition duration-300" />
+      <img src="https://comfass.com/img/comfass-logo.jpg" alt="ComfAss Logo Small" class="w-28 opacity-80 hover:opacity-100 transition duration-300" />
     </a>
   </div>
 </footer>
-
-  <audio id="bg-music" loop>
-    <source src="Dreams in the Clouds.mp3" type="audio/mpeg">
-  </audio>
-  <div class="fixed bottom-4 left-4 flex flex-col items-start gap-3 z-50">
-    <button onclick="toggleTheme()" id="theme-btn" class="w-12 h-12 rounded-full bg-gray-800 text-white flex items-center justify-center shadow-lg hover:bg-gray-900 transition text-xl" title="מצב כהה/בהיר">🌓</button>
-    <button onclick="toggleMusic()" id="music-btn" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition text-xl" title="נגן מוזיקה">🔊</button>
-  </div>
+    <script src="js/testimonial.js" defer></script>
+  <script src="js/review.js" defer></script>
+  <script src="js/rating.js" defer></script>
+  <script src="js/contact.js" defer></script>
+  <script src="js/validation.js" defer></script>
+  <script src="js/submit.js" defer></script>
+  <script src="js/popup.js" defer></script>
+  <script src="js/theme-music.js" defer></script>
+  <script src="js/main.js" defer></script>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ once: false });
-    const music = document.getElementById('bg-music');
-    const btn = document.getElementById('music-btn');
-    let playing = false;
-    function toggleMusic() {
-      if (playing) {
-        music.pause();
-        btn.textContent = '🔊';
-      } else {
-        music.play();
-        btn.textContent = '⏸️';
-      }
-      playing = !playing;
-    }
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-    }
-    (function () {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') document.body.classList.add('dark');
-    })();
   </script>
   <script src="https://comfass.github.io/comfass/nagishli.js?v=2.3" charset="utf-8" defer></script>
+
 </body>
 </html>
