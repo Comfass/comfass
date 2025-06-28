@@ -14,6 +14,8 @@ export function toggleMusic() {
 
   if (!music || !iconPath) return;
 
+  music.volume = 0.7;
+
   if (music.paused) {
     music.play();
     // Pause icon
