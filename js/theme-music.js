@@ -17,17 +17,16 @@ const musicBtn = document.getElementById('music-btn');
 let playing = false;
 
 function toggleMusic() {
-  if (!music || !musicBtn) return;
-
   if (playing) {
     music.pause();
-    musicBtn.textContent = '🔊';
+    iconPath.setAttribute('d', 'M9 19V6l12-2v13'); // Play icon
   } else {
     music.play();
-    musicBtn.textContent = '⏸️';
+    iconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // Pause icon
   }
   playing = !playing;
 }
+
 
 // attach listeners after DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
