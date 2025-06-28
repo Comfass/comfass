@@ -1,1 +1,103 @@
 
+body {
+  font-family: 'Varela Round', sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3 {
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.bg-animate {
+  background: linear-gradient(270deg, #06b6d4, #3b82f6, #06b6d4);
+  background-size: 600% 600%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.ticker-container {
+  overflow: hidden;
+  position: relative;
+  height: 2.5rem;
+  background-color: #1e293b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  direction: ltr;
+}
+
+.ticker-content {
+  white-space: nowrap;
+  display: inline-block;
+  animation: scrollLTR 25s linear infinite;
+}
+
+@keyframes scrollLTR {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.wave-divider {
+  display: block;
+  height: 80px;
+  margin-top: -1px;
+}
+
+.transition-bounce {
+  transition: all 0.3s ease-in-out;
+}
+
+.transition-bounce:hover,
+button:hover {
+  transform: scale(1.05);
+}
+
+body.dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+body.dark .bg-gray-50,
+body.dark .bg-gray-100,
+body.dark .bg-white {
+  background-color: #1e293b !important;
+}
+
+body.dark .text-gray-800 {
+  color: #f1f5f9 !important;
+}
+
+body.dark .text-gray-700 {
+  color: #e2e8f0 !important;
+}
+
+body.dark .bg-gray-200 {
+  background-color: #334155 !important;
+}
+
+.star-rating {
+  direction: rtl;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.star {
+  font-size: 1.75rem;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.star:hover {
+  transform: scale(1.1);
+}
+
+.star.selected {
+  color: #facc15;
+}
