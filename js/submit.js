@@ -1,21 +1,26 @@
 // js/submit.js
 
 import { toggleReviewPopup } from './review.js';
+import { validatePhone, validateEmail } from './validation.js';
 
 /**
  * שליחת טופס צור קשר (כולל אימות טלפון ישראלי)
  */
+
 export function handleSubmit(event) {
   event.preventDefault();
 
   const form = event.target;
-  const data = new FormData(form);
-  const thankYou = document.getElementById('thank-you');
+  const phoneInput = form.querySelector('[name="phone"]');
+  const emailInput = form.querySelector('[name="email"]');
 
-  const phone = form.querySelector('[name="phone"]');
-  const israelPhonePattern = /^(\+972|0)([23489]|5[0-9])-?\d{7}$/;
-  if (phone && !israelPhonePattern.test(phone.value.trim())) {
+  if (phoneInput && !validatePhone(phoneInput.value)) {
     alert('יש להזין מספר טלפון ישראלי תקין');
+    return false;
+  }
+
+  if (emailInput && !validateEmail(emailInput.value)) {
+    alert('יש להזין כתובת אימייל תקינה');
     return false;
   }
 
