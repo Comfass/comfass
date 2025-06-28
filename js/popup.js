@@ -1,5 +1,4 @@
-// popup.js - ניהול פתיחה וסגירה של פופאפ חוות דעת
-
+// popup.js
 export function toggleReviewPopup() {
   const popup = document.getElementById('review-popup');
   const form = document.getElementById('review-form');
@@ -10,3 +9,11 @@ export function toggleReviewPopup() {
   popup.classList.toggle('hidden');
   popup.classList.toggle('flex');
 }
+
+// קישור הפונקציה לכפתורים
+document.addEventListener("DOMContentLoaded", () => {
+  const openBtns = document.querySelectorAll('[data-popup="review"]');
+  openBtns.forEach(btn => {
+    btn.addEventListener("click", toggleReviewPopup);
+  });
+});
