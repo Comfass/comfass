@@ -1,0 +1,74 @@
+
+# ---------------------------------------------------
+# אבטחה
+# ---------------------------------------------------
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=()"
+  Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# ---------------------------------------------------
+# קאשינג לקבצים סטטיים
+# ---------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/x-javascript "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresDefault "access plus 2 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|jpg|jpeg|png|gif|ico|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------------
+# שפת ברירת מחדל
+# ---------------------------------------------------
+AddDefaultCharset UTF-8
+
+# ---------------------------------------------------
+# חסימת קבצים מסוכנים
+# ---------------------------------------------------
+<FilesMatch "\.(htaccess|env|json|md|git|log)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+
+
+---
+
+netlify.toml
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Content-Security-Policy = "frame-ancestors 'self'"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=()"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "http://comfass.com/*"
+  to = "https://www.comfass.com/:splat"
+  status = 301
+  force = true
