@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 
+  <header class="fixed top-4 right-4 z-50 flex gap-4">
+  <button id="theme-toggle" class="p-2 rounded-full bg-white shadow transition hover:scale-110 text-xl dark:bg-gray-800 dark:text-yellow-400">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <button id="music-btn" class="p-2 rounded-full bg-white shadow transition hover:scale-110 dark:bg-gray-800">
+    <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 dark:text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-2v13" />
+    </svg>
+  </button>
+
+    <section class="bg-animate text-white pt-12 pb-20 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <img src="img/COMFASS-LOGO-No-BackGround.png" alt="ComfAss Logo" class="mx-auto w-72 sm:w-80 md:w-96 lg:w-[32rem] xl:w-[36rem] mb-6 drop-shadow-lg" data-aos="zoom-in" data-aos-duration="800" />
+    </div>
+  </section>
+</header>
+
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -165,20 +184,6 @@
 </footer>
   <!-- Music audio -->
 <audio id="bg-music" src="M.mp3" loop preload="auto"></audio>
-
-<!-- Buttons -->
-<button id="theme-toggle" class="p-2 rounded-full transition hover:scale-110 text-xl">
-  <span id="theme-icon">🌙</span>
-</button>
-
-
-<button id="music-btn" class="p-2 rounded-full bg-white shadow-lg transition hover:scale-110 dark:bg-gray-700">
-  <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 dark:text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path id="icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-2v13" />
-  </svg>
-</button>
-
-
 
 <script src="js/testimonial.js" defer></script>
   <script type="module" src="js/review.js" defer></script>
