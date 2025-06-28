@@ -20,6 +20,29 @@ h1, h2, h3 {
   100% { background-position: 0% 50%; }
 }
 
+/* ✅ נוסיף מעבר גם לאלמנטים שמשנים צבעים במצב dark */
+.bg-white,
+.bg-gray-50,
+.bg-gray-100,
+.bg-gray-200,
+.text-gray-700,
+.text-gray-800 {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* ✅ אפשרות גמישה יותר עם מחלקת עזר */
+.transition-theme {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* ✅ דוגמה לסמל */
+#theme-toggle {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+#theme-toggle:hover {
+  transform: rotate(15deg) scale(1.1);
+}
+
 .ticker-container {
   overflow: hidden;
   position: relative;
