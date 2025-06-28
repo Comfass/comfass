@@ -32,6 +32,8 @@ function toggleMusic() {
 // attach listeners after DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   const themeBtn = document.getElementById('theme-toggle');
+  const musicBtn = document.getElementById('music-btn'); // ⬅️ היה חסר!
+
   if (themeBtn) {
     themeBtn.addEventListener('click', toggleTheme);
   }
@@ -40,3 +42,4 @@ document.addEventListener("DOMContentLoaded", () => {
     musicBtn.addEventListener('click', toggleMusic);
   }
 });
+
