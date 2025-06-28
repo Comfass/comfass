@@ -46,29 +46,3 @@ AddDefaultCharset UTF-8
   Order allow,deny
   Deny from all
 </FilesMatch>
-
-
-
----
-
-netlify.toml
-
-[build]
-  command = "npm run build"
-  publish = "dist"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "frame-ancestors 'self'"
-    X-Frame-Options = "SAMEORIGIN"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "geolocation=(), microphone=()"
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[redirects]]
-  from = "http://comfass.com/*"
-  to = "https://www.comfass.com/:splat"
-  status = 301
-  force = true
