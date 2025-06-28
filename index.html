@@ -192,5 +192,17 @@
   <script>  AOS.init({ once: false }); </script>
   <script> nl_pos = "br"; nl_compact = "1"; </script>
 <script src="https://comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
+<!-- תיקון aria-hidden -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const interval = setInterval(() => {
+      const brokenOption = document.querySelector('option[aria-hidden="true"]');
+      if (brokenOption) {
+        brokenOption.removeAttribute('aria-hidden');
+        clearInterval(interval);
+      }
+    }, 500);
+  });
+</script>
 </body>
 </html>
