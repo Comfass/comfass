@@ -20,3 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+import { handleSubmit } from './submit.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', handleSubmit);
+  }
+});
+
