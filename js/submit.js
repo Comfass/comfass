@@ -1,5 +1,11 @@
-// Handles form submission for contact and review
-function handleSubmit(event) {
+// js/submit.js
+
+import { toggleReviewPopup } from './review.js';
+
+/**
+ * שליחת טופס צור קשר (כולל אימות טלפון ישראלי)
+ */
+export function handleSubmit(event) {
   event.preventDefault();
 
   const form = event.target;
@@ -20,7 +26,7 @@ function handleSubmit(event) {
   }).then(response => {
     if (response.ok) {
       form.reset();
-      if (thankYou) {
+      if (thankThankYou) {
         form.style.display = 'none';
         thankYou.classList.remove('hidden');
       }
@@ -32,7 +38,10 @@ function handleSubmit(event) {
   return false;
 }
 
-function handleReviewSubmit(event) {
+/**
+ * שליחת טופס חוות דעת
+ */
+export function handleReviewSubmit(event) {
   event.preventDefault();
 
   const form = event.target;
