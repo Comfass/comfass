@@ -5,10 +5,15 @@ export function toggleReviewPopup() {
   const form = document.getElementById('review-form');
   const thankyou = document.getElementById('review-thankyou');
 
-  form.reset();
-  thankyou.classList.add('hidden');
-  popup.classList.toggle('hidden');
-  popup.classList.toggle('flex');
+  if (popup.classList.contains('hidden')) {
+    form.reset();
+    thankyou.classList.add('hidden');
+    popup.classList.remove('hidden');
+    popup.classList.add('flex');
+  } else {
+    popup.classList.remove('flex');
+    popup.classList.add('hidden');
+  }
 }
 
 export function handleReviewSubmit(event) {
@@ -36,11 +41,17 @@ export function handleReviewSubmit(event) {
   return false;
 }
 
-// Auto attach submit listener
 export function initReviewForm() {
   const form = document.getElementById('review-form');
   if (form) {
     form.addEventListener('submit', handleReviewSubmit);
   }
-}
 
+  document.querySelectorAll('[data-popup="review"]').forEach(btn => {
+    btn.addEventListener("click", toggleReviewPopup);
+  });
+
+  document.querySelectorAll('[data-close="review"]').forEach(btn => {
+    btn.addEventListener("click", toggleReviewPopup);
+  });
+}
