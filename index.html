@@ -96,10 +96,10 @@
     <div class="flex flex-col justify-center">
       <h2 class="text-2xl font-bold mb-6 text-center md:text-right">📩 צור קשר להזמנה סיטונאית</h2>
       <form id="contact-form" action="https://formspree.io/f/xgvyrwrd" method="POST" class="space-y-4 text-right">
-        <input type="text" name="name" placeholder="שם מלא" required class="w-full border p-3 rounded-lg shadow-sm" />
-        <input type="email" name="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm" />
-        <input type="tel" name="phone" placeholder="מספר טלפון" required class="w-full border p-3 rounded-lg shadow-sm" />
-        <input type="text" name="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm" />
+        <input type="text" name="name" autocomplete="name"> placeholder="שם מלא" required class="w-full border p-3 rounded-lg shadow-sm" />
+        <input type="email" name="email" autocomplete="email"> placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm" />
+        <input type="tel" name="phone" autocomplete="phone"> placeholder="מספר טלפון" required class="w-full border p-3 rounded-lg shadow-sm" />
+        <input type="text" name="company" autocomplete="company"> placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm" />
         <textarea name="message" placeholder="מה ברצונך להזמין?" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
         <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">שלח פנייה</button>
       </form>
@@ -134,8 +134,8 @@
     <button data-close="review" class="absolute top-2 left-2 text-gray-500 hover:text-red-500 text-xl">✖</button>
     <h3 class="text-xl font-bold mb-4 text-center">השאר חוות דעת</h3>
     <form id="review-form" action="https://formspree.io/f/mblyqgwq" method="POST" class="space-y-4">
-      <input type="text" name="name" placeholder="שמך" required class="w-full border p-2 rounded" />
-      <input type="email" name="email" placeholder="אימייל (לא יוצג)" required class="w-full border p-2 rounded" />
+      <input type="text" name="name" autocomplete="name"> placeholder="שמך" required class="w-full border p-2 rounded" />
+      <input type="email" name="email" autocomplete="email"> placeholder="אימייל (לא יוצג)" required class="w-full border p-2 rounded" />
       <textarea name="message" placeholder="חוות דעת" rows="4" class="w-full border p-2 rounded" required></textarea>
       <div class="text-center">
       <p class="text-sm text-gray-500 mb-2">לחץ כדי לדרג</p>
