@@ -14,11 +14,17 @@ import { initReviewForm, toggleReviewPopup } from './review.js';
 document.addEventListener("DOMContentLoaded", () => {
   initReviewForm();
 
-  // חיבור כפתורים עם data-popup="review"
+  // כפתור פתיחה
   document.querySelectorAll('[data-popup="review"]').forEach(btn => {
     btn.addEventListener("click", toggleReviewPopup);
   });
+
+  // כפתור סגירה
+  document.querySelectorAll('[data-close="review"]').forEach(btn => {
+    btn.addEventListener("click", toggleReviewPopup);
+  });
 });
+
 
 import { handleSubmit } from './submit.js';
 
