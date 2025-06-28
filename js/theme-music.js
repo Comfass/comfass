@@ -1,9 +1,33 @@
 // js/theme-music.js
 
 function toggleTheme() {
-  document.body.classList.toggle('dark');
-  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+  const html = document.documentElement;
+  const icon = document.getElementById('theme-icon');
+
+  html.classList.toggle('dark');
+  const isDark = html.classList.contains('dark');
+
+  // שמירה על המצב בזיכרון הדפדפן
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+  // החלפת סמל
+  icon.textContent = isDark ? '☀️' : '🌙';
 }
+
+// כשנכנסים לדף: נטען ערך קודם אם קיים
+(function () {
+  const savedTheme = localStorage.getItem('theme');
+  const html = document.documentElement;
+  const icon = document.getElementById('theme-icon');
+
+  if (savedTheme === 'dark') {
+    html.classList.add('dark');
+    if (icon) icon.textContent = '☀️';
+  } else {
+    html.classList.remove('dark');
+    if (icon) icon.textContent = '🌙';
+  }
+})();
 
 // load saved theme
 (function () {
