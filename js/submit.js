@@ -26,7 +26,7 @@ export function handleSubmit(event) {
   }).then(response => {
     if (response.ok) {
       form.reset();
-      if (thankThankYou) {
+    if (thankYou) {
         form.style.display = 'none';
         thankYou.classList.remove('hidden');
       }
