@@ -5,7 +5,6 @@ import './rating.js';
 import './testimonial.js';
 import './theme-music.js';
 import './validation.js';
-import './contact.js';
 
 // מריץ את כל ההאזנות כאשר הדף מוכן
 document.addEventListener("DOMContentLoaded", () => {
