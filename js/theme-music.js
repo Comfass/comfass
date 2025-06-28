@@ -16,10 +16,12 @@ export function toggleMusic() {
 
   if (music.paused) {
     music.play();
-    iconPath.setAttribute('d', 'M9 19V6l12-2v13'); // Play icon
+    // Pause icon
+    iconPath.setAttribute('d', 'M6 4h4v16H6zM14 4h4v16h-4z');
   } else {
     music.pause();
-    iconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // X icon
+    // Play icon
+    iconPath.setAttribute('d', 'M5 3v18l14-9L5 3z');
   }
 }
 
