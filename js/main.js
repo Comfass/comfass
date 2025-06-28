@@ -1,5 +1,5 @@
 // main.js
-import { toggleReviewPopup, initReviewForm, handleSubmit } from './review.js';
+import { toggleReviewPopup, initReviewForm, handleContactSubmit } from './review.js';
 import { attachValidationListeners } from './validation.js';
 import './rating.js';
 import './testimonial.js';
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
-    contactForm.addEventListener("submit", handleSubmit);
+    contactForm.addEventListener("submit", handleContactSubmit);
     attachValidationListeners('#contact-form [name="phone"]', '#contact-form [name="email"]');
   }
 
