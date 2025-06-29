@@ -3,37 +3,14 @@
   to { width: 100% }
 }
 
-@keyframes blink {
-  50% { border-color: transparent }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-typing-delayed {
+.animate-typing-clean {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid white;
-  opacity: 0;
-  animation:
-    fadeInUp 0.8s ease-in-out forwards,
-    typing 3s steps(30, end) 0.8s forwards,
-    blink 0.75s step-end infinite 0.8s;
+  width: 0;
+  animation: typing 2.5s steps(30, end) forwards;
 }
 
-.typing-done {
-  border-right: none !important;
-  animation: none !important;
-}
 
 body {
   font-family: 'Varela Round', sans-serif;
