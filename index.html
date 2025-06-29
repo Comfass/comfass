@@ -41,9 +41,8 @@
      data-aos="zoom-in" data-aos-duration="1000" 
     />
     <p id="slogan" class="text-xl sm:text-2xl md:text-3xl font-light font-[Varela Round] animate-typing-delayed overflow-hidden whitespace-nowrap pr-4 mt-6">
-  COMFASS מרפד לך את היום
-</p>
-
+      COMFASS מפרד לך את היום
+     </p>
   </section>
    
    <script>
@@ -51,15 +50,17 @@
     const slogan = document.getElementById("slogan");
     if (!slogan) return;
 
-    const typingDuration = 3000; // הקלדה
-    const delay = 1000; // דיליי
-    const total = typingDuration + delay;
+    const fadeIn = 800;
+    const typing = 3000;
+    const fadeOutBlinkEarly = 300; // כמה לפני סוף הקלדה נוריד את הקו
+    const total = fadeIn + typing - fadeOutBlinkEarly;
 
     setTimeout(() => {
       slogan.classList.add("typing-done");
     }, total);
   });
 </script>
+
 
 
 
