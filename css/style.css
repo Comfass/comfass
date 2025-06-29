@@ -1,12 +1,10 @@
-html {
-  text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
 
 body {
   font-family: 'Varela Round', sans-serif;
   transition: background-color 0.5s ease, color 0.5s ease;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 h1, h2, h3 {
