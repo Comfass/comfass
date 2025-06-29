@@ -40,9 +40,10 @@
      class="mx-auto w-72 sm:w-[26rem] md:w-[32rem] lg:w-[40rem] xl:w-[44rem] drop-shadow-2xl animate-fade-in"
      data-aos="zoom-in" data-aos-duration="1000" 
     />
-    <p class="text-xl sm:text-2xl md:text-3xl font-light font-[Varela Round] animate-typing-clean mt-6">
-  COMFASS מרפד לך את היום
-</p>
+    <p id="slogan" class="text-xl sm:text-2xl md:text-3xl font-light font-[Varela Round] mt-6 opacity-0">
+       COMFASS מפרד לך את היום
+    </p>
+
 
   </section>
    
@@ -215,5 +216,17 @@
     }, 500);
   });
 </script>
+
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slogan = document.getElementById("slogan");
+    if (slogan) {
+      setTimeout(() => {
+        slogan.classList.add("typing-effect");
+      }, 1200); // זמן תיאום עם אנימציית הלוגו
+    }
+  });
+</script>
+
 </body>
 </html>
