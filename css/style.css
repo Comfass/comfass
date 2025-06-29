@@ -28,6 +28,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  padding-top: 2.5rem; /* או כמה פיקסלים שהגובה של ה-header */
 }
 
 h1, h2, h3 {
