@@ -44,6 +44,21 @@
       COMFASS מפרד לך את היום
     </p>
   </section>
+   
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slogan = document.querySelector('.animate-typing-delayed');
+
+    if (slogan) {
+      const duration = 4000; // זמן כולל של האנימציה: הקלדה + דיליי
+
+      setTimeout(() => {
+        slogan.classList.add('typing-done');
+      }, duration);
+    }
+  });
+</script>
+
 
   <section class="bg-animate text-white transition-theme text-center py-12 px-6">
     <div class="max-w-5xl mx-auto">
