@@ -5,15 +5,16 @@
 }
 
 @keyframes blink {
-  50% { border-color: transparent; }
+  50% { border-color: transparent }
 }
 
-.animate-typing {
+.animate-typing-delayed {
   width: 0;
-  animation:
-    typing 3s steps(30, end) forwards,
-    blink 0.75s step-end infinite;
+  animation: 
+    typing 3s steps(30, end) 1.2s forwards,  /* 1.2s עיכוב */
+    blink 0.75s step-end infinite 1s;
 }
+
 
 body {
   font-family: 'Varela Round', sans-serif;
