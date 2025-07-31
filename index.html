@@ -235,6 +235,10 @@
 <!-- תנאי שימוש -->
 <div id="termsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
   <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl">
+
+   <div class="sticky top-0 bg-white z-10 flex justify-end">
+  <button onclick="closeModal('termsModal')" class="text-gray-600 hover:text-black text-xl">✖</button>
+</div>
     <h2 class="text-2xl font-bold text-center mb-4">📜 תקנון ותנאי שימוש באתר ComfAss.com</h2>
     <p class="text-sm text-gray-500 text-center mb-6">עודכן לאחרונה: 31 ביולי 2025</p>
 
@@ -287,15 +291,17 @@
     <li>📱 טופס יצירת הקשר המובנה באתר</li>
   </ul>
 </div>
-  <div class="sticky top-0 bg-white z-10 flex justify-end">
-  <button onclick="closeModal('termsModal')" class="text-gray-600 hover:text-black text-xl">✖</button>
-</div>
+  
 </div>
 </div>
 
 <!-- מדיניות פרטיות -->
 <div id="privacyModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
   <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl">
+
+    <div class="sticky top-0 bg-white z-10 flex justify-end">
+      <button onclick="closeModal('privacyModal')" class="text-gray-600 hover:text-black text-xl">✖</button>
+    </div>
     
     <h2 class="text-2xl font-bold text-center mb-4">🔐 מדיניות פרטיות באתר ComfAss.com</h2>
     <p class="text-sm text-gray-500 text-center mb-6">עודכן לאחרונה: 31 ביולי 2025</p>
@@ -349,9 +355,7 @@
     <li>📧 בדוא"ל: <strong>[כתובת האימייל שלך]</strong></li>
     <li>📱 דרך טופס יצירת הקשר באתר</li>
   </ul>
-   <div class="sticky top-0 bg-white z-10 flex justify-end">
-      <button onclick="closeModal('privacyModal')" class="text-gray-600 hover:text-black text-xl">✖</button>
-    </div>
+  
     </div>
 
   </div>
