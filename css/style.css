@@ -4,10 +4,11 @@
 }
 
 .typing-effect {
-  display: inline-block;
+   display: inline-block;
   overflow: hidden;
-  white-space: nowrap;
-  width: 0;
+  white-space: normal;        /* מאפשר שבירת שורה */
+  word-break: break-word;     /* שובר מילים אם צריך */
+  max-width: 100%;            /* מונע גלילה לצדדים */
   animation: typing 2.5s steps(30, end) forwards;
   opacity: 1 !important;
  animation-delay: 0s;
