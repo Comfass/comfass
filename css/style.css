@@ -154,3 +154,24 @@ body.dark .bg-gray-200 {
 .star.selected {
   color: #facc15;
 }
+
+@keyframes fadeInSmooth {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-delayed-1 {
+  animation: fadeInSmooth 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.animate-fade-in-delayed-2 {
+  animation: fadeInSmooth 1s ease-out forwards;
+  animation-delay: 1.6s;
+}
+
+.animate-fade-in-delayed-3 {
+  animation: fadeInSmooth 1s ease-out forwards;
+  animation-delay: 2.8s;
+}
+
