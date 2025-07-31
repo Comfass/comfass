@@ -117,11 +117,43 @@
         <button type="button" onclick="openModal('privacyModal')" class="text-blue-600 underline">מדיניות הפרטיות</button>.
         </label>
         </div>
-        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">שלח פנייה</button>
+        <button id="submit-btn" type="submit" disabled class="w-full py-3 rounded-lg shadow-lg transition transform">שלח פנייה</button>
       </form>
       <div id="thank-you" class="hidden text-center mt-6 text-green-600 font-bold text-lg">
         ✅ תודה! פנייתך התקבלה ונחזור אליך בהקדם 🙏
       </div>
+     <script>
+  const form = document.getElementById("contact-form");
+  const submitBtn = document.getElementById("submit-btn");
+  const inputs = form.querySelectorAll("input[required], textarea[required]");
+  const checkbox = document.getElementById("terms");
+
+  function validateForm() {
+    let isValid = true;
+
+    inputs.forEach((input) => {
+      if (!input.value.trim()) isValid = false;
+    });
+
+    if (!checkbox.checked) isValid = false;
+
+    if (isValid) {
+      submitBtn.disabled = false;
+      submitBtn.classList.remove("bg-gray-400", "cursor-not-allowed");
+      submitBtn.classList.add("bg-blue-600", "text-white", "hover:bg-blue-700");
+    } else {
+      submitBtn.disabled = true;
+      submitBtn.classList.add("bg-gray-400", "cursor-not-allowed");
+      submitBtn.classList.remove("bg-blue-600", "text-white", "hover:bg-blue-700");
+    }
+  }
+
+  form.addEventListener("input", validateForm);
+  form.addEventListener("change", validateForm);
+
+  // התחלה במצב "כבוי"
+  validateForm();
+</script>
     </div>
 
     <!-- חוות דעת עם כפתור פתיחה -->
