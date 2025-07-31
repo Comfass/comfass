@@ -4,14 +4,14 @@
 }
 
 .typing-effect {
-   display: inline-block;
+  display: block;                 /* block במקום inline-block */
   overflow: hidden;
-  white-space: normal;        /* מאפשר שבירת שורה */
-  word-break: break-word;     /* שובר מילים אם צריך */
-  max-width: 100%;            /* מונע גלילה לצדדים */
+  white-space: normal;           /* מאפשר שבירת שורות */
+  word-break: break-word;        /* שובר מילים אם צריך */
+  max-width: 100%;
   animation: typing 2.5s steps(30, end) forwards;
   opacity: 1 !important;
- animation-delay: 0s;
+  animation-delay: 0.5s;
 }
 
 
