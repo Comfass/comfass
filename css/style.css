@@ -1,6 +1,6 @@
 @keyframes typing {
   0% {
-    clip-path: inset(0 100% 0 0); /* מתחיל מוסתר מימין */
+    clip-path: inset(0 0 0 100%); /* מתחיל מוסתר מימין */
     opacity: 0;
   }
   1% {
