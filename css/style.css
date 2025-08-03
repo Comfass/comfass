@@ -1,16 +1,16 @@
 @keyframes typing {
-  0% { width: 0; opacity: 0; }
+  0% { max-width: 0; opacity: 0; }
   1% { opacity: 1; }
-  100% { width: 70ch; opacity: 1; }
+  100% { max-width: 100%; opacity: 1; }
 }
 
 .typing-effect {
   overflow: hidden;
   display: inline-block;
   white-space: normal;
-  width: 0; /* התחלה מגובה אפס */
+  max-width: 0; /* התחלה מגובה אפס */
   opacity: 0; /* שקוף לחלוטין עד תחילת האנימציה */
-  animation: typing 2.5s steps(30, end) forwards;
+  animation: typing 2.5s steps(40, end) forwards;
   animation-fill-mode: forwards;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .typing-effect-2 {
-  animation-delay: 2.5s;
+  animation-delay: 4.6s;
 }
 
 @keyframes fadeInSmooth {
@@ -29,7 +29,7 @@
 
 .animate-fade-in-delayed-3 {
   animation: fadeInSmooth 1s ease-out forwards;
-  animation-delay: 3.1s;
+  animation-delay: 3.3s;
 }
 
 
