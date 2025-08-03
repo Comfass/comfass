@@ -1,38 +1,46 @@
 @keyframes typing {
-  0% { max-width: 0; opacity: 0; }
-  1% { opacity: 1; }
-  100% { max-width: 100%; opacity: 1; }
+  0% {
+    clip-path: inset(0 100% 0 0); /* מתחיל מוסתר מימין */
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0 0 0); /* נחשף לגמרי */
+    opacity: 1;
+  }
 }
 
 .typing-effect {
-  overflow: hidden;
   display: inline-block;
-  white-space: normal;
-  max-width: 0; /* התחלה מגובה אפס */
-  opacity: 0; /* שקוף לחלוטין עד תחילת האנימציה */
-  animation: typing 2.5s steps(40, end) forwards;
+  white-space: normal; /* מאפשר שבירת שורות */
+  overflow: hidden;
+  opacity: 0;
+  animation: typing 2.5s steps(50, end) forwards;
   animation-fill-mode: forwards;
 }
 
+/* משפט ראשון */
 .typing-effect-1 {
   animation-delay: 0.5s;
 }
 
+/* משפט שלישי */
 .typing-effect-2 {
   animation-delay: 4.6s;
 }
 
+/* לוגו (fade in רגוע) */
 @keyframes fadeInSmooth {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in-delayed-3 {
-  animation: fadeInSmooth 1s ease-out forwards;
+  animation: fadeInSmooth 1.2s ease-out forwards;
   animation-delay: 3.3s;
 }
-
-
 
 
 body {
