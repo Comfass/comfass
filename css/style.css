@@ -31,6 +31,19 @@
   animation-delay: 4.6s;
 }
 
+/* סמן מהבהב (כמו במקלדת) */
+.blinker {
+  display: inline-block;
+  margin-right: 2px;
+  color: white;
+  animation: blink 1s steps(2, start) infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
 /* לוגו (fade in רגוע) */
 @keyframes fadeInSmooth {
   from { opacity: 0; transform: translateY(10px); }
