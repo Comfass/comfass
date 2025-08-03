@@ -435,7 +435,7 @@ function typeText(elementId, text, delay = 50) {
   await typeText("line1", "מהפכת הנוחות כבר כאן", 60);
   await new Promise(r => setTimeout(r, 300));
   document.getElementById("logo").classList.remove("opacity-0");
-  await new Promise(r => setTimeout(r, 1200));
+  await new Promise(r => setTimeout(r, 1000));
   await typeText("line2", "הפתרון החדשני לישיבה ממושכת בארגונים, מוסדות וחיים סטודנטיאליים", 40);
 })();
 </script>
