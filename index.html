@@ -97,28 +97,35 @@
   </div>
 </section>
 
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<section style="padding: 4rem 1rem; background: #ffffff; text-align: center;">
+  <h2 style="
+    font-size: 2rem; 
+    color: #1a1a1a; 
+    margin-bottom: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    הכירו את <span style="color: #0aa2c0;">ComfAss</span>
+  </h2>
 
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <section style="background-color: #f7f7f7; padding: 2rem; text-align: center;">
-    <h2 style="margin-bottom: 1rem;">הכירו את ComfAss</h2>
-    
-    <model-viewer 
-      src="comfass_3d_model_full_compresed.glb"
-      alt="ComfAss Cushion 3D"
-      auto-rotate
-      camera-controls
-      shadow-intensity="1"
-      ar
-      style="width: 100%; max-width: 600px; height: 500px; margin: 0 auto;">
-    </model-viewer>
-  </section>
+  <model-viewer 
+    src="comfass_3d_model_full_compresed.glb"
+    alt="ComfAss Cushion 3D"
+    auto-rotate
+    camera-controls
+    shadow-intensity="1"
+    environment-image="neutral"
+    style="
+      width: 100%;
+      max-width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      background-color: #f9f9f9;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    ">
+  </model-viewer>
+</section>
 
-  <section class="py-20 px-6 transition-theme text-center" data-aos="fade-up">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold mb-6">מי אנחנו?</h2>
-      <p class="text-xl leading-relaxed">שלושה סטודנטים בשנה השנייה להנדסה, שהבינו על עצמם מה זה לשבת שעות בלי תמיכה. במקום להתלונן, בנינו פתרון. ככה נולדה כרית ComfAss – חדשנות, אכפתיות ויזמות שפותרת כאב אמיתי.</p>
-    </div>
-  </section>
 
 <section id="contact" class="py-20 px-6 bg-gray-100" transition-theme data-aos="fade-up" data-aos-duration="1000">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start md:items-stretch">
