@@ -189,7 +189,7 @@
     </template>
   </div>
 </div>
-
+ </section>
 
 
 <section id="contact" class="py-20 px-6 bg-gray-100" transition-theme data-aos="fade-up" data-aos-duration="1000">
@@ -306,39 +306,6 @@
   </div>
 </footer>
 
-<script src="js/testimonial.js" defer></script>
-  <script type="module" src="js/review.js" defer></script>
-  <script type="module" src="js/rating.js" defer></script>
-  <script type="module" src="js/validation.js" defer></script>
-  <script type="module" src="js/theme-music.js" defer></script>
-  <script type="module" src="js/main.js" defer></script>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>  AOS.init({ once: false }); </script>
-  <script> nl_pos = "br"; nl_compact = "1"; </script>
-<script src="https://comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const interval = setInterval(() => {
-      const brokenOption = document.querySelector('option[aria-hidden="true"]');
-      if (brokenOption) {
-        brokenOption.removeAttribute('aria-hidden');
-        clearInterval(interval);
-      }
-    }, 500);
-  });
-</script>
-
-   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const slogan = document.getElementById("slogan");
-    if (slogan) {
-      setTimeout(() => {
-        slogan.classList.add("typing-effect");
-      }, 1000); // זמן תיאום עם אנימציית הלוגו
-    }
-  });
-</script>
 
 <!-- תנאי שימוש -->
 <div id="termsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -505,9 +472,39 @@
 
 </div>
 
+<script src="js/testimonial.js" defer></script>
+<script type="module" src="js/review.js" defer></script>
+<script type="module" src="js/rating.js" defer></script>
+<script type="module" src="js/validation.js" defer></script>
+<script type="module" src="js/theme-music.js" defer></script>
+<script type="module" src="js/main.js" defer></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>  AOS.init({ once: false }); </script>
+<script> nl_pos = "br"; nl_compact = "1"; </script>
+<script src="https://comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const interval = setInterval(() => {
+      const brokenOption = document.querySelector('option[aria-hidden="true"]');
+      if (brokenOption) {
+        brokenOption.removeAttribute('aria-hidden');
+        clearInterval(interval);
+      }
+    }, 500);
+  });
+</script>
 
-
-
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slogan = document.getElementById("slogan");
+    if (slogan) {
+      setTimeout(() => {
+        slogan.classList.add("typing-effect");
+      }, 1000); // זמן תיאום עם אנימציית הלוגו
+    }
+  });
+</script>
+  
 <script>
   function openModal(id) {
     document.getElementById(id).classList.remove('hidden');
