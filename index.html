@@ -116,15 +116,11 @@
   <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
     המטרה שלנו הייתה אחת: להפוך כל כיסא לנוח יותר. והיום, אנחנו גאים להציג בפניכם את התוצאה.
   </p>
-<!-- Alpine.js -->
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<!-- Alpine.js -->
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <!-- Alpine.js -->
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-<!-- קרוסלת תמונות עם תיאור מעל -->
+<!-- קרוסלת תמונות עם טקסט מעל התמונות -->
 <div 
   x-data="{
     activeSlide: 0,
@@ -137,11 +133,11 @@
   }"
   x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides.length }, 7000)"
   class="relative w-full max-w-3xl mx-auto mt-12 overflow-hidden rounded-xl shadow-xl"
-  style="height: 450px; padding-top: 64px;" <!-- מוסיף מקום לכיתוב -->
+  style="height: 450px;"
 >
 
-  <!-- כיתוב מעל התמונה -->
-  <div class="absolute top-0 w-full bg-white/80 text-gray-800 text-lg font-semibold py-4 text-center z-20">
+  <!-- טקסט מעל התמונה -->
+  <div class="absolute top-0 w-full bg-white/70 text-gray-800 text-lg font-semibold py-4 text-center z-20 backdrop-blur-sm">
     <span x-text="slides[activeSlide].caption"></span>
   </div>
 
@@ -155,7 +151,7 @@
       x-transition:leave="transition-opacity duration-700" 
       x-transition:leave-start="opacity-100" 
       x-transition:leave-end="opacity-0"
-      class="w-full h-full absolute top-0 left-0"
+      class="absolute top-0 left-0 w-full h-full z-10"
     >
       <img :src="slide.src" class="w-full h-full object-cover" :alt="'תמונה ' + (index + 1)">
     </div>
@@ -193,6 +189,7 @@
     </template>
   </div>
 </div>
+
 
 
 <section id="contact" class="py-20 px-6 bg-gray-100" transition-theme data-aos="fade-up" data-aos-duration="1000">
