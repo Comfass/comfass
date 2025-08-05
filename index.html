@@ -473,39 +473,38 @@
 <!-- Music audio -->
 <audio id="bg-music" src="M.mp3" loop preload="auto"></audio>
 
-<!-- כפתורים צפים -->
-<div id="floating-buttons"
-     class="fixed bottom-4 left-4 z-50 flex flex-col gap-3 items-center pointer-events-auto">
-
-  <!-- כפתור WhatsApp -->
-  <a href="https://wa.me/972546662738?text=היי%20ראיתי%20את%20הכרית%20באתר%20ומעניין%20אותי%20לשמוע%20עוד"
-     target="_blank"
-     title="צ'אט בוואטסאפ"
+<!-- Floating Buttons -->
+<div class="fixed left-4 bottom-4 z-50 flex flex-col gap-3 items-center">
+  
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/YOUR_PHONE_NUMBER?text=היי%20ראיתי%20את%20הכרית%20באתר%20ומעניין%20אותי%20לשמוע%20עוד" 
+     target="_blank" 
+     title="צ'אט בוואטסאפ" 
      class="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
          alt="WhatsApp" class="w-6 h-6">
   </a>
 
-  <!-- כפתור מצב כהה/בהיר -->
-  <button id="theme-toggle"
-          title="מצב כהה/בהיר"
+  <!-- Dark Mode Button -->
+  <button id="theme-toggle" 
+          title="מצב כהה/בהיר" 
           aria-label="הפעלת מצב כהה או בהיר"
           class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 text-xl shadow-lg flex items-center justify-center">
     <span id="theme-icon">🌙</span>
   </button>
 
-  <!-- כפתור מוזיקה -->
-  <button id="music-btn"
-          title="הפעל או השהה מוזיקה"
+  <!-- Music Toggle Button -->
+  <button id="music-btn" 
+          title="הפעל או השהה מוזיקה" 
           aria-label="הפעל או השהה מוזיקה"
           class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 shadow-lg flex items-center justify-center">
-    <svg id="music-icon" xmlns="http://www.w3.org/2000/svg"
-         class="w-6 h-6 text-blue-600 dark:text-yellow-400" fill="currentColor"
-         viewBox="0 0 24 24">
-      <path id="icon-path" d="M5 3v18l14-9L5 3z" />
+    <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600 dark:text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+      <path id="icon-path" d="M5 3v18l14-9L5 3z" /> <!-- Play icon -->
     </svg>
   </button>
+
 </div>
+
 
 
 
