@@ -463,9 +463,31 @@ function typeText(elementId, text, delay = 50) {
 })();
 </script>
 
-</body>
-</html>
 
+    <!-- כפתור WhatsApp צף -->
+<a href="https://wa.me/972501234567?text=היי%20ראיתי%20את%20Comfass%20באתר%20ומעניין%20אותי%20לשמוע%20עוד" 
+   class="whatsapp-float" target="_blank" title="צ'אט בוואטסאפ">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+       alt="WhatsApp" style="width: 55px; height: 55px;">
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 5px;
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+</style>
 
 </body>
 </html>
