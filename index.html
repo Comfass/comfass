@@ -308,7 +308,7 @@
   <!-- Music audio -->
 <audio id="bg-music" src="M.mp3" loop preload="auto"></audio>
 
-  <div class="fixed bottom-4 left-4 z-50 transition-theme flex flex-col gap-3 items-center">
+  <div class="flex flex-col gap-2 ml-4 mb-4 z-50">
   <!-- Dark mode button -->
   <button  id="theme-toggle" title="הפעלת מצב כהה או בהיר" aria-label="הפעלת מצב כהה או בהיר" class="p-2 rounded-full bg-white shadow-md transition hover:scale-110 text-xl dark:bg-gray-700 dark:text-yellow-400">
     <span id="theme-icon">🌙</span>
@@ -334,7 +334,6 @@
   <script>  AOS.init({ once: false }); </script>
   <script> nl_pos = "br"; nl_compact = "1"; </script>
 <script src="https://comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
-<!-- תיקון aria-hidden -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const interval = setInterval(() => {
