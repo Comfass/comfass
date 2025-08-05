@@ -153,7 +153,7 @@
       x-transition:leave-end="opacity-0"
       class="absolute top-0 left-0 w-full h-full z-10"
     >
-      <img :src="slide.src" class="w-full h-full object-cover" :alt="'תמונה ' + (index + 1)">
+      <img :src="slide.src" class="carousel-image w-full h-full object-contain bg-white" :alt="'תמונה ' + (index + 1)">
     </div>
   </template>
 
@@ -474,7 +474,7 @@
 <audio id="bg-music" src="M.mp3" loop preload="auto"></audio>
 
 <!-- Floating Buttons -->
-<div class="fixed left-4 bottom-4 z-50 flex flex-col gap-3 items-center">
+<div class="floating-buttons fixed left-4 bottom-4 z-50 flex flex-col gap-3 items-center">
   
   <!-- WhatsApp Button -->
   <a href="https://wa.me/YOUR_PHONE_NUMBER?text=היי%20ראיתי%20את%20הכרית%20באתר%20ומעניין%20אותי%20לשמוע%20עוד" 
