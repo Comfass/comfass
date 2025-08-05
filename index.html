@@ -305,23 +305,40 @@
     </a>
   </div>
 </footer>
-  <!-- Music audio -->
+<!-- Music audio -->
 <audio id="bg-music" src="M.mp3" loop preload="auto"></audio>
 
-  <div class="flex flex-col gap-2 ml-4 mb-4 z-50">
-  <!-- Dark mode button -->
-  <button  id="theme-toggle" title="הפעלת מצב כהה או בהיר" aria-label="הפעלת מצב כהה או בהיר" class="p-2 rounded-full bg-white shadow-md transition hover:scale-110 text-xl dark:bg-gray-700 dark:text-yellow-400">
+<!-- Floating Buttons -->
+<div class="fixed bottom-4 left-4 z-50 flex flex-col gap-3 items-center">
+  
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/972546662738?text=היי%20ראיתי%20את%20הכרית%20באתר%20ומעניין%20אותי%20לשמוע%20עוד" 
+     target="_blank" 
+     title="צ'אט בוואטסאפ" 
+     class="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg hover:scale-110 transition">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+         alt="WhatsApp" class="w-6 h-6">
+  </a>
+
+  <!-- Dark Mode Button -->
+  <button id="theme-toggle" 
+          title="מצב כהה/בהיר" 
+          aria-label="הפעלת מצב כהה או בהיר"
+          class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 text-xl shadow-lg hover:scale-110 transition flex items-center justify-center">
     <span id="theme-icon">🌙</span>
   </button>
 
-  <!-- Music toggle button -->
-<button id="music-btn" title="הפעל או השהה מוזיקה" aria-label="הפעל או השהה מוזיקה" class="p-2 rounded-full bg-white shadow-md transition hover:scale-110 dark:bg-gray-700">
-  <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 dark:text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
-    <path id="icon-path" d="M5 3v18l14-9L5 3z" /> <!-- Play icon -->
-  </svg>
-</button>
+  <!-- Music Toggle Button -->
+  <button id="music-btn" 
+          title="הפעל או השהה מוזיקה" 
+          aria-label="הפעל או השהה מוזיקה"
+          class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 shadow-lg hover:scale-110 transition flex items-center justify-center">
+    <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600 dark:text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+      <path id="icon-path" d="M5 3v18l14-9L5 3z" /> <!-- Play icon -->
+    </svg>
+  </button>
 
-
+</div>
 
 <script src="js/testimonial.js" defer></script>
   <script type="module" src="js/review.js" defer></script>
@@ -526,32 +543,6 @@ function typeText(elementId, text, delay = 50) {
   await typeText("line2", "הפתרון הפשוט לישיבה ממושכת במכללות, אוניברסטאות וארגונים", 40);
 })();
 </script>
-
-
-<!-- כפתור WhatsApp צף בפינה שמאלית תחתונה מעל כפתורי Theme -->
-<a href="https://wa.me/972546662738?text=היי%20ראיתי%20את%20הכרית%20באתר%20ומעניין%20אותי%20לשמוע%20עוד" 
-   class="whatsapp-float" target="_blank" title="צ'אט בוואטסאפ">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-       alt="WhatsApp" style="width: 34px; height: 34px;">
-</a>
-
-<style>
-  .whatsapp-float {
-    position: fixed;
-    bottom: 125px; /* מעלה אותו מעל כפתור מצב כהה */
-    left: 15px; /* פינה שמאלית */
-    z-index: 9999; /* מעל כל שאר האלמנטים */
-    background-color: #25D366;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    padding: 5px;
-    transition: transform 0.3s ease;
-  }
-
-  .whatsapp-float:hover {
-    transform: scale(1.1);
-  }
-</style>
 
 
 </body>
