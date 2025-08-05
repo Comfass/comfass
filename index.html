@@ -152,25 +152,35 @@
           'opacity-0 z-0': activeSlide !== index
         }"
       >
-        <img :src="slide.src" class="w-full h-full object-cover rounded-b-xl" :alt="'תמונה ' + (index + 1)">
+       <img :src="slide.src" class="w-full max-h-[450px] object-contain mx-auto" :alt="'תמונה ' + (index + 1)">
       </div>
     </template>
   </div>
 
   <!-- חיצים -->
-  <button 
-    @click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1" 
-    class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 px-3 py-2 rounded-full shadow-md hover:bg-gray-100 z-20"
-  >
-    ◀
-  </button>
+<button 
+  @click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1" 
+  class="absolute left-3 top-1/2 transform -translate-y-1/2 
+         w-10 h-10 flex items-center justify-center 
+         bg-white text-gray-800 text-lg font-bold 
+         rounded-full shadow-md 
+         transition-all duration-300 ease-in-out 
+         hover:bg-gray-100 z-20"
+>
+  ◀
+</button>
 
-  <button 
-    @click="activeSlide = (activeSlide + 1) % slides.length" 
-    class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 px-3 py-2 rounded-full shadow-md hover:bg-gray-100 z-20"
-  >
-    ▶
-  </button>
+<button 
+  @click="activeSlide = (activeSlide + 1) % slides.length" 
+  class="absolute right-3 top-1/2 transform -translate-y-1/2 
+         w-10 h-10 flex items-center justify-center 
+         bg-white text-gray-800 text-lg font-bold 
+         rounded-full shadow-md 
+         transition-all duration-300 ease-in-out 
+         hover:bg-gray-100 z-20"
+>
+  ▶
+</button>
 
   <!-- נקודות -->
   <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
