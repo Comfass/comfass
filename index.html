@@ -464,20 +464,20 @@ function typeText(elementId, text, delay = 50) {
 </script>
 
 
-    <!-- כפתור WhatsApp צף -->
+<!-- כפתור WhatsApp צף בפינה שמאלית תחתונה מעל כפתורי Theme -->
 <a href="https://wa.me/972546662738?text=היי%20ראיתי%20את%20Comfass%20באתר%20ומעניין%20אותי%20לשמוע%20עוד" 
    class="whatsapp-float" target="_blank" title="צ'אט בוואטסאפ">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-       alt="WhatsApp" style="width: 55px; height: 55px;">
+       alt="WhatsApp" style="width: 45px; height: 45px;">
 </a>
 
 <style>
   .whatsapp-float {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    background-color: transparent;
+    bottom: 100px; /* מעלה אותו מעל כפתור מצב כהה */
+    left: 20px; /* פינה שמאלית */
+    z-index: 9999; /* מעל כל שאר האלמנטים */
+    background-color: #25D366;
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     padding: 5px;
@@ -488,6 +488,7 @@ function typeText(elementId, text, delay = 50) {
     transform: scale(1.1);
   }
 </style>
+
 
 </body>
 </html>
