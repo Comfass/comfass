@@ -55,13 +55,13 @@
    
  <section class="py-20 px-6 transition-theme text-center" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-4">הבעיה</h2>
-    <p class="text-xl max-w-2xl mx-auto leading-relaxed">כולנו יושבים שעות בכיתה או בעבודה. הכיסאות פשוט לא נוחים – וזה משפיע על הבריאות, הריכוז והתפקוד היומיומי.</p>
+    <p class="text-xl max-w-2xl mx-auto leading-relaxed">כולנו מכירים את הצורך לשבת שעות בכיתה או בעבודה. הכיסאות במוסדות או באירגונים כיום לא מותאמים לישבה ממושכת. והעניין הזה משפיע על הבריאות, הריכוז והתפקוד היומיומי.</p>
   </section>
 
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 <section class="py-20 px-6 transition-theme max-w-6xl mx-auto" data-aos="fade-up">
-  <h2 class="text-3xl font-bold text-center mb-16">למה <span class="text-cyan-600">ComfAss</span>?</h2>
+  <h2 class="text-3xl font-bold text-center mb-16">בדיוק מהמצוקה הזאת נוצר  <span class="text-cyan-600">Comfass</span>?</h2>
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
     
@@ -86,7 +86,7 @@
       </div>
       <div class="flex items-start gap-4">
         <div class="text-2xl text-blue-600">💼</div>
-        <span class="text-xl">קלה, ניידת ומתקפלת</span>
+        <span class="text-xl">קלה, ניידת ומתלבשת על כל תיק</span>
       </div>
       <div class="flex items-start gap-4">
         <div class="text-2xl text-blue-600">🪑</div>
@@ -148,11 +148,11 @@
 
     if (isValid) {
       submitBtn.disabled = false;
-      submitBtn.classList.remove("bg-gray-400", "cursor-not-allowed");
+      submitBtn.classList.remove("bg-orange-500", "cursor-not-allowed");
       submitBtn.classList.add("bg-blue-600", "text-white", "hover:bg-blue-700");
     } else {
       submitBtn.disabled = true;
-      submitBtn.classList.add("bg-gray-400", "cursor-not-allowed");
+      submitBtn.classList.add("bg-orange-500", "cursor-not-allowed");
       submitBtn.classList.remove("bg-blue-600", "text-white", "hover:bg-blue-700");
     }
   }
@@ -435,11 +435,11 @@ function typeText(elementId, text, delay = 50) {
 }
 
 (async function startTypingAnimation() {
-  await typeText("line1", "מהפכת הנוחות כבר כאן", 60);
+  await typeText("line1", "הצעת הנוחות כבר כאן", 60);
   await new Promise(r => setTimeout(r, 300));
   document.getElementById("logo").classList.remove("opacity-0");
   await new Promise(r => setTimeout(r, 800));
-  await typeText("line2", "הפתרון החדשני לישיבה ממושכת בארגונים, מוסדות וחיים סטודנטיאליים", 40);
+  await typeText("line2", "הפתרון הפשוט לישיבה ממושכת במכללות, אוניברסטאות וארגונים", 40);
 })();
 </script>
 
