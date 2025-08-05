@@ -116,51 +116,62 @@
   <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
     המטרה שלנו הייתה אחת: להפוך כל כיסא לנוח יותר. והיום, אנחנו גאים להציג בפניכם את התוצאה.
   </p>
-<!-- Alpine.js לוגיקה -->
+<!-- Alpine.js -->
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-<!-- קרוסלת ComfAss -->
+<!-- קרוסלת תמונות עם תיאור למעלה -->
 <div 
   x-data="{
     activeSlide: 1,
     slides: [
-      { src: 'img/Product1.jpg', caption: 'לוקחים אותה לכל מקום פשוט ונוח' },
-      { src: 'img/Product2.jpg', caption:  'מתאימה לכל כיסא באקדמיה או בבית' },
-      { src: 'img/Product3.jpg', caption: 'תואמת לכל תיק מקסימום נוחות + ניידות בלי מאמץ' },
-      { src: 'img/Product4.jpg', caption: 'קלה לנשיאה מתאימה לכל תיק סטודנטיאלי' }
+      { src: 'img/Product1.jpg', caption: 'לוקחים אותה לכל מקום – פשוט ונוח' },
+      { src: 'img/Product2.jpg', caption: 'מתאימה לכל כיסא באקדמיה או בבית' },
+      { src: 'img/Product3.jpg', caption: 'תואמת לכל תיק – מקסימום נוחות וניידות' },
+      { src: 'img/Product4.jpg', caption: 'קלה לנשיאה – מתאימה לכל תיק סטודנטיאלי' }
     ]
   }"
-  x-init="setInterval(() => { activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1 }, 4000)"
-  class="relative w-full max-w-3xl mx-auto mt-12 overflow-hidden rounded-xl shadow-xl"
+  x-init="setInterval(() => { activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1 }, 7000)"
+  class="relative w-full max-w-3xl mx-auto mt-12 overflow-hidden rounded-xl shadow-xl style="height: 450px;"
 >
 
-  <!-- תמונות + כיתוב -->
+  <!-- כיתוב מעל התמונה -->
+  <div class="absolute top-0 w-full bg-white/80 text-gray-800 text-lg font-semibold py-4 text-center z-10">
+    <span x-text="slides[activeSlide - 1].caption"></span>
+  </div>
+
+  <!-- תצוגת תמונה -->
   <template x-for="(slide, index) in slides" :key="index">
-    <div x-show="activeSlide === index + 1" class="text-center transition-opacity duration-700 ease-in-out">
-      <img :src="slide.src" class="w-full h-auto object-cover rounded-t-xl" :alt="'תמונה ' + (index + 1)">
-      <figcaption class="bg-white py-4 text-gray-700 text-sm font-medium">
-        <span x-text="slide.caption"></span>
-      </figcaption>
+    <div 
+      x-show="activeSlide === index + 1" 
+      x-transition:enter="transition-opacity duration-700" 
+      x-transition:enter-start="opacity-0" 
+      x-transition:enter-end="opacity-100" 
+      x-transition:leave="transition-opacity duration-700" 
+      x-transition:leave-start="opacity-100" 
+      x-transition:leave-end="opacity-0"
+      class="w-full"
+    >
+      <img :src="slide.src" class="w-full h-auto object-cover rounded-b-xl" :alt="'תמונה ' + (index + 1)">
     </div>
   </template>
 
-  <!-- כפתורי ניווט -->
+  <!-- חיצים -->
   <button 
     @click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1" 
-    class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 px-3 py-2 rounded-full shadow-md hover:bg-gray-100"
+    class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 px-3 py-2 rounded-full shadow-md hover:bg-gray-100 z-20"
   >
     ◀
   </button>
 
   <button 
     @click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1" 
-    class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 px-3 py-2 rounded-full shadow-md hover:bg-gray-100"
+    class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 px-3 py-2 rounded-full shadow-md hover:bg-gray-100 z-20"
   >
     ▶
   </button>
 
-  <!-- נקודות למטה -->
-  <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
+  <!-- נקודות -->
+  <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
     <template x-for="i in slides.length" :key="i">
       <div 
         @click="activeSlide = i" 
@@ -170,6 +181,7 @@
     </template>
   </div>
 </div>
+
 
 
 
