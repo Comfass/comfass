@@ -116,13 +116,61 @@
   <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
     המטרה שלנו הייתה אחת: להפוך כל כיסא לנוח יותר. והיום, אנחנו גאים להציג בפניכם את התוצאה.
   </p>
-  <!-- גלריית תמונות -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
-    <img src="img/Product1.jpg" alt="ComfAss בשימוש על גב הסטודנט" class="rounded-lg shadow-lg">
-    <img src="img/Product2.jpg" alt="ComfAss על כיסא באקדמיה" class="rounded-lg shadow-lg">
-    <img src="img/Product3.jpg" alt="ComfAss על תיק נשים מודרני" class="rounded-lg shadow-lg">
+<!-- Alpine.js לוגיקה -->
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- קרוסלת ComfAss -->
+<div 
+  x-data="{
+    activeSlide: 1,
+    slides: [
+      { src: 'img/Product1.jpg', caption: 'לוקחים אותה לכל מקום פשוט ונוח' },
+      { src: 'img/Product2.jpg', caption:  'מתאימה לכל כיסא באקדמיה או בבית' },
+      { src: 'img/Product3.jpg', caption: 'תואמת לכל תיק מקסימום נוחות + ניידות בלי מאמץ' },
+      { src: 'img/Product4.jpg', caption: 'קלה לנשיאה מתאימה לכל תיק סטודנטיאלי' }
+    ]
+  }"
+  x-init="setInterval(() => { activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1 }, 4000)"
+  class="relative w-full max-w-3xl mx-auto mt-12 overflow-hidden rounded-xl shadow-xl"
+>
+
+  <!-- תמונות + כיתוב -->
+  <template x-for="(slide, index) in slides" :key="index">
+    <div x-show="activeSlide === index + 1" class="text-center transition-opacity duration-700 ease-in-out">
+      <img :src="slide.src" class="w-full h-auto object-cover rounded-t-xl" :alt="'תמונה ' + (index + 1)">
+      <figcaption class="bg-white py-4 text-gray-700 text-sm font-medium">
+        <span x-text="slide.caption"></span>
+      </figcaption>
+    </div>
+  </template>
+
+  <!-- כפתורי ניווט -->
+  <button 
+    @click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1" 
+    class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 px-3 py-2 rounded-full shadow-md hover:bg-gray-100"
+  >
+    ◀
+  </button>
+
+  <button 
+    @click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1" 
+    class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 px-3 py-2 rounded-full shadow-md hover:bg-gray-100"
+  >
+    ▶
+  </button>
+
+  <!-- נקודות למטה -->
+  <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
+    <template x-for="i in slides.length" :key="i">
+      <div 
+        @click="activeSlide = i" 
+        :class="{'bg-cyan-600': activeSlide === i, 'bg-gray-300': activeSlide !== i}" 
+        class="w-3 h-3 rounded-full cursor-pointer transition-colors"
+      ></div>
+    </template>
   </div>
-</section>
+</div>
+
 
 
 <section id="contact" class="py-20 px-6 bg-gray-100" transition-theme data-aos="fade-up" data-aos-duration="1000">
