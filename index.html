@@ -121,7 +121,10 @@
 <!-- Alpine.js -->
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-<!-- קרוסלת תמונות עם תיאור למעלה -->
+<!-- Alpine.js -->
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- קרוסלת תמונות עם תיאור מעל -->
 <div 
   x-data="{
     activeSlide: 0,
@@ -134,56 +137,53 @@
   }"
   x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides.length }, 7000)"
   class="relative w-full max-w-3xl mx-auto mt-12 overflow-hidden rounded-xl shadow-xl"
-  style="height: 450px;"
+  style="height: 450px; padding-top: 64px;" <!-- מוסיף מקום לכיתוב -->
 >
 
   <!-- כיתוב מעל התמונה -->
-  <div class="absolute top-0 w-full bg-white/80 text-gray-800 text-lg font-semibold py-4 text-center z-10">
+  <div class="absolute top-0 w-full bg-white/80 text-gray-800 text-lg font-semibold py-4 text-center z-20">
     <span x-text="slides[activeSlide].caption"></span>
   </div>
 
-  <!-- תצוגת תמונה - כל התמונות קיימות בדום, רק אחת מוצגת -->
-  <div class="relative w-full h-full">
-    <template x-for="(slide, index) in slides" :key="index">
-      <div
-        class="absolute inset-0 transition-opacity duration-700"
-        :class="{
-          'opacity-100 z-10': activeSlide === index,
-          'opacity-0 z-0': activeSlide !== index
-        }"
-      >
-       <img :src="slide.src" class="w-full max-h-[450px] object-contain mx-auto" :alt="'תמונה ' + (index + 1)">
-      </div>
-    </template>
-  </div>
+  <!-- תמונות -->
+  <template x-for="(slide, index) in slides" :key="index">
+    <div 
+      x-show="activeSlide === index" 
+      x-transition:enter="transition-opacity duration-700" 
+      x-transition:enter-start="opacity-0" 
+      x-transition:enter-end="opacity-100" 
+      x-transition:leave="transition-opacity duration-700" 
+      x-transition:leave-start="opacity-100" 
+      x-transition:leave-end="opacity-0"
+      class="w-full h-full absolute top-0 left-0"
+    >
+      <img :src="slide.src" class="w-full h-full object-cover" :alt="'תמונה ' + (index + 1)">
+    </div>
+  </template>
 
   <!-- חיצים -->
-<button 
-  @click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1" 
-  class="absolute left-3 top-1/2 transform -translate-y-1/2 
-         w-10 h-10 flex items-center justify-center 
-         bg-white text-gray-800 text-lg font-bold 
-         rounded-full shadow-md 
-         transition-all duration-300 ease-in-out 
-         hover:bg-gray-100 z-20"
->
-  ◀
-</button>
+  <button 
+    @click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1" 
+    class="absolute left-3 top-1/2 transform -translate-y-1/2 
+           w-10 h-10 flex items-center justify-center 
+           bg-white text-gray-800 text-lg font-bold 
+           rounded-full shadow-md z-30"
+  >
+    ◀
+  </button>
 
-<button 
-  @click="activeSlide = (activeSlide + 1) % slides.length" 
-  class="absolute right-3 top-1/2 transform -translate-y-1/2 
-         w-10 h-10 flex items-center justify-center 
-         bg-white text-gray-800 text-lg font-bold 
-         rounded-full shadow-md 
-         transition-all duration-300 ease-in-out 
-         hover:bg-gray-100 z-20"
->
-  ▶
-</button>
+  <button 
+    @click="activeSlide = (activeSlide + 1) % slides.length" 
+    class="absolute right-3 top-1/2 transform -translate-y-1/2 
+           w-10 h-10 flex items-center justify-center 
+           bg-white text-gray-800 text-lg font-bold 
+           rounded-full shadow-md z-30"
+  >
+    ▶
+  </button>
 
   <!-- נקודות -->
-  <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+  <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
     <template x-for="i in slides.length" :key="i">
       <div 
         @click="activeSlide = i" 
@@ -193,6 +193,7 @@
     </template>
   </div>
 </div>
+
 
 <section id="contact" class="py-20 px-6 bg-gray-100" transition-theme data-aos="fade-up" data-aos-duration="1000">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start md:items-stretch">
