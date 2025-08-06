@@ -63,22 +63,26 @@
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 <section class="py-20 px-6 transition-theme max-w-6xl mx-auto" data-aos="fade-up">
-  <h2 class="text-3xl font-bold text-center mb-16">מתוך הצורך הזה נולד <span class="text-cyan-600">Comfass</span>?</h2>
+  <h2 class="text-3xl font-bold text-center mb-16">מתוך הצורך הזה נולד <span class="text-cyan-600">Comfass</span>!</h2>
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
     
-    <!-- צד שמאל – מודל תלת ממדי -->
-    <div class="flex justify-center">
-      <model-viewer 
-        src="comfass_3d_model_full_compresed.glb"
-        alt="ComfAss Cushion 3D"
-        auto-rotate
-        camera-controls
-        shadow-intensity="1"
-        environment-image="neutral"
-        class="w-full max-w-sm h-[500px] rounded-2xl shadow-xl bg-gray-100">
-      </model-viewer>
-    </div>
+   <!-- צד שמאל – מודל תלת ממדי -->
+<div class="flex flex-col items-center">
+  <model-viewer 
+    src="/models/Product_3D_Model.glb"
+    alt="ComfAss Cushion 3D"
+    auto-rotate
+    camera-controls
+    shadow-intensity="1"
+    environment-image="neutral"
+    class="w-full max-w-sm h-[500px] rounded-2xl shadow-xl bg-gray-100">
+  </model-viewer>
+  
+  <!-- כיתוב מתחת למודל -->
+  <small class="text-gray-500 mt-2 text-sm">* המודל להמחשה בלבד</small>
+</div>
+
 
     <!-- צד ימין – הסיבות -->
     <div class="space-y-8 text-right">
