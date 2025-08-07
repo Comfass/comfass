@@ -7,11 +7,12 @@
 <div id="accessibilityModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center">
   <div class="bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 rounded relative shadow-lg text-right">
     
-    <!-- כפתור סגירה -->
-    <button onclick="closeModal('accessibilityModal')" class="sticky top-0 bg-white z-10 flex justify-end"">
-      ✖
-    </button>
-
+   <!-- עטוף את הכפתור בתוך div שתישאר דבוקה למעלה -->   <!-- כפתור סגירה -->
+  <div class="sticky top-0 bg-white z-10 flex justify-end">
+  <button onclick="closeModal('accessibilityModal')" class="text-gray-600 hover:text-black text-2xl font-bold p-2">
+    ✖
+  </button>
+</div>
     <!-- תוכן ההצהרה שלך -->
     <h1 class="text-xl font-bold mb-4">הצהרת נגישות – Comfass</h1>
     <p>אנו ב־Comfass רואים חשיבות רבה בהנגשת האתר והשירותים שלנו לכלל הציבור, ובפרט לאנשים עם מוגבלות.</p>
@@ -56,6 +57,26 @@
   function openModal(id) {
     document.getElementById(id).classList.remove('hidden');
   }
+
+  <script>
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+
+  // סגירה ב-Escape
+  document.addEventListener('keydown', function (event) {
+    if (event.key === "Escape") {
+      const modal = document.getElementById('accessibilityModal');
+      if (modal && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+      }
+    }
+  });
+</script>
 
   function closeModal(id) {
     document.getElementById(id).classList.add('hidden');
