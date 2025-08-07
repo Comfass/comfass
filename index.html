@@ -315,15 +315,13 @@
       .then(data => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(data, 'text/html');
-        const content = doc.body.innerHTML;
-
-        document.getElementById('accessibilityContent').innerHTML = content;
-        document.getElementById('accessibilityModal').classList.remove('hidden');
+        const modal = doc.querySelector('#accessibilityModal');
+        document.body.appendChild(modal);
+        modal.classList.remove('hidden');
       })
       .catch(error => {
-        document.getElementById('accessibilityContent').innerHTML = "<p class='text-red-600'>אירעה שגיאה בטעינת ההצהרה.</p>";
-        document.getElementById('accessibilityModal').classList.remove('hidden');
         console.error("שגיאה בטעינת accessibility.html:", error);
+        alert("אירעה שגיאה בטעינת הצהרת הנגישות");
       });
   }
 
