@@ -309,28 +309,28 @@
   </div>
 </footer>
 <script>
-  function openAccessibilityWindow() {
-    window.open("accessibility.html", "AccessibilityPopup", "width=700,height=600,scrollbars=yes,resizable=yes");
+  function loadAccessibilityModal() {
+    fetch('accessibility.html')
+      .then(response => response.text())
+      .then(data => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+        const content = doc.body.innerHTML;
+
+        document.getElementById('accessibilityContent').innerHTML = content;
+        document.getElementById('accessibilityModal').classList.remove('hidden');
+      })
+      .catch(error => {
+        document.getElementById('accessibilityContent').innerHTML = "<p class='text-red-600'>אירעה שגיאה בטעינת ההצהרה.</p>";
+        document.getElementById('accessibilityModal').classList.remove('hidden');
+        console.error("שגיאה בטעינת accessibility.html:", error);
+      });
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
   }
 </script>
-
-<style>
-  .accessibility-btn {
-    background-color: none;
-    color: #000000;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    transition: background-color 0.3s;
-  }
-
-  .accessibility-btn:hover {
-    background-color: none;
-  }
-</style>
 <!-- תנאי שימוש -->
 <div id="termsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
   <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl">
