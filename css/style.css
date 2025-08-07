@@ -241,3 +241,14 @@ body.dark .bg-gray-200 {
   }
 }
 
+.accessibility-link {
+  color: #00f;
+  text-decoration: underline;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.accessibility-link:hover {
+  color: #0077cc;
+}
+
