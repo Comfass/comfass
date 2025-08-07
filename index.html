@@ -310,12 +310,27 @@
 </footer>
 <script>
   function loadAccessibilityModal() {
+    // 🧹 מחיקת מודל קודם אם קיים
+    const existingModal = document.getElementById('accessibilityModal');
+    if (existingModal) {
+      existingModal.remove();
+    }
+
+    // 🎯 טעינה דינמית של הקובץ
     fetch('accessibility.html')
       .then(response => response.text())
       .then(data => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(data, 'text/html');
         const modal = doc.querySelector('#accessibilityModal');
+
+        // ✅ סגירה בלחיצה על הרקע
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) {
+            closeModal('accessibilityModal');
+          }
+        });
+
         document.body.appendChild(modal);
         modal.classList.remove('hidden');
       })
@@ -326,9 +341,23 @@
   }
 
   function closeModal(id) {
-    document.getElementById(id).classList.add('hidden');
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.classList.add('hidden');
+    }
   }
+
+  // ✅ סגירה בלחיצה על מקש ESC
+  document.addEventListener('keydown', function (event) {
+    if (event.key === "Escape") {
+      const modal = document.getElementById('accessibilityModal');
+      if (modal && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+      }
+    }
+  });
 </script>
+
 <!-- תנאי שימוש -->
 <div id="termsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
   <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl">
