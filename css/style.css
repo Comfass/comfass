@@ -240,5 +240,19 @@ body.dark .bg-gray-200 {
     bottom: 5rem; /* מרים אותם טיפה מעל אלמנטים אחרים במובייל */
   }
 }
+.language-switch a {
+  color: #fff !important;      /* תמיד לבן */
+  font-weight: 600;
+}
+.language-switch a:hover {
+  color: #fff !important;      /* גם בהובר */
+  text-decoration: underline;  /* קו תחתון קל בהובר אם תרצה */
+}
+.language-switch {
+  position: fixed;
+  top: 8px;
+  right: 12px;
+  z-index: 60;
+}
 
 
