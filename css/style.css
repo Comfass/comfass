@@ -241,12 +241,10 @@ body.dark .bg-gray-200 {
   }
 }
 .language-switch a {
-  color: #ffffff !important;      /* תמיד לבן */
+  color: #ffffff !important;   /* תמיד לבן */
   font-weight: 600;
 }
 .language-switch a:hover {
-  color: #ffffff !important;      /* גם בהובר */
-  text-decoration: underline;  /* קו תחתון קל בהובר אם תרצה */
+  color: #ffffff !important;   /* גם בהובר */
+  text-decoration: underline;  /* אם תרצה קו תחתון */
 }
-
-
