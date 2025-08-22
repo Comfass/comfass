@@ -1,599 +1,527 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comfass כרית ניידת לישיבה נוחה וממושכת</title>
-  
+  <title>Comfass – Portable Cushion for Long, Comfortable Sitting</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class' // מאפשר dark לפי class בלבד
-    }
+    tailwind.config = { darkMode: 'class' };
   </script>
-  
-  <meta name="description" content="Comfass הפתרון החדשני והנוח לישיבה ממושכת" />
-  <meta property="og:title" content="Comfass הפתרון הנוח שלך" />
-  <meta property="og:description" content="הצטרפו למהפכת הנוחות עם Comfass פתרון חדשני לישיבה ממושכת" />
+
+  <!-- Meta -->
+  <meta name="description" content="Comfass – the smart, portable solution for extended sitting." />
+  <meta property="og:title" content="Comfass – Your Comfort Solution" />
+  <meta property="og:description" content="Join the comfort revolution with Comfass – a smart solution for prolonged sitting." />
   <meta property="og:image" content="https://comfass.com/img/comfass-logo.jpg" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="https://comfass.com/img/comfass-logo.jpg" type="image/jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
+  <style>
+    /* small helpers */
+    .blinker{animation:blink 1s step-end infinite}
+    @keyframes blink{50%{opacity:0}}
+    .language-switch{position:fixed;top:8px;right:12px;z-index:60;font-size:14px}
+    .language-switch a{margin:0 6px;text-decoration:none}
+    .language-switch a:hover{text-decoration:underline}
+    .carousel-image{background:#fff}
+  </style>
 </head>
 
- <header>
-  <div class="ticker-container fixed top-0 w-full z-50 bg-gray-900 text-white overflow-hidden">
-    <div class="ticker-content whitespace-nowrap animate-scroll">
-       ✨אתם יכולים להיות הלקוחות הראשונים שלנו, הצטרפו למהפכת הנוכות עוד היום✨
-    </div>
-  </div>
-</header>
-
-
 <body class="bg-gray-50 text-gray-800 pt-10">
-<section class="bg-animate min-h-[85vh] flex flex-col items-center justify-center px-4 text-center text-white space-y-6">
+  <!-- Top ticker (EN) -->
+  <header>
+    <div class="ticker-container fixed top-0 w-full z-50 bg-gray-900 text-white overflow-hidden">
+      <div class="ticker-content whitespace-nowrap animate-scroll px-4 py-2">
+        Be among the first to join the comfort revolution with Comfass.
+      </div>
+    </div>
+    <!-- Language switch -->
+    <div class="language-switch">
+      <a href="index.html">עברית</a> | <a href="index-en.html" aria-current="page">English</a>
+    </div>
+  </header>
 
-  <!-- משפט ראשון באפקט הקלדה -->
-<p id="line1" class="text-xl sm:text-2xl md:text-3xl font-light font-[Varela Round] text-center max-w-screen-md mx-auto px-4"></p>
- 
+  <!-- Hero -->
+  <section class="bg-animate min-h-[85vh] flex flex-col items-center justify-center px-4 text-center text-white space-y-6">
+    <!-- line 1 typing -->
+    <p id="line1" class="text-xl sm:text-2xl md:text-3xl font-light font-[Varela Round] text-center max-w-screen-md mx-auto px-4"></p>
 
-  <!-- תמונת לוגו אחרי שני המשפטים -->
- <img 
-  id="logo"
-  src="img/COMFASS-LOGO-No-BackGround.png" 
-  alt="ComfAss Logo" 
-  class="mx-auto w-72 sm:w-[26rem] md:w-[32rem] lg:w-[40rem] xl:w-[44rem] drop-shadow-2xl opacity-0 transition-opacity duration-700"
-/> 
-    <!-- משפט שני באפקט הקלדה (נפרד) -->
-<p id="line2" class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 
-           font-light font-[Varela Round] 
-           text-center px-4 max-w-screen-md mx-auto"></p>
-</section>
+    <!-- Logo -->
+    <img
+      id="logo"
+      src="img/COMFASS-LOGO-No-BackGround.png"
+      alt="Comfass Logo"
+      class="mx-auto w-72 sm:w-[26rem] md:w-[32rem] lg:w-[40rem] xl:w-[44rem] drop-shadow-2xl opacity-0 transition-opacity duration-700"
+    />
 
-   
- <section class="py-20 px-6 transition-theme text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-4">הבעיה</h2>
-    <p class="text-xl max-w-2xl mx-auto leading-relaxed">
-    כמעט כולנו נדרשים לשבת שעות ארוכות בכיתה, בהרצאות או בעבודה. אנחנו יושבים על כיסאות שלא מותאמים לישיבה ממושכת. 
-    זה פוגע לא רק בנוחות, אלא גם בריכוז, בבריאות ובעמידות לאורך היום.</p>
+    <!-- line 2 typing -->
+    <p id="line2" class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light font-[Varela Round] text-center px-4 max-w-screen-md mx-auto"></p>
   </section>
 
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <!-- Problem -->
+  <section class="py-20 px-6 transition-theme text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">The Problem</h2>
+    <p class="text-xl max-w-2xl mx-auto leading-relaxed">
+      Most of us sit for long hours—lectures, classes, or work. The chairs around us usually aren’t built for extended sitting.
+      It impacts more than comfort: it hurts focus, health, and stamina throughout the day.
+    </p>
+  </section>
 
-<section class="py-20 px-6 transition-theme max-w-6xl mx-auto" data-aos="fade-up">
-  <h2 class="text-3xl font-bold text-center mb-16">מתוך הצורך הזה נולד <span class="text-cyan-600">Comfass</span>!</h2>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-    
-   <!-- צד שמאל – מודל תלת ממדי -->
-<div class="flex flex-col items-center">
-  <model-viewer 
-    src="/models/Product_3D_Model.glb"
-    alt="ComfAss Cushion 3D"
-    auto-rotate
-    camera-controls
-    shadow-intensity="1"
-    environment-image="neutral"
-    class="w-full max-w-sm h-[500px] rounded-2xl shadow-xl bg-gray-100">
-  </model-viewer>
-  
-  <!-- כיתוב מתחת למודל -->
-  <small class="text-gray-500 mt-2 text-sm">* המודל להמחשה בלבד</small>
-</div>
+  <!-- Solution / Why Comfass -->
+  <section class="py-20 px-6 transition-theme max-w-6xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-16">From this need, <span class="text-cyan-600">Comfass</span> was born.</h2>
 
-
-    <!-- צד ימין – הסיבות -->
-    <div class="space-y-8 text-right">
-      <div class="flex items-start gap-4">
-        <div class="text-2xl text-blue-600">✔️</div>
-        <span class="text-xl">פיתוח ישראלי איכותי</span>
-      </div>
-      <div class="flex items-start gap-4">
-        <div class="text-2xl text-blue-600">💼</div>
-        <span class="text-xl">קלה, ניידת ומתלבשת על כל תיק</span>
-      </div>
-      <div class="flex items-start gap-4">
-        <div class="text-2xl text-blue-600">🪑</div>
-        <span class="text-xl">מתאימה לכל גוף ולכל כיסא</span>
-      </div>
-      <div class="flex items-start gap-4">
-        <div class="text-2xl text-blue-600">🎨</div>
-        <span class="text-xl">ניתן למיתוג אישי עם לוגו</span>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Left: 3D model -->
+      <div class="flex flex-col items-center">
+        <model-viewer
+          src="/models/Product_3D_Model.glb"
+          alt="Comfass Cushion 3D"
+          auto-rotate
+          camera-controls
+          shadow-intensity="1"
+          environment-image="neutral"
+          class="w-full max-w-sm h-[500px] rounded-2xl shadow-xl bg-gray-100">
+        </model-viewer>
+        <small class="text-gray-500 mt-2 text-sm">* Model for illustration only</small>
       </div>
 
-      <div class="pt-8 text-center lg:text-right">
-        <h3 class="text-2xl font-semibold mb-2">עשייה עם ערך מוסף</h3>
-        <p class="text-lg text-gray-700 leading-relaxed max-w-md">10% מהרווחים שלנו מוקדשים לתרומות לילדים במצוקה כלכלית בישראל. יחד אנחנו עושים שינוי אמיתי.</p>
+      <!-- Right: bullets -->
+      <div class="space-y-8 text-left">
+        <div class="flex items-start gap-4">
+          <div class="text-2xl text-blue-600">✔</div>
+          <span class="text-xl">Quality design, engineered in Israel</span>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="text-2xl text-blue-600">■</div>
+          <span class="text-xl">Lightweight, portable, attaches to any bag</span>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="text-2xl text-blue-600">■</div>
+          <span class="text-xl">Fits any body and most chairs</span>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="text-2xl text-blue-600">■</div>
+          <span class="text-xl">Custom branding with your logo</span>
+        </div>
+
+        <div class="pt-8 text-left">
+          <h3 class="text-2xl font-semibold mb-2">Giving Back</h3>
+          <p class="text-lg text-gray-700 leading-relaxed max-w-md">
+            10% of our profits are donated to support children in financial hardship in Israel. Real comfort, real impact.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="py-20 px-6 transition-theme max-w-5xl mx-auto text-center" data-aos="fade-up">
-  <h2 class="text-3xl font-bold mb-6">מי עומד מאחורי ComfAss?</h2>
-  <p class="text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto">
-    אנחנו שלושה סטודנטים להנדסה מהמכללה האקדמית SCE, פיתחנו את Comfass מתוך צורך אישי אמיתי. 
-    אחרי שעות רבות של ישיבה לא נוחה בהרצאות, הבנו שאפשר ואפילו צריך למצוא פתרון פשוט, יעיל ונוח שיתאים לכולם.
-  </p>
-  <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-    המטרה שלנו הייתה אחת: להפוך כל כיסא לנוח יותר. והיום, אנחנו גאים להציג בפניכם את התוצאה.
-  </p>
+  <!-- About -->
+  <section class="py-20 px-6 transition-theme max-w-5xl mx-auto text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-6">Who’s behind Comfass?</h2>
+    <p class="text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto">
+      We’re three engineering students from SCE who created Comfass out of a real personal need.
+      After many hours of uncomfortable seating in lectures, we knew there had to be a better way—simple, effective, and comfortable for everyone.
+    </p>
+    <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+      Our goal was clear: turn any chair into a more comfortable seat. Today, we’re proud to share the result with you.
+    </p>
 
-<!-- Alpine.js -->
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-<!-- קרוסלת תמונות עם טקסט מעל התמונות -->
-<div 
-  x-data="{
-    activeSlide: 0,
-    slides: [
-      { src: 'img/Product1.jpg', caption: 'לוקחים אותה לכל מקום – פשוט ונוח' },
-      { src: 'img/Product2.jpg', caption: 'מתאימה לכל כיסא באקדמיה או בבית' },
-      { src: 'img/Product3.jpg', caption: 'תואמת לכל תיק – מקסימום נוחות וניידות' },
-      { src: 'img/Product4.jpg', caption: 'קלה לנשיאה – מתאימה לכל תיק סטודנטיאלי' }
-    ]
-  }"
-  x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides.length }, 7000)"
-  class="relative w-full max-w-3xl mx-auto mt-12 overflow-hidden rounded-xl shadow-xl"
-  style="height: 450px;"
->
-
-  <!-- טקסט מעל התמונה -->
-  <div class="absolute top-0 w-full bg-white/70 text-gray-800 text-lg font-semibold py-4 text-center z-20 backdrop-blur-sm">
-    <span x-text="slides[activeSlide].caption"></span>
-  </div>
-
-  <!-- תמונות -->
-  <template x-for="(slide, index) in slides" :key="index">
-    <div 
-      x-show="activeSlide === index" 
-      x-transition:enter="transition-opacity duration-700" 
-      x-transition:enter-start="opacity-0" 
-      x-transition:enter-end="opacity-100" 
-      x-transition:leave="transition-opacity duration-700" 
-      x-transition:leave-start="opacity-100" 
-      x-transition:leave-end="opacity-0"
-      class="absolute top-0 left-0 w-full h-full z-10"
+    <!-- Carousel -->
+    <div
+      x-data="{
+        activeSlide: 0,
+        slides: [
+          { src: 'img/Product1.jpg', caption: 'Take it anywhere – simple, practical comfort.' },
+          { src: 'img/Product2.jpg', caption: 'Fits most chairs – at campus, office, or home.' },
+          { src: 'img/Product3.jpg', caption: 'Bag-friendly design for true portability.' },
+          { src: 'img/Product4.jpg', caption: 'Light to carry, easy to use, day in and day out.' }
+        ]
+      }"
+      x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides.length }, 7000)"
+      class="relative w-full max-w-3xl mx-auto mt-12 overflow-hidden rounded-xl shadow-xl"
+      style="height: 450px;"
     >
-      <img :src="slide.src" class="carousel-image w-full h-full object-contain bg-white" :alt="'תמונה ' + (index)">
-    </div>
-  </template>
+      <!-- Caption -->
+      <div class="absolute top-0 w-full bg-white/70 text-gray-800 text-lg font-semibold py-4 text-center z-20 backdrop-blur-sm">
+        <span x-text="slides[activeSlide].caption"></span>
+      </div>
 
-<!-- חיצים -->
-<button 
-  @click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1" 
-  class="absolute left-3 top-1/2 transform -translate-y-1/2 
-         w-10 h-10 flex items-center justify-center 
-         bg-white text-gray-800 text-lg font-bold 
-         rounded-full shadow-md z-30 hover:bg-gray-200 hover:text-black transition-colors"
->
-  ◀
-</button>
-
-<button 
-  @click="activeSlide = (activeSlide + 1) % slides.length" 
-  class="absolute right-3 top-1/2 transform -translate-y-1/2 
-         w-10 h-10 flex items-center justify-center 
-         bg-white text-gray-800 text-lg font-bold 
-         rounded-full shadow-md z-30 hover:bg-gray-200 hover:text-black transition-colors"
->
-  ▶
-</button>
-
-<!-- נקודות -->
-<div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
-  <template x-for="(slide, i) in slides" :key="i">
-    <div 
-      @click="activeSlide = i" 
-      :class="{'bg-cyan-600': activeSlide === i, 'bg-gray-300': activeSlide !== i}" 
-      class="w-3 h-3 rounded-full cursor-pointer transition-colors"
-    ></div>
-  </template>
-</div>
-</section>
-  
-<section id="contact" class="py-20 px-6 bg-gray-100" transition-theme data-aos="fade-up" data-aos-duration="1000">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start md:items-stretch">
-    <!-- טופס יצירת קשר -->
-    <div class="flex flex-col justify-center">
-      <h2 class="text-2xl font-bold mb-6 text-center md:text-right">📩 צור קשר להזמנה סיטונאית</h2>
-      <form id="contact-form" action="https://formspree.io/f/xgvyrwrd" method="POST" class="space-y-4 text-right">
-        <input type="text" name="name" autocomplete="name" placeholder="שם מלא" required class="w-full border p-3 rounded-lg shadow-sm" />
-        <input type="email" name="email" autocomplete="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm" />
-        <input type="tel" name="phone" autocomplete="phone" placeholder="מספר טלפון" required class="w-full border p-3 rounded-lg shadow-sm" />
-        <input type="text" name="company" autocomplete="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm" />
-        <textarea name="message" placeholder="טקסט חופשי" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
-        <div class="flex items-start mb-4">
-        <input id="terms" type="checkbox" class="mt-1 mr-2" required>
-        <label for="terms" class="text-sm text-gray-700">
-          אני מאשר/ת את 
-        <button type="button" onclick="openModal('termsModal')" class="text-blue-600 underline">תנאי השימוש</button> ואת
-        <button type="button" onclick="openModal('privacyModal')" class="text-blue-600 underline">מדיניות הפרטיות</button>.
-        </label>
+      <!-- Images -->
+      <template x-for="(slide, index) in slides" :key="index">
+        <div
+          x-show="activeSlide === index"
+          x-transition:enter="transition-opacity duration-700"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition-opacity duration-700"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="absolute top-0 left-0 w-full h-full z-10"
+        >
+          <img :src="slide.src" class="carousel-image w-full h-full object-contain bg-white" :alt="'Slide ' + (index+1)">
         </div>
-        <button id="submit-btn" type="submit" disabled class="w-full py-3 rounded-lg shadow-lg transition transform">שלח פנייה</button>
-      </form>
-      <div id="thank-you" class="hidden text-center mt-6 text-green-600 font-bold text-lg">
-        ✅ תודה! פנייתך התקבלה ונחזור אליך בהקדם 🙏
+      </template>
+
+      <!-- Arrows -->
+      <button
+        @click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1"
+        class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white text-gray-800 text-lg font-bold rounded-full shadow-md z-30 hover:bg-gray-200 hover:text-black transition-colors"
+        aria-label="Previous slide"
+      >◀</button>
+
+      <button
+        @click="activeSlide = (activeSlide + 1) % slides.length"
+        class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white text-gray-800 text-lg font-bold rounded-full shadow-md z-30 hover:bg-gray-200 hover:text-black transition-colors"
+        aria-label="Next slide"
+      >▶</button>
+
+      <!-- Dots -->
+      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2 z-30">
+        <template x-for="(slide, i) in slides" :key="i">
+          <div
+            @click="activeSlide = i"
+            :class="{'bg-cyan-600': activeSlide === i, 'bg-gray-300': activeSlide !== i}"
+            class="w-3 h-3 rounded-full cursor-pointer transition-colors"
+            role="button" aria-label="Go to slide"
+          ></div>
+        </template>
       </div>
-     <script>
-  const form = document.getElementById("contact-form");
-  const submitBtn = document.getElementById("submit-btn");
-  const inputs = form.querySelectorAll("input[required], textarea[required]");
-  const checkbox = document.getElementById("terms");
-
-  function validateForm() {
-    let isValid = true;
-
-    inputs.forEach((input) => {
-      if (!input.value.trim()) isValid = false;
-    });
-
-    if (!checkbox.checked) isValid = false;
-
-    if (isValid) {
-      submitBtn.disabled = false;
-      submitBtn.classList.remove("bg-orange-500", "cursor-not-allowed");
-      submitBtn.classList.add("bg-blue-600", "text-white", "hover:bg-blue-700");
-    } else {
-      submitBtn.disabled = true;
-      submitBtn.classList.add("bg-orange-500", "cursor-not-allowed");
-      submitBtn.classList.remove("bg-blue-600", "text-white", "hover:bg-blue-700");
-    }
-  }
-
-  form.addEventListener("input", validateForm);
-  form.addEventListener("change", validateForm);
-
-  // התחלה במצב "כבוי"
-  validateForm();
-</script>
     </div>
+  </section>
 
-    <!-- חוות דעת עם כפתור פתיחה -->
-    <div class="flex flex-col justify-center bg-white transition-theme rounded-lg shadow-md p-6">
-      <h3 class="text-xl font-semibold mb-4 text-center text-gray-800">מה הלקוחות אומרים 💬</h3>
-      <div id="testimonial-box" class="text-center text-gray-700 text-lg transition-opacity duration-700 ease-in-out">
-        <div class="flex flex-col items-center">
-          <img id="testimonial-img" src="https://i.pravatar.cc/80?img=1" alt="avatar" class="w-16 h-16 rounded-full mb-2 shadow" />
-          <div class="text-sm font-medium text-gray-800 mb-1" id="testimonial-name">רותם מ.</div>
-          <div class="flex gap-1 text-yellow-400 mb-2" id="stars-box">⭐⭐⭐⭐⭐</div>
-          <p id="testimonial-text">הכרית הזאת שינתה לי את הישיבה במשרד!</p>
+  <!-- Contact / Reviews -->
+  <section id="contact" class="py-20 px-6 bg-gray-100" transition-theme data-aos="fade-up" data-aos-duration="1000">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start md:items-stretch">
+      <!-- Contact form -->
+      <div class="flex flex-col justify-center">
+        <h2 class="text-2xl font-bold mb-6 text-center md:text-left">Contact Us for Wholesale</h2>
+        <form id="contact-form" action="https://formspree.io/f/xgvyrwrd" method="POST" class="space-y-4 text-left">
+          <input type="text" name="name" autocomplete="name" placeholder="Full Name" required class="w-full border p-3 rounded-lg shadow-sm" />
+          <input type="email" name="email" autocomplete="email" placeholder="Email" required class="w-full border p-3 rounded-lg shadow-sm" />
+          <input type="tel" name="phone" autocomplete="tel" placeholder="Phone Number" required class="w-full border p-3 rounded-lg shadow-sm" />
+          <input type="text" name="company" autocomplete="organization" placeholder="Institution / Company" class="w-full border p-3 rounded-lg shadow-sm" />
+          <textarea name="message" placeholder="Your message" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
+
+          <div class="flex items-start mb-4">
+            <input id="terms" type="checkbox" class="mt-1 mr-2">
+            <label for="terms" class="text-sm text-gray-700">
+              I agree to the
+              <button type="button" onclick="openModal('termsModal')" class="text-blue-600 underline">Terms of Use</button>
+              and the
+              <button type="button" onclick="openModal('privacyModal')" class="text-blue-600 underline">Privacy Policy</button>.
+            </label>
+          </div>
+
+          <button id="submit-btn" type="submit" disabled class="w-full py-3 rounded-lg shadow-lg transition transform">Send</button>
+        </form>
+
+        <div id="thank-you" class="hidden text-center mt-6 text-green-600 font-bold text-lg">
+          Thank you! We’ll get back to you shortly.
         </div>
-      </div>
-      <div class="mt-6 text-center">
-       <button data-popup="review" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-5 rounded-full transition-all duration-300 shadow">
-          ✍️ השאר חוות דעת משלך
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- POPUP Modal לחוות דעת -->
-<div id="review-popup" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center">
-  <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full relative">
-    <button data-close="review" class="absolute top-2 left-2 text-gray-500 hover:text-red-500 text-xl">✖</button>
-    <h3 class="text-xl font-bold mb-4 text-center">השאר חוות דעת</h3>
-    <form id="review-form" action="https://formspree.io/f/mblyqgwq" method="POST" class="space-y-4">
-      <input type="text" name="name" autocomplete="name" placeholder="שמך" required class="w-full border p-2 rounded" />
-      <input type="email" name="email" autocomplete="email" placeholder="אימייל (לא יוצג)" required class="w-full border p-2 rounded" />
-      <textarea name="message" placeholder="חוות דעת" rows="4" class="w-full border p-2 rounded" required></textarea>
-      <div class="text-center">
-      <p class="text-sm text-gray-500 mb-2">לחץ כדי לדרג</p>
-      <div class="star-rating" id="star-rating">
-        <span class="star" data-value="5">★</span>
-        <span class="star" data-value="4">★</span>
-        <span class="star" data-value="3">★</span>
-        <span class="star" data-value="2">★</span>
-        <span class="star" data-value="1">★</span>
-      </div>
-      <input type="hidden" name="rating" id="rating-input">
-      </div>
-      <input type="hidden" name="submittedFrom" value="review-popup" />
-      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">שליחה</button>
-    </form>
-    <div id="review-thankyou" class="hidden text-center mt-4 text-green-600 font-bold">✅ תודה על חוות הדעת!</div>
-  </div>
-</div>
-  <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600">
-  <div class="flex flex-col items-center gap-2">
-    <p><a href="#" onclick="loadAccessibilityModal(); return false;">הצהרת נגישות</a></p> 
-    <p>© 2025 Comfass | כל הזכויות שמורות</p>
-    <p class="text-xs text-gray-500">עיצוב הלוגו נוצר באהבה על ידי ז'נה קולצ'ין</p>
-    <a href="#" title="ComfAss Home">
-      <img src="https://comfass.com/img/comfass-logo.jpg" alt="ComfAss Logo Small" class="w-28 opacity-80 hover:opacity-100 transition duration-300" />
-    </a>
-  </div>
-</footer>
-<script>
-  function loadAccessibilityModal() {
-    // 🧹 מחיקת מודל קודם אם קיים
-    const existingModal = document.getElementById('accessibilityModal');
-    if (existingModal) {
-      existingModal.remove();
-    }
+        <script>
+          const form = document.getElementById("contact-form");
+          const submitBtn = document.getElementById("submit-btn");
+          const inputs = form.querySelectorAll("input[required], textarea[required]");
+          const checkbox = document.getElementById("terms");
 
-    // 🎯 טעינה דינמית של הקובץ
-    fetch('accessibility.html')
-      .then(response => response.text())
-      .then(data => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data, 'text/html');
-        const modal = doc.querySelector('#accessibilityModal');
+          function validateForm() {
+            let isValid = true;
+            inputs.forEach((input) => { if (!input.value.trim()) isValid = false; });
+            if (!checkbox.checked) isValid = false;
 
-        // ✅ סגירה בלחיצה על הרקע
-        modal.addEventListener('click', function (e) {
-          if (e.target === modal) {
-            closeModal('accessibilityModal');
+            if (isValid) {
+              submitBtn.disabled = false;
+              submitBtn.classList.remove("bg-orange-500","cursor-not-allowed");
+              submitBtn.classList.add("bg-blue-600","text-white","hover:bg-blue-700");
+            } else {
+              submitBtn.disabled = true;
+              submitBtn.classList.add("bg-orange-500","cursor-not-allowed");
+              submitBtn.classList.remove("bg-blue-600","text-white","hover:bg-blue-700");
+            }
           }
-        });
+          form.addEventListener("input", validateForm);
+          form.addEventListener("change", validateForm);
+          validateForm();
+        </script>
+      </div>
 
-        document.body.appendChild(modal);
-        modal.classList.remove('hidden');
-      })
-      .catch(error => {
-        console.error("שגיאה בטעינת accessibility.html:", error);
-        alert("אירעה שגיאה בטעינת הצהרת הנגישות");
-      });
-  }
-
-  function closeModal(id) {
-    const modal = document.getElementById(id);
-    if (modal) {
-      modal.classList.add('hidden');
-    }
-  }
-
-  // ✅ סגירה בלחיצה על מקש ESC
-  document.addEventListener('keydown', function (event) {
-    if (event.key === "Escape") {
-      const modal = document.getElementById('accessibilityModal');
-      if (modal && !modal.classList.contains('hidden')) {
-        modal.classList.add('hidden');
-      }
-    }
-  });
-</script>
-
-<!-- תנאי שימוש -->
-<div id="termsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-  <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl">
-
-   <div class="sticky top-0 bg-white z-10 flex justify-end">
-  <button onclick="closeModal('termsModal')" class="text-gray-600 hover:text-black text-xl">✖</button>
-</div>
-    <h2 class="text-2xl font-bold text-center mb-4">📜 תקנון ותנאי שימוש באתר Comfass.com</h2>
-    <p class="text-sm text-gray-500 text-center mb-6">עודכן לאחרונה: 31 ביולי 2025</p>
-
-    <div class="text-gray-800 leading-relaxed text-sm space-y-4">
-
-  <h3 class="font-semibold text-lg">1. מבוא והגדרות</h3>
-  <p>1.1. אתר Comfass.com (להלן: "האתר") מופעל על ידי Comfass, ע.מ./ח.פ. [מספר עוסק], שמקום עסקו בכתובת: [כתובת מלאה] (להלן: "החברה").</p>
-  <p>1.2. "משתמש" – כל אדם ו/או גוף הגולש או עושה שימוש כלשהו באתר.</p>
-  <p>1.3. שימוש באתר מהווה הסכמה מלאה לתנאים אלה. אי הסכמה לתנאים – הימנע משימוש באתר.</p>
-  <p>1.4. כותרות הסעיפים נועדו לנוחות בלבד. התקנון מנוסח בלשון זכר אך מתייחס לכל המגדרים.</p>
-
-  <h3 class="font-semibold text-lg">2. השירותים באתר</h3>
-  <p>2.1. האתר מציג מידע שיווקי על מוצר הדגל של החברה – כרית ישיבה ניידת בשם "ComfAss".</p>
-  <p>2.2. כל מידע באתר הינו אינפורמטיבי בלבד ואינו מהווה התחייבות חוזית מכל סוג.</p>
-  <p>2.3. כל התקשרות כספית תיעשה רק לאחר קבלת הצעת מחיר רשמית ואישור פרטני מצד שני הצדדים.</p>
-
-  <h3 class="font-semibold text-lg">3. קניין רוחני</h3>
-  <p>3.1. כל הזכויות על התכנים, העיצובים, הסמלים, הלוגו, הקוד והתמונות באתר – שמורות לחברה או לבעלי זכויות צד שלישי שהרשו שימוש.</p>
-  <p>3.2. אין להעתיק, לשכפל, להפיץ, לפרסם או לעשות שימוש מסחרי בכל חלק מהאתר ללא אישור מראש ובכתב.</p>
-  <p>3.3. השימוש בשם או בלוגו ComfAss מותר רק ברשות החברה.</p>
-
-  <h3 class="font-semibold text-lg">4. הגבלת אחריות</h3>
-  <p>4.1. החברה אינה מתחייבת לזמינות מתמדת או לפעולה חפה מתקלות באתר.</p>
-  <p>4.2. כל התכנים מוצגים As-Is – ואין לראות בהם ייעוץ עסקי, רפואי, מקצועי או אישי.</p>
-  <p>4.3. החברה לא תישא באחריות לנזק ישיר או עקיף שייגרם עקב שימוש או הסתמכות על המידע באתר.</p>
-
-  <h3 class="font-semibold text-lg">5. שימוש בטופס יצירת קשר</h3>
-  <p>5.1. המשתמש מתחייב למסור פרטים נכונים בלבד.</p>
-  <p>5.2. מסירת מידע כוזב מהווה עבירה על החוק, והחברה שומרת לעצמה את הזכות לפעול בהתאם.</p>
-  <p>5.3. חל איסור על העלאת תוכן פוגעני, מסית או כזה המנוגד לחוק.</p>
-
-  <h3 class="font-semibold text-lg">6. קישורים חיצוניים</h3>
-  <p>האתר עשוי להכיל קישורים לאתרים שאינם בשליטת החברה. החברה לא תישא באחריות לתכנים, שירותים או מדיניות פרטיות באתרים חיצוניים.</p>
-
-  <h3 class="font-semibold text-lg">7. פרטיות</h3>
-  <p>האתר אוסף מידע אישי לצורכי יצירת קשר בלבד. אין העברת מידע לגורמים שלישיים אלא אם כן נדרש לפי חוק. למידע נוסף ראו 
-    <a href="#" onclick="openModal('privacyModal')" class="text-blue-600 underline">מדיניות הפרטיות</a>.
-  </p>
-
-  <h3 class="font-semibold text-lg">8. שינויים בתקנון</h3>
-  <p>החברה שומרת לעצמה את הזכות לעדכן את התקנון מעת לעת, והנוסח המחייב הוא זה המתפרסם באתר בזמן השימוש.</p>
-
-  <h3 class="font-semibold text-lg">9. סמכות שיפוט</h3>
-  <p>הדין החל על האתר הוא הדין הישראלי בלבד. הסמכות המקומית הבלעדית תימצא בבתי המשפט במחוז דרום.</p>
-
-  <h3 class="font-semibold text-lg">10. יצירת קשר</h3>
-  <p>לשאלות, בירורים או פניות בכל נושא ניתן ליצור קשר באמצעות:</p>
-  <ul class="list-disc pr-5 text-gray-700">
-    <li>📧 דוא"ל: תקנון ותנאי שימוש באתר Comfass.official@gmail.com</li>
-  </ul>
-</div>
-  
-</div>
-</div>
-
-<!-- מדיניות פרטיות -->
-<div id="privacyModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-  <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl">
-
-    <div class="sticky top-0 bg-white z-10 flex justify-end">
-      <button onclick="closeModal('privacyModal')" class="text-gray-600 hover:text-black text-xl">✖</button>
+      <!-- Reviews -->
+      <div class="flex flex-col justify-center bg-white transition-theme rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold mb-4 text-center text-gray-800">What Customers Say</h3>
+        <div id="testimonial-box" class="text-center text-gray-700 text-lg transition-opacity duration-700 ease-in-out">
+          <div class="flex flex-col items-center">
+            <img id="testimonial-img" src="https://i.pravatar.cc/80?img=1" alt="avatar" class="w-16 h-16 rounded-full mb-2 shadow" />
+            <div class="text-sm font-medium text-gray-800 mb-1" id="testimonial-name">Rotem M.</div>
+            <div class="flex gap-1 text-yellow-500 mb-2" id="stars-box" aria-label="rating">★★★★★</div>
+            <p id="testimonial-text">“This cushion changed my workday comfort.”</p>
+          </div>
+        </div>
+        <div class="mt-6 text-center">
+          <button data-popup="review" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-5 rounded-full transition-all duration-300 shadow">
+            Leave a Review
+          </button>
+        </div>
+      </div>
     </div>
-    
-    <h2 class="text-2xl font-bold text-center mb-4">🔐 מדיניות פרטיות באתר ComfAss.com</h2>
-    <p class="text-sm text-gray-500 text-center mb-6">עודכן לאחרונה: 31 ביולי 2025</p>
+  </section>
 
-  <h3 class="font-semibold text-lg">1. מבוא</h3>
-  <p>חברת [השלם כאן: שם מלא / שם עסק], המפעילה את אתר <strong>comfass.com</strong> (להלן: "החברה" או "אנחנו"), רואה חשיבות רבה בהגנה על פרטיות המשתמשים. מדיניות זו מפרטת כיצד אנו אוספים, שומרים, משתמשים ומגנים על מידע אישי של המשתמשים באתר.</p>
-
-  <h3 class="font-semibold text-lg">2. איזה מידע נאסף?</h3>
-  <ul class="list-disc pr-5 space-y-1">
-    <li><strong>מידע אישי מזהה:</strong> שם, טלפון ודוא"ל – בעת מילוי טופס יצירת קשר.</li>
-    <li><strong>מידע טכני:</strong> כתובת IP, סוג מכשיר ודפדפן, עמודים נצפים וזמני שימוש.</li>
-    <li><strong>Cookies:</strong> קבצי טקסט קטנים לצורכי תפעול, ניתוח סטטיסטי והתאמה אישית. המשתמש יכול לחסום אותם דרך הגדרות הדפדפן.</li>
-  </ul>
-
-  <h3 class="font-semibold text-lg">3. מטרות השימוש במידע</h3>
-  <ul class="list-disc pr-5 space-y-1">
-    <li>ליצירת קשר ומתן מידע או הצעת מחיר לפי בקשת המשתמש.</li>
-    <li>לשיפור חווית השימוש, ניתוח ביצועי האתר ואיתור תקלות.</li>
-    <li>לשליחת עדכונים – רק לאחר אישור אקטיבי ומפורש של המשתמש.</li>
-    <li>למילוי חובה חוקית או דרישות רגולטוריות.</li>
-  </ul>
-
-  <h3 class="font-semibold text-lg">4. שיתוף מידע עם צדדים שלישיים</h3>
-  <p>המידע לא יימסר לגורמים חיצוניים למעט במקרים הבאים:</p>
-  <ul class="list-disc pr-5 space-y-1">
-    <li>לספקי שירות (כגון אחסון או CRM) – בכפוף להסכם סודיות.</li>
-    <li>לפי צו שיפוטי או דרישה חוקית מחייבת.</li>
-    <li>במסגרת הליכים משפטיים או לשם הגנה על זכויות החברה.</li>
-    <li>במקרה של מיזוג, רכישה או שינוי מבני בעסק – בכפוף להתחייבות לשמירה על המדיניות.</li>
-  </ul>
-
-  <h3 class="font-semibold text-lg">5. אבטחת מידע</h3>
-  <p>האתר משתמש בפרוטוקול אבטחה (SSL) ובאמצעים סבירים לאבטחת המידע. יחד עם זאת, לא ניתן להבטיח אבטחה מוחלטת, והחברה אינה אחראית לכל נזק שייגרם עקב גישה בלתי מורשית למידע.</p>
-
-  <h3 class="font-semibold text-lg">6. זכויות המשתמש על פי חוק</h3>
-  <ul class="list-disc pr-5 space-y-1">
-    <li>המשתמש רשאי לבקש עיון במידע אישי המוחזק עליו.</li>
-    <li>ניתן לבקש תיקון או מחיקה של מידע שגוי או מיושן.</li>
-    <li>בקשות יש להגיש בכתב לכתובת הדוא"ל: <strong>Comfass.official@gmail.com</strong>.</li>
-  </ul>
-
-  <h3 class="font-semibold text-lg">7. שמירת מידע</h3>
-  <p>המידע יישמר רק כל עוד הוא נדרש לצורכי השירות או לפי דרישת החוק. לאחר מכן יימחק או יעבור אנונימיזציה.</p>
-
-  <h3 class="font-semibold text-lg">8. שינויים במדיניות</h3>
-  <p>החברה רשאית לעדכן מדיניות זו בכל עת. תאריך העדכון האחרון מופיע בראש העמוד. מומלץ לעיין במדיניות זו מעת לעת.</p>
-
-  <h3 class="font-semibold text-lg">9. יצירת קשר</h3>
-  <p>לשאלות, בקשות או פניות בנושא פרטיות ניתן לפנות אלינו:</p>
-  <ul class="list-disc pr-5">
-    <li>📧 בדוא"ל: <strong>Comfass.official@gmail.com</strong></li>
-    <li>📱 דרך טופס יצירת הקשר באתר</li>
-  </ul>
-  
+  <!-- Review Popup -->
+  <div id="review-popup" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center" role="dialog" aria-modal="true">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full relative">
+      <button data-close="review" class="absolute top-2 left-2 text-gray-500 hover:text-red-500 text-xl" aria-label="Close">✖</button>
+      <h3 class="text-xl font-bold mb-4 text-center">Leave a Review</h3>
+      <form id="review-form" action="https://formspree.io/f/mblyqgwq" method="POST" class="space-y-4">
+        <input type="text" name="name" autocomplete="name" placeholder="Your Name" required class="w-full border p-2 rounded" />
+        <input type="email" name="email" autocomplete="email" placeholder="Email (not displayed)" required class="w-full border p-2 rounded" />
+        <textarea name="message" placeholder="Your review" rows="4" class="w-full border p-2 rounded" required></textarea>
+        <div class="text-center">
+          <p class="text-sm text-gray-500 mb-2">Click to rate</p>
+          <div class="star-rating" id="star-rating" aria-label="Choose rating">
+            <span class="star" data-value="5">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="1">★</span>
+          </div>
+          <input type="hidden" name="rating" id="rating-input">
+        </div>
+        <input type="hidden" name="submittedFrom" value="review-popup" />
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit</button>
+      </form>
+      <div id="review-thankyou" class="hidden text-center mt-4 text-green-600 font-bold">Thank you for your feedback!</div>
     </div>
-
   </div>
-</div>
 
+  <!-- Footer -->
+  <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600">
+    <div class="flex flex-col items-center gap-2">
+      <p><a href="#" onclick="loadAccessibilityModal(); return false;">Accessibility Statement</a></p>
+      <p>© 2025 Comfass | All rights reserved</p>
+      <p class="text-xs text-gray-500">Logo design by Zhanna Kolchin</p>
+      <a href="#" title="Comfass Home">
+        <img src="https://comfass.com/img/comfass-logo.jpg" alt="Comfass Logo Small" class="w-28 opacity-80 hover:opacity-100 transition duration-300" />
+      </a>
+    </div>
+  </footer>
 
-<!-- Music audio -->
-<audio id="bg-music" src="M.mp3" loop preload="auto"></audio>
+  <!-- Accessibility modal loader (points to accessibility.html – can create accessibility-en.html if you prefer) -->
+  <script>
+    function loadAccessibilityModal() {
+      const existingModal = document.getElementById('accessibilityModal');
+      if (existingModal) existingModal.remove();
 
-<!-- Floating Buttons -->
-<div class="floating-buttons fixed left-4 bottom-4 z-50 flex flex-col gap-3 items-center">
-  
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/972546662738?text=היי%20ראיתי%20את%20הכרית%20באתר%20ומעניין%20אותי%20לשמוע%20עוד" 
-     target="_blank" 
-     title="צ'אט בוואטסאפ" 
-     class="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-         alt="WhatsApp" class="w-6 h-6">
-  </a>
-
-  <!-- Dark Mode Button -->
-  <button id="theme-toggle" 
-          title="מצב כהה/בהיר" 
-          aria-label="הפעלת מצב כהה או בהיר"
-          class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 text-xl shadow-lg flex items-center justify-center">
-    <span id="theme-icon">🌙</span>
-  </button>
-
-  <!-- Music Toggle Button -->
-  <button id="music-btn" 
-          title="הפעל או השהה מוזיקה" 
-          aria-label="הפעל או השהה מוזיקה"
-          class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 shadow-lg flex items-center justify-center">
-    <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600 dark:text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
-      <path id="icon-path" d="M5 3v18l14-9L5 3z" /> <!-- Play icon -->
-    </svg>
-  </button>
-
-</div>
-
-<script src="js/testimonial.js" defer></script>
-<script type="module" src="js/review.js" defer></script>
-<script type="module" src="js/rating.js" defer></script>
-<script type="module" src="js/validation.js" defer></script>
-<script type="module" src="js/theme-music.js" defer></script>
-<script type="module" src="js/main.js" defer></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>  AOS.init({ once: false }); </script>
-<script> nl_pos = "br"; nl_compact = "1"; </script>
-<script src="https://comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const interval = setInterval(() => {
-      const brokenOption = document.querySelector('option[aria-hidden="true"]');
-      if (brokenOption) {
-        brokenOption.removeAttribute('aria-hidden');
-        clearInterval(interval);
-      }
-    }, 500);
-  });
-</script>
-
-   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const slogan = document.getElementById("slogan");
-    if (slogan) {
-      setTimeout(() => {
-        slogan.classList.add("typing-effect");
-      }, 1000); // זמן תיאום עם אנימציית הלוגו
+      fetch('accessibility.html')
+        .then(r => r.text())
+        .then(html => {
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const modal = doc.querySelector('#accessibilityModal');
+          modal.addEventListener('click', e => { if (e.target === modal) closeModal('accessibilityModal'); });
+          document.body.appendChild(modal);
+          modal.classList.remove('hidden');
+        })
+        .catch(err => {
+          console.error('Error loading accessibility.html:', err);
+          alert('Failed to load accessibility statement');
+        });
     }
-  });
-</script>
-  
-<script>
-  function openModal(id) {
-    document.getElementById(id).classList.remove('hidden');
-  }
-
-  function closeModal(id) {
-    document.getElementById(id).classList.add('hidden');
-  }
-</script>
-
-<script>
-function typeText(elementId, text, delay = 50) {
-  return new Promise((resolve) => {
-    const el = document.getElementById(elementId);
-    let i = 0;
-    el.innerHTML = '<span id="blinker" class="blinker">|</span>';
-    const blinker = document.getElementById("blinker");
-
-    const interval = setInterval(() => {
-      blinker.insertAdjacentText("beforebegin", text.charAt(i));
-      i++;
-      if (i >= text.length) {
-        clearInterval(interval);
-        blinker.remove();
-        resolve();
+    function closeModal(id){ const m=document.getElementById(id); if(m) m.classList.add('hidden'); }
+    document.addEventListener('keydown', e => {
+      if (e.key === "Escape") {
+        const modal = document.getElementById('accessibilityModal');
+        if (modal && !modal.classList.contains('hidden')) modal.classList.add('hidden');
       }
-    }, delay);
-  });
-}
+    });
+  </script>
 
-(async function startTypingAnimation() {
-  await typeText("line1", "נוחות חכמה מתחילה כאן", 60);
-  await new Promise(r => setTimeout(r, 300));
-  document.getElementById("logo").classList.remove("opacity-0");
-  await new Promise(r => setTimeout(r, 800));
-  await typeText("line2", "הפתרון המושלם לישיבה ממושכת במכללות, אוניברסטאות וארגונים", 40);
-})();
-</script>
+  <!-- TERMS (EN) -->
+  <div id="termsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+      <div class="sticky top-0 bg-white z-10 flex justify-end">
+        <button onclick="closeModal('termsModal')" class="text-gray-600 hover:text-black text-xl" aria-label="Close">✖</button>
+      </div>
+      <h2 class="text-2xl font-bold text-center mb-4">Terms of Use – Comfass.com</h2>
+      <p class="text-sm text-gray-500 text-center mb-6">Last Updated: July 31, 2025</p>
 
+      <div class="text-gray-800 leading-relaxed text-sm space-y-4">
+        <h3 class="font-semibold text-lg">1. Introduction & Definitions</h3>
+        <p>1.1. Comfass.com (the “Website”) is operated by Comfass (“the Company”).</p>
+        <p>1.2. “User” – any person or entity using or browsing the Website.</p>
+        <p>1.3. Using the Website constitutes full acceptance of these Terms.</p>
 
+        <h3 class="font-semibold text-lg">2. Services</h3>
+        <p>2.1. The Website provides marketing information about Comfass’ portable seat cushion.</p>
+        <p>2.2. Information is for general purposes only and not a binding offer.</p>
+
+        <h3 class="font-semibold text-lg">3. Intellectual Property</h3>
+        <p>All content, design, code, and media are protected. No copying or commercial use without prior written consent.</p>
+
+        <h3 class="font-semibold text-lg">4. Disclaimer</h3>
+        <p>The Website is provided “as is”. The Company is not liable for any direct or indirect damages resulting from use.</p>
+
+        <h3 class="font-semibold text-lg">5. Contact Form</h3>
+        <p>Provide accurate details only. Do not submit illegal or offensive content.</p>
+
+        <h3 class="font-semibold text-lg">6. External Links</h3>
+        <p>The Company is not responsible for third-party content or policies.</p>
+
+        <h3 class="font-semibold text-lg">7. Privacy</h3>
+        <p>See our <a href="#" onclick="openModal('privacyModal')" class="text-blue-600 underline">Privacy Policy</a>.</p>
+
+        <h3 class="font-semibold text-lg">8. Changes</h3>
+        <p>Terms may be updated occasionally; the current version on the Website is binding.</p>
+
+        <h3 class="font-semibold text-lg">9. Jurisdiction</h3>
+        <p>Israeli law applies. Exclusive jurisdiction: Southern District courts.</p>
+
+        <h3 class="font-semibold text-lg">10. Contact</h3>
+        <ul class="list-disc pl-5 text-gray-700">
+          <li>Email: Comfass.official@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVACY (EN) -->
+  <div id="privacyModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+      <div class="sticky top-0 bg-white z-10 flex justify-end">
+        <button onclick="closeModal('privacyModal')" class="text-gray-600 hover:text-black text-xl" aria-label="Close">✖</button>
+      </div>
+      <h2 class="text-2xl font-bold text-center mb-4">Privacy Policy – Comfass.com</h2>
+      <p class="text-sm text-gray-500 text-center mb-6">Last Updated: July 31, 2025</p>
+
+      <h3 class="font-semibold text-lg">1. Introduction</h3>
+      <p>We value your privacy. This policy explains what data we collect, how we use it, and your rights.</p>
+
+      <h3 class="font-semibold text-lg">2. Data We Collect</h3>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>Personal info: name, phone, email (via contact forms).</li>
+        <li>Technical info: IP, device/browser type, pages viewed, timestamps.</li>
+        <li>Cookies for operation, analytics, and personalization.</li>
+      </ul>
+
+      <h3 class="font-semibold text-lg">3. How We Use Data</h3>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>To respond to inquiries and provide quotes.</li>
+        <li>To improve the Website and fix issues.</li>
+        <li>To send updates (only with explicit opt-in).</li>
+        <li>To comply with legal obligations.</li>
+      </ul>
+
+      <h3 class="font-semibold text-lg">4. Sharing Data</h3>
+      <p>We do not sell your data. We may share with service providers (e.g., hosting/CRM) under NDA, or if legally required.</p>
+
+      <h3 class="font-semibold text-lg">5. Security</h3>
+      <p>We use reasonable safeguards (including SSL), but no method is 100% secure.</p>
+
+      <h3 class="font-semibold text-lg">6. Your Rights</h3>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>Access, correction, or deletion of your personal data.</li>
+        <li>Contact: <strong>Comfass.official@gmail.com</strong></li>
+      </ul>
+
+      <h3 class="font-semibold text-lg">7. Retention</h3>
+      <p>We retain data only as long as necessary for the stated purposes or as required by law.</p>
+
+      <h3 class="font-semibold text-lg">8. Changes</h3>
+      <p>We may update this policy; see the “Last Updated” date above.</p>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="bg-music" src="M.mp3" loop preload="auto"></audio>
+
+  <!-- Floating Buttons -->
+  <div class="floating-buttons fixed left-4 bottom-4 z-50 flex flex-col gap-3 items-center">
+    <!-- WhatsApp (EN) -->
+    <a href="https://wa.me/972546662738?text=Hi%20I%20saw%20your%20Comfass%20cushion%20and%20would%20love%20to%20hear%20more"
+       target="_blank"
+       title="Chat on WhatsApp"
+       class="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg" aria-label="WhatsApp chat">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6">
+    </a>
+
+    <!-- Dark Mode -->
+    <button id="theme-toggle"
+            title="Dark/Light Mode"
+            aria-label="Toggle dark or light mode"
+            class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 text-xl shadow-lg flex items-center justify-center">
+      <span id="theme-icon">🌙</span>
+    </button>
+
+    <!-- Music -->
+    <button id="music-btn"
+            title="Play/Pause Music"
+            aria-label="Play or pause music"
+            class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 shadow-lg flex items-center justify-center">
+      <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600 dark:text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+        <path id="icon-path" d="M5 3v18l14-9L5 3z" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/testimonial.js" defer></script>
+  <script type="module" src="js/review.js" defer></script>
+  <script type="module" src="js/rating.js" defer></script>
+  <script type="module" src="js/validation.js" defer></script>
+  <script type="module" src="js/theme-music.js" defer></script>
+  <script type="module" src="js/main.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ once: false }); </script>
+
+  <!-- If you use a Hebrew accessibility plugin, you can keep it or load an EN variant -->
+  <script> nl_pos = "br"; nl_compact = "1"; </script>
+  <script src="https://comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
+
+  <!-- Fix hidden option (kept from HE version if needed) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interval = setInterval(() => {
+        const brokenOption = document.querySelector('option[aria-hidden="true"]');
+        if (brokenOption) { brokenOption.removeAttribute('aria-hidden'); clearInterval(interval); }
+      }, 500);
+    });
+  </script>
+
+  <!-- Slogan typing -->
+  <script>
+    function typeText(elementId, text, delay = 50) {
+      return new Promise((resolve) => {
+        const el = document.getElementById(elementId);
+        let i = 0;
+        el.innerHTML = '<span id="blinker" class="blinker">|</span>';
+        const blinker = document.getElementById("blinker");
+
+        const interval = setInterval(() => {
+          blinker.insertAdjacentText("beforebegin", text.charAt(i));
+          i++;
+          if (i >= text.length) {
+            clearInterval(interval);
+            blinker.remove();
+            resolve();
+          }
+        }, delay);
+      });
+    }
+
+    (async function startTypingAnimation() {
+      await typeText("line1", "Smart comfort starts here", 60);
+      await new Promise(r => setTimeout(r, 300));
+      document.getElementById("logo").classList.remove("opacity-0");
+      await new Promise(r => setTimeout(r, 800));
+      await typeText("line2", "The perfect solution for extended sitting in colleges, universities, and organizations.", 40);
+    })();
+  </script>
 </body>
 </html>
