@@ -20,8 +20,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
+  <!-- model-viewer (needed for the 3D component) -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
   <style>
-    /* small helpers */
     .blinker{animation:blink 1s step-end infinite}
     @keyframes blink{50%{opacity:0}}
     .language-switch{position:fixed;top:8px;right:12px;z-index:60;font-size:14px}
@@ -43,10 +45,8 @@
 
   <!-- Hero -->
   <section class="bg-animate min-h-[85vh] flex flex-col items-center justify-center px-4 text-center text-white space-y-6">
-    <!-- line 1 typing -->
     <p id="line1" class="text-xl sm:text-2xl md:text-3xl font-light font-[Varela Round] text-center max-w-screen-md mx-auto px-4"></p>
 
-    <!-- Logo -->
     <img
       id="logo"
       src="img/COMFASS-LOGO-No-BackGround.png"
@@ -54,7 +54,6 @@
       class="mx-auto w-72 sm:w-[26rem] md:w-[32rem] lg:w-[40rem] xl:w-[44rem] drop-shadow-2xl opacity-0 transition-opacity duration-700"
     />
 
-    <!-- line 2 typing -->
     <p id="line2" class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light font-[Varela Round] text-center px-4 max-w-screen-md mx-auto"></p>
   </section>
 
@@ -270,7 +269,7 @@
   </section>
 
   <!-- Review Popup -->
-  <div id="review-popup" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center" role="dialog" aria-modal="true">
+  <div id="review-popup" class="fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm hidden items-center justify-center" role="dialog" aria-modal="true">
     <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full relative">
       <button data-close="review" class="absolute top-2 left-2 text-gray-500 hover:text-red-500 text-xl" aria-label="Close">✖</button>
       <h3 class="text-xl font-bold mb-4 text-center">Leave a Review</h3>
@@ -308,7 +307,7 @@
     </div>
   </footer>
 
-  <!-- Accessibility modal loader (points to accessibility.html – can create accessibility-en.html if you prefer) -->
+  <!-- Accessibility modal loader -->
   <script>
     function loadAccessibilityModal() {
       const existingModal = document.getElementById('accessibilityModal');
@@ -329,16 +328,24 @@
         });
     }
     function closeModal(id){ const m=document.getElementById(id); if(m) m.classList.add('hidden'); }
+    // ESC closes any open modal
     document.addEventListener('keydown', e => {
       if (e.key === "Escape") {
-        const modal = document.getElementById('accessibilityModal');
-        if (modal && !modal.classList.contains('hidden')) modal.classList.add('hidden');
+        ['termsModal','privacyModal','accessibilityModal','review-popup'].forEach(mid=>{
+          const m=document.getElementById(mid);
+          if(m && !m.classList.contains('hidden')) m.classList.add('hidden');
+        });
       }
     });
+    // openModal for Terms/Privacy
+    function openModal(id){
+      const m=document.getElementById(id);
+      if(m){ m.classList.remove('hidden'); }
+    }
   </script>
 
   <!-- TERMS (EN) -->
-  <div id="termsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div id="termsModal" class="hidden fixed inset-0 z-[9999] bg-black/60 flex items-center justify-center">
     <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
       <div class="sticky top-0 bg-white z-10 flex justify-end">
         <button onclick="closeModal('termsModal')" class="text-gray-600 hover:text-black text-xl" aria-label="Close">✖</button>
@@ -386,7 +393,7 @@
   </div>
 
   <!-- PRIVACY (EN) -->
-  <div id="privacyModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div id="privacyModal" class="hidden fixed inset-0 z-[9999] bg-black bg-opacity-50 flex items-center justify-center">
     <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
       <div class="sticky top-0 bg-white z-10 flex justify-end">
         <button onclick="closeModal('privacyModal')" class="text-gray-600 hover:text-black text-xl" aria-label="Close">✖</button>
@@ -432,7 +439,6 @@
     </div>
   </div>
 
-  
   <!-- Floating Buttons -->
   <div class="floating-buttons fixed left-4 bottom-4 z-50 flex flex-col gap-3 items-center">
     <!-- WhatsApp (EN) -->
@@ -451,13 +457,13 @@
       <span id="theme-icon">🌙</span>
     </button>
 
-   <!-- Language Button (עב) – מחליף את כפתור המוזיקה -->
-  <a href="index.html"
-     title="Switch to Hebrew"
-     aria-label="Switch to Hebrew"
-     class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 shadow-lg flex items-center justify-center font-bold">
-    עב
-  </a>
+    <!-- Language Button (HE) -->
+    <a href="index.html"
+       title="Switch to Hebrew"
+       aria-label="Switch to Hebrew"
+       class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 shadow-lg flex items-center justify-center font-bold">
+      HE
+    </a>
   </div>
 
   <!-- Scripts -->
@@ -465,12 +471,12 @@
   <script type="module" src="js/review.js" defer></script>
   <script type="module" src="js/rating.js" defer></script>
   <script type="module" src="js/validation.js" defer></script>
+  <!-- remove this if you fully removed music; harmless otherwise -->
   <script type="module" src="js/theme-music.js" defer></script>
   <script type="module" src="js/main.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script> AOS.init({ once: false }); </script>
 
-  <!-- If you use a Hebrew accessibility plugin, you can keep it or load an EN variant -->
   <script> nl_pos = "br"; nl_compact = "1"; </script>
   <script src="https://comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
 
