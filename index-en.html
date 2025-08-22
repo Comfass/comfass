@@ -205,14 +205,15 @@
           <input type="text" name="company" autocomplete="organization" placeholder="Institution / Company" class="w-full border p-3 rounded-lg shadow-sm" />
           <textarea name="message" placeholder="Your message" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
 
-         <div class="flex items-start mb-4">
-        <input id="terms" type="checkbox" class="mt-1 mr-2" required>
-        <label for="terms" class="text-sm text-gray-700">
-          אני מאשר/ת את 
-        <button type="button" onclick="openModal('termsModal')" class="text-blue-600 underline">תנאי השימוש</button> ואת
-        <button type="button" onclick="openModal('privacyModal')" class="text-blue-600 underline">מדיניות הפרטיות</button>.
-        </label>
-        </div>
+          <div class="flex items-start mb-4">
+            <input id="terms" type="checkbox" class="mt-1 mr-2">
+            <label for="terms" class="text-sm text-gray-700">
+              I agree to the
+              <button type="button" onclick="openModal('termsModal')" class="text-blue-600 underline">Terms of Use</button>
+              and the
+              <button type="button" onclick="openModal('privacyModal')" class="text-blue-600 underline">Privacy Policy</button>.
+            </label>
+          </div>
 
           <button id="submit-btn" type="submit" disabled class="w-full py-3 rounded-lg shadow-lg transition transform">Send</button>
         </form>
