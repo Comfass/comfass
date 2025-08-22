@@ -313,7 +313,7 @@
       const existingModal = document.getElementById('accessibilityModal');
       if (existingModal) existingModal.remove();
 
-      fetch('accessibility.html')
+      fetch('accessibility-en.html')
         .then(r => r.text())
         .then(html => {
           const doc = new DOMParser().parseFromString(html, 'text/html');
@@ -323,7 +323,7 @@
           modal.classList.remove('hidden');
         })
         .catch(err => {
-          console.error('Error loading accessibility.html:', err);
+          console.error('Error loading accessibility-en.html:', err);
           alert('Failed to load accessibility statement');
         });
     }
