@@ -586,7 +586,7 @@ function typeText(elementId, text, delay = 50) {
 }
 
 (async function startTypingAnimation() {
-  await typeText("line1", "נוחות שנשארת איתך", 60);
+  await typeText("line1", "כאן מתחיל השיפור שאתה מרגיש.", 60);
   await new Promise(r => setTimeout(r, 300));
   document.getElementById("logo").classList.remove("opacity-0");
   await new Promise(r => setTimeout(r, 800));
