@@ -31,11 +31,7 @@
        ✨אתם יכולים להיות הלקוחות הראשונים שלנו, הצטרפו למהפכת הנוכות עוד היום✨
     </div>
   </div>
- <!-- Language switch -->
-    <div class="language-switch">
-      <a href="index-en.html" class="text-white font-semibold">English</a> | <a href="index.html" aria-current="page" class="text-white font-semibold">עברית</a>
-    </div>
- </header>
+     
 <section class="bg-animate min-h-[85vh] flex flex-col items-center justify-center px-4 text-center text-white space-y-6">
   
 
@@ -494,9 +490,6 @@
 </div>
 
 
-<!-- Music audio -->
-<audio id="bg-music" src="M.mp3" loop preload="auto"></audio>
-
 <!-- Floating Buttons -->
 <div class="floating-buttons fixed left-4 bottom-4 z-50 flex flex-col gap-3 items-center">
   
@@ -517,15 +510,13 @@
     <span id="theme-icon">🌙</span>
   </button>
 
-  <!-- Music Toggle Button -->
-  <button id="music-btn" 
-          title="הפעל או השהה מוזיקה" 
-          aria-label="הפעל או השהה מוזיקה"
-          class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 shadow-lg flex items-center justify-center">
-    <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600 dark:text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
-      <path id="icon-path" d="M5 3v18l14-9L5 3z" /> <!-- Play icon -->
-    </svg>
-  </button>
+ <!-- Language Button (EN) – מחליף את כפתור המוזיקה -->
+  <a href="index-en.html"
+     title="Switch to English"
+     aria-label="Switch to English"
+     class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 shadow-lg flex items-center justify-center font-bold">
+    EN
+  </a>
 
 </div>
 
@@ -533,7 +524,6 @@
 <script type="module" src="js/review.js" defer></script>
 <script type="module" src="js/rating.js" defer></script>
 <script type="module" src="js/validation.js" defer></script>
-<script type="module" src="js/theme-music.js" defer></script>
 <script type="module" src="js/main.js" defer></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>  AOS.init({ once: false }); </script>
