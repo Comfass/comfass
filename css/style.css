@@ -399,4 +399,18 @@ body.dark .bg-gray-200 {
   stroke-dashoffset: 0;
 }
 
+/* RTL-friendly spacing: margin-inline-start במקום margin-left */
+.checkbox-wrapper .terms-label .label-text {
+  margin-left: 0;              /* נטרול ההגדרה המקורית אם קיימת */
+  margin-inline-start: 10px;   /* רווח אחרי האייקון לפי כיוון הכתיבה */
+}
+
+/* קו מתאר לפוקוס (נגישות) כשממקד/ים עם מקלדת על כל ה-label */
+.checkbox-wrapper .terms-label:focus-within {
+  outline: 2px solid #8c00ff;
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+
 
