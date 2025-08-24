@@ -567,22 +567,42 @@
 </script>
 
 <script>
-function typeText(elementId, text, delay = 50) {
+// הקלדה עם מהירויות שונות וסימני פיסוק
+function typeText(elementId, text, baseDelay = 60) {
   return new Promise((resolve) => {
     const el = document.getElementById(elementId);
     let i = 0;
     el.innerHTML = '<span id="blinker" class="blinker">|</span>';
     const blinker = document.getElementById("blinker");
 
-    const interval = setInterval(() => {
-      blinker.insertAdjacentText("beforebegin", text.charAt(i));
-      i++;
+    const step = () => {
       if (i >= text.length) {
-        clearInterval(interval);
         blinker.remove();
         resolve();
+        return;
       }
-    }, delay);
+      const ch = text.charAt(i);
+      blinker.insertAdjacentText("beforebegin", ch);
+      i++;
+
+      // מהירות בסיס + האטות חכמות
+      let delay = baseDelay;
+      if (ch === ' ') delay *= 0.6;                         // רווחים — טיפה מהיר יותר
+      if (/[,\.\!\?\:\;]/.test(ch)) delay *= 4;             // פסיקים/נקודות — עצירה קצרה
+      if (/[־–—]/.test(ch)) delay *= 2.5;                   // מקף — עצירה בינונית
+      if (/[“”'"״׳]/.test(ch)) delay *= 1.8;                // מירכאות/גרש — עצירה קלה
+
+      setTimeout(step, delay);
+    };
+
+    step();
+  });
+}
+
+// גלילה לטופס
+function scrollToForm() {
+  document.getElementById("contact").scrollIntoView({
+    behavior: "smooth"
   });
 }
 
@@ -591,28 +611,30 @@ function typeText(elementId, text, delay = 50) {
   await new Promise(r => setTimeout(r, 300));
   document.getElementById("logo").classList.remove("opacity-0");
   await new Promise(r => setTimeout(r, 800));
-  await typeText("line2", "הפתרון המושלם לישיבה ממושכת במכללות, אוניברסטאות וארגונים", 40);
 
-  // הוספת הכפתור אחרי שהטקסט השני סיים להקליד
-  document.getElementById("cta-button-container").innerHTML = `
-    <button class="frutiger-button" onclick="scrollToForm()">
+  // מאט את השורה השנייה + עצירות אחרי פיסוק
+  await typeText("line2", "הפתרון המושלם לישיבה ממושכת במכללות, אוניברסטאות וארגונים", 75);
+
+  // מזריקים כפתור עם כיתה התחלתית (cta-enter) ואז מפעילים טרנזישן בפריים הבא
+  const container = document.getElementById("cta-button-container");
+  container.innerHTML = `
+    <button class="frutiger-button cta-enter" onclick="scrollToForm()">
       <div class="inner">
         <div class="top-white"></div>
         <span class="text">השאר פניה</span>
       </div>
     </button>
   `;
-})();
-
-// פונקציה שמביאה לטופס
-function scrollToForm() {
-  document.getElementById("contact-Form").scrollIntoView({
-    behavior: "smooth"
+  // טריגר ל-transition: נותן לדפדפן "לצייר" ואז מוסיף את הכיתה הפעילה
+  requestAnimationFrame(() => {
+    const btn = container.querySelector('.cta-enter');
+    // כפול requestAnimationFrame כדי להבטיח חישוב סגנונות לפני ההחלפה
+    requestAnimationFrame(() => {
+      btn.classList.add('cta-enter-active');
+    });
   });
-}
+})();
 </script>
-
-
 
 </body>
 </html>
