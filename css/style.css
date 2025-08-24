@@ -338,3 +338,23 @@ body.dark .bg-gray-200 {
   transition: inherit;
 }
 
+/* הופעת הכפתור חלקה */
+.cta-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.cta-enter.cta-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+/* (אופציונלי) מהבהב של הקורסור, אם אין לך כבר */
+.blinker {
+  animation: blink 1s steps(1,end) infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+
