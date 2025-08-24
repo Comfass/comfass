@@ -191,6 +191,99 @@ body.dark .bg-gray-200 {
   text-decoration: underline;  /* אם תרצה קו תחתון */
 }
 
+/* ---- Banner Layout ---- */
+.hidden { display: none !important; }
+
+.promo-banner {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: linear-gradient(90deg,#111827,#1f2937,#111827); /* אפור כהה אלגנטי */
+  color: #fff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+.promo-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 10px 56px 10px 44px; /* רווחים + מקום לכפתורים */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* מסילה + טקסט נע */
+.promo-track-wrapper {
+  overflow: hidden;
+  flex: 1;
+}
+
+.promo-track {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.promo-track-wrapper:hover .promo-track.animate {
+  animation-play-state: paused; /* עצירה בהובר */
+}
+
+.promo-msg { opacity: 0.9; }
+.promo-sep  { margin: 0 16px; opacity: 0.6; }
+.promo-gap  { display: inline-block; width: 32px; }
+
+/* אנימציית גלילה אופקית */
+@keyframes banner-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* בגלל שיש שכפול טקסט */
+}
+.promo-track.animate { animation: banner-scroll 25s linear infinite; }
+
+/* מכבד העדפת הפחתת תנועה */
+@media (prefers-reduced-motion: reduce) {
+  .promo-track.animate { animation: none !important; }
+}
+
+/* CTA */
+.promo-cta {
+  flex: 0 0 auto;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+.promo-cta:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.35); }
+
+/* Close (שמאל ב-RTL) */
+.promo-close {
+  position: absolute;
+  left: 12px; top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.75);
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px;
+  transition: color .2s ease;
+}
+.promo-close:hover { color: #fff; }
+
+/* התאמות מובייל */
+@media (max-width: 480px) {
+  .promo-inner { padding: 8px 48px 8px 40px; gap: 8px; }
+  .promo-cta   { font-size: 13px; padding: 6px 10px; }
+  .promo-close { left: 8px; font-size: 16px; }
+}
+
+
 /*כפתור השאר פניה עליון   */
 /* From Uiverse.io by SelfMadeSystem */ 
 .frutiger-button {
