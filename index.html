@@ -232,12 +232,12 @@
 
     <!-- הכפתורים: עוצרים בועת קליק כדי שלא ילחצו על ה-checkbox -->
    <button type="button" class="text-blue-600 underline ml-1"
-        onclick="event.stopPropagation(); openModal('termsModal', 'terms.html')">
+        onclick="event.stopPropagation(); openModal('termsModal', './modals/terms.html')">
   תנאי השימוש
 </button>
 <span class="label-text">&nbsp;ואת&nbsp;</span>
 <button type="button" class="text-blue-600 underline"
-        onclick="event.stopPropagation(); openModal('privacyModal', 'privacy.html')">
+        onclick="event.stopPropagation(); openModal('privacyModal', './modals/privacy.html')">
   מדיניות הפרטיות
 </button>
     <span class="label-text">.</span>
@@ -332,9 +332,10 @@
   <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600">
   <div class="flex flex-col items-center gap-2">
     <p>
-      <a href="#" onclick="loadAccessibilityModal(); return false;">הצהרת נגישות</a> |
-      <a href="#" onclick="openModal('termsModal', 'terms.html'); return false;">תנאי השימוש</a>
-      <a href="#" onclick="openModal('privacyModal', 'privacy.html'); return false;">מדיניות הפרטיות</a>
+      <a href="#" onclick="openModal('termsModal', './modals/terms.html'); return false;">תנאי השימוש</a>
+      <a href="#" onclick="openModal('privacyModal', './modals/privacy.html'); return false;">מדיניות הפרטיות</a>
+      <a href="#" onclick="openModal('accessibilityModal', './modals/accessibility.html'); return false;">הצהרת נגישות</a>
+
     </p>
     <p>© 2025 Comfass | כל הזכויות שמורות</p>
     <p class="text-xs text-gray-500">עיצוב הלוגו נוצר באהבה על ידי ז'נה קולצ'ין</p>
@@ -344,43 +345,6 @@
   </div>
 </footer>
 <script>
-  function loadAccessibilityModal() {
-    // 🧹 מחיקת מודל קודם אם קיים
-    const existingModal = document.getElementById('accessibilityModal');
-    if (existingModal) {
-      existingModal.remove();
-    }
-
-    // 🎯 טעינה דינמית של הקובץ
-    fetch('accessibility.html')
-      .then(response => response.text())
-      .then(data => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data, 'text/html');
-        const modal = doc.querySelector('#accessibilityModal');
-
-        // ✅ סגירה בלחיצה על הרקע
-        modal.addEventListener('click', function (e) {
-          if (e.target === modal) {
-            closeModal('accessibilityModal');
-          }
-        });
-
-        document.body.appendChild(modal);
-        modal.classList.remove('hidden');
-      })
-      .catch(error => {
-        console.error("שגיאה בטעינת accessibility.html:", error);
-        alert("אירעה שגיאה בטעינת הצהרת הנגישות");
-      });
-  }
-
-  function closeModal(id) {
-    const modal = document.getElementById(id);
-    if (modal) {
-      modal.classList.add('hidden');
-    }
-  }
 
   // ✅ סגירה בלחיצה על מקש ESC
   document.addEventListener('keydown', function (event) {
@@ -417,6 +381,20 @@
     </div>
   </div>
 </div>
+
+     <!-- Accessibility Modal (ריק – נטען דינמית) -->
+<div id="accessibilityModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl"
+       onclick="event.stopPropagation()">
+    <div class="sticky top-0 bg-white z-10 flex justify-end">
+      <button onclick="closeModal('accessibilityModal')" class="text-gray-600 hover:text-black text-xl">✖</button>
+    </div>
+    <div id="accessibilityContent">
+      <!-- כאן ייטען accessibility.html -->
+    </div>
+  </div>
+</div>
+
 
 <!-- Floating Buttons -->
 <div class="floating-buttons fixed left-4 bottom-4 z-50 flex flex-col gap-3 items-center">
@@ -483,28 +461,44 @@
 <script>
   function openModal(id, url) {
     const modal = document.getElementById(id);
+    if (!modal) return;
+
+    // סגירה בלחיצה על הרקע
+    modal.onclick = (e) => { if (e.target === modal) closeModal(id); };
+
     modal.classList.remove('hidden');
 
     if (url) {
-      fetch(url)
-        .then(res => res.text())
+      const contentId = id.replace('Modal', 'Content');
+      const contentEl = modal.querySelector('#' + contentId);
+      if (!contentEl) return;
+
+      // אינדיקציית טעינה
+      contentEl.innerHTML = '<p class="text-gray-500 text-sm">טוען…</p>';
+
+      // בונה נתיב יחסי בטוח
+      const finalUrl = new URL(url, document.baseURI).toString();
+      console.log('[openModal] fetching:', finalUrl);
+
+      fetch(finalUrl)
+        .then(res => {
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status} for ${finalUrl}`);
+          }
+          return res.text();
+        })
         .then(html => {
-          modal.querySelector("#" + id.replace("Modal","Content")).innerHTML = html;
+          contentEl.innerHTML = html;
         })
         .catch(err => {
-          modal.querySelector("#" + id.replace("Modal","Content")).innerHTML =
-            "<p>⚠️ שגיאה בטעינת התוכן</p>";
-          console.error("שגיאה בטעינה:", err);
+          console.error('שגיאה בטעינת תוכן:', err);
+          contentEl.innerHTML = '<p class="text-red-600">⚠️ לא הצלחתי לטעון את התוכן. בדוק את הנתיב/השמות.</p>';
         });
     }
   }
 
-  function closeModal(id) {
-    document.getElementById(id).classList.add('hidden');
-  }
+  function closeModal(id){ const m=document.getElementById(id); if(m) m.classList.add('hidden'); }
 </script>
-
-
 
 <script>
 // הקלדה עם מהירויות שונות וסימני פיסוק
