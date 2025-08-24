@@ -6,12 +6,7 @@
   <title>Comfass כרית ניידת לישיבה נוחה וממושכת</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class' // מאפשר dark לפי class בלבד
-    }
-  </script>
-  
+  <script> tailwind.config = { darkMode: 'class' }</script>
   <meta name="description" content="Comfass הפתרון החדשני והנוח לישיבה ממושכת" />
   <meta property="og:title" content="Comfass הפתרון הנוח שלך" />
   <meta property="og:description" content="הצטרפו למהפכת הנוחות עם Comfass פתרון חדשני לישיבה ממושכת" />
@@ -21,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 
 
@@ -422,8 +418,10 @@
 </div>   
 <!-- third-party -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-<script> AOS.init({ once: false }); </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer
+        onload="AOS.init({ once: false });"></script>
 <script> nl_pos = "br"; nl_compact = "1"; </script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
 <script src="https://comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <!-- שלך -->
