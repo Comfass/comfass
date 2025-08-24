@@ -50,14 +50,9 @@
 <p id="line2" class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 
            font-light font-[Varela Round] 
            text-center px-4 max-w-screen-md mx-auto"></p>
-
-  <!-- From Uiverse.io by SelfMadeSystem --> 
-<button class="frutiger-button" onclick="scrollToForm()">
-  <div class="inner">
-    <div class="top-white"></div>
-    <span class="text">השאר פניה</span>
-  </div>
-</button>
+  
+<!-- מקום לכפתור פעולה -->
+<div id="cta-button-container"></div>
 
 </section>
 
@@ -592,21 +587,31 @@ function typeText(elementId, text, delay = 50) {
 }
 
 (async function startTypingAnimation() {
-  await typeText("line1", "כאן מתחיל השיפור שאתה מרגיש.", 60);
+  await typeText("line1", "כאן מתחיל השיפור שאתה מרגיש", 60);
   await new Promise(r => setTimeout(r, 300));
   document.getElementById("logo").classList.remove("opacity-0");
   await new Promise(r => setTimeout(r, 800));
   await typeText("line2", "הפתרון המושלם לישיבה ממושכת במכללות, אוניברסטאות וארגונים", 40);
+
+  // הוספת הכפתור אחרי שהטקסט השני סיים להקליד
+  document.getElementById("cta-button-container").innerHTML = `
+    <button class="frutiger-button" onclick="scrollToForm()">
+      <div class="inner">
+        <div class="top-white"></div>
+        <span class="text">השאר פניה</span>
+      </div>
+    </button>
+  `;
 })();
+
+// פונקציה שמביאה לטופס
+function scrollToForm() {
+  document.getElementById("contact-Form").scrollIntoView({
+    behavior: "smooth"
+  });
+}
 </script>
 
-     <script>
-  function scrollToForm() {
-    document.getElementById("contact-form").scrollIntoView({
-      behavior: "smooth"  // גלילה חלקה
-    });
-  }
-</script>
 
 
 </body>
