@@ -239,7 +239,7 @@ body.dark .bg-gray-200 {
   to   { transform: translateX(0); }
 }
 .promo-track.animate { 
-  animation: banner-scroll 30s linear infinite; 
+  animation: banner-scroll 18s linear infinite; 
 }
 
 /* מכבד העדפת הפחתת תנועה */
