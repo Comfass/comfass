@@ -242,6 +242,12 @@ body.dark .bg-gray-200 {
   animation: banner-scroll 18s linear infinite; 
 }
 
+@keyframes banner-scroll-ltr {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+
 /* מכבד העדפת הפחתת תנועה */
 @media (prefers-reduced-motion: reduce) {
   .promo-track.animate { animation: none !important; }
