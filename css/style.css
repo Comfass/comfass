@@ -235,11 +235,11 @@ body.dark .bg-gray-200 {
 
 /* אנימציית גלילה אופקית */
 @keyframes banner-scroll {
-  from { transform: translateX(-50%); }
+  from { transform: translateX(-100%); }
   to   { transform: translateX(0); }
 }
 .promo-track.animate { 
-  animation: banner-scroll 35s linear infinite; 
+  animation: banner-scroll 30s linear infinite; 
 }
 
 /* מכבד העדפת הפחתת תנועה */
