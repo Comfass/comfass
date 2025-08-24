@@ -25,13 +25,37 @@
 
 
 <body class="bg-gray-50 text-gray-800 pt-10">
-   <header>
-  <div class="ticker-container fixed top-0 w-full z-50 bg-gray-900 text-white overflow-hidden">
-    <div class="ticker-content whitespace-nowrap animate-scroll px-4 py-2">
-       ✨אתם יכולים להיות הלקוחות הראשונים שלנו, הצטרפו למהפכת הנוכות עוד היום✨
+<header>
+  <!-- Announcement Banner -->
+<div id="promoBanner" dir="rtl" class="promo-banner hidden" role="region" aria-label="הודעה חשובה">
+  <div class="promo-inner">
+    <!-- תוכן גלול עדין; אם לא רוצים גלילה – הסר את המחלקה animate -->
+    <div class="promo-track-wrapper" aria-live="polite">
+      <div id="bannerTicker" class="promo-track animate">
+        <span class="promo-msg">ComfAss: נוחות חכמה לשעות ישיבה ארוכות במכללות ובארגונים.</span>
+        <span class="promo-sep">|</span>
+        <span class="promo-msg">משטיח לחץ, מפחית כאב, מעלה ריכוז – נבדק בפיילוטים.</span>
+        <span class="promo-sep">|</span>
+        <span class="promo-msg">הצטרפו לרשימת המקדימים וקבלו תנאי השקה.</span>
+
+        <!-- שכפול ללופ חלק -->
+        <span class="promo-gap"></span>
+        <span class="promo-msg">ComfAss: נוחות חכמה לשעות ישיבה ארוכות במכללות ובארגונים.</span>
+        <span class="promo-sep">|</span>
+        <span class="promo-msg">משטיח לחץ, מפחית כאב, מעלה ריכוז – נבדק בפיילוטים.</span>
+        <span class="promo-sep">|</span>
+        <span class="promo-msg">הצטרפו לרשימת המקדימים וקבלו תנאי השקה.</span>
+      </div>
     </div>
+
+    <!-- CTA -->
+    <button type="button" class="promo-cta" onclick="scrollToForm()">השאר פניה</button>
+
+    <!-- Close -->
+    <button type="button" class="promo-close" aria-label="סגירת הבאנר" onclick="dismissBanner()">✖</button>
   </div>
-     
+</div>
+</header>
 <section class="bg-animate min-h-[85vh] flex flex-col items-center justify-center px-4 text-center text-white space-y-6">
   
 
@@ -60,11 +84,11 @@
  <section class="py-20 px-6 transition-theme text-center" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-4">הבעיה</h2>
     <p class="text-xl max-w-2xl mx-auto leading-relaxed">
-    כולנו מבלים שעות ארוכות בישיבה – בהרצאות, בלימודים, במשרד או בבית. <br>
-    רוב הכיסאות שסביבנו לא מיועדים לישיבה ממושכת, וכך חוסר הנוחות מתחיל להצטבר.
-    הגב כואב, הריכוז נעלם, והעייפות משתלטת על כל היום.<br><br>
-התוצאה ברורה: גם הבריאות נפגעת וגם היכולת להישאר ממוקדים ויעילים. במקום להתקדם, אנחנו מתמודדים עם כאב ותסכול שניתן היה למנוע מראש.
-</p>
+      כולנו מבלים שעות ארוכות בישיבה – בהרצאות, בלימודים, במשרד או בבית. <br>
+      רוב הכיסאות שסביבנו לא מיועדים לישיבה ממושכת, וכך חוסר הנוחות מתחיל להצטבר.
+      הגב כואב, הריכוז נעלם, והעייפות משתלטת על כל היום.<br><br>
+      התוצאה ברורה: גם הבריאות נפגעת וגם היכולת להישאר ממוקדים ויעילים. במקום להתקדם, אנחנו מתמודדים עם כאב ותסכול שניתן היה למנוע מראש.
+    </p>
   </section>
 
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
@@ -169,22 +193,24 @@
   </template>
 
 <!-- חיצים -->
+<!-- חץ שמאלה -->
 <button 
   @click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1" 
   class="absolute left-3 top-1/2 transform -translate-y-1/2 
          w-10 h-10 flex items-center justify-center 
-         bg-white text-gray-800 text-lg font-bold 
-         rounded-full shadow-md z-30 hover:bg-gray-200 hover:text-black transition-colors"
+         bg-transparent text-gray-800 text-lg font-bold 
+         rounded-full shadow-md z-30 transition-colors"
 >
   ◀
 </button>
 
+<!-- חץ ימינה -->
 <button 
   @click="activeSlide = (activeSlide + 1) % slides.length" 
   class="absolute right-3 top-1/2 transform -translate-y-1/2 
          w-10 h-10 flex items-center justify-center 
-         bg-white text-gray-800 text-lg font-bold 
-         rounded-full shadow-md z-30 hover:bg-gray-200 hover:text-black transition-colors"
+         bg-transparent text-gray-800 text-lg font-bold 
+         rounded-full shadow-md z-30 transition-colors"
 >
   ▶
 </button>
@@ -412,162 +438,23 @@
   </a>
 
 </div>
+     
+<!-- third-party -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+<script> AOS.init({ once: false }); </script>
+<script> nl_pos = "br"; nl_compact = "1"; </script>
+<script src="https://comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
 
+<!-- שלך -->
+<script type="module" src="js/dom-fixes.js" defer></script>
+<script type="module" src="js/modals.js" defer></script>
+<script type="module" src="js/typing.js" defer></script>
 <script src="js/testimonial.js" defer></script>
 <script type="module" src="js/review.js" defer></script>
 <script type="module" src="js/rating.js" defer></script>
 <script type="module" src="js/validation.js" defer></script>
 <script type="module" src="js/main.js" defer></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>  AOS.init({ once: false }); </script>
-<script> nl_pos = "br"; nl_compact = "1"; </script>
-<script src="https://comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const interval = setInterval(() => {
-      const brokenOption = document.querySelector('option[aria-hidden="true"]');
-      if (brokenOption) {
-        brokenOption.removeAttribute('aria-hidden');
-        clearInterval(interval);
-      }
-    }, 500);
-  });
-</script>
 
-<script>
-  // ✅ סגירה בלחיצה על מקש ESC
-  document.addEventListener('keydown', function (event) {
-    if (event.key === "Escape") {
-      const modal = document.getElementById('accessibilityModal');
-      if (modal && !modal.classList.contains('hidden')) {
-        modal.classList.add('hidden');
-      }
-    }
-  });
-</script>
-     
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const slogan = document.getElementById("slogan");
-    if (slogan) {
-      setTimeout(() => {
-        slogan.classList.add("typing-effect");
-      }, 1000); // זמן תיאום עם אנימציית הלוגו
-    }
-  });
-</script>
-  
-<script>
-  function openModal(id, url) {
-    const modal = document.getElementById(id);
-    if (!modal) return;
-
-    // סגירה בלחיצה על הרקע
-    modal.onclick = (e) => { if (e.target === modal) closeModal(id); };
-
-    modal.classList.remove('hidden');
-
-    if (url) {
-      const contentId = id.replace('Modal', 'Content');
-      const contentEl = modal.querySelector('#' + contentId);
-      if (!contentEl) return;
-
-      // אינדיקציית טעינה
-      contentEl.innerHTML = '<p class="text-gray-500 text-sm">טוען…</p>';
-
-      // בונה נתיב יחסי בטוח
-      const finalUrl = new URL(url, document.baseURI).toString();
-      console.log('[openModal] fetching:', finalUrl);
-
-      fetch(finalUrl)
-        .then(res => {
-          if (!res.ok) {
-            throw new Error(`HTTP ${res.status} for ${finalUrl}`);
-          }
-          return res.text();
-        })
-        .then(html => {
-          contentEl.innerHTML = html;
-        })
-        .catch(err => {
-          console.error('שגיאה בטעינת תוכן:', err);
-          contentEl.innerHTML = '<p class="text-red-600">⚠️ לא הצלחתי לטעון את התוכן. בדוק את הנתיב/השמות.</p>';
-        });
-    }
-  }
-
-  function closeModal(id){ const m=document.getElementById(id); if(m) m.classList.add('hidden'); }
-</script>
-
-<script>
-// הקלדה עם מהירויות שונות וסימני פיסוק
-function typeText(elementId, text, baseDelay = 60) {
-  return new Promise((resolve) => {
-    const el = document.getElementById(elementId);
-    let i = 0;
-    el.innerHTML = '<span id="blinker" class="blinker">|</span>';
-    const blinker = document.getElementById("blinker");
-
-    const step = () => {
-      if (i >= text.length) {
-        blinker.remove();
-        resolve();
-        return;
-      }
-      const ch = text.charAt(i);
-      blinker.insertAdjacentText("beforebegin", ch);
-      i++;
-
-      // מהירות בסיס + האטות חכמות
-      let delay = baseDelay;
-      if (ch === ' ') delay *= 0.6;                         // רווחים — טיפה מהיר יותר
-      if (/[,\.\!\?\:\;]/.test(ch)) delay *= 4;             // פסיקים/נקודות — עצירה קצרה
-      if (/[־–—]/.test(ch)) delay *= 2.5;                   // מקף — עצירה בינונית
-      if (/[“”'"״׳]/.test(ch)) delay *= 1.8;                // מירכאות/גרש — עצירה קלה
-
-      setTimeout(step, delay);
-    };
-
-    step();
-  });
-}
-
-// גלילה לטופס
-function scrollToForm() {
-  document.getElementById("contact").scrollIntoView({
-    behavior: "smooth"
-  });
-}
-
-(async function startTypingAnimation() {
-  await typeText("line1", "כאן מתחיל השיפור שאתה מרגיש", 60);
-  await new Promise(r => setTimeout(r, 300));
-  document.getElementById("logo").classList.remove("opacity-0");
-  await new Promise(r => setTimeout(r, 800));
-
-  // מאט את השורה השנייה + עצירות אחרי פיסוק
-  await typeText("line2", "הפתרון המושלם לישיבה ממושכת במכללות, אוניברסטאות וארגונים", 75);
-
-  // מזריקים כפתור עם כיתה התחלתית (cta-enter) ואז מפעילים טרנזישן בפריים הבא
-  const container = document.getElementById("cta-button-container");
-  container.innerHTML = `
-    <button class="frutiger-button cta-enter" onclick="scrollToForm()">
-      <div class="inner">
-        <div class="top-white"></div>
-        <span class="text">השאר פניה</span>
-      </div>
-    </button>
-  `;
-  // טריגר ל-transition: נותן לדפדפן "לצייר" ואז מוסיף את הכיתה הפעילה
-  requestAnimationFrame(() => {
-    const btn = container.querySelector('.cta-enter');
-    // כפול requestAnimationFrame כדי להבטיח חישוב סגנונות לפני ההחלפה
-    requestAnimationFrame(() => {
-      btn.classList.add('cta-enter-active');
-    });
-  });
-})();
-</script>
 
 </body>
 </html>
