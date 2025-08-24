@@ -52,7 +52,7 @@
            text-center px-4 max-w-screen-md mx-auto"></p>
 
   <!-- From Uiverse.io by SelfMadeSystem --> 
-<button class="frutiger-button">
+<button class="frutiger-button" onclick="scrollToForm()">
   <div class="inner">
     <div class="top-white"></div>
     <span class="text">השאר פניה</span>
@@ -598,6 +598,14 @@ function typeText(elementId, text, delay = 50) {
   await new Promise(r => setTimeout(r, 800));
   await typeText("line2", "הפתרון המושלם לישיבה ממושכת במכללות, אוניברסטאות וארגונים", 40);
 })();
+</script>
+
+     <script>
+  function scrollToForm() {
+    document.getElementById("contact-form").scrollIntoView({
+      behavior: "smooth"  // גלילה חלקה
+    });
+  }
 </script>
 
 
