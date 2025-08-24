@@ -212,14 +212,38 @@
         <input type="tel" name="phone" autocomplete="phone" placeholder="מספר טלפון" required class="w-full border p-3 rounded-lg shadow-sm" />
         <input type="text" name="company" autocomplete="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm" />
         <textarea name="message" placeholder="טקסט חופשי" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
-        <div class="flex items-start mb-4">
-        <input id="terms" type="checkbox" class="mt-1 mr-2" required>
-        <label for="terms" class="text-sm text-gray-700">
-          אני מאשר/ת את 
-        <button type="button" onclick="openModal('termsModal')" class="text-blue-600 underline">תנאי השימוש</button> ואת
-        <button type="button" onclick="openModal('privacyModal')" class="text-blue-600 underline">מדיניות הפרטיות</button>.
-        </label>
-        </div>
+        <!-- Checkbox חדש עם האנימציה -->
+<div class="checkbox-wrapper flex items-start mb-4">
+  <!-- שים לב: שמרנו על אותו id ושמנו required -->
+  <input id="terms" name="terms" type="checkbox" required>
+
+  <!-- התווית מפעילה את ה-checkbox בלחיצה על האזור שלה (לא על הכפתורים) -->
+  <label class="terms-label" for="terms">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" class="checkbox-svg" aria-hidden="true" focusable="false">
+      <mask fill="white" id="path-1-inside-1_476_5-37">
+        <rect height="200" width="200"></rect>
+      </mask>
+      <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
+      <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
+    </svg>
+
+    <!-- טקסט ההצהרה -->
+    <span class="label-text">אני מאשר/ת את</span>
+
+    <!-- הכפתורים: עוצרים בועת קליק כדי שלא ילחצו על ה-checkbox -->
+    <button type="button" class="text-blue-600 underline ml-1"
+            onclick="event.stopPropagation(); openModal('termsModal')">
+      תנאי השימוש
+    </button>
+    <span class="label-text">&nbsp;ואת&nbsp;</span>
+    <button type="button" class="text-blue-600 underline"
+            onclick="event.stopPropagation(); openModal('privacyModal')">
+      מדיניות הפרטיות
+    </button>
+    <span class="label-text">.</span>
+  </label>
+</div>
+
         <button id="submit-btn" type="submit" disabled class="w-full py-3 rounded-lg shadow-lg transition transform">שלח פנייה</button>
       </form>
       <div id="thank-you" class="hidden text-center mt-6 text-green-600 font-bold text-lg">
