@@ -247,7 +247,7 @@ html, body { margin: 0; padding: 0; }
 }
 
 .promo-track.animate {
-  animation: banner-scroll-ltr var(--banner-duration, 30s) linear infinite;
+  animation: banner-scroll-ltr var(--banner-duration, 33s) linear infinite;
 }
 
 /* מכבד העדפת הפחתת תנועה */
@@ -284,7 +284,6 @@ html, body { margin: 0; padding: 0; }
   padding: 2px;
   transition: color .2s ease;
 }
-.promo-close:hover { color: #fff; }
 
 /* התאמות מובייל */
 @media (max-width: 480px) {
