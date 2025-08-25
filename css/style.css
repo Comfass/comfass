@@ -247,7 +247,7 @@ html, body { margin: 0; padding: 0; }
 }
 
 .promo-track.animate {
-  animation: banner-scroll-ltr var(--banner-duration, 37s) linear infinite;
+  animation: banner-scroll-ltr var(--banner-duration, 30s) linear infinite;
 }
 
 /* מכבד העדפת הפחתת תנועה */
