@@ -1,40 +1,22 @@
 // js/banner.js
-(function initPromoBanner() {
-  var banner = document.getElementById('promoBanner');
-  if (banner) {
-    banner.classList.remove('hidden'); // תמיד מציג את הבאנר
-  }
-})();
-
-function dismissBanner() {
-  var el = document.getElementById('promoBanner');
-  if (el) el.classList.add('hidden');
-}
-
-function scrollToForm() {
-  var el = document.getElementById('contact');
-  if (el && el.scrollIntoView) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  } else {
-    location.hash = '#contact';
-  }
-}
-
+// js/banner.js
 document.addEventListener('DOMContentLoaded', function () {
-  const banner = document.getElementById('promoBanner');
-  const track = document.getElementById('bannerTicker');
+  var banner = document.getElementById('promoBanner');
+  var track  = document.getElementById('bannerTicker');
 
-  // מציג את הבאנר תמיד כשהעמוד נטען
+  // מציג את הבאנר מיד כשהעמוד מוכן
   if (banner) banner.classList.remove('hidden');
 
   // כפתור סגירה
   window.dismissBanner = function () {
-    if (banner) banner.classList.add('hidden');
+    if (!banner) return;
+    banner.classList.add('hidden');
+    // אין פס לבן כי ביטלנו margin ברירת מחדל של body ב-CSS למעלה
   };
 
-  // גלילה לטופס (אם יש לך #contact בעמוד)
+  // גלילה לטופס
   window.scrollToForm = function () {
-    const el = document.getElementById('contact');
+    var el = document.getElementById('contact');
     if (el && el.scrollIntoView) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
@@ -42,21 +24,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  // התאמת מהירות הגלילה לפי אורך התוכן
+  // מהירות דינמית לפי אורך התוכן (כדי שלא ייחתך)
   if (track) {
-    // משכפלים תוכן כדי ליצור לולאה רציפה
-    track.innerHTML = track.innerHTML + track.innerHTML;
+    // אם לא שכפלת ב-HTML, אפשר לשכפל כאן:
+    // track.innerHTML = track.innerHTML + track.innerHTML;
 
-    // מחשבים את הרוחב הכולל של הטקסט
-    const distance = track.scrollWidth / 2; // מחזור אחד = חצי מהרוחב
-    const PX_PER_SEC = 80; // מהירות קריאה נוחה ~80px לשנייה
-    const durationSec = distance / PX_PER_SEC;
+    // מרחק מחזור: חצי מהרוחב (בגלל הכפילות)
+    var distancePx = track.scrollWidth / 2;
+    // מהירות "קריאה" נוחה (פיקסלים לשנייה) – כוון לפי טעם
+    var PX_PER_SEC = 90;
 
-    // מזריקים משך אנימציה דינמי
-    track.style.animationDuration = durationSec.toFixed(2) + 's';
-
-    // מגדירים את האנימציה לכיוון משמאל לימין
-    track.style.animationName = 'banner-scroll-ltr';
+    var durationSec = distancePx / PX_PER_SEC;
+    // מזריקים משך דינמי ל-CSS var
+    track.style.setProperty('--banner-duration', durationSec.toFixed(2) + 's');
   }
 });
-
