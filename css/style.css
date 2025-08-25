@@ -194,6 +194,9 @@ body.dark .bg-gray-200 {
 /* ---- Banner Layout ---- */
 .hidden { display: none !important; }
 
+/* איפוס ברירת מחדל כדי שלא יישאר פס לבן בראש הדף */
+html, body { margin: 0; padding: 0; }
+
 .promo-banner {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -219,10 +222,12 @@ body.dark .bg-gray-200 {
   flex: 1;
 }
 
+/* חשוב כדי שהזזה על ציר X תהיה עקבית גם בתוך RTL */
 .promo-track {
   display: inline-block;
   white-space: nowrap;
   will-change: transform;
+  direction: ltr; /* אל תסיר – זה פותר "קפיצות" בכיוון */
 }
 
 .promo-track-wrapper:hover .promo-track.animate {
@@ -233,20 +238,17 @@ body.dark .bg-gray-200 {
 .promo-sep  { margin: 0 16px; opacity: 0.6; }
 .promo-gap  { display: inline-block; width: 32px; }
 
-/* אנימציית גלילה אופקית */
-@keyframes banner-scroll {
-  from { transform: translateX(-100%); }
-  to   { transform: translateX(0); }
-}
-.promo-track.animate { 
-  animation: banner-scroll 23s linear infinite; 
-}
-
+/* ===== אנימציה משמאל לימין בלי חיתוך =====
+   מכיוון ששכפלנו את התוכן ([A][A]), די להזיז +50% כדי לקבל לולאה חלקה.
+   מתחילים מ-0 כדי שהטקסט יהיה נראה מיד. */
 @keyframes banner-scroll-ltr {
-  from { transform: translateX(-100%); }
-  to   { transform: translateX(0); }
+  from { transform: translateX(0); }
+  to   { transform: translateX(50%); }
 }
 
+.promo-track.animate {
+  animation: banner-scroll-ltr var(--banner-duration, 30s) linear infinite;
+}
 
 /* מכבד העדפת הפחתת תנועה */
 @media (prefers-reduced-motion: reduce) {
@@ -290,6 +292,7 @@ body.dark .bg-gray-200 {
   .promo-cta   { font-size: 13px; padding: 6px 10px; }
   .promo-close { left: 8px; font-size: 16px; }
 }
+
 
 /*כפתור השאר פניה עליון   */
 /* From Uiverse.io by SelfMadeSystem */ 
