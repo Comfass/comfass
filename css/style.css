@@ -61,7 +61,7 @@ h1, h2, h3 {
 .ticker-content {
   white-space: nowrap;
   display: inline-block;
-  animation: scrollLTR 35s linear infinite;
+  animation: scrollLTR 60s linear infinite;
 }
 
 @keyframes scrollLTR {
