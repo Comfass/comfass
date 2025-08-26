@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // מרחק מחזור: חצי מהרוחב (בגלל הכפילות)
     var distancePx = track.scrollWidth / 2;
     // מהירות "קריאה" נוחה (פיקסלים לשנייה) – כוון לפי טעם
-    var PX_PER_SEC = 30;
+    var PX_PER_SEC = 90;
 
     var durationSec = distancePx / PX_PER_SEC;
     // מזריקים משך דינמי ל-CSS var
