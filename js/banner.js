@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // מהירות "קריאה" נוחה (פיקסלים לשנייה) – כוון לפי טעם
     var PX_PER_SEC = 30;
 
-    var durationSec = distancePx / PX_PER_SEC;
+    var durationSec = 30;
     // מזריקים משך דינמי ל-CSS var
     track.style.setProperty('--banner-duration', durationSec.toFixed(2) + 's');
   }
