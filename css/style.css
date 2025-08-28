@@ -434,4 +434,95 @@ html, body { margin: 0; padding: 0; }
 }
 
 
+/* ===== Features Section (scoped) ===== */
+.features {
+  direction: rtl;
+  padding: clamp(24px, 4vw, 56px) 0;
+  background: var(--features-bg, transparent);
+}
+
+.features__wrap {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: clamp(12px, 3vw, 24px);
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 640px) {
+  .features__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 960px) {
+  .features__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.feature-card {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--card-bg, #fff);
+  color: var(--card-fg, #111);
+  border: 1px solid var(--card-border, rgba(0,0,0,0.08));
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  border-color: var(--card-border-hover, rgba(0,0,0,0.14));
+}
+
+.feature-card__icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--icon-bg, #f4f6ff);
+  color: var(--icon-fg, #4b6bff);
+}
+
+.feature-card__title {
+  margin: 0;
+  font-size: clamp(16px, 1.7vw, 18px);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.feature-card__text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted-fg, #444);
+}
+
+/* Optional: dark-mode adapt if האתר שלך תומך ב־data-theme="dark" */
+:root[data-theme="dark"] {
+  --features-bg: transparent;
+  --card-bg: #111318;
+  --card-fg: #eaeefb;
+  --card-border: rgba(255,255,255,0.08);
+  --card-border-hover: rgba(255,255,255,0.18);
+  --icon-bg: #1a1f2e;
+  --icon-fg: #8aa3ff;
+  --muted-fg: #c5cbe3;
+}
+
+/* אם יש לך שפת עיצוב ניאון/מותג, אפשר לכוונן פה צבעים למיתוג */
+:root {
+  /* דוגמא: כחול-טורקיז עדין */
+  --icon-bg: #eef4ff;
+  --icon-fg: #4763ff;
+}
+
+
 
