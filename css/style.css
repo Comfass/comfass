@@ -443,7 +443,7 @@ html, body { margin: 0; padding: 0; }
 /* ===== Carousel buttons – mobile visibility & contrast ===== */
 .carousel-btn{
   z-index: 999;                          /* תמיד מעל התמונות/הכיתוב */
-  background: rgba(255,255,255,.78);     /* לבן שקוף אבל נראה */
+  background: rgba(255,255,255,.20);     /* לבן שקוף אבל נראה */
   color: #111;
   border: 1px solid rgba(0,0,0,.10);     /* קונטור דק לשיפור ניגודיות */
   backdrop-filter: blur(2px);
@@ -453,7 +453,7 @@ html, body { margin: 0; padding: 0; }
 /* במובייל – טיפה פחות שקוף כדי שתמיד יראו */
 @media (max-width: 640px){
   .carousel-btn{
-    background: rgba(255,255,255,.84);
+    background: rgba(255,255,255,.20);
   }
 }
 
@@ -464,14 +464,14 @@ body.dark .carousel-btn{
   border-color: rgba(255,255,255,.18);
 }
 body.dark .carousel-btn:hover{
-  background: rgba(15,23,42,.65);
+  background: rgba(15,23,42,.25);
   color: #06b6d4;
 }
 
 /* מובייל + מצב כהה – עוד קצת אטימות */
 @media (max-width: 640px){
   body.dark .carousel-btn{
-    background: rgba(15,23,42,.70);
+    background: rgba(15,23,42,.20);
   }
 }
 
