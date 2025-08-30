@@ -437,7 +437,7 @@ html, body { margin: 0; padding: 0; }
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 40;                /* מעל התמונה (z-10), הכיתוב (z-20) והנקודות (z-30) */
+  z-index: -40;                /* מעל התמונה (z-10), הכיתוב (z-20) והנקודות (z-30) */
   display: flex; align-items:center; justify-content:center;
 
   width: 56px; height: 56px;  /* tap target נגיש */
@@ -471,37 +471,8 @@ html, body { margin: 0; padding: 0; }
 
 /* מסכים גדולים – טיפה יותר גדולים ומרווח צדדי גדול יותר */
 @media (min-width: 1024px){
-  .carousel-btn{ width: 64px; height: 64px; }
+  .carousel-btn{ width: 40px; height: 40px; }
   .carousel-btn svg{ width: 32px; height: 32px; }
   .carousel-btn--prev{ left: 16px; }
   .carousel-btn--next{ right: 16px; }
 }
-/* מבטיחים שהקרוסלה יוצרת סטאק נפרד ושאפשר לעלות מעל הכל */
-.carousel{
-  position: relative;
-  isolation: isolate; /* מסדר z-index בעקביות במובייל */
-}
-
-/* החצים – נראות ודפדוף תקינים בכל מצב */
-.carousel-btn{
-  z-index: 1000;                /* גבוה מכל שאר האלמנטים בקרוסלה */
-  opacity: 1 !important;        /* לא לתת לכלל אחר להוריד שקיפות */
-  visibility: visible !important;
-  pointer-events: auto;
-}
-
-.carousel-btn svg{
-  display: block; /* מונע כיווץ/ירושה מוזרה במובייל */
-}
-
-/* התאמות מובייל קטנות – מרווחי צד ושכבת רקע קריאה יותר */
-@media (max-width: 640px){
-  .carousel-btn{
-    width: 56px;
-    height: 56px;
-    background: rgba(255,255,255,.92);
-  }
-  .carousel-btn--prev{ left: 8px; }
-  .carousel-btn--next{ right: 8px; }
-}
-
