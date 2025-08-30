@@ -442,8 +442,8 @@ html, body { margin: 0; padding: 0; }
 /* ===== Carousel arrows – size bump & tap target ===== */
 .carousel-btn{
   /* גודל הכפתור (מינימום מומלץ ל־mobile הוא 44px) */
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
 
   /* רקע לבן שקוף – נראה על תמונות בהירות וכהות */
   background: rgba(255,255,255,.58);
@@ -457,8 +457,8 @@ html, body { margin: 0; padding: 0; }
 
 /* הגדלת האייקון עצמו */
 .carousel-btn svg{
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   fill: currentColor;
   opacity: .92;
 }
