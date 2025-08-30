@@ -457,8 +457,8 @@ html, body { margin: 0; padding: 0; }
 
 /* הגדלת האייקון עצמו */
 .carousel-btn svg{
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   fill: currentColor;
   opacity: .92;
 }
@@ -485,6 +485,6 @@ html, body { margin: 0; padding: 0; }
 
 /* במסכים גדולים – עוד קצת */
 @media (min-width: 1024px){
-  .carousel-btn{ width: 40px; height: 40px; }
+  .carousel-btn{ width: 64px; height: 64px; }
   .carousel-btn svg{ width: 32px; height: 32px; }
 }
