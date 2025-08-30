@@ -536,6 +536,72 @@ html, body { margin: 0; padding: 0; }
   --icon-bg: #eef4ff;
   --icon-fg: #4763ff;
 }
+/* ===== Carousel (בלי Tailwind) ===== */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 768px;          /* תוכל לשנות לפי הצורך */
+  margin: 3rem auto 0;       /* מרכז את הקרוסלה */
+  overflow: hidden;
+  border-radius: 12px;        /* אופציונלי: פינות מעוגלות */
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12); /* אופציונלי */
+}
+
+/* כפתורי הניווט */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);             /* מרכז אנכי קבוע */
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.88);
+  color: #333;
+  cursor: pointer;
+  z-index: 30;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease, color .2s ease;
+  -webkit-tap-highlight-color: transparent; /* iOS נעים יותר */
+  touch-action: manipulation;
+}
+
+.carousel-btn:hover {
+  transform: translateY(-50%) scale(1.2);   /* גדל אבל לא “נופל” */
+  background: #fff;
+  color: #06b6d4;                           /* צבע החץ בהובר */
+  box-shadow: 0 4px 14px rgba(0,0,0,.2);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.95);  /* תחושת לחיצה */
+}
+
+.carousel-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor; /* החץ מקבל את הצבע מה- color של הכפתור */
+}
+
+/* מיקום ימינה/שמאלה */
+.carousel-btn--prev { left: 12px; }
+.carousel-btn--next { right: 12px; }
+
+/* התאמות מובייל קטנות */
+@media (max-width: 480px) {
+  .carousel-btn { width: 40px; height: 40px; }
+  .carousel-btn svg { width: 22px; height: 22px; }
+  .carousel-btn--prev { left: 8px; }
+  .carousel-btn--next { right: 8px; }
+}
+
+/* מכבד העדפת הפחתת אנימציה */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-btn, .carousel-btn svg { transition: none; }
+}
 
 
 
