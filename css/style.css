@@ -481,49 +481,5 @@ html, body { margin: 0; padding: 0; }
 
 /* במכשירי מגע אין hover – מחזקים קצת את הרקע שיהיה קריא */
 @media (hover:none) and (pointer:coarse) {
-  .carousel-btn { background: rgba(255,255,255,.78); }
+  .carousel-btn { background: rgba(255,255,255,.28); }
 }
-
-/* ==== Hover לקישורים (ליד הצ'קבוקס ובפוטר) ==== */
-/* הכפתורים שבתוך ה-label של תנאי שימוש/פרטיות */
-.checkbox-wrapper .terms-label button {
-  appearance: none;
-  background: transparent;
-  border: 0;
-  padding: 0 2px;
-  margin: 0 2px;
-  color: #0ea5e9;              /* טורקיז-כחול נעים */
-  text-decoration: underline;
-  font: inherit;
-  cursor: pointer;
-  transition: color .15s ease, opacity .15s ease, text-decoration-color .15s ease;
-}
-.checkbox-wrapper .terms-label button:hover {
-  color: #0284c7;
-  opacity: .9;
-}
-.checkbox-wrapper .terms-label button:focus-visible {
-  outline: 2px dashed #0ea5e9;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-.checkbox-wrapper .terms-label button:active {
-  opacity: .75;
-}
-
-/* לינקים בפוטר */
-footer a {
-  color: #0ea5e9;
-  text-decoration: underline;
-  transition: color .15s ease, opacity .15s ease, text-decoration-color .15s ease;
-}
-footer a:hover {
-  color: #0284c7;
-  opacity: .9;
-}
-footer a:focus-visible {
-  outline: 2px dashed #0ea5e9;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-footer a:active { opacity: .75; }
