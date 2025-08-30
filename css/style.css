@@ -429,62 +429,50 @@ html, body { margin: 0; padding: 0; }
 }
 :root { /* צבעי מותג לדוגמה */ --icon-bg: #eef4ff; --icon-fg: #4763ff; }
 
-/* ===== Carousel (Vanilla CSS) ===== */
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 768px;          /* שנה לפי הצורך */
-  margin: 3rem auto 0;       /* מרכז את הקרוסלה */
-  overflow: hidden;
-  border-radius: 12px;        /* אופציונלי */
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12); /* אופציונלי */
-}
-/* ===== Carousel arrows – size bump & tap target ===== */
+/* קרוסלה חייבת להיות יחסית כדי שמיקום מוחלט יעבוד */
+.carousel{ position: relative; }
+
+/* חצים – נראות במובייל וקבוע מעל התמונות */
 .carousel-btn{
-  /* גודל הכפתור (מינימום מומלץ ל־mobile הוא 44px) */
-  width: 56px;
-  height: 56px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;                /* מעל התמונה (z-10), הכיתוב (z-20) והנקודות (z-30) */
+  display: flex; align-items:center; justify-content:center;
 
-  /* רקע לבן שקוף – נראה על תמונות בהירות וכהות */
-  background: rgba(255,255,255,.58);
+  width: 56px; height: 56px;  /* tap target נגיש */
+  border: 0; border-radius: 999px;
+
+  background: rgba(255,255,255,.85); /* במובייל – יותר אטום כדי שיראו תמיד */
   backdrop-filter: blur(2px);
-
-  /* אסתטיקה ונגישות */
-  border-radius: 999px;
+  color: #111;                /* צבע האיקון (fill: currentColor ב-SVG) */
   box-shadow: 0 8px 24px rgba(0,0,0,.18);
   transition: transform .15s ease, background-color .15s ease, opacity .15s ease;
 }
 
-/* הגדלת האייקון עצמו */
-.carousel-btn svg{
-  width: 28px;
-  height: 28px;
-  fill: currentColor;
-  opacity: .92;
+.carousel-btn svg{ width: 28px; height: 28px; opacity: .92; }
+
+/* מיקום שמאל/ימין */
+.carousel-btn--prev{ left: 10px; }
+.carousel-btn--next{ right: 10px; }
+
+/* Hover/Focus בדסקטופ */
+@media (hover:hover){
+  .carousel-btn:hover,
+  .carousel-btn:focus-visible{
+    background: rgba(255,255,255,.95);
+    transform: translateY(-50%) scale(1.04);
+    outline: none;
+  }
 }
 
-/* Hover/Focus – קצת הדגשה */
-.carousel-btn:hover,
-.carousel-btn:focus-visible{
-  background: rgba(255,255,255,.72);
-  transform: scale(1.04);
-  outline: none;
-}
+/* active */
+.carousel-btn:active{ transform: translateY(-50%) scale(.98); }
 
-/* מצב לחיצה */
-.carousel-btn:active{
-  transform: scale(.98);
-}
-
-/* לשפר שטח לחיץ בלי לשנות את הויזואל – טוב למובייל */
-.carousel-btn::after{
-  content: "";
-  position: absolute;
-  inset: -8px; /* מוסיף 8px מסביב כל הכפתור כ־hit area */
-}
-
-/* במסכים גדולים – עוד קצת */
+/* מסכים גדולים – טיפה יותר גדולים ומרווח צדדי גדול יותר */
 @media (min-width: 1024px){
   .carousel-btn{ width: 64px; height: 64px; }
   .carousel-btn svg{ width: 32px; height: 32px; }
+  .carousel-btn--prev{ left: 16px; }
+  .carousel-btn--next{ right: 16px; }
 }
