@@ -56,8 +56,9 @@ h1, h2, h3 {
   transition: all 0.3s ease-in-out;
 }
 
+/* 🔧 תיקון: הובר גלובלי רק לכפתורים עם המחלקה transition-bounce */
 .transition-bounce:hover,
-button:hover {
+button.transition-bounce:hover {
   transform: scale(1.15);
 }
 
@@ -110,7 +111,6 @@ body.dark .bg-gray-200 {
 .animate-fade-in {
   animation: fade-in 1s ease-out forwards;
 }
-
 
 .star.selected {
   color: #facc15;
@@ -247,7 +247,6 @@ html, body { margin: 0; padding: 0; }
 }
 .promo-cta:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.35); }
 
-/* Close (שמאל ב-RTL) */
 /* כפתור X של הבאנר */
 .promo-close {
   position: absolute;
@@ -263,14 +262,10 @@ html, body { margin: 0; padding: 0; }
   padding: 2px;
   transition: color .2s ease, transform .2s ease;
 }
-
-/* בהובר – נשאר ממורכז וגדל */
 .promo-close:hover {
   transform: translateY(-50%) scale(1.15); /* מרכז + סקייל */
   color: #fff;
 }
-
-/* בלחיצה – נשאר ממורכז ומקבל תחושת לחיצה */
 .promo-close:active {
   transform: translateY(-50%) scale(0.95);
 }
@@ -281,7 +276,6 @@ html, body { margin: 0; padding: 0; }
   .promo-cta   { font-size: 13px; padding: 6px 10px; }
   .promo-close { left: 8px; font-size: 16px; }
 }
-
 
 /*כפתור השאר פניה עליון   */
 /* From Uiverse.io by SelfMadeSystem */ 
@@ -296,15 +290,12 @@ html, body { margin: 0; padding: 0; }
   box-shadow: 0px 4px 6px 0px #0008;
   transition: 0.3s all;
 }
-
 .frutiger-button:hover {
   box-shadow: 0px 6px 12px 0px #0009;
 }
-
 .frutiger-button:active {
   box-shadow: 0px 0px 0px 0px #0000;
 }
-
 .inner {
   position: relative;
   inset: 0px;
@@ -315,7 +306,6 @@ html, body { margin: 0; padding: 0; }
   overflow: hidden;
   transition: inherit;
 }
-
 .inner::before {
   content: "";
   position: absolute;
@@ -325,32 +315,17 @@ html, body { margin: 0; padding: 0; }
   background-repeat: no-repeat;
   animation: thing 3s ease infinite;
 }
-
 @keyframes thing {
-  0% {
-    background-position: 130%;
-    opacity: 1;
-  }
-
-  to {
-    background-position: -166%;
-    opacity: 0;
-  }
+  0% { background-position: 130%; opacity: 1; }
+  to  { background-position: -166%; opacity: 0; }
 }
-
 .top-white {
   position: absolute;
   border-radius: inherit;
   inset: 0 -8em;
-  background: radial-gradient(
-    circle at 50% -270%,
-    #fff 45%,
-    #fff6 60%,
-    #fff0 60%
-  );
+  background: radial-gradient(circle at 50% -270%, #fff 45%, #fff6 60%, #fff0 60%);
   transition: inherit;
 }
-
 .inner::after {
   content: "";
   position: absolute;
@@ -359,11 +334,9 @@ html, body { margin: 0; padding: 0; }
   transition: inherit;
   box-shadow: inset 0px 2px 8px -2px #0000;
 }
-
 .frutiger-button:active .inner::after {
   box-shadow: inset 0px 2px 8px -2px #000a;
 }
-
 .text {
   position: relative;
   z-index: 1;
@@ -373,46 +346,25 @@ html, body { margin: 0; padding: 0; }
 }
 
 /* הופעת הכפתור חלקה */
-.cta-enter {
-  opacity: 0;
-  transform: translateY(0px);
-}
+.cta-enter { opacity: 0; transform: translateY(0px); }
 .cta-enter.cta-enter-active {
   opacity: 1;
   transform: translateY(0);
   transition: opacity .5s ease, transform .5s ease;
 }
 
-/* (אופציונלי) מהבהב של הקורסור, אם אין לך כבר */
-.blinker {
-  animation: blink 1s steps(1,end) infinite;
-}
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
+/* (אופציונלי) מהבהב של הקורסור */
+.blinker { animation: blink 1s steps(1,end) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
 
 /* צ'אק בוקס */
 /* From Uiverse.io by PriyanshuGupta28 */ 
-.checkbox-wrapper input[type="checkbox"] {
-  display: none;
-}
-
+.checkbox-wrapper input[type="checkbox"] { display: none; }
 .checkbox-wrapper .terms-label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+  cursor: pointer; display: flex; align-items: center;
 }
-
-.checkbox-wrapper .terms-label .label-text {
-  margin-left: 10px;
-}
-
-.checkbox-wrapper .checkbox-svg {
-  width: 30px;
-  height: 30px;
-}
-
+.checkbox-wrapper .terms-label .label-text { margin-left: 10px; }
+.checkbox-wrapper .checkbox-svg { width: 30px; height: 30px; }
 .checkbox-wrapper .checkbox-box {
   fill: rgba(207, 205, 205, 0.425);
   stroke: #8c00ff;
@@ -420,105 +372,51 @@ html, body { margin: 0; padding: 0; }
   stroke-dashoffset: 800;
   transition: stroke-dashoffset 0.6s ease-in;
 }
-
 .checkbox-wrapper .checkbox-tick {
   stroke: #8c00ff;
   stroke-dasharray: 172;
   stroke-dashoffset: 172;
   transition: stroke-dashoffset 0.6s ease-in;
 }
-
 .checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-box,
-  .checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-tick {
+.checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-tick {
   stroke-dashoffset: 0;
 }
-
-/* RTL-friendly spacing: margin-inline-start במקום margin-left */
+/* RTL-friendly spacing */
 .checkbox-wrapper .terms-label .label-text {
-  margin-left: 0;              /* נטרול ההגדרה המקורית אם קיימת */
-  margin-inline-start: 10px;   /* רווח אחרי האייקון לפי כיוון הכתיבה */
+  margin-left: 0;
+  margin-inline-start: 10px;
 }
-
-/* קו מתאר לפוקוס (נגישות) כשממקד/ים עם מקלדת על כל ה-label */
 .checkbox-wrapper .terms-label:focus-within {
   outline: 2px solid #8c00ff;
   outline-offset: 4px;
   border-radius: 6px;
 }
 
-
 /* ===== Features Section (scoped) ===== */
-.features {
-  direction: rtl;
-  padding: clamp(24px, 4vw, 56px) 0;
-  background: var(--features-bg, transparent);
-}
-
-.features__wrap {
-  max-width: 1100px;
-  margin-inline: auto;
-  padding-inline: clamp(12px, 3vw, 24px);
-}
-
-.features__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-
-@media (min-width: 640px) {
-  .features__grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 960px) {
-  .features__grid { grid-template-columns: repeat(3, 1fr); }
-}
+.features { direction: rtl; padding: clamp(24px, 4vw, 56px) 0; background: var(--features-bg, transparent); }
+.features__wrap { max-width: 1100px; margin-inline: auto; padding-inline: clamp(12px, 3vw, 24px); }
+.features__grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 640px) { .features__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .features__grid { grid-template-columns: repeat(3, 1fr); } }
 
 .feature-card {
-  display: grid;
-  grid-template-rows: auto auto 1fr;
-  gap: 8px;
-  padding: 16px;
-  border-radius: 16px;
-  background: var(--card-bg, #fff);
-  color: var(--card-fg, #111);
+  display: grid; grid-template-rows: auto auto 1fr; gap: 8px; padding: 16px;
+  border-radius: 16px; background: var(--card-bg, #fff); color: var(--card-fg, #111);
   border: 1px solid var(--card-border, rgba(0,0,0,0.08));
   box-shadow: 0 4px 14px rgba(0,0,0,0.06);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
-
 .feature-card:hover {
   transform: translateY(0px);
   box-shadow: 0 10px 24px rgba(0,0,0,0.12);
   border-color: var(--card-border-hover, rgba(0,0,0,0.14));
 }
+.feature-card__icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: var(--icon-bg, #f4f6ff); color: var(--icon-fg, #4b6bff); }
+.feature-card__title { margin: 0; font-size: clamp(16px, 1.7vw, 18px); line-height: 1.25; font-weight: 700; letter-spacing: -0.2px; }
+.feature-card__text  { margin: 0; font-size: 15px; line-height: 1.55; color: var(--muted-fg, #444); }
 
-.feature-card__icon {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: var(--icon-bg, #f4f6ff);
-  color: var(--icon-fg, #4b6bff);
-}
-
-.feature-card__title {
-  margin: 0;
-  font-size: clamp(16px, 1.7vw, 18px);
-  line-height: 1.25;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-}
-
-.feature-card__text {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--muted-fg, #444);
-}
-
-/* Optional: dark-mode adapt if האתר שלך תומך ב־data-theme="dark" */
+/* Optional: dark-mode adapt */
 :root[data-theme="dark"] {
   --features-bg: transparent;
   --card-bg: #111318;
@@ -529,25 +427,20 @@ html, body { margin: 0; padding: 0; }
   --icon-fg: #8aa3ff;
   --muted-fg: #c5cbe3;
 }
+:root { /* צבעי מותג לדוגמה */ --icon-bg: #eef4ff; --icon-fg: #4763ff; }
 
-/* אם יש לך שפת עיצוב ניאון/מותג, אפשר לכוונן פה צבעים למיתוג */
-:root {
-  /* דוגמא: כחול-טורקיז עדין */
-  --icon-bg: #eef4ff;
-  --icon-fg: #4763ff;
-}
-/* ===== Carousel (בלי Tailwind) ===== */
+/* ===== Carousel (Vanilla CSS) ===== */
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 768px;          /* תוכל לשנות לפי הצורך */
+  max-width: 768px;          /* שנה לפי הצורך */
   margin: 3rem auto 0;       /* מרכז את הקרוסלה */
   overflow: hidden;
-  border-radius: 12px;        /* אופציונלי: פינות מעוגלות */
+  border-radius: 12px;        /* אופציונלי */
   box-shadow: 0 10px 24px rgba(0,0,0,0.12); /* אופציונלי */
 }
 
-/* כפתורי הניווט */
+/* כפתורי הניווט של הקרוסלה */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -568,18 +461,15 @@ html, body { margin: 0; padding: 0; }
   -webkit-tap-highlight-color: transparent; /* iOS נעים יותר */
   touch-action: manipulation;
 }
-
 .carousel-btn:hover {
   transform: translateY(-50%) scale(1.2);   /* גדל אבל לא “נופל” */
   background: #fff;
   color: #06b6d4;                           /* צבע החץ בהובר */
   box-shadow: 0 4px 14px rgba(0,0,0,.2);
 }
-
 .carousel-btn:active {
   transform: translateY(-50%) scale(0.95);  /* תחושת לחיצה */
 }
-
 .carousel-btn svg {
   width: 24px;
   height: 24px;
@@ -589,6 +479,17 @@ html, body { margin: 0; padding: 0; }
 /* מיקום ימינה/שמאלה */
 .carousel-btn--prev { left: 12px; }
 .carousel-btn--next { right: 12px; }
+
+/* Dark mode לחיצים */
+body.dark .carousel-btn {
+  background: rgba(255,255,255,0.12);
+  color: #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.4);
+}
+body.dark .carousel-btn:hover {
+  background: rgba(255,255,255,0.2);
+  color: #06b6d4;
+}
 
 /* התאמות מובייל קטנות */
 @media (max-width: 480px) {
@@ -602,6 +503,3 @@ html, body { margin: 0; padding: 0; }
 @media (prefers-reduced-motion: reduce) {
   .carousel-btn, .carousel-btn svg { transition: none; }
 }
-
-
-
