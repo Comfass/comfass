@@ -439,48 +439,52 @@ html, body { margin: 0; padding: 0; }
   border-radius: 12px;        /* אופציונלי */
   box-shadow: 0 10px 24px rgba(0,0,0,0.12); /* אופציונלי */
 }
-/* ==== Carousel arrows – softer bg + visible on photos ==== */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 999px;
-  background: rgba(255,255,255,.58);      /* היה 0.88 */
-  color: #111827;                         /* חץ כהה */
-  cursor: pointer;
-  z-index: 30;
-  box-shadow: 0 2px 8px rgba(0,0,0,.15);
-  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease, color .2s ease;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-}
-.carousel-btn:hover {
-  transform: translateY(-50%) scale(1.18);
-  background: rgba(255,255,255,.15);
-  color: #06b6d4;
-  box-shadow: 0 4px 14px rgba(0,0,0,.50);
-}
-.carousel-btn:active {
-  transform: translateY(-50%) scale(.95);
-}
-.carousel-btn svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-  /* נותן קונטרסט לחץ גם כשאין כמעט רקע */
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,.20));
-}
-.carousel-btn--prev { left: 12px; }
-.carousel-btn--next { right: 12px; }
+/* ===== Carousel arrows – size bump & tap target ===== */
+.carousel-btn{
+  /* גודל הכפתור (מינימום מומלץ ל־mobile הוא 44px) */
+  width: 56px;
+  height: 56px;
 
-/* במכשירי מגע אין hover – מחזקים קצת את הרקע שיהיה קריא */
-@media (hover:none) and (pointer:coarse) {
-  .carousel-btn { background: rgba(255,255,255,.28); }
-  
+  /* רקע לבן שקוף – נראה על תמונות בהירות וכהות */
+  background: rgba(255,255,255,.58);
+  backdrop-filter: blur(2px);
+
+  /* אסתטיקה ונגישות */
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  transition: transform .15s ease, background-color .15s ease, opacity .15s ease;
+}
+
+/* הגדלת האייקון עצמו */
+.carousel-btn svg{
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+  opacity: .92;
+}
+
+/* Hover/Focus – קצת הדגשה */
+.carousel-btn:hover,
+.carousel-btn:focus-visible{
+  background: rgba(255,255,255,.72);
+  transform: scale(1.04);
+  outline: none;
+}
+
+/* מצב לחיצה */
+.carousel-btn:active{
+  transform: scale(.98);
+}
+
+/* לשפר שטח לחיץ בלי לשנות את הויזואל – טוב למובייל */
+.carousel-btn::after{
+  content: "";
+  position: absolute;
+  inset: -8px; /* מוסיף 8px מסביב כל הכפתור כ־hit area */
+}
+
+/* במסכים גדולים – עוד קצת */
+@media (min-width: 1024px){
+  .carousel-btn{ width: 64px; height: 64px; }
+  .carousel-btn svg{ width: 32px; height: 32px; }
 }
