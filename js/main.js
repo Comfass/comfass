@@ -12,13 +12,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // טפסים
   initReviewForm();
 
-  // ✅ ולידציה: צור קשר (טלפון + אימייל + מוסד/חברה)
-  attachValidationListeners('#contact-form [name="phone"]',
-                            '#contact-form [name="email"]',
-                            '#contact-form [name="company"]');
+ // צור קשר: טלפון + אימייל + מוסד/חברה + שליטה על ה-submit
+attachValidationListeners(
+  '#contact-form [name="phone"]',
+  '#contact-form [name="email"]',
+  '#contact-form [name="company"]',
+  '#contact-form'
+);
 
-  // ✅ ולידציה: חוות דעת (רק אימייל)
-  attachValidationListeners('#review-form [name="email"]');
+// חוות דעת: רק אימייל (אם אין טלפון/מוסד בטופס הזה)
+attachValidationListeners(
+  null,
+  '#review-form [name="email"]',
+  null,
+  '#review-form'
+);
 
   initThemeUIOnce();
 });
