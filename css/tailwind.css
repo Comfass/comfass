@@ -11,6 +11,13 @@
 /* טוען את Tailwind */
 @import "tailwindcss";
 
+/* גורם ל-variant של dark: לעבוד דרך class .dark על <html> (או מעלה בעץ) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* אופציונלי: מעבר חלק צבע/רקע לכל מקום */
+@layer base {
+  html, body { transition: background-color .3s ease, color .3s ease; }
+}
 /* ================================
    CSS הישן שלך (שולב כ־components)
 =================================== */
@@ -225,5 +232,6 @@ html {
 }
 
 }
+
 
 
