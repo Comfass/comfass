@@ -217,25 +217,22 @@
 
 <!-- חיצים -->
 <!-- חץ שמאלה -->
-<button 
-  @click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1" 
-  class="absolute left-3 top-1/2 transform -translate-y-1/2 
-         w-10 h-10 flex items-center justify-center 
-         bg-transparent text-gray-800 text-lg font-bold 
-         rounded-full shadow-md z-30 transition-colors"
->
-  ◀
+<!-- חץ שמאלה -->
+<button
+  @click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1"
+  class="carousel-btn absolute left-3 top-1/2 z-30 w-10 h-10 flex items-center justify-center
+         bg-transparent text-gray-800 text-lg font-bold rounded-full shadow-md transition-colors"
+  aria-label="תמונה קודמת">
+  <span aria-hidden="true">◀</span>
 </button>
 
 <!-- חץ ימינה -->
-<button 
-  @click="activeSlide = (activeSlide + 1) % slides.length" 
-  class="absolute right-3 top-1/2 transform -translate-y-1/2 
-         w-10 h-10 flex items-center justify-center 
-         bg-transparent text-gray-800 text-lg font-bold 
-         rounded-full shadow-md z-30 transition-colors"
->
-  ▶
+<button
+  @click="activeSlide = (activeSlide + 1) % slides.length"
+  class="carousel-btn absolute right-3 top-1/2 z-30 w-10 h-10 flex items-center justify-center
+         bg-transparent text-gray-800 text-lg font-bold rounded-full shadow-md transition-colors"
+  aria-label="תמונה הבאה">
+  <span aria-hidden="true">▶</span>
 </button>
 
 <!-- נקודות -->
