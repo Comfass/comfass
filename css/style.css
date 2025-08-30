@@ -459,7 +459,7 @@ html, body { margin: 0; padding: 0; }
 
 /* מצב כהה – רקע כהה שקוף, אייקון בהיר */
 body.dark .carousel-btn{
-  background: rgba(15,23,42,.55);        /* כחול-כהה שקוף */
+  background: rgba(15,23,42,.20);        /* כחול-כהה שקוף */
   color: #e5e7eb;
   border-color: rgba(255,255,255,.18);
 }
