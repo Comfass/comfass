@@ -1,6 +1,6 @@
 /* ================================
-   Tailwind v4 — Sources (IMPORTANT)
-   יחסיים למיקום הקובץ: css/tailwind.css
+   Tailwind v4 — Sources
+   יחסיים למיקום הקובץ (css/tailwind.css)
 =================================== */
 @source "../index.html";
 @source "../*.html";
@@ -8,98 +8,206 @@
 @source "../models/**/*.html";
 @source "../js/**/*.js";
 
-/* טוען את Tailwind v4 */
+/* טוען את Tailwind */
 @import "tailwindcss";
 
 /* ================================
-   COMPONENTS — העיצובים שלך
+   CSS הישן שלך (שולב כ־components)
 =================================== */
 @layer components {
-  /* ---------- Announcement Banner ---------- */
-  .promo-banner { @apply fixed top-0 inset-x-0 z-50 hidden; }
-  .promo-inner  { @apply mx-auto max-w-7xl flex items-center gap-3 px-4 py-2 
-                         bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-lg; }
-  .promo-track-wrapper { @apply overflow-hidden flex-1; }
-  .promo-track  { @apply inline-flex items-center gap-3 whitespace-nowrap; }
-  .promo-msg    { @apply text-sm md:text-base; }
-  .promo-sep    { @apply opacity-60; }
-  .promo-cta    { @apply bg-white/15 hover:bg-white/25 rounded-full px-4 py-1 text-sm transition; }
-  .promo-close  { @apply text-white/80 hover:text-white text-base leading-none; }
 
-  /* ---------- Carousel ---------- */
-  .carousel        { @apply relative w-full rounded-lg overflow-hidden shadow bg-white; }
-  .carousel-image  { @apply w-full h-full object-contain bg-white select-none pointer-events-none; }
-  .carousel-btn    { @apply absolute top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white 
-                             rounded-full p-2 shadow transition; }
-  .carousel-btn--prev { @apply right-2; }
-  .carousel-btn--next { @apply left-2; }
-
-  /* ---------- Floating Buttons ---------- */
-  .floating-buttons a,
-  .floating-buttons button { @apply hover:scale-105 transition-transform; }
-
-  /* ---------- Theme Transition (light/dark) ---------- */
-  .transition-theme { @apply transition-colors duration-300; }
-
-  /* ---------- Star Rating (popup) ---------- */
-  .star-rating { @apply flex flex-row-reverse justify-center gap-1 text-2xl cursor-pointer select-none; }
-  .star-rating .star { @apply text-gray-300 transition; }
-  .star-rating .star:hover,
-  .star-rating .star:hover ~ .star { @apply text-yellow-400; }
-
-  /* ---------- Terms / Privacy — Fancy Checkbox ---------- */
-  .checkbox-wrapper { @apply relative gap-3; }
-  /* מסתיר את הצ’קבוקס המקורי (נגישות נשמרת) */
-  .checkbox-wrapper > input[type="checkbox"] {
-    position: absolute; opacity: 0; inset: 0; width: 1px; height: 1px;
+  body {
+    font-family: 'Varela Round', sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    padding-top: 2.5rem;
   }
 
-  .terms-label { @apply inline-flex items-center gap-2 select-none cursor-pointer; }
+  h1, h2, h3 { font-family: 'Comfortaa', sans-serif; }
 
-  .checkbox-svg { @apply w-5 h-5; }
-  .checkbox-box {
-    stroke: currentColor; color: rgb(148 163 184); /* slate-400 */
-    fill: transparent; transition: all .2s ease;
-  }
-  .checkbox-tick {
-    stroke: white; fill: none; stroke-linecap: round; stroke-linejoin: round;
-    stroke-dasharray: 220; stroke-dashoffset: 220; transition: stroke-dashoffset .25s ease;
-  }
-
-  /* מצב Checked – צביעה ואנימציה */
-  .checkbox-wrapper > input:checked + .terms-label .checkbox-box {
-    color: rgb(37 99 235); /* blue-600 */ fill: rgb(37 99 235);
-  }
-  .checkbox-wrapper > input:checked + .terms-label .checkbox-tick {
-    stroke-dashoffset: 0;
-  }
-
-  /* מצב Focus (מקלדת) על האלמנט כולו */
-  .checkbox-wrapper > input:focus-visible + .terms-label .checkbox-box {
-    outline: 2px solid rgba(59,130,246,.8); /* ring-blue-500 */
-    outline-offset: 2px;
-  }
-
-  /* ---------- Disabled Submit (fallback classes שה-JS מוסיף/מסיר) ---------- */
-  .btn-disabled  { @apply bg-orange-500 cursor-not-allowed; }
-  .btn-primary   { @apply bg-blue-600 text-white hover:bg-blue-700; }
-
-  /* ---------- Cards / Boxes used in “יתרונות” ---------- */
-  .feature-card { @apply flex flex-col items-center p-6 rounded-2xl bg-white dark:bg-gray-900 
-                           border border-gray-200 dark:border-gray-700 shadow-sm 
-                           hover:shadow-md hover:-translate-y-0.5 transition; }
-  .feature-icon { @apply grid place-items-center w-12 h-12 mb-3 rounded-xl; }
-}
-
-/* ================================
-   UTILITIES — קטנות שימושיות
-=================================== */
-@layer utilities {
-  /* רקע חי (Hero) */
   .bg-animate {
-    background:
-      radial-gradient(1200px 600px at 80% -100px, rgba(14,165,233,.25), transparent),
-      radial-gradient(1000px 500px at 0% 0%, rgba(99,102,241,.18), transparent),
-      linear-gradient(180deg, #0ea5e9 0%, #111827 100%);
+    background: linear-gradient(270deg, #06b6d4, #3b82f6, #06b6d4);
+    background-size: 600% 600%;
+    animation: gradientShift 12s ease infinite;
   }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .bg-white,
+  .bg-gray-50,
+  .bg-gray-100,
+  .bg-gray-200,
+  .text-gray-700,
+  .text-gray-800 {
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  .transition-theme {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+  }
+
+  #theme-toggle { transition: transform 0.3s ease, background-color 0.3s ease; }
+  #theme-toggle:hover { transform: rotate(15deg) scale(1.1); }
+
+  .wave-divider { display: block; height: 80px; margin-top: -1px; }
+
+  .transition-bounce { transition: all 0.3s ease-in-out; }
+  .transition-bounce:hover,
+  button.transition-bounce:hover { transform: scale(1.15); }
+
+  body.dark { background-color: #0f172a; color: #f8fafc; }
+  body.dark .bg-gray-50,
+  body.dark .bg-gray-100,
+  body.dark .bg-white { background-color: #1e293b !important; }
+  body.dark .text-gray-800 { color: #f1f5f9 !important; }
+  body.dark .text-gray-700 { color: #e2e8f0 !important; }
+  body.dark .bg-gray-200 { background-color: #334155 !important; }
+
+  /* ⭐ דירוג */
+  .star-rating { direction: rtl; display: flex; justify-content: center; gap: 5px; }
+  .star { font-size: 1.75rem; color: #e5e7eb; cursor: pointer; transition: transform 0.2s; }
+  .star:hover { transform: scale(1.15); }
+  .star.selected { color: #facc15; }
+
+  @keyframes fade-in {
+    0% { opacity: 0; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .animate-fade-in { animation: fade-in 1s ease-out forwards; }
+
+  @keyframes fadeInSmooth {
+    from { opacity: 0; transform: translateY(0px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-delayed-1 { animation: fadeInSmooth 1s ease-out forwards; animation-delay: 0.5s; }
+  .animate-fade-in-delayed-2 { animation: fadeInSmooth 1s ease-out forwards; animation-delay: 1.6s; }
+  .animate-fade-in-delayed-3 { animation: fadeInSmooth 1s ease-out forwards; animation-delay: 2.8s; }
+
+  .floating-buttons {
+    position: fixed; bottom: 1rem; left: 1rem; z-index: 9999;
+    display: flex; flex-direction: column; gap: 0.75rem; align-items: center;
+  }
+  @media (max-width: 640px) { .floating-buttons { bottom: 5rem; } }
+
+  .carousel-image { width: 100%; height: 100%; object-fit: contain; background-color: white; }
+
+  .language-switch a { color: #ffffff !important; font-weight: 450; }
+  .language-switch a:hover { color: #ffffff !important; text-decoration: underline; }
+
+  html, body { margin: 0; padding: 0; }
+
+  /* ----- Banner ----- */
+  .promo-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+    background: linear-gradient(90deg,#111827,#1f2937,#111827); color: #fff; }
+  .promo-inner { max-width: 1200px; margin: 0 auto; padding: 10px 56px 10px 44px;
+    display: flex; align-items: center; gap: 12px; position: relative; }
+  .promo-track-wrapper { overflow: hidden; flex: 1; }
+  .promo-track { display: inline-block; white-space: nowrap; will-change: transform; direction: ltr; }
+  .promo-track.animate { animation: banner-scroll-ltr var(--banner-duration, 30s) linear infinite; }
+  .promo-msg { opacity: 0.9; }
+  .promo-sep { margin: 0 16px; opacity: 0.6; }
+  .promo-gap { display: inline-block; width: 32px; }
+
+  @keyframes banner-scroll-ltr {
+    from { transform: translateX(0); }
+    to   { transform: translateX(50%); }
+  }
+
+  .promo-cta {
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 14px; cursor: pointer;
+    transition: background-color .2s, border-color .2s;
+  }
+  .promo-cta:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.35); }
+
+  .promo-close {
+    position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: rgba(255,255,255,0.75);
+    font-size: 18px; cursor: pointer; line-height: 1; padding: 2px;
+    transition: color .2s, transform .2s;
+  }
+  .promo-close:hover { transform: translateY(-50%) scale(1.15); color: #fff; }
+  .promo-close:active { transform: translateY(-50%) scale(0.95); }
+
+  /* CTA כפתור מעוצב */
+  .frutiger-button {
+    cursor: pointer; position: relative; padding: 2px; border-radius: 6px; border: 0;
+    text-shadow: 1px 1px #000a; background: linear-gradient(#006caa, #00c3ff);
+    box-shadow: 0px 4px 6px 0px #0008; transition: 0.3s all;
+  }
+  .frutiger-button:hover { box-shadow: 0px 6px 12px 0px #0009; }
+  .frutiger-button:active { box-shadow: 0px 0px 0px 0px #0000; }
+
+  .inner { position: relative; inset: 0px; padding: 1em; border-radius: 4px;
+    background: radial-gradient(circle at 50% 100%, #30f8f8 10%, #30f8f800 55%), linear-gradient(#00526a, #009dcd);
+    overflow: hidden; transition: inherit; }
+  .inner::before { content: ""; position: absolute; inset: 0;
+    background: linear-gradient(-65deg, #0000 40%, #fff7 50%, #0000 70%);
+    background-size: 200% 100%; animation: thing 3s ease infinite; }
+  @keyframes thing {
+    0% { background-position: 130%; opacity: 1; }
+    100% { background-position: -166%; opacity: 0; }
+  }
+
+  .top-white { position: absolute; border-radius: inherit; inset: 0 -8em;
+    background: radial-gradient(circle at 50% -270%, #fff 45%, #fff6 60%, #fff0 60%); }
+
+  .inner::after { content: ""; position: absolute; inset: 0; border-radius: inherit;
+    transition: inherit; box-shadow: inset 0px 2px 8px -2px #0000; }
+  .frutiger-button:active .inner::after { box-shadow: inset 0px 2px 8px -2px #000a; }
+
+  .text { position: relative; z-index: 1; color: white; font-weight: 550; transition: inherit; }
+
+  .cta-enter { opacity: 0; transform: translateY(0px); }
+  .cta-enter.cta-enter-active { opacity: 1; transform: translateY(0); transition: opacity .5s, transform .5s; }
+
+  .blinker { animation: blink 1s steps(1,end) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* Features */
+  .features { direction: rtl; padding: clamp(24px, 4vw, 56px) 0; background: var(--features-bg, transparent); }
+  .features__wrap { max-width: 1100px; margin-inline: auto; padding-inline: clamp(12px, 3vw, 24px); }
+  .features__grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 640px) { .features__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 960px) { .features__grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .feature-card {
+    display: grid; grid-template-rows: auto auto 1fr; gap: 8px; padding: 16px;
+    border-radius: 16px; background: var(--card-bg, #fff); color: var(--card-fg, #111);
+    border: 1px solid var(--card-border, rgba(0,0,0,0.08));
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    transition: transform .18s, box-shadow .18s, border-color .18s;
+  }
+  .feature-card:hover {
+    transform: translateY(0px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    border-color: var(--card-border-hover, rgba(0,0,0,0.14));
+  }
+
+  /* Carousel */
+  .carousel { position: relative; width: 100%; max-width: 768px;
+    margin: 3rem auto 0; overflow: hidden; border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12); }
+  .carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center;
+    border: none; border-radius: 999px; background: rgba(255,255,255,.12); color: #111827;
+    cursor: pointer; z-index: 30; box-shadow: 0 2px 8px rgba(0,0,0,.12);
+    transition: transform .2s, background-color .2s, box-shadow .2s, color .2s;
+  }
+  .carousel-btn:hover { transform: translateY(-50%) scale(1.18); color: #06b6d4; box-shadow: 0 4px 14px rgba(0,0,0,.12); }
+  .carousel-btn:active { transform: translateY(-50%) scale(.95); }
+  .carousel-btn svg { width: 24px; height: 24px; fill: currentColor; filter: drop-shadow(0 1px 1px rgba(0,0,0,.12)); }
+  .carousel-btn--prev { left: 12px; }
+  .carousel-btn--next { right: 12px; }
+  @media (hover:none) and (pointer:coarse) { .carousel-btn { background: rgba(255,255,255,.12); } }
 }
