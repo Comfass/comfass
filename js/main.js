@@ -17,8 +17,10 @@ attachValidationListeners(
   '#contact-form [name="phone"]',
   '#contact-form [name="email"]',
   '#contact-form [name="company"]',
+  '#contact-form [name="name"]',  // ⬅️ חדש
   '#contact-form'
 );
+
 
 // חוות דעת: רק אימייל (אם אין טלפון/מוסד בטופס הזה)
 attachValidationListeners(
