@@ -5,7 +5,19 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Comfass, wherever you go</title>
-
+  <!-- Theme early-init: קובע .dark על <html> לפני הציור -->
+<script>
+(() => {
+  try {
+    const theme = localStorage.getItem('theme'); // 'dark' | 'light' | null (system)
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = theme === 'dark' || (!theme && prefersDark);
+    document.documentElement.classList.toggle('dark', isDark);
+    // מנקה class ישן על <body> אם נשאר בעבר
+    document.body?.classList?.remove('dark');
+  } catch (e) {}
+})();
+</script>
   <!-- CSS שנבנה ב-PostCSS/Tailwind (פעם אחת) -->
   <link href="./css/style.css?v=3" rel="stylesheet">
   <meta name="description" content="Comfass הפתרון החדשני והנוח לישיבה ממושכת" />
@@ -14,7 +26,6 @@
   <meta property="og:image" content="https://comfass.com/img/comfass-logo.jpg" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="https://comfass.com/img/comfass-logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="/css/style.css?v=2025-08-30-01">
   <script type="module" src="/js/main.js?v=2025-08-30-01"></script>
   
   <!-- פונט + AOS (פעם אחת) -->
