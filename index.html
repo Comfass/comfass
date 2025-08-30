@@ -219,7 +219,7 @@
 <!-- חץ שמאלה -->
 <button
   @click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1"
-  class="carousel-btn absolute left-3 top-1/2 z-20"
+  class="carousel-btn absolute left-3 top-1/2 z-0"
   aria-label="תמונה קודמת">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
     <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
@@ -229,7 +229,7 @@
 <!-- חץ ימינה -->
 <button
   @click="activeSlide = (activeSlide + 1) % slides.length"
-  class="carousel-btn absolute right-3 top-1/2 z-20"
+  class="carousel-btn absolute right-3 top-1/2 z-0"
   aria-label="תמונה הבאה">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
     <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
