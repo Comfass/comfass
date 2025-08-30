@@ -1,0 +1,14 @@
+/* css/tailwind.css */
+
+/* מגדיר ל-Tailwind v4 מאיפה לסרוק מחלקות */
+@source "./index.html";
+@source "./modals/**/*.html";
+@source "./models/**/*.html";
+@source "./js/**/*.js";
+
+/* מייבא את Tailwind (ב-v4 אין @tailwind base/components/utilities) */
+@import "tailwindcss";
+
+/* אם אתה משתמש ב-darkMode דרך class (כמו קודם) – ב-v4 זה כבר ברירת מחדל.
+   אם בכל זאת תרצה לאכוף: */
+@plugin "@tailwindcss/forms"; /* דוגמה לפלאגין אם תרצה בעתיד – אפשר למחוק */
