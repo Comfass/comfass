@@ -1,14 +1,105 @@
-/* css/tailwind.css */
+/* ================================
+   Tailwind v4 — Sources (IMPORTANT)
+   יחסיים למיקום הקובץ: css/tailwind.css
+=================================== */
+@source "../index.html";
+@source "../*.html";
+@source "../modals/**/*.html";
+@source "../models/**/*.html";
+@source "../js/**/*.js";
 
-/* מגדיר ל-Tailwind v4 מאיפה לסרוק מחלקות */
-@source "./index.html";
-@source "./modals/**/*.html";
-@source "./models/**/*.html";
-@source "./js/**/*.js";
-
-/* מייבא את Tailwind (ב-v4 אין @tailwind base/components/utilities) */
+/* טוען את Tailwind v4 */
 @import "tailwindcss";
 
-/* אם אתה משתמש ב-darkMode דרך class (כמו קודם) – ב-v4 זה כבר ברירת מחדל.
-   אם בכל זאת תרצה לאכוף: */
-@plugin "@tailwindcss/forms"; /* דוגמה לפלאגין אם תרצה בעתיד – אפשר למחוק */
+/* ================================
+   COMPONENTS — העיצובים שלך
+=================================== */
+@layer components {
+  /* ---------- Announcement Banner ---------- */
+  .promo-banner { @apply fixed top-0 inset-x-0 z-50 hidden; }
+  .promo-inner  { @apply mx-auto max-w-7xl flex items-center gap-3 px-4 py-2 
+                         bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-lg; }
+  .promo-track-wrapper { @apply overflow-hidden flex-1; }
+  .promo-track  { @apply inline-flex items-center gap-3 whitespace-nowrap; }
+  .promo-msg    { @apply text-sm md:text-base; }
+  .promo-sep    { @apply opacity-60; }
+  .promo-cta    { @apply bg-white/15 hover:bg-white/25 rounded-full px-4 py-1 text-sm transition; }
+  .promo-close  { @apply text-white/80 hover:text-white text-base leading-none; }
+
+  /* ---------- Carousel ---------- */
+  .carousel        { @apply relative w-full rounded-lg overflow-hidden shadow bg-white; }
+  .carousel-image  { @apply w-full h-full object-contain bg-white select-none pointer-events-none; }
+  .carousel-btn    { @apply absolute top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white 
+                             rounded-full p-2 shadow transition; }
+  .carousel-btn--prev { @apply right-2; }
+  .carousel-btn--next { @apply left-2; }
+
+  /* ---------- Floating Buttons ---------- */
+  .floating-buttons a,
+  .floating-buttons button { @apply hover:scale-105 transition-transform; }
+
+  /* ---------- Theme Transition (light/dark) ---------- */
+  .transition-theme { @apply transition-colors duration-300; }
+
+  /* ---------- Star Rating (popup) ---------- */
+  .star-rating { @apply flex flex-row-reverse justify-center gap-1 text-2xl cursor-pointer select-none; }
+  .star-rating .star { @apply text-gray-300 transition; }
+  .star-rating .star:hover,
+  .star-rating .star:hover ~ .star { @apply text-yellow-400; }
+
+  /* ---------- Terms / Privacy — Fancy Checkbox ---------- */
+  .checkbox-wrapper { @apply relative gap-3; }
+  /* מסתיר את הצ’קבוקס המקורי (נגישות נשמרת) */
+  .checkbox-wrapper > input[type="checkbox"] {
+    position: absolute; opacity: 0; inset: 0; width: 1px; height: 1px;
+  }
+
+  .terms-label { @apply inline-flex items-center gap-2 select-none cursor-pointer; }
+
+  .checkbox-svg { @apply w-5 h-5; }
+  .checkbox-box {
+    stroke: currentColor; color: rgb(148 163 184); /* slate-400 */
+    fill: transparent; transition: all .2s ease;
+  }
+  .checkbox-tick {
+    stroke: white; fill: none; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 220; stroke-dashoffset: 220; transition: stroke-dashoffset .25s ease;
+  }
+
+  /* מצב Checked – צביעה ואנימציה */
+  .checkbox-wrapper > input:checked + .terms-label .checkbox-box {
+    color: rgb(37 99 235); /* blue-600 */ fill: rgb(37 99 235);
+  }
+  .checkbox-wrapper > input:checked + .terms-label .checkbox-tick {
+    stroke-dashoffset: 0;
+  }
+
+  /* מצב Focus (מקלדת) על האלמנט כולו */
+  .checkbox-wrapper > input:focus-visible + .terms-label .checkbox-box {
+    outline: 2px solid rgba(59,130,246,.8); /* ring-blue-500 */
+    outline-offset: 2px;
+  }
+
+  /* ---------- Disabled Submit (fallback classes שה-JS מוסיף/מסיר) ---------- */
+  .btn-disabled  { @apply bg-orange-500 cursor-not-allowed; }
+  .btn-primary   { @apply bg-blue-600 text-white hover:bg-blue-700; }
+
+  /* ---------- Cards / Boxes used in “יתרונות” ---------- */
+  .feature-card { @apply flex flex-col items-center p-6 rounded-2xl bg-white dark:bg-gray-900 
+                           border border-gray-200 dark:border-gray-700 shadow-sm 
+                           hover:shadow-md hover:-translate-y-0.5 transition; }
+  .feature-icon { @apply grid place-items-center w-12 h-12 mb-3 rounded-xl; }
+}
+
+/* ================================
+   UTILITIES — קטנות שימושיות
+=================================== */
+@layer utilities {
+  /* רקע חי (Hero) */
+  .bg-animate {
+    background:
+      radial-gradient(1200px 600px at 80% -100px, rgba(14,165,233,.25), transparent),
+      radial-gradient(1000px 500px at 0% 0%, rgba(99,102,241,.18), transparent),
+      linear-gradient(180deg, #0ea5e9 0%, #111827 100%);
+  }
+}
