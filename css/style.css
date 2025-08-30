@@ -117,7 +117,7 @@ body.dark .bg-gray-200 {
 }
 
 @keyframes fadeInSmooth {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(0px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -362,7 +362,7 @@ html, body { margin: 0; padding: 0; }
 /* הופעת הכפתור חלקה */
 .cta-enter {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(0px);
 }
 .cta-enter.cta-enter-active {
   opacity: 1;
@@ -475,7 +475,7 @@ html, body { margin: 0; padding: 0; }
 }
 
 .feature-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(0px);
   box-shadow: 0 10px 24px rgba(0,0,0,0.12);
   border-color: var(--card-border-hover, rgba(0,0,0,0.14));
 }
