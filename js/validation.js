@@ -57,6 +57,10 @@ function validateFieldAndStyle(input) {
 
   if (type === 'phone') ok = validatePhone(input.value);
   else if (type === 'institution') ok = validateInstitution(input.value);
+  else if (type === 'name') {
+    const v = (input.value || '').trim();
+    ok = v.length >= 2; // מינימום 2 תווים
+  }
   else if (input.type === 'email' || input.name === 'email') ok = validateEmail(input.value);
   else if (input.required) ok = !!(input.value || '').trim();
   else ok = true;
@@ -64,6 +68,7 @@ function validateFieldAndStyle(input) {
   updateInputValidationStyle(input, ok);
   return ok;
 }
+
 
 function refreshSubmitStateFor(input) {
   const form = input?.closest('form');
