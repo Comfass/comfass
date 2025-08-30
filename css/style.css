@@ -462,9 +462,9 @@ html, body { margin: 0; padding: 0; }
 }
 .carousel-btn:hover {
   transform: translateY(-50%) scale(1.18);
-  background: rgba(255,255,255,.82);
+  background: rgba(255,255,255,.15);
   color: #06b6d4;
-  box-shadow: 0 4px 14px rgba(0,0,0,.22);
+  box-shadow: 0 4px 14px rgba(0,0,0,.50);
 }
 .carousel-btn:active {
   transform: translateY(-50%) scale(.95);
@@ -474,7 +474,7 @@ html, body { margin: 0; padding: 0; }
   height: 24px;
   fill: currentColor;
   /* נותן קונטרסט לחץ גם כשאין כמעט רקע */
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,.45));
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.20));
 }
 .carousel-btn--prev { left: 12px; }
 .carousel-btn--next { right: 12px; }
