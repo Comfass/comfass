@@ -1,0 +1,28 @@
+{
+  "name": "comfass",
+  "version": "1.0.0",
+  "description": "<!--\r **Comfass/comfass** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.",
+  "main": "nagishli.js",
+  "scripts": {
+  "dev": "postcss ./css/tailwind.css -o ./css/style.css --watch",
+  "build": "postcss ./css/tailwind.css -o ./css/style.css --env production",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Comfass/comfass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Comfass/comfass/issues"
+  },
+  "homepage": "https://github.com/Comfass/comfass#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.12"
+  }
+}
