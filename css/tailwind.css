@@ -217,5 +217,13 @@ html {
   .carousel-btn--prev { left: 12px; }
   .carousel-btn--next { right: 12px; }
   @media (hover:none) and (pointer:coarse) { .carousel-btn { background: rgba(255,255,255,.12); } }
+
+   .blur-bg {
+  background-color: rgba(255, 255, 255, 0.6);     /* נפול-בק כשאין תמיכה */
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%); /* Safari */
 }
+
+}
+
 
