@@ -429,27 +429,70 @@ html, body { margin: 0; padding: 0; }
 }
 :root { /* צבעי מותג לדוגמה */ --icon-bg: #eef4ff; --icon-fg: #4763ff; }
 
-/* ==== Carousel: תיקון שכבות וקליקים במובייל ==== */
-
-/* שים את הכפתורים *מעל* הסליידים תמיד, וקבע שכבת קומפוזיט נפרדת (iOS) */
-.carousel-btn{
-  z-index: 1000 !important;
-  transform: translateY(-50%) translateZ(0); /* promote layer ל-iOS */
-  pointer-events: auto;
+/* ===== Carousel (Vanilla CSS) ===== */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 768px;          /* שנה לפי הצורך */
+  margin: 3rem auto 0;       /* מרכז את הקרוסלה */
+  overflow: hidden;
+  border-radius: 12px;        /* אופציונלי */
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12); /* אופציונלי */
 }
 
-/* הסליידים עצמם לא יחסמו קליקים לחיצים */
-.carousel-slide{
-  z-index: 10 !important;
-  pointer-events: none;       /* התמונות לא בולעות את הטאצ' */
-}
-
-/* רקע מעט שקוף יותר, ויותר ברור בהובר */
-.carousel-btn{
-  background: rgba(255,255,255,.72);        /* היה .88 */
+/* כפתורי הניווט של הקרוסלה */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);             /* מרכז אנכי קבוע */
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.88);
   color: #333;
+  cursor: pointer;
+  z-index: 30;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease, color .2s ease;
+  -webkit-tap-highlight-color: transparent; /* iOS נעים יותר */
+  touch-action: manipulation;
 }
-.carousel-btn:hover{
-  background: rgba(255,255,255,.88);
+.carousel-btn:hover {
+  transform: translateY(-50%) scale(1.2);   /* גדל אבל לא “נופל” */
+  background: #fff;
+  color: #06b6d4;                           /* צבע החץ בהובר */
+  box-shadow: 0 4px 14px rgba(0,0,0,.2);
+}
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.95);  /* תחושת לחיצה */
+}
+.carousel-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor; /* החץ מקבל את הצבע מה- color של הכפתור */
+}
+
+/* מיקום ימינה/שמאלה */
+.carousel-btn--prev { left: 12px; }
+.carousel-btn--next { right: 12px; }
+
+/* Dark mode לחיצים */
+body.dark .carousel-btn {
+  background: rgba(255,255,255,0.12);
+  color: #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.4);
+}
+body.dark .carousel-btn:hover {
+  background: rgba(255,255,255,0.2);
   color: #06b6d4;
+}
+
+
+/* מכבד העדפת הפחתת אנימציה */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-btn, .carousel-btn svg { transition: none; }
 }
