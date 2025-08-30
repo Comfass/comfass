@@ -491,13 +491,6 @@ body.dark .carousel-btn:hover {
   color: #06b6d4;
 }
 
-/* התאמות מובייל קטנות */
-@media (max-width: 480px) {
-  .carousel-btn { width: 40px; height: 40px; }
-  .carousel-btn svg { width: 22px; height: 22px; }
-  .carousel-btn--prev { left: 8px; }
-  .carousel-btn--next { right: 8px; }
-}
 
 /* מכבד העדפת הפחתת אנימציה */
 @media (prefers-reduced-motion: reduce) {
