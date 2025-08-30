@@ -75,13 +75,8 @@ html {
   .transition-bounce:hover,
   button.transition-bounce:hover { transform: scale(1.15); }
 
-  body.dark { background-color: #0f172a; color: #f8fafc; }
-  body.dark .bg-gray-50,
-  body.dark .bg-gray-100,
-  body.dark .bg-white { background-color: #1e293b !important; }
-  body.dark .text-gray-800 { color: #f1f5f9 !important; }
-  body.dark .text-gray-700 { color: #e2e8f0 !important; }
-  body.dark .bg-gray-200 { background-color: #334155 !important; }
+  .dark { background-color: #0f172a; color: #f8fafc; }
+  .dark .transition-theme { transition: background-color .3s, color .3s, border-color .3s; }
 
   /* ⭐ דירוג */
   .star-rating { direction: rtl; display: flex; justify-content: center; gap: 5px; }
@@ -232,6 +227,7 @@ html {
 }
 
 }
+
 
 
 
