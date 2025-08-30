@@ -16,6 +16,13 @@
 =================================== */
 @layer components {
 
+   /* קבע שלא תהיה הגדלת טקסט אוטומטית במובייל (או שנה ל-100% אם תרצה לאפשר) */
+html {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; /* iOS/Safari ישנים */
+  -ms-text-size-adjust: 100%;     /* דפדפני מיקרוסופט ישנים */
+}
+
   body {
     font-family: 'Varela Round', sans-serif;
     transition: background-color 0.5s ease, color 0.5s ease;
@@ -211,3 +218,4 @@
   .carousel-btn--next { right: 12px; }
   @media (hover:none) and (pointer:coarse) { .carousel-btn { background: rgba(255,255,255,.12); } }
 }
+
