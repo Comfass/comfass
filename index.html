@@ -259,10 +259,20 @@
     <div class="flex flex-col justify-center">
       <h2 class="text-2xl font-bold mb-6 text-center md:text-right">📩 צור קשר להזמנה סיטונאית</h2>
       <form id="contact-form" action="https://formspree.io/f/xgvyrwrd" method="POST" class="space-y-4 text-right">
-        <input type="text" name="name" autocomplete="name" placeholder="שם מלא" required class="w-full border p-3 rounded-lg shadow-sm" />
-        <input type="email" name="email" autocomplete="email" placeholder="אימייל" required class="w-full border p-3 rounded-lg shadow-sm" />
-        <input type="tel" name="phone" autocomplete="phone" placeholder="מספר טלפון" required class="w-full border p-3 rounded-lg shadow-sm" />
-        <input type="text" name="company" autocomplete="company" placeholder="שם מוסד / חברה" class="w-full border p-3 rounded-lg shadow-sm" />
+        <input type="text"  name="name"    autocomplete="name"    placeholder="שם מלא"
+       required class="w-full border p-3 rounded-lg shadow-sm" />
+
+<input type="email" name="email"   autocomplete="email"   placeholder="אימייל"
+       required class="w-full border p-3 rounded-lg shadow-sm" />
+
+<input type="tel"   name="phone"   autocomplete="tel"     inputmode="tel" dir="ltr"
+       placeholder="מספר טלפון" required data-validate="phone"
+       class="w-full border p-3 rounded-lg shadow-sm" />
+
+<input type="text"  name="company" autocomplete="organization" 
+       placeholder="שם מוסד / חברה" required data-validate="institution"
+       class="w-full border p-3 rounded-lg shadow-sm" />
+
         <textarea name="message" placeholder="טקסט חופשי" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
         <!-- Checkbox חדש עם האנימציה -->
 <div class="checkbox-wrapper flex items-start mb-4">
