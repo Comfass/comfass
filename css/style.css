@@ -58,7 +58,7 @@ h1, h2, h3 {
 
 .transition-bounce:hover,
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.15);
 }
 
 body.dark {
@@ -99,7 +99,7 @@ body.dark .bg-gray-200 {
 }
 
 .star:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 @keyframes fade-in {
