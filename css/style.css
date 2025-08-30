@@ -429,56 +429,27 @@ html, body { margin: 0; padding: 0; }
 }
 :root { /* צבעי מותג לדוגמה */ --icon-bg: #eef4ff; --icon-fg: #4763ff; }
 
-/* ===== Carousel (Vanilla CSS) ===== */
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 768px;          /* שנה לפי הצורך */
-  margin: 3rem auto 0;       /* מרכז את הקרוסלה */
-  overflow: hidden;
-  border-radius: 12px;        /* אופציונלי */
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12); /* אופציונלי */
-}
+/* ==== Carousel: תיקון שכבות וקליקים במובייל ==== */
 
-/* ===== Carousel buttons – mobile visibility & contrast ===== */
+/* שים את הכפתורים *מעל* הסליידים תמיד, וקבע שכבת קומפוזיט נפרדת (iOS) */
 .carousel-btn{
-  z-index: 999;                          /* תמיד מעל התמונות/הכיתוב */
-  background: rgba(255,255,255,.20);     /* לבן שקוף אבל נראה */
-  color: #111;
-  border: 1px solid rgba(0,0,0,.10);     /* קונטור דק לשיפור ניגודיות */
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);    /* iOS */
+  z-index: 1000 !important;
+  transform: translateY(-50%) translateZ(0); /* promote layer ל-iOS */
+  pointer-events: auto;
 }
 
-/* במובייל – טיפה פחות שקוף כדי שתמיד יראו */
-@media (max-width: 640px){
-  .carousel-btn{
-    background: rgba(255,255,255,.20);
-  }
+/* הסליידים עצמם לא יחסמו קליקים לחיצים */
+.carousel-slide{
+  z-index: 10 !important;
+  pointer-events: none;       /* התמונות לא בולעות את הטאצ' */
 }
 
-/* מצב כהה – רקע כהה שקוף, אייקון בהיר */
-body.dark .carousel-btn{
-  background: rgba(15,23,42,.20);        /* כחול-כהה שקוף */
-  color: #e5e7eb;
-  border-color: rgba(255,255,255,.18);
+/* רקע מעט שקוף יותר, ויותר ברור בהובר */
+.carousel-btn{
+  background: rgba(255,255,255,.72);        /* היה .88 */
+  color: #333;
 }
-body.dark .carousel-btn:hover{
-  background: rgba(15,23,42,.25);
+.carousel-btn:hover{
+  background: rgba(255,255,255,.88);
   color: #06b6d4;
-}
-
-/* מובייל + מצב כהה – עוד קצת אטימות */
-@media (max-width: 640px){
-  body.dark .carousel-btn{
-    background: rgba(15,23,42,.20);
-  }
-}
-
-/* מגדיל שטח לחיץ בלי לשנות מראה (עוזר ל-iOS) */
-.carousel-btn::after{
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: inherit;
 }
