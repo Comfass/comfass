@@ -1,20 +1,17 @@
-
-[build]
-  command = "npm run build"
-  publish = "dist"
+# netlify.toml (ללא build כלל)
 
 [[headers]]
-  for = "/*"
+for = "/*"
   [headers.values]
-    X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "frame-ancestors 'self'"
-    X-Frame-Options = "SAMEORIGIN"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "geolocation=(), microphone=()"
-    Cache-Control = "public, max-age=31536000, immutable"
+  Cache-Control = "public, max-age=31536000, immutable"
+  Content-Security-Policy = "frame-ancestors 'self'"
+  Permissions-Policy = "geolocation=(), microphone=()"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  X-Content-Type-Options = "nosniff"
+  X-Frame-Options = "SAMEORIGIN"
 
 [[redirects]]
-  from = "http://comfass.com/*"
-  to = "https://www.comfass.com/:splat"
-  status = 301
-  force = true
+from = "http://comfass.com/*"
+to = "https://www.comfass.com/:splat"
+status = 301
+force = true
