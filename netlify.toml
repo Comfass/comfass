@@ -12,7 +12,20 @@ for = "/*"
   X-Content-Type-Options = "nosniff"
   X-Frame-Options = "SAMEORIGIN"
 
-# קאש שמרני ל-CSS/JS ללא hashing
+# אל תשים Cache-Control גלובלי על /*
+
+# קאש ארוך רק לקבצי תמונות/מודלים כבדים
+[[headers]]
+for = "/images/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/models/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+# CSS/JS ללא hashing – קאש קצר
 [[headers]]
 for = "/**/*.css"
   [headers.values]
@@ -23,16 +36,6 @@ for = "/**/*.js"
   [headers.values]
   Cache-Control = "public, max-age=300"
 
-# קאש ארוך לנכסים סטטיים כבדים
-[[headers]]
-for = "/images/*"
-  [headers.values]
-  Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-for = "/models/*"
-  [headers.values]
-  Cache-Control = "public, max-age=31536000, immutable"
 
 [[redirects]]
 from = "http://comfass.com/*"
