@@ -353,14 +353,14 @@
         role="region" aria-label="קרוסלת תמונות ComfAss">
 
        <!-- Caption -->
-<div class="absolute inset-x-0 top-0 px-4 py-6 text-center z-20 
-            bg-gradient-to-b from-white/90 via-white/60 to-transparent 
+<div class="absolute inset-x-0 top-0 px-4 py-6 text-center z-20
+            bg-gradient-to-b from-white/90 via-white/60 to-transparent
             dark:from-neutral-900/90 dark:via-neutral-900/60 dark:to-transparent
             backdrop-blur-sm rounded-t-3xl">
   <span x-text="slides[active].caption"
-        class="text-xl sm:text-2xl font-bold text-cyan-700 dark:text-cyan-400 drop-shadow-md tracking-wide">
-  </span>
+        class="text-xl sm:text-2xl font-bold !text-cyan-700 dark:!text-cyan-400 drop-shadow-md tracking-wide"></span>
 </div>
+
 
         <!-- Slides -->
 <template x-for="(slide, i) in slides" :key="i">
