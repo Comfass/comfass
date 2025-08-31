@@ -572,6 +572,37 @@
       </div>
     </div>
   </div>
+
+  <!-- כרטיסיית ביקורות/תגובות – תופיע משמאל במסכים רחבים -->
+<div class="md:order-first bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+  <h3 id="reviews" class="text-xl font-bold mb-4 text-right">
+    ⭐ ביקורות ותגובות
+  </h3>
+
+  <!-- כאן Disqus ייטען -->
+  <div id="disqus_thread"></div>
+
+  <!-- הטמעת Disqus -->
+  <script>
+    /**
+     * מומלץ להגדיר URL ו-identifier כדי למנוע פתיחת שרשורים כפולים.
+     * אם יש לכם כמה עמודים, החליפו בהתאם לדף.
+     */
+    var disqus_config = function () {
+      this.page.url = 'https://www.comfass.com/'; // כתובת קנונית מלאה של הדף
+      this.page.identifier = 'comfass-reviews';            // מזהה ייחודי לשרשור בדף זה
+    };
+
+    (function () { // אל לערוך מתחת לשורה זו
+      var d = document, s = d.createElement('script');
+      s.src = 'https://comfass-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
 </section>
 
   <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600">
@@ -657,6 +688,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script id="dsq-count-scr" src="//comfass-com.disqus.com/count.js" async></script>
 
 <!-- שלך -->
 <script src="/js/faq.js"></script>
