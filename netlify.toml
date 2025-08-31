@@ -1,14 +1,38 @@
-# netlify.toml (ללא build כלל)
+[build]
+  command = "npm run build"
+  publish = "."
 
+# כותרות ואבטחה (אופציונלי)
 [[headers]]
 for = "/*"
   [headers.values]
-  Cache-Control = "public, max-age=31536000, immutable"
   Content-Security-Policy = "frame-ancestors 'self'"
   Permissions-Policy = "geolocation=(), microphone=()"
   Referrer-Policy = "strict-origin-when-cross-origin"
   X-Content-Type-Options = "nosniff"
   X-Frame-Options = "SAMEORIGIN"
+
+# קאש שמרני ל-CSS/JS ללא hashing
+[[headers]]
+for = "/**/*.css"
+  [headers.values]
+  Cache-Control = "public, max-age=300"
+
+[[headers]]
+for = "/**/*.js"
+  [headers.values]
+  Cache-Control = "public, max-age=300"
+
+# קאש ארוך לנכסים סטטיים כבדים
+[[headers]]
+for = "/images/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/models/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
 
 [[redirects]]
 from = "http://comfass.com/*"
