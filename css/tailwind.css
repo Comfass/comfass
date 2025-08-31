@@ -226,7 +226,86 @@ html {
   -webkit-backdrop-filter: blur(12px) saturate(120%); /* Safari */
 }
 
+   /* עטיפה בסיסית – לא חובה אם אתה כבר משתמש במחלקות של Tailwind ב-HTML */
+  .checkbox-wrapper {
+    @apply items-start gap-2;
+  }
+
+  /* מסתירים את ה-checkbox המקורי (אפשר גם להשתמש ב-sr-only של Tailwind ב-HTML) */
+  .checkbox-wrapper input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+  }
+
+  /* מאפשר קליק על כל האזור + מצב פוקוס נגיש */
+  .terms-label {
+    @apply inline-flex select-none items-center cursor-pointer;
+  }
+
+  /* נראות הטקסט ליד האייקון */
+  .terms-label .label-text {
+    @apply ms-3;
+  }
+
+  /* ה-SVG עצמו */
+  .checkbox-svg {
+    width: 30px;
+    height: 30px;
+    display: block;
+  }
+
+  /* משתמשים ב-currentColor כדי שצבע יגיע מ-Tailwind (למשל text-violet-600) */
+  .checkbox-box,
+  .checkbox-tick {
+    stroke: currentColor;
+  }
+
+  /* רקע הקופסה (fill) – בהיר/כהה לפי מצב */
+  .checkbox-box {
+    fill: rgba(207, 205, 205, 0.425);
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    transition: stroke-dashoffset 0.6s ease-in;
+  }
+  .checkbox-tick {
+    stroke-dasharray: 172;
+    stroke-dashoffset: 172;
+    transition: stroke-dashoffset 0.6s ease-in;
+  }
+
+  /* כשה-checkbox מסומן – מפעיל את האנימציה */
+  .checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-box,
+  .checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-tick {
+    stroke-dashoffset: 0;
+  }
+
+  /* פוקוס נגיש על כל הקומפוננטה כשנכנסים עם מקלדת */
+  .checkbox-wrapper:focus-within .terms-label {
+    outline: 2px solid theme('colors.violet.500');
+    outline-offset: 4px;
+    border-radius: 0.5rem;
+  }
+
+  /* לכבד העדפת Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .checkbox-box,
+    .checkbox-tick {
+      transition: none;
+    }
+  }
 }
+
+/* תמיכה ב-dark mode (אם אתה עובד עם class 'dark' ב-HTML) */
+@layer utilities {
+  .dark .checkbox-box {
+    fill: rgba(255, 255, 255, 0.08);
+  }
+
+}
+
 
 
 
