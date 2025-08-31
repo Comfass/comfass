@@ -1,51 +1,62 @@
 // app.js — root
-
 (function () {
   const faqContainer = document.getElementById('faq-accordion');
   if (!faqContainer) return;
 
-  // Load the external FAQ HTML that sits at the project root: /faq.html
-  fetch('/faq.html', { cache: 'no-cache' })
-    .then(r => r.text())
+  // אם האתר לא נטען מהשורש, זה ימנע 404
+  const faqUrl = './faq.html';
+
+  fetch(faqUrl, { cache: 'no-cache' })
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(html => {
       faqContainer.innerHTML = html;
-      initAccordion();
+      initAccordion(faqContainer);
     })
-    .catch(err => {
-      console.error('Failed to load FAQ:', err);
-    });
+    .catch(err => console.error('Failed to load FAQ:', err));
 
- function initAccordion() {
-  let openItem = null;
+  function initAccordion(root) {
+    let openItem = null;
 
-  const setOpen = (item, open) => {
-    const btn = item.querySelector('button[aria-controls]');
-    const panel = item.querySelector('.faq-panel');
-    const icon = btn.querySelector('svg path');
-    if (!btn || !panel) return;
+    root.querySelectorAll('.faq-item').forEach((item) => {
+      const btn   = item.querySelector('button[aria-controls]');
+      const panel = item.querySelector('.faq-panel');
+      if (!btn || !panel) return;
 
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      const iconPath = btn.querySelector('svg path'); // ייתכן שאין – נבדוק לפני שימוש
 
-    if (open) {
-      panel.style.maxHeight = panel.scrollHeight + 'px';
-      // לשנות את האייקון למינוס
-      icon.setAttribute("d", "M20 12H4"); 
-    } else {
+      const setOpen = (open) => {
+        btn.setAttribute('aria-expanded', String(open));
+        panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0px';
+
+        // עדכון האייקון רק אם יש path
+        if (iconPath) {
+          // פתוח = מינוס; סגור = פלוס
+          iconPath.setAttribute('d', open ? 'M20 12H4' : 'M12 4v16M20 12H4');
+        }
+      };
+
+      btn.addEventListener('click', () => {
+        // סגור את הפריט הפתוח הקודם
+        if (openItem && openItem !== item) {
+          const prevBtn   = openItem.querySelector('button[aria-controls]');
+          const prevPanel = openItem.querySelector('.faq-panel');
+          const prevPath  = prevBtn?.querySelector('svg path');
+          if (prevBtn && prevPanel) {
+            prevBtn.setAttribute('aria-expanded', 'false');
+            prevPanel.style.maxHeight = '0px';
+            if (prevPath) prevPath.setAttribute('d', 'M12 4v16M20 12H4');
+          }
+          openItem = null;
+        }
+
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        setOpen(!isOpen);
+        openItem = !isOpen ? item : null;
+      });
+
+      // התחל סגור כברירת מחדל
+      btn.setAttribute('aria-expanded', 'false');
       panel.style.maxHeight = '0px';
-      // להחזיר לפלוס
-      icon.setAttribute("d", "M12 4v16m8-8H4");
-    }
-  };
-
-  faqContainer.querySelectorAll('.faq-item').forEach((item) => {
-    const btn = item.querySelector('button[aria-controls]');
-    btn.addEventListener('click', () => {
-      if (openItem && openItem !== item) setOpen(openItem, false);
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      setOpen(item, !isOpen);
-      openItem = !isOpen ? item : null;
     });
-    setOpen(item, false); // התחל סגור
-  });
-}
+  }
 })();
