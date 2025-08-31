@@ -304,7 +304,12 @@ html {
     fill: rgba(255, 255, 255, 0.08);
   }
 
+     /* צבעים רגילים בלבד – כדי ש-Disqus לא יקרוס */
+  .disqus-sandbox { color: #111827; background: #ffffff; }
+  .dark .disqus-sandbox { color: #e5e7eb; background: #0b1220; }
+
 }
+
 
 
 
