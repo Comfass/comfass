@@ -25,10 +25,10 @@
 
    /* קבע שלא תהיה הגדלת טקסט אוטומטית במובייל (או שנה ל-100% אם תרצה לאפשר) */
 html {
+  -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%; /* iOS/Safari ישנים */
-  -ms-text-size-adjust: 100%;     /* דפדפני מיקרוסופט ישנים */
 }
+
 
   body {
     font-family: 'Varela Round', sans-serif;
@@ -309,9 +309,25 @@ html {
   .dark .disqus-sandbox { color: #e5e7eb; background: #0b1220; }
 
    .faq-panel { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+   
+   /* נפילת-חסד לכל הדפדפנים – רק שקיפות/צבע */
+.glass {
+  background: rgba(255,255,255,.6);
+}
+
+/* תמיכה כשיש Backdrop Filter */
+@supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))) {
+  .glass {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,.3);
+  }
+}
+
 
 
 }
+
 
 
 
