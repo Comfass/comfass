@@ -453,100 +453,128 @@
     <!-- טופס יצירת קשר -->
     <div class="flex flex-col justify-center">
       <h2 class="text-2xl font-bold mb-6 text-center md:text-right">📩 צור קשר להזמנה סיטונאית</h2>
+
       <form id="contact-form" action="https://formspree.io/f/xgvyrwrd" method="POST" class="space-y-4 text-right">
-        <input type="text" name="name" autocomplete="name" placeholder="שם מלא"
-       required data-validate="name"
-       class="w-full border p-3 rounded-lg shadow-sm" />
+        <!-- שם מלא -->
+        <input
+          type="text"
+          name="name"
+          autocomplete="name"
+          placeholder="שם מלא"
+          required
+          data-validate="name"
+          class="w-full border border-gray-300 p-3 rounded-lg shadow-sm"
+        />
 
+        <!-- אימייל -->
+        <input
+          type="email"
+          name="email"
+          autocomplete="email"
+          placeholder="אימייל"
+          required
+          class="w-full border border-gray-300 p-3 rounded-lg shadow-sm"
+        />
 
-<input type="email" name="email"   autocomplete="email"   placeholder="אימייל"
-       required class="w-full border p-3 rounded-lg shadow-sm" />
+        <!-- טלפון -->
+        <input
+          type="tel"
+          name="phone"
+          autocomplete="tel"
+          inputmode="tel"
+          dir="ltr"
+          placeholder="מספר טלפון"
+          required
+          data-validate="phone"
+          class="w-full border border-gray-300 p-3 rounded-lg shadow-sm"
+        />
 
-<input type="tel"   name="phone"   autocomplete="tel"     inputmode="tel" dir="ltr"
-       placeholder="מספר טלפון" required data-validate="phone"
-       class="w-full border p-3 rounded-lg shadow-sm" />
+        <!-- מוסד/חברה -->
+        <input
+          type="text"
+          name="company"
+          autocomplete="organization"
+          placeholder="שם מוסד / חברה"
+          required
+          data-validate="institution"
+          class="w-full border border-gray-300 p-3 rounded-lg shadow-sm"
+        />
 
-<input type="text"  name="company" autocomplete="organization" 
-       placeholder="שם מוסד / חברה" required data-validate="institution"
-       class="w-full border p-3 rounded-lg shadow-sm" />
+        <!-- הודעה חופשית (לא חובה) -->
+        <textarea
+          name="message"
+          placeholder="טקסט חופשי"
+          rows="4"
+          class="w-full border border-gray-300 p-3 rounded-lg shadow-sm"
+        ></textarea>
 
-        <textarea name="message" placeholder="טקסט חופשי" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
- <div class="checkbox-wrapper flex items-start mb-4">
-  <input id="terms" name="terms" type="checkbox" required aria-required="true" />
+        <!-- תנאים -->
+        <div class="checkbox-wrapper flex items-start mb-1">
+          <input id="terms" name="terms" type="checkbox" required aria-required="true" class="mt-1" />
 
-  <label class="terms-label" for="terms">
-    <!-- הצבע מיושם כאן על ה-SVG -->
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200"
-         class="checkbox-svg text-violet-600 dark:text-violet-400"
-         aria-hidden="true" focusable="false">
-      <mask fill="white" id="path-1-inside-1_476_5-37">
-        <rect height="200" width="200"></rect>
-      </mask>
-      <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40"
-            class="checkbox-box" height="200" width="200"></rect>
-      <path stroke-width="15"
-            d="M52 111.018L76.9867 136L149 64"
-            class="checkbox-tick"></path>
-    </svg>
+          <label class="terms-label ml-3 cursor-pointer select-none" for="terms">
+            <!-- ה־SVG עצמו צבוע באמצעות currentColor דרך Tailwind על העטיפה -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 200 200"
+              class="checkbox-svg text-violet-600 dark:text-violet-400 inline-block align-middle"
+              aria-hidden="true"
+              focusable="false"
+              style="width: 30px; height: 30px;"
+            >
+              <mask fill="white" id="path-1-inside-1_476_5-37">
+                <rect height="200" width="200"></rect>
+              </mask>
+              <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
+              <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
+            </svg>
 
-    <!-- הטקסט יירש צבע ברירת מחדל -->
-    <span class="label-text text-gray-900 dark:text-gray-100">
-      אני מאשר/ת את התנאים
-    </span>
-  </label>
+            <span class="label-text text-gray-900 dark:text-gray-100 align-middle ml-2">
+              אני מאשר/ת את התנאים
+            </span>
+          </label>
+        </div>
 
-    <!-- הכפתורים: עוצרים בועת קליק כדי שלא ילחצו על ה-checkbox -->
-   <button type="button" class="text-blue-600 underline ml-1"
-        onclick="event.stopPropagation(); openModal('termsModal', './modals/terms.html')">
-  תנאי השימוש
-</button>
-<span class="label-text">&nbsp;ואת&nbsp;</span>
-<button type="button" class="text-blue-600 underline"
-        onclick="event.stopPropagation(); openModal('privacyModal', './modals/privacy.html')">
-  מדיניות הפרטיות
-</button>
-    <span class="label-text">.</span>
-  </label>
-</div>
+        <!-- קישורים (מחוץ ל-label!) -->
+        <div class="text-sm text-gray-700 dark:text-gray-300 -mt-1">
+          <button type="button" class="text-blue-600 underline" onclick="openModal && openModal('termsModal', './modals/terms.html')">תנאי השימוש</button>
+          <span>&nbsp;ו־&nbsp;</span>
+          <button type="button" class="text-blue-600 underline" onclick="openModal && openModal('privacyModal', './modals/privacy.html')">מדיניות הפרטיות</button>
+        </div>
 
-        <button id="submit-btn" type="submit" disabled class="w-full py-3 rounded-lg shadow-lg transition transform">שלח פנייה</button>
+        <!-- שליחה -->
+        <button
+          id="submit-btn"
+          type="submit"
+          disabled
+          class="w-full py-3 rounded-lg shadow-lg transition
+                 bg-orange-500 cursor-not-allowed"
+        >
+          שלח פנייה
+        </button>
       </form>
+
       <div id="thank-you" class="hidden text-center mt-6 text-green-600 font-bold text-lg">
         ✅ תודה! פנייתך התקבלה ונחזור אליך בהקדם 🙏
       </div>
-     <script>
-  const form = document.getElementById("contact-form");
-  const submitBtn = document.getElementById("submit-btn");
-  const inputs = form.querySelectorAll("input[required], textarea[required]");
-  const checkbox = document.getElementById("terms");
-
-  function validateForm() {
-    let isValid = true;
-
-    inputs.forEach((input) => {
-      if (!input.value.trim()) isValid = false;
-    });
-
-    if (!checkbox.checked) isValid = false;
-
-    if (isValid) {
-      submitBtn.disabled = false;
-      submitBtn.classList.remove("bg-orange-500", "cursor-not-allowed");
-      submitBtn.classList.add("bg-blue-600", "text-white", "hover:bg-blue-700");
-    } else {
-      submitBtn.disabled = true;
-      submitBtn.classList.add("bg-orange-500", "cursor-not-allowed");
-      submitBtn.classList.remove("bg-blue-600", "text-white", "hover:bg-blue-700");
-    }
-  }
-
-  form.addEventListener("input", validateForm);
-  form.addEventListener("change", validateForm);
-
-  // התחלה במצב "כבוי"
-  validateForm();
-</script>
     </div>
+  </div>
+
+  <!-- טעינת ולידציה והפעלה -->
+  <script type="module">
+    import { attachValidationListeners } from './js/validation.js';
+
+    // הפעלת מאזינים: סלקטורים לשדות + ה־form
+    attachValidationListeners(
+      'input[name="phone"]',
+      'input[name="email"]',
+      'input[name="company"]',
+      '#contact-form'
+    );
+  </script>
+</section>
+
 
     <!-- חוות דעת עם כפתור פתיחה -->
     <div class="flex flex-col justify-center bg-white transition-theme rounded-lg shadow-md p-6">
