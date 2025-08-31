@@ -448,8 +448,33 @@
   </div>
 </section>
 
+  
+
 <section id="contact" class="py-20 px-6 bg-gray-100" transition-theme data-aos="fade-up" data-aos-duration="1000">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start md:items-stretch">
+
+    <!-- כרטיסיית ביקורות/תגובות – תופיע משמאל במסכים רחבים -->
+    <div class="md:order-first bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+      <h3 id="reviews" class="text-xl font-bold mb-4 text-right">⭐ ביקורות ותגובות</h3>
+
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https://www.comfass.com/#reviews';  // כתובת הקנונית של הדף
+          this.page.identifier = 'comfass-reviews';             // מזהה ייחודי לשרשור
+        };
+        (function () { // אל לערוך מתחת לשורה זו
+          var d = document, s = d.createElement('script');
+          s.src = 'https://comfass-com.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript class="text-sm text-gray-600 dark:text-gray-300">
+        אנא הפעילו JavaScript כדי לראות תגובות מ-Disqus.
+      </noscript>
+    </div>
+    
     <!-- טופס יצירת קשר -->
     <div class="flex flex-col justify-center">
   <h2 class="text-2xl font-bold mb-6 text-center md:text-right">📩 צור קשר להזמנה סיטונאית</h2>
@@ -572,37 +597,6 @@
       </div>
     </div>
   </div>
-
-  <!-- כרטיסיית ביקורות/תגובות – תופיע משמאל במסכים רחבים -->
-<div class="md:order-first bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-  <h3 id="reviews" class="text-xl font-bold mb-4 text-right">
-    ⭐ ביקורות ותגובות
-  </h3>
-
-  <!-- כאן Disqus ייטען -->
-  <div id="disqus_thread"></div>
-
-  <!-- הטמעת Disqus -->
-  <script>
-    /**
-     * מומלץ להגדיר URL ו-identifier כדי למנוע פתיחת שרשורים כפולים.
-     * אם יש לכם כמה עמודים, החליפו בהתאם לדף.
-     */
-    var disqus_config = function () {
-      this.page.url = 'https://www.comfass.com/'; // כתובת קנונית מלאה של הדף
-      this.page.identifier = 'comfass-reviews';            // מזהה ייחודי לשרשור בדף זה
-    };
-
-    (function () { // אל לערוך מתחת לשורה זו
-      var d = document, s = d.createElement('script');
-      s.src = 'https://comfass-com.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-
 </section>
 
   <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600">
