@@ -14,18 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
     '#contact-form'
   );
 
-  // טופס חוות דעת (רק אם באמת קיים בדף)
-  const reviewFormEl = document.querySelector('#review-form');
-  if (reviewFormEl) {
-    attachValidationListeners(
-      null,
-      '#review-form [name="email"]',
-      null,
-      '#review-form'
-    );
-    // נניח שהפונקציה כבר יודעת להגן אם חסרים שדות
-    initReviewForm();
-  }
-
   initThemeUIOnce();
 });
