@@ -450,145 +450,100 @@
   </div>
 </section>
 
-  
-
 <section id="contact" class="py-20 px-6 bg-gray-100" transition-theme data-aos="fade-up" data-aos-duration="1000">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start md:items-stretch">
 
-    <!-- כרטיסיית ביקורות/תגובות – תופיע משמאל במסכים רחבים -->
+    <!-- כרטיסיית ביקורות/תגובות – שמאל במסכים רחבים -->
     <div class="md:order-first bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-  <h3 id="reviews" class="text-xl font-bold mb-4 text-right">⭐ ביקורות ותגובות</h3>
+      <h3 id="reviews" class="text-xl font-bold mb-4 text-right">⭐ ביקורות ותגובות</h3>
 
-  <!-- המכל של דיסקאס עם צבעים בפורמט HEX/RGB -->
-  <div id="disqus_thread" class="disqus-sandbox"></div>
+      <!-- Disqus נטען כאן; מחלקה שמבטיחה צבעים ב-HEX/RGB -->
+      <div id="disqus_thread" class="disqus-sandbox"></div>
 
-  <script>
-    var disqus_config = function () {
-      this.page.url = 'https://www.comfass.com/#reviews';
-      this.page.identifier = 'comfass-reviews';
-      this.language = 'he';
-    };
-    (function(){var d=document,s=d.createElement('script');
-      s.src='https://comfass-com.disqus.com/embed.js';
-      s.setAttribute('data-timestamp',+new Date());
-      (d.head||d.body).appendChild(s);
-    })();
-  </script>
-</div>
-    
-    <!-- טופס יצירת קשר -->
+      <script>
+        // Disqus config: כתובת/מזהה קבועים + ממשק בעברית
+        var disqus_config = function () {
+          this.page.url = 'https://www.comfass.com/#reviews';
+          this.page.identifier = 'comfass-reviews';
+          this.language = 'he';
+        };
+        (function () {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://comfass-com.disqus.com/embed.js';   // shortname: comfass-com
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript class="text-sm text-gray-600 dark:text-gray-300">
+        אנא הפעילו JavaScript כדי לראות תגובות מ-Disqus.
+      </noscript>
+    </div>
+
+    <!-- עמודת הטופס שלך — ללא שינוי מהותי -->
     <div class="flex flex-col justify-center">
-  <h2 class="text-2xl font-bold mb-6 text-center md:text-right">📩 צור קשר להזמנה סיטונאית</h2>
+      <h2 class="text-2xl font-bold mb-6 text-center md:text-right">📩 צור קשר להזמנה סיטונאית</h2>
 
-  <form id="contact-form" action="https://formspree.io/f/xgvyrwrd" method="POST" class="space-y-4 text-right">
+      <form id="contact-form" action="https://formspree.io/f/xgvyrwrd" method="POST" class="space-y-4 text-right">
+        <!-- שם מלא -->
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+          שם מלא <span class="text-red-500">*</span>
+          <input type="text" name="name" autocomplete="name" required data-validate="name"
+                 class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm" />
+        </label>
 
-    <!-- שם מלא -->
-    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
-      שם מלא <span class="text-red-500">*</span>
-      <input
-        type="text"
-        name="name"
-        autocomplete="name"
-        required
-        data-validate="name"
-        class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm"
-      />
-    </label>
+        <!-- אימייל -->
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+          אימייל <span class="text-red-500">*</span>
+          <input type="email" name="email" autocomplete="email" dir="ltr" required
+                 class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm" />
+        </label>
 
-    <!-- אימייל -->
-    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
-      אימייל <span class="text-red-500">*</span>
-      <input
-        type="email"
-        name="email"
-        autocomplete="email"
-        dir="ltr"
-        required
-        class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm"
-      />
-    </label>
+        <!-- טלפון -->
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+          מספר טלפון <span class="text-red-500">*</span>
+          <input type="tel" name="phone" autocomplete="tel" inputmode="tel" dir="ltr" required data-validate="phone"
+                 class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm" />
+        </label>
 
-    <!-- טלפון -->
-    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
-      מספר טלפון <span class="text-red-500">*</span>
-      <input
-        type="tel"
-        name="phone"
-        autocomplete="tel"
-        inputmode="tel"
-        dir="ltr"
-        required
-        data-validate="phone"
-        class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm"
-      />
-    </label>
+        <!-- מוסד/חברה -->
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+          שם מוסד / חברה <span class="text-red-500">*</span>
+          <input type="text" name="company" autocomplete="organization" required data-validate="institution"
+                 class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm" />
+        </label>
 
-    <!-- מוסד/חברה -->
-    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
-      שם מוסד / חברה <span class="text-red-500">*</span>
-      <input
-        type="text"
-        name="company"
-        autocomplete="organization"
-        required
-        data-validate="institution"
-        class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm"
-      />
-    </label>
-
-    <!-- הודעה חופשית (לא חובה) -->
-    <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
-      טקסט חופשי
-      <textarea
-        name="message"
-        rows="4"
-        class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm"
-      ></textarea>
-    </label>
+        <!-- הודעה -->
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+          טקסט חופשי
+          <textarea name="message" rows="4" class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm"></textarea>
+        </label>
 
         <!-- תנאים -->
         <div class="checkbox-wrapper flex items-start mb-1">
           <input id="terms" name="terms" type="checkbox" required aria-required="true" class="mt-1" />
-
           <label class="terms-label ml-3 cursor-pointer select-none" for="terms">
-            <!-- ה־SVG עצמו צבוע באמצעות currentColor דרך Tailwind על העטיפה -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 200 200"
-              class="checkbox-svg text-violet-600 dark:text-violet-400 inline-block align-middle"
-              aria-hidden="true"
-              focusable="false"
-              style="width: 30px; height: 30px;"
-            >
-              <mask fill="white" id="path-1-inside-1_476_5-37">
-                <rect height="200" width="200"></rect>
-              </mask>
-              <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
-              <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
+            <!-- SVG תקין -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+                 class="checkbox-svg text-violet-600 dark:text-violet-400 inline-block align-middle"
+                 aria-hidden="true" focusable="false" style="width:30px;height:30px;">
+              <mask id="cb" fill="white"><rect width="200" height="200"/></mask>
+              <rect class="checkbox-box" width="200" height="200" mask="url(#cb)" stroke-width="40"></rect>
+              <path class="checkbox-tick" d="M52 111.018L76.9867 136L149 64" stroke-width="15"></path>
             </svg>
-
             <span class="label-text text-gray-900 dark:text-gray-100 align-middle ml-2">
-                  אני מאשר/ת את התנאים <span class="text-red-500">*</span>
+              אני מאשר/ת את התנאים <span class="text-red-500">*</span>
             </span>
           </label>
         </div>
 
-        <!-- קישורים (מחוץ ל-label!) -->
         <div class="text-sm text-gray-700 dark:text-gray-300 -mt-1">
-          <button type="button" class="text-blue-600 underline" onclick="openModal && openModal('termsModal', './modals/terms.html')">תנאי השימוש</button>
+          <button type="button" class="text-blue-600 underline" onclick="openModal && openModal('termsModal','./modals/terms.html')">תנאי השימוש</button>
           <span>&nbsp;ו־&nbsp;</span>
-          <button type="button" class="text-blue-600 underline" onclick="openModal && openModal('privacyModal', './modals/privacy.html')">מדיניות הפרטיות</button>
+          <button type="button" class="text-blue-600 underline" onclick="openModal && openModal('privacyModal','./modals/privacy.html')">מדיניות הפרטיות</button>
         </div>
 
-        <!-- שליחה -->
-        <button
-          id="submit-btn"
-          type="submit"
-          disabled
-          class="w-full py-3 rounded-lg shadow-lg transition
-                 bg-orange-500 cursor-not-allowed"
-        >
+        <button id="submit-btn" type="submit" disabled
+                class="w-full py-3 rounded-lg shadow-lg transition bg-orange-500 cursor-not-allowed">
           שלח פנייה
         </button>
       </form>
