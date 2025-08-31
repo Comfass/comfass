@@ -4,19 +4,11 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Comfass, wherever you go</title>
-  <!-- Theme early-init: קובע .dark על <html> לפני הציור -->
-<script>
-(() => {
-  try {
-    const theme = localStorage.getItem('theme'); // 'dark' | 'light' | null (system)
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = theme === 'dark' || (!theme && prefersDark);
-    document.documentElement.classList.toggle('dark', isDark);
-    // מנקה class ישן על <body> אם נשאר בעבר
-    document.body?.classList?.remove('dark');
-  } catch (e) {}
-})();
-</script>
+
+    <!-- Alpine.js -->
+
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
   <!-- CSS שנבנה ב-PostCSS/Tailwind (פעם אחת) -->
   <link href="./css/style.css?v=3" rel="stylesheet">
   <meta name="description" content="Comfass הפתרון החדשני והנוח לישיבה ממושכת" />
@@ -24,12 +16,18 @@
   <meta property="og:description" content="הצטרפו למהפכת הנוחות עם Comfass פתרון חדשני לישיבה ממושכת" />
   <meta property="og:image" content="https://comfass.com/img/comfass-logo.jpg" />
   <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="https://comfass.com/img/comfass-logo.jpg" type="image/jpeg">
   <script type="module" src="/js/main.js?v=2025-08-30-01"></script>
   
   <!-- פונט + AOS (פעם אחת) -->
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body{font-family: Heebo, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", Arial, "Apple Color Emoji","Segoe UI Emoji"}
+  </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 pt-10">
@@ -326,302 +324,103 @@
     המטרה שלנו הייתה אחת: להפוך כל כיסא לנוח יותר. והיום, אנחנו גאים להציג בפניכם את התוצאה.
   </p>
 
-<!-- Alpine.js -->
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+  <!-- ====== ComfAss: FAQ (left) + Carousel (right) – fixed equal height ====== -->
 
-<!-- ====== ComfAss: Carousel (right) + FAQ (left) ====== -->
-<section class="max-w-6xl mx-auto px-4">
-  <div class="grid grid-cols-12 gap-6 items-start" dir="rtl">
-    <!-- LEFT: FAQ -->
-    <aside class="col-span-12 lg:col-span-5">
-      <!-- כרטיס FAQ בגובה קבוע -->
-      <div class="bg-white dark:bg-neutral-900 rounded-3xl shadow-xl ring-1 ring-black/5 dark:ring-white/10 h-[450px] flex flex-col">
-        <h2 class="text-xl font-semibold px-5 pt-5 pb-2 text-gray-900 dark:text-gray-100 shrink-0">
-          שאלות ותשובות נפוצות – COMFASS
-        </h2>
-        <div id="faq-accordion"
-             class="divide-y divide-gray-200/80 dark:divide-white/10 overflow-y-auto px-2 sm:px-3 pb-3 grow"
-             aria-label="רשימת שאלות ותשובות">
-          
-          <!-- FAQ ITEM (template: duplicate & edit text only) -->
-          <!-- 1 -->
-          <div class="faq-item">
-            <button type="button"
-              class="w-full flex items-center justify-between gap-4 py-4 px-3 text-right text-gray-900 dark:text-gray-100 hover:bg-gray-50/70 dark:hover:bg-white/5 rounded-xl"
-              aria-expanded="false" aria-controls="faq-panel-1" id="faq-button-1">
-              <span class="text-sm sm:text-base font-medium">האם הכרית מתאימה לישיבה ממושכת?</span>
-              <svg class="shrink-0 h-5 w-5 text-gray-400 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
-              </svg>
-            </button>
-            <div id="faq-panel-1" role="region" aria-labelledby="faq-button-1"
-                 class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
-              <div class="overflow-hidden px-3 pb-4 text-sm leading-6 text-gray-700 dark:text-gray-300">
-                כן. הכרית פותחה במיוחד אחרי שעות רבות של ישיבה בהרצאות ובמשרדים, כדי לספק נוחות לאורך זמן ולשמור על תחושה נעימה גם אחרי שימוש ממושך.
-              </div>
-            </div>
-          </div>
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <div class="grid grid-cols-12 gap-6 items-stretch">
 
-          <!-- 2 -->
-          <div class="faq-item">
-            <button type="button" class="w-full flex items-center justify-between gap-4 py-4 px-3 text-right text-gray-900 dark:text-gray-100 hover:bg-gray-50/70 dark:hover:bg-white/5 rounded-xl"
-              aria-expanded="false" aria-controls="faq-panel-2" id="faq-button-2">
-              <span class="text-sm sm:text-base font-medium">האם אפשר לקחת את הכרית לכל מקום?</span>
-              <svg class="shrink-0 h-5 w-5 text-gray-400 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-            </button>
-            <div id="faq-panel-2" role="region" aria-labelledby="faq-button-2" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
-              <div class="overflow-hidden px-3 pb-4 text-sm leading-6 text-gray-700 dark:text-gray-300">
-                בהחלט. הכרית קלה לנשיאה ומתניידת בקלות – לבית, למשרד, לאוניברסיטה ואפילו לנסיעות ארוכות.
-              </div>
-            </div>
-          </div>
-
-          <!-- 3 -->
-          <div class="faq-item">
-            <button type="button" class="w-full flex items-center justify-between gap-4 py-4 px-3 text-right text-gray-900 dark:text-gray-100 hover:bg-gray-50/70 dark:hover:bg-white/5 rounded-xl"
-              aria-expanded="false" aria-controls="faq-panel-3" id="faq-button-3">
-              <span class="text-sm sm:text-base font-medium">מאילו חומרים עשויה הכרית?</span>
-              <svg class="shrink-0 h-5 w-5 text-gray-400 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-            </button>
-            <div id="faq-panel-3" role="region" aria-labelledby="faq-button-3" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
-              <div class="overflow-hidden px-3 pb-4 text-sm leading-6 text-gray-700 dark:text-gray-300">
-                הכרית משלבת שכבות ספוג איכותיות ברמות קשיחות שונות (High-Resilience Foam וריבונד), כדי להעניק איזון בין תמיכה לנוחות. <strong>תוספת:</strong> הכיסוי עשוי בד עמיד ונושם, נעים למגע וקל לניקוי.
-              </div>
-            </div>
-          </div>
-
-          <!-- 4 -->
-          <div class="faq-item">
-            <button type="button" class="w-full flex items-center justify-between gap-4 py-4 px-3 text-right text-gray-900 dark:text-gray-100 hover:bg-gray-50/70 dark:hover:bg-white/5 rounded-xl"
-              aria-expanded="false" aria-controls="faq-panel-4" id="faq-button-4">
-              <span class="text-sm sm:text-base font-medium">האם הכרית מתאימה לכל כיסא?</span>
-              <svg class="shrink-0 h-5 w-5 text-gray-400 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-            </button>
-            <div id="faq-panel-4" role="region" aria-labelledby="faq-button-4" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
-              <div class="overflow-hidden px-3 pb-4 text-sm leading-6 text-gray-700 dark:text-gray-300">
-                כן. הכרית תוכננה להתאים לרוב סוגי הכיסאות – כיסאות משרד, סטודנטים, כיסאות אוכל ואפילו מושבי רכב.
-              </div>
-            </div>
-          </div>
-
-          <!-- 5 -->
-          <div class="faq-item">
-            <button type="button" class="w-full flex items-center justify-between gap-4 py-4 px-3 text-right text-gray-900 dark:text-gray-100 hover:bg-gray-50/70 dark:hover:bg-white/5 rounded-xl"
-              aria-expanded="false" aria-controls="faq-panel-5" id="faq-button-5">
-              <span class="text-sm sm:text-base font-medium">איך מנקים את הכרית?</span>
-              <svg class="shrink-0 h-5 w-5 text-gray-400 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-            </button>
-            <div id="faq-panel-5" role="region" aria-labelledby="faq-button-5" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
-              <div class="overflow-hidden px-3 pb-4 text-sm leading-6 text-gray-700 dark:text-gray-300">
-                הכרית מגיעה עם כיסוי ייחודי שניתן להסרה ולכביסה בקלות, כך שהיא תמיד נשארת נקייה ורעננה.
-              </div>
-            </div>
-          </div>
-
-          <!-- 6 -->
-          <div class="faq-item">
-            <button type="button" class="w-full flex items-center justify-between gap-4 py-4 px-3 text-right text-gray-900 dark:text-gray-100 hover:bg-gray-50/70 dark:hover:bg-white/5 rounded-xl"
-              aria-expanded="false" aria-controls="faq-panel-6" id="faq-button-6">
-              <span class="text-sm sm:text-base font-medium">כמה זמן אחריות יש למוצר?</span>
-              <svg class="shrink-0 h-5 w-5 text-gray-400 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-            </button>
-            <div id="faq-panel-6" role="region" aria-labelledby="faq-button-6" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
-              <div class="overflow-hidden px-3 pb-4 text-sm leading-6 text-gray-700 dark:text-gray-300">
-                לכריות שלנו יש אחריות לשנה על פגמים בייצור, כדי שתוכלו להשתמש בהן בראש שקט.
-              </div>
-            </div>
-          </div>
-
-          <!-- 7 -->
-          <div class="faq-item">
-            <button type="button" class="w-full flex items-center justify-between gap-4 py-4 px-3 text-right text-gray-900 dark:text-gray-100 hover:bg-gray-50/70 dark:hover:bg-white/5 rounded-xl"
-              aria-expanded="false" aria-controls="faq-panel-7" id="faq-button-7">
-              <span class="text-sm sm:text-base font-medium">תוך כמה זמן מגיעה ההזמנה?</span>
-              <svg class="shrink-0 h-5 w-5 text-gray-400 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-            </button>
-            <div id="faq-panel-7" role="region" aria-labelledby="faq-button-7" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
-              <div class="overflow-hidden px-3 pb-4 text-sm leading-6 text-gray-700 dark:text-gray-300">
-                זמני המשלוח משתנים בהתאם לאופי ההזמנה וליעד המשלוח. ברוב המקרים המוצרים מגיעים במהירות, ואנו עושים כל מאמץ כדי שתיהנו מהכרית שלכם בהקדם האפשרי.
-              </div>
-            </div>
-          </div>
-
-          <!-- 8 -->
-          <div class="faq-item">
-            <button type="button" class="w-full flex items-center justify-between gap-4 py-4 px-3 text-right text-gray-900 dark:text-gray-100 hover:bg-gray-50/70 dark:hover:bg-white/5 rounded-xl"
-              aria-expanded="false" aria-controls="faq-panel-8" id="faq-button-8">
-              <span class="text-sm sm:text-base font-medium">האם ניתן להחזיר את המוצר אם לא מתאים לי?</span>
-              <svg class="shrink-0 h-5 w-5 text-gray-400 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-            </button>
-            <div id="faq-panel-8" role="region" aria-labelledby="faq-button-8" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
-              <div class="overflow-hidden px-3 pb-4 text-sm leading-6 text-gray-700 dark:text-gray-300">
-                כן. ניתן להחזיר את הכרית תוך 14 ימים ולקבל החזר כספי מלא, כל עוד המוצר במצב חדש ובאריזתו המקורית.
-              </div>
-            </div>
-          </div>
-
-          <!-- 9 -->
-          <div class="faq-item">
-            <button type="button" class="w-full flex items-center justify-between gap-4 py-4 px-3 text-right text-gray-900 dark:text-gray-100 hover:bg-gray-50/70 dark:hover:bg-white/5 rounded-xl"
-              aria-expanded="false" aria-controls="faq-panel-9" id="faq-button-9">
-              <span class="text-sm sm:text-base font-medium">האם ניתן להזמין את הכרית בעיצוב אישי?</span>
-              <svg class="shrink-0 h-5 w-5 text-gray-400 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-            </button>
-            <div id="faq-panel-9" role="region" aria-labelledby="faq-button-9" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
-              <div class="overflow-hidden px-3 pb-4 text-sm leading-6 text-gray-700 dark:text-gray-300">
-                כן. אנו מציעים אפשרות להוסיף לוגו של חברה או ארגון לפי בקשה מיוחדת – פתרון ממותג לאירועים, מתנות לעובדים ושימוש מוסדי.
-              </div>
-            </div>
-          </div>
-
-          <!-- 10 -->
-          <div class="faq-item">
-            <button type="button" class="w-full flex items-center justify-between gap-4 py-4 px-3 text-right text-gray-900 dark:text-gray-100 hover:bg-gray-50/70 dark:hover:bg-white/5 rounded-xl"
-              aria-expanded="false" aria-controls="faq-panel-10" id="faq-button-10">
-              <span class="text-sm sm:text-base font-medium">איך נושאים את הכרית והאם היא באמת ניידת?</span>
-              <svg class="shrink-0 h-5 w-5 text-gray-400 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-            </button>
-            <div id="faq-panel-10" role="region" aria-labelledby="faq-button-10" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
-              <div class="overflow-hidden px-3 pb-4 text-sm leading-6 text-gray-700 dark:text-gray-300">
-                הכרית מצוידת בקליפס חזק ונוח לחיבור לכל תיק – ללימודים, לעבודה או לנסיעות – בלי לסחוב תיק נוסף.
-              </div>
-            </div>
-          </div>
-
-          <!-- 11 -->
-          <div class="faq-item">
-            <button type="button" class="w-full flex items-center justify-between gap-4 py-4 px-3 text-right text-gray-900 dark:text-gray-100 hover:bg-gray-50/70 dark:hover:bg-white/5 rounded-xl"
-              aria-expanded="false" aria-controls="faq-panel-11" id="faq-button-11">
-              <span class="text-sm sm:text-base font-medium">איך פועלות התרומות?</span>
-              <svg class="shrink-0 h-5 w-5 text-gray-400 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-            </button>
-            <div id="faq-panel-11" role="region" aria-labelledby="faq-button-11" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
-              <div class="overflow-hidden px-3 pb-4 text-sm leading-6 text-gray-700 dark:text-gray-300">
-                ב-COMFASS חלק מההכנסות נתרם לעמותות התומכות בילדים ממשפחות במצוקה. כך כל רכישה תורמת גם ערך חברתי.
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </aside>
-
-<!-- RIGHT: CAROUSEL -->
-    <div class="col-span-12 lg:col-span-7">
-      <div 
-        x-data="() => {
-          return {
-            activeSlide: 0, timer: null, isPaused: false,
-            slides: [
-              { src: 'img/Product1.jpg', caption: 'לוקחים אותה לכל מקום – פשוט ונוח' },
-              { src: 'img/Product2.jpg', caption: 'מתאימה לכל כיסא באקדמיה או בבית' },
-              { src: 'img/Product3.jpg', caption: 'תואמת לכל תיק – מקסימום נוחות וניידות' },
-              { src: 'img/Product4.jpg', caption: 'קלה לנשיאה – מתאימה לכל תיק סטודנטיאלי' }
-            ],
-            next(){ this.activeSlide = (this.activeSlide + 1) % this.slides.length },
-            prev(){ this.activeSlide = this.activeSlide === 0 ? this.slides.length - 1 : this.activeSlide - 1 },
-            start(){ this.stop(); this.timer = setInterval(()=>{ if(!this.isPaused) this.next() }, 7000) },
-            stop(){ if(this.timer){ clearInterval(this.timer); this.timer = null } }
-          }
-        }"
-        x-init="start()"
-        x-on:mouseenter="isPaused = true"
-        x-on:mouseleave="isPaused = false"
-        x-on:focusin="isPaused = true"
-        x-on:focusout="isPaused = false"
-        class="relative w-full h-[450px] overflow-hidden rounded-3xl bg-white dark:bg-neutral-900 shadow-xl ring-1 ring-black/5 dark:ring-white/10"
-        role="region" aria-label="קרוסלת תמונות ComfAss"
-      >
-        <!-- כתובית -->
-        <div class="absolute inset-x-0 top-0 bg-white/70 dark:bg-neutral-900/70 text-gray-900 dark:text-gray-100 text-base sm:text-lg font-semibold py-3 text-center z-20 backdrop-blur-sm">
-          <span x-text="slides[activeSlide].caption"></span>
-        </div>
-
-        <!-- תמונות -->
-        <template x-for="(slide, index) in slides" :key="index">
-          <div x-show="activeSlide === index"
-               x-transition:enter="transition-opacity duration-700"
-               x-transition:enter-start="opacity-0"
-               x-transition:enter-end="opacity-100"
-               x-transition:leave="transition-opacity duration-700"
-               x-transition:leave-start="opacity-100"
-               x-transition:leave-end="opacity-0"
-               class="absolute inset-0 z-10 grid place-items-center">
-            <img :src="slide.src" :alt="`תמונה ${index + 1}: ${slide.caption}`"
-                 loading="lazy" class="w-full h-full object-contain bg-white dark:bg-neutral-900" />
-          </div>
-        </template>
-
-        <!-- חצים -->
-        <div class="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 sm:px-4 z-30">
-          <button type="button" class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow-md ring-1 ring-black/5 dark:ring-white/10 hover:bg-white dark:hover:bg-neutral-800 transition"
-                  aria-label="תמונה קודמת" @click="prev()">
-            <svg class="h-5 w-5 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <button type="button" class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow-md ring-1 ring-black/5 dark:ring-white/10 hover:bg-white dark:hover:bg-neutral-800 transition"
-                  aria-label="תמונה הבאה" @click="next()">
-            <svg class="h-5 w-5 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-
-        <!-- נקודות -->
-        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-30" role="tablist" aria-label="חלון בחירת שקופית">
-          <template x-for="(slide, i) in slides" :key="i">
-            <button role="tab" :aria-selected="activeSlide === i ? 'true' : 'false'"
-                    :aria-controls="`slide-${i}`" @click="activeSlide = i"
-                    :class="activeSlide === i ? 'bg-cyan-600 dark:bg-cyan-400' : 'bg-gray-300 dark:bg-gray-600'"
-                    class="w-3 h-3 rounded-full transition-colors"></button>
-          </template>
-        </div>
-
-        <!-- ניקוי טיימר -->
-        <span x-init="$root.addEventListener('alpine:destroy', () => { stop() })"></span>
+```
+  <!-- LEFT: FAQ card -->
+  <aside class="col-span-12 lg:col-span-6">
+    <div class="bg-white dark:bg-neutral-900 rounded-3xl shadow-xl ring-1 ring-black/5 dark:ring-white/10 h-[500px] flex flex-col">
+      <h2 class="text-xl font-semibold px-5 pt-5 pb-2 text-gray-900 dark:text-gray-100 shrink-0">
+        שאלות ותשובות נפוצות – COMFASS
+      </h2>
+      <div id="faq-accordion" class="divide-y divide-gray-200/80 dark:divide-white/10 overflow-y-auto px-2 sm:px-3 pb-3 grow" aria-label="רשימת שאלות ותשובות">
+        <!-- נטען מבחוץ -->
       </div>
     </div>
+  </aside>
+
+  <!-- RIGHT: Carousel card -->
+  <div class="col-span-12 lg:col-span-6">
+    <div
+      x-data="() => ({
+        active: 0, t: null, paused: false,
+        slides: [
+          { src: 'img/Product1.jpg', caption: 'לוקחים אותה לכל מקום – פשוט ונוח' },
+          { src: 'img/Product2.jpg', caption: 'מתאימה לכל כיסא באקדמיה או בבית' },
+          { src: 'img/Product3.jpg', caption: 'תואמת לכל תיק – מקסימום נוחות וניידות' },
+          { src: 'img/Product4.jpg', caption: 'קלה לנשיאה – מתאימה לכל תיק סטודנטיאלי' }
+        ],
+        next(){ this.active = (this.active + 1) % this.slides.length },
+        prev(){ this.active = this.active === 0 ? this.slides.length - 1 : this.active - 1 },
+        start(){ this.stop(); this.t = setInterval(()=>{ if(!this.paused) this.next() }, 7000) },
+        stop(){ if(this.t){ clearInterval(this.t); this.t = null } }
+      })"
+      x-init="start()"
+      x-on:mouseenter="paused = true" x-on:mouseleave="paused = false"
+      x-on:focusin="paused = true" x-on:focusout="paused = false"
+      class="relative w-full h-[500px] overflow-hidden rounded-3xl bg-white dark:bg-neutral-900 shadow-xl ring-1 ring-black/5 dark:ring-white/10"
+      role="region" aria-label="קרוסלת תמונות ComfAss">
+
+      <!-- Caption -->
+      <div class="absolute inset-x-0 top-0 bg-white/70 dark:bg-neutral-900/70 text-gray-900 dark:text-gray-100 text-base sm:text-lg font-semibold py-3 text-center z-20 backdrop-blur-sm">
+        <span x-text="slides[active].caption"></span>
+      </div>
+
+      <!-- Slides -->
+      <template x-for="(slide, i) in slides" :key="i">
+        <div x-show="active === i"
+             x-transition:enter="transition-opacity duration-700"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             x-transition:leave="transition-opacity duration-700"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0"
+             class="absolute inset-0 grid place-items-center">
+          <img :src="slide.src" :alt="`תמונה ${i+1}: ${slide.caption}`" loading="lazy"
+               class="w-full h-full object-contain select-none" draggable="false" />
+        </div>
+      </template>
+
+      <!-- Arrows -->
+      <div class="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 sm:px-4 z-30">
+        <button type="button" class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow ring-1 ring-black/5 dark:ring-white/10 hover:bg-white dark:hover:bg-neutral-800 transition" aria-label="תמונה קודמת" @click="prev()">
+          <svg class="h-5 w-5 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow ring-1 ring-black/5 dark:ring-white/10 hover:bg-white dark:hover:bg-neutral-800 transition" aria-label="תמונה הבאה" @click="next()">
+          <svg class="h-5 w-5 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <!-- Dots -->
+      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-30" role="tablist" aria-label="בחירת שקופית">
+        <template x-for="(slide, i) in slides" :key="i">
+          <button role="tab" :aria-selected="active === i ? 'true' : 'false'" @click="active = i"
+                  :class="active === i ? 'bg-cyan-600 dark:bg-cyan-400' : 'bg-gray-300 dark:bg-gray-600'"
+                  class="w-3 h-3 rounded-full transition-colors"></button>
+        </template>
+      </div>
+
+      <span x-init="$root.addEventListener('alpine:destroy', () => { stop() })"></span>
+    </div>
   </div>
-</section>
+</div>
+```
 
-<!-- ====== Only-one-open Accordion script (vanilla JS) ====== -->
-<script>
-  (function () {
-    const root = document.getElementById('faq-accordion');
-    if (!root) return;
-    let openItem = null;
+  </section>
 
-    function setOpen(item, open) {
-      const btn = item.querySelector('button[aria-controls]');
-      const panel = item.querySelector('[role="region"]');
-      if (!btn || !panel) return;
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      // height animation (grid trick)
-      panel.style.gridTemplateRows = open ? '1fr' : '0fr';
-      // rotate chevron
-      const chevron = btn.querySelector('svg');
-      if (chevron) chevron.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
-    }
+  <!-- ====== App scripts ====== -->
 
-    root.querySelectorAll('.faq-item').forEach((item, idx) => {
-      const btn = item.querySelector('button[aria-controls]');
-      btn.addEventListener('click', () => {
-        if (openItem && openItem !== item) setOpen(openItem, false);
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        setOpen(item, !isOpen);
-        openItem = !isOpen ? item : null;
-      });
-      // keyboard support: open with Enter/Space is default for button
-      // init collapsed
-      setOpen(item, false);
-      // optionally open first by default:
-      if (idx === 0) { setOpen(item, true); openItem = item; }
-    });
-  })();
-</script>
-</section>
+  <!-- נטען את ה-FAQ החיצוני ואת לוגיקת האקורדיון מקובץ faq.js בשורש -->
+
+  <script src="/js/faq.js"></script>
+
+</body>
+</html>
+
   
 <section id="contact" class="py-20 px-6 bg-gray-100" transition-theme data-aos="fade-up" data-aos-duration="1000">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start md:items-stretch">
