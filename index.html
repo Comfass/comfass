@@ -334,12 +334,15 @@
 <!-- ====== ComfAss: Carousel (right) + FAQ (left) ====== -->
 <section class="max-w-6xl mx-auto px-4">
   <div class="grid grid-cols-12 gap-6 items-start" dir="rtl">
-    <!-- LEFT: FAQ (scrollable card) -->
+    <!-- LEFT: FAQ -->
     <aside class="col-span-12 lg:col-span-5">
-      <div class="bg-white dark:bg-neutral-900 rounded-3xl shadow-xl ring-1 ring-black/5 dark:ring-white/10">
-        <h2 class="text-xl font-semibold px-5 pt-5 pb-2 text-gray-900 dark:text-gray-100">שאלות ותשובות נפוצות – COMFASS</h2>
+      <!-- כרטיס FAQ בגובה קבוע -->
+      <div class="bg-white dark:bg-neutral-900 rounded-3xl shadow-xl ring-1 ring-black/5 dark:ring-white/10 h-[450px] flex flex-col">
+        <h2 class="text-xl font-semibold px-5 pt-5 pb-2 text-gray-900 dark:text-gray-100 shrink-0">
+          שאלות ותשובות נפוצות – COMFASS
+        </h2>
         <div id="faq-accordion"
-             class="divide-y divide-gray-200/80 dark:divide-white/10 max-h-[560px] overflow-y-auto px-2 sm:px-3 pb-3"
+             class="divide-y divide-gray-200/80 dark:divide-white/10 overflow-y-auto px-2 sm:px-3 pb-3 grow"
              aria-label="רשימת שאלות ותשובות">
           
           <!-- FAQ ITEM (template: duplicate & edit text only) -->
@@ -505,99 +508,84 @@
       </div>
     </aside>
 
-<!-- RIGHT: YOUR CAROUSEL -->
-<div 
-  x-data="() => {
-    return {
-      activeSlide: 0,
-      timer: null,
-      isPaused: false,
-      slides: [
-        { src: 'img/Product1.jpg', caption: 'לוקחים אותה לכל מקום – פשוט ונוח' },
-        { src: 'img/Product2.jpg', caption: 'מתאימה לכל כיסא באקדמיה או בבית' },
-        { src: 'img/Product3.jpg', caption: 'תואמת לכל תיק – מקסימום נוחות וניידות' },
-        { src: 'img/Product4.jpg', caption: 'קלה לנשיאה – מתאימה לכל תיק סטודנטיאלי' }
-      ],
-      next(){ this.activeSlide = (this.activeSlide + 1) % this.slides.length },
-      prev(){ this.activeSlide = this.activeSlide === 0 ? this.slides.length - 1 : this.activeSlide - 1 },
-      start(){ this.stop(); this.timer = setInterval(()=>{ if(!this.isPaused) this.next() }, 7000) },
-      stop(){ if(this.timer) { clearInterval(this.timer); this.timer = null } }
-    }
-  }"
-  x-init="start()"
-  x-on:mouseenter="isPaused = true"
-  x-on:mouseleave="isPaused = false"
-  x-on:focusin="isPaused = true"
-  x-on:focusout="isPaused = false"
-  class="relative w-full h-[450px] overflow-hidden rounded-3xl bg-white dark:bg-neutral-900 shadow-xl ring-1 ring-black/5 dark:ring-white/10"
-  role="region"
-  aria-label="קרוסלת תמונות ComfAss"
->
+<!-- RIGHT: CAROUSEL -->
+    <div class="col-span-12 lg:col-span-7">
+      <div 
+        x-data="() => {
+          return {
+            activeSlide: 0, timer: null, isPaused: false,
+            slides: [
+              { src: 'img/Product1.jpg', caption: 'לוקחים אותה לכל מקום – פשוט ונוח' },
+              { src: 'img/Product2.jpg', caption: 'מתאימה לכל כיסא באקדמיה או בבית' },
+              { src: 'img/Product3.jpg', caption: 'תואמת לכל תיק – מקסימום נוחות וניידות' },
+              { src: 'img/Product4.jpg', caption: 'קלה לנשיאה – מתאימה לכל תיק סטודנטיאלי' }
+            ],
+            next(){ this.activeSlide = (this.activeSlide + 1) % this.slides.length },
+            prev(){ this.activeSlide = this.activeSlide === 0 ? this.slides.length - 1 : this.activeSlide - 1 },
+            start(){ this.stop(); this.timer = setInterval(()=>{ if(!this.isPaused) this.next() }, 7000) },
+            stop(){ if(this.timer){ clearInterval(this.timer); this.timer = null } }
+          }
+        }"
+        x-init="start()"
+        x-on:mouseenter="isPaused = true"
+        x-on:mouseleave="isPaused = false"
+        x-on:focusin="isPaused = true"
+        x-on:focusout="isPaused = false"
+        class="relative w-full h-[450px] overflow-hidden rounded-3xl bg-white dark:bg-neutral-900 shadow-xl ring-1 ring-black/5 dark:ring-white/10"
+        role="region" aria-label="קרוסלת תמונות ComfAss"
+      >
+        <!-- כתובית -->
+        <div class="absolute inset-x-0 top-0 bg-white/70 dark:bg-neutral-900/70 text-gray-900 dark:text-gray-100 text-base sm:text-lg font-semibold py-3 text-center z-20 backdrop-blur-sm">
+          <span x-text="slides[activeSlide].caption"></span>
+        </div>
 
-  <!-- כותרת/כתובית מעל התמונה -->
-  <div class="absolute inset-x-0 top-0 bg-white/70 dark:bg-neutral-900/70 text-gray-900 dark:text-gray-100 text-base sm:text-lg font-semibold py-3 text-center z-20 backdrop-blur-sm">
-    <span x-text="slides[activeSlide].caption"></span>
-  </div>
+        <!-- תמונות -->
+        <template x-for="(slide, index) in slides" :key="index">
+          <div x-show="activeSlide === index"
+               x-transition:enter="transition-opacity duration-700"
+               x-transition:enter-start="opacity-0"
+               x-transition:enter-end="opacity-100"
+               x-transition:leave="transition-opacity duration-700"
+               x-transition:leave-start="opacity-100"
+               x-transition:leave-end="opacity-0"
+               class="absolute inset-0 z-10 grid place-items-center">
+            <img :src="slide.src" :alt="`תמונה ${index + 1}: ${slide.caption}`"
+                 loading="lazy" class="w-full h-full object-contain bg-white dark:bg-neutral-900" />
+          </div>
+        </template>
 
-  <!-- תמונות -->
-  <template x-for="(slide, index) in slides" :key="index">
-    <div 
-      x-show="activeSlide === index" 
-      x-transition:enter="transition-opacity duration-700" 
-      x-transition:enter-start="opacity-0" 
-      x-transition:enter-end="opacity-100" 
-      x-transition:leave="transition-opacity duration-700" 
-      x-transition:leave-start="opacity-100" 
-      x-transition:leave-end="opacity-0"
-      class="absolute inset-0 z-10 grid place-items-center"
-    >
-      <img 
-        :src="slide.src" 
-        :alt="`תמונה ${index + 1}: ${slide.caption}`"
-        loading="lazy"
-        class="w-full h-full object-contain bg-white dark:bg-neutral-900"
-      />
+        <!-- חצים -->
+        <div class="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 sm:px-4 z-30">
+          <button type="button" class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow-md ring-1 ring-black/5 dark:ring-white/10 hover:bg-white dark:hover:bg-neutral-800 transition"
+                  aria-label="תמונה קודמת" @click="prev()">
+            <svg class="h-5 w-5 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button type="button" class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow-md ring-1 ring-black/5 dark:ring-white/10 hover:bg-white dark:hover:bg-neutral-800 transition"
+                  aria-label="תמונה הבאה" @click="next()">
+            <svg class="h-5 w-5 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- נקודות -->
+        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-30" role="tablist" aria-label="חלון בחירת שקופית">
+          <template x-for="(slide, i) in slides" :key="i">
+            <button role="tab" :aria-selected="activeSlide === i ? 'true' : 'false'"
+                    :aria-controls="`slide-${i}`" @click="activeSlide = i"
+                    :class="activeSlide === i ? 'bg-cyan-600 dark:bg-cyan-400' : 'bg-gray-300 dark:bg-gray-600'"
+                    class="w-3 h-3 rounded-full transition-colors"></button>
+          </template>
+        </div>
+
+        <!-- ניקוי טיימר -->
+        <span x-init="$root.addEventListener('alpine:destroy', () => { stop() })"></span>
+      </div>
     </div>
-  </template>
-
-  <!-- חצים -->
-  <div class="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 sm:px-4 z-30">
-    <button type="button" 
-            class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow-md ring-1 ring-black/5 dark:ring-white/10 hover:bg-white dark:hover:bg-neutral-800 transition"
-            aria-label="תמונה קודמת"
-            @click="prev()">
-      <svg class="h-5 w-5 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-
-    <button type="button" 
-            class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow-md ring-1 ring-black/5 dark:ring-white/10 hover:bg-white dark:hover:bg-neutral-800 transition"
-            aria-label="תמונה הבאה"
-            @click="next()">
-      <svg class="h-5 w-5 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
   </div>
-
-  <!-- נקודות -->
-  <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-30" role="tablist" aria-label="חלון בחירת שקופית">
-    <template x-for="(slide, i) in slides" :key="i">
-      <button 
-        role="tab"
-        :aria-selected="activeSlide === i ? 'true' : 'false'"
-        :aria-controls="`slide-${i}`"
-        @click="activeSlide = i"
-        :class="activeSlide === i ? 'bg-cyan-600 dark:bg-cyan-400' : 'bg-gray-300 dark:bg-gray-600'"
-        class="w-3 h-3 rounded-full transition-colors"
-      ></button>
-    </template>
-  </div>
-
-  <!-- ניקוי טיימר כשמוסרים את האלמנט מה-DOM -->
-  <span x-init="$root.addEventListener('alpine:destroy', () => { stop() })"></span>
-</div>
+</section>
 
 <!-- ====== Only-one-open Accordion script (vanilla JS) ====== -->
 <script>
