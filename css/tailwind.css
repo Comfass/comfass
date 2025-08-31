@@ -16,7 +16,15 @@
 
 /* אופציונלי: מעבר חלק צבע/רקע לכל מקום */
 @layer base {
-  html, body { transition: background-color .3s ease, color .3s ease; }
+   html,
+    :host {
+        -webkit-text-size-adjust: 100%;
+    }
+}
+@layer utilities {
+    .backdrop-blur {
+        backdrop-filter: var(--tw-backdrop-blur,)var(--tw-backdrop-brightness,)var(--tw-backdrop-contrast,)var(--tw-backdrop-grayscale,)var(--tw-backdrop-hue-rotate,)var(--tw-backdrop-invert,)var(--tw-backdrop-opacity,)var(--tw-backdrop-saturate,)var(--tw-backdrop-sepia,);
+    }
 }
 /* ================================
    CSS הישן שלך (שולב כ־components)
@@ -323,10 +331,14 @@ html {
     background: rgba(255,255,255,.3);
   }
 }
+   .blur-bg {
+        -webkit-backdrop-filter: blur(12px)saturate(120%);
+    }
 
 
 
 }
+
 
 
 
