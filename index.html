@@ -276,23 +276,23 @@
        class="w-full border p-3 rounded-lg shadow-sm" />
 
         <textarea name="message" placeholder="טקסט חופשי" rows="4" class="w-full border p-3 rounded-lg shadow-sm"></textarea>
-        <!-- Checkbox חדש עם האנימציה -->
-<div class="checkbox-wrapper flex items-start mb-4">
-  <!-- שים לב: שמרנו על אותו id ושמנו required -->
-  <input id="terms" name="terms" type="checkbox" required>
-
-  <!-- התווית מפעילה את ה-checkbox בלחיצה על האזור שלה (לא על הכפתורים) -->
-  <label class="terms-label" for="terms">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" class="checkbox-svg" aria-hidden="true" focusable="false">
-      <mask fill="white" id="path-1-inside-1_476_5-37">
-        <rect height="200" width="200"></rect>
-      </mask>
-      <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
-      <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
-    </svg>
-
-    <!-- טקסט ההצהרה -->
-    <span class="label-text">אני מאשר/ת את</span>
+  <!-- Checkbox חדש עם האנימציה -->
+  <div class="checkbox-wrapper flex items-start mb-4 text-violet-600 dark:text-violet-400">
+    <!-- שים לב: שמרנו על required; הוספתי aria-required לנגישות -->
+    <input id="terms" name="terms" type="checkbox" required aria-required="true" />
+  
+    <!-- לחיצה על כל האזור מפעילה את ה-checkbox -->
+    <label class="terms-label" for="terms">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" class="checkbox-svg" aria-hidden="true" focusable="false">
+        <mask fill="white" id="path-1-inside-1_476_5-37">
+          <rect height="200" width="200"></rect>
+        </mask>
+        <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
+        <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
+      </svg>
+      <span class="label-text">אני מאשר/ת את התנאים</span>
+    </label>
+  </div>
 
     <!-- הכפתורים: עוצרים בועת קליק כדי שלא ילחצו על ה-checkbox -->
    <button type="button" class="text-blue-600 underline ml-1"
