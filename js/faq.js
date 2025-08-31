@@ -28,12 +28,15 @@
 
         // פלוס = שני קווים, מינוס = קו אחד
         if (iconPath) {
-          iconPath.setAttribute('d',
-            open
-              ? 'M4 12 H20'                  // מינוס
-              : 'M12 4 V20 M4 12 H20'       // פלוס
-          );
-        }
+  if (open) {
+    // מינוס
+    iconPath.setAttribute('d', 'M4 12 H20');
+  } else {
+    // פלוס
+    iconPath.setAttribute('d', 'M12 4 V20 M4 12 H20');
+  }
+}
+
       };
 
       btn.addEventListener('click', () => {
