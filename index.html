@@ -358,35 +358,57 @@
         </div>
 
         <!-- Slides -->
-        <template x-for="(slide, i) in slides" :key="i">
-          <div x-show="active === i"
-               x-transition:enter="transition-opacity duration-700"
-               x-transition:enter-start="opacity-0"
-               x-transition:enter-end="opacity-100"
-               x-transition:leave="transition-opacity duration-700"
-               x-transition:leave-start="opacity-100"
-               x-transition:leave-end="opacity-0"
-               class="absolute inset-0 grid place-items-center">
-            <img :src="slide.src" :alt="`תמונה ${i+1}: ${slide.caption}`"
-                 loading="lazy" class="w-full h-full object-contain select-none" draggable="false" />
-          </div>
-        </template>
+<template x-for="(slide, i) in slides" :key="i">
+  <div 
+    x-show="active === i"
+    x-transition:enter="transition-opacity duration-700"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition-opacity duration-700"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    class="absolute inset-0 flex items-center justify-center p-4"
+  >
+    <!-- קונטיינר ביחס 4:3 -->
+    <div class="w-full max-w-md aspect-[4/3]">
+      <img 
+        :src="slide.src" 
+        :alt="`תמונה ${i+1}: ${slide.caption}`"
+        loading="lazy"
+        draggable="false"
+        class="w-full h-full object-contain rounded-xl bg-white dark:bg-neutral-900"
+      />
+    </div>
+  </div>
+</template>
 
-        <!-- Arrows -->
-        <div class="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 sm:px-4 z-30">
-          <button type="button" class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow ring-1 ring-black/5 dark:ring-white/10 hover:bg-white dark:hover:bg-neutral-800 transition"
-                  aria-label="תמונה קודמת" @click="prev()">
-            <svg class="h-5 w-5 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <button type="button" class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow ring-1 ring-black/5 dark:ring-white/10 hover:bg-white dark:hover:bg-neutral-800 transition"
-                  aria-label="תמונה הבאה" @click="next()">
-            <svg class="h-5 w-5 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6ל6 6-6 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
+       <!-- Arrows -->
+<div class="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 sm:px-4 z-30">
+  
+  <!-- Previous (שמאל) -->
+  <button type="button"
+          class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-transparent hover:bg-black/10 dark:hover:bg-white/10 transition"
+          aria-label="תמונה קודמת"
+          @click="prev()">
+    <svg class="h-6 w-6 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M15.41 7.41 14 6 8 12l6 6 1.41-1.41L10.83 12z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <!-- Next (ימין) -->
+  <button type="button"
+          class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-transparent hover:bg-black/10 dark:hover:bg-white/10 transition"
+          aria-label="תמונה הבאה"
+          @click="next()">
+    <svg class="h-6 w-6 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+</div>
+
 
         <!-- Dots -->
         <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-30" role="tablist" aria-label="בחירת שקופית">
