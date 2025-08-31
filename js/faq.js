@@ -15,29 +15,37 @@
       console.error('Failed to load FAQ:', err);
     });
 
-  function initAccordion() {
-    let openItem = null;
+ function initAccordion() {
+  let openItem = null;
 
-    const setOpen = (item, open) => {
-      const btn = item.querySelector('button[aria-controls]');
-      const panel = item.querySelector('[role="region"]');
-      if (!btn || !panel) return;
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      panel.style.gridTemplateRows = open ? '1fr' : '0fr';
-      const chev = btn.querySelector('svg');
-      if (chev) chev.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
-    };
+  const setOpen = (item, open) => {
+    const btn = item.querySelector('button[aria-controls]');
+    const panel = item.querySelector('.faq-panel');
+    const icon = btn.querySelector('svg path');
+    if (!btn || !panel) return;
 
-    // Start closed, open only what user clicks. One open item at a time.
-    faqContainer.querySelectorAll('.faq-item').forEach((item) => {
-      const btn = item.querySelector('button[aria-controls]');
-      btn.addEventListener('click', () => {
-        if (openItem && openItem !== item) setOpen(openItem, false);
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        setOpen(item, !isOpen);
-        openItem = !isOpen ? item : null;
-      });
-      setOpen(item, false);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+    if (open) {
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+      // לשנות את האייקון למינוס
+      icon.setAttribute("d", "M20 12H4"); 
+    } else {
+      panel.style.maxHeight = '0px';
+      // להחזיר לפלוס
+      icon.setAttribute("d", "M12 4v16m8-8H4");
+    }
+  };
+
+  faqContainer.querySelectorAll('.faq-item').forEach((item) => {
+    const btn = item.querySelector('button[aria-controls]');
+    btn.addEventListener('click', () => {
+      if (openItem && openItem !== item) setOpen(openItem, false);
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      setOpen(item, !isOpen);
+      openItem = !isOpen ? item : null;
     });
-  }
+    setOpen(item, false); // התחל סגור
+  });
+}
 })();
