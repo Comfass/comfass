@@ -572,53 +572,8 @@
       </div>
     </div>
   </div>
-
-    <!-- חוות דעת עם כפתור פתיחה -->
-    <div class="flex flex-col justify-center bg-white transition-theme rounded-lg shadow-md p-6">
-      <h3 class="text-xl font-semibold mb-4 text-center text-gray-800">מה הלקוחות אומרים 💬</h3>
-      <div id="testimonial-box" class="text-center text-gray-700 text-lg transition-opacity duration-700 ease-in-out">
-        <div class="flex flex-col items-center">
-          <img id="testimonial-img" src="https://i.pravatar.cc/80?img=1" alt="avatar" class="w-16 h-16 rounded-full mb-2 shadow" />
-          <div class="text-sm font-medium text-gray-800 mb-1" id="testimonial-name">רותם מ.</div>
-          <div class="flex gap-1 text-yellow-400 mb-2" id="stars-box">⭐⭐⭐⭐⭐</div>
-          <p id="testimonial-text">הכרית הזאת שינתה לי את הישיבה במשרד!</p>
-        </div>
-      </div>
-      <div class="mt-6 text-center">
-       <button data-popup="review" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-5 rounded-full transition-all duration-300 shadow">
-          ✍️ השאר חוות דעת משלך
-        </button>
-      </div>
-    </div>
-  </div>
 </section>
 
-<!-- POPUP Modal לחוות דעת -->
-<div id="review-popup" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center">
-  <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full relative">
-    <button data-close="review" class="absolute top-2 left-2 text-gray-500 hover:text-red-500 text-xl">✖</button>
-    <h3 class="text-xl font-bold mb-4 text-center">השאר חוות דעת</h3>
-    <form id="review-form" action="https://formspree.io/f/mblyqgwq" method="POST" class="space-y-4">
-      <input type="text" name="name" autocomplete="name" placeholder="שמך" required class="w-full border p-2 rounded" />
-      <input type="email" name="email" autocomplete="email" placeholder="אימייל (לא יוצג)" required class="w-full border p-2 rounded" />
-      <textarea name="message" placeholder="חוות דעת" rows="4" class="w-full border p-2 rounded" required></textarea>
-      <div class="text-center">
-      <p class="text-sm text-gray-500 mb-2">לחץ כדי לדרג</p>
-      <div class="star-rating" id="star-rating">
-        <span class="star" data-value="5">★</span>
-        <span class="star" data-value="4">★</span>
-        <span class="star" data-value="3">★</span>
-        <span class="star" data-value="2">★</span>
-        <span class="star" data-value="1">★</span>
-      </div>
-      <input type="hidden" name="rating" id="rating-input">
-      </div>
-      <input type="hidden" name="submittedFrom" value="review-popup" />
-      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">שליחה</button>
-    </form>
-    <div id="review-thankyou" class="hidden text-center mt-4 text-green-600 font-bold">✅ תודה על חוות הדעת!</div>
-  </div>
-</div>
   <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600">
   <div class="flex flex-col items-center gap-2">
     <p>
@@ -708,9 +663,6 @@
 <script type="module" src="js/dom-fixes.js" defer></script>
 <script type="module" src="js/modals.js" defer></script>
 <script type="module" src="js/typing.js" defer></script>
-<script src="js/testimonial.js" defer></script>
-<script type="module" src="js/review.js" defer></script>
-<script type="module" src="js/rating.js" defer></script>
 <script type="module" src="js/validation.js" defer></script>
 <script type="module" src="js/main.js" defer></script>
 <script src="js/banner.js" defer></script>
