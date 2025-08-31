@@ -1,4 +1,4 @@
-// validation.js
+// js/validation.js
 
 // ---------- Email ----------
 export function validateEmail(email) {
@@ -22,8 +22,8 @@ export function validatePhone(phone) {
   let local = clean.startsWith('+972') ? '0' + clean.slice(4) : clean;
   local = local.replace(/\D/g, ''); // רק ספרות
 
-  const isMobile = /^05\d{8}$/.test(local);       // 10 ספרות
-  const isLand9 = /^0[23489]\d{7}$/.test(local);  // 9 ספרות (02/03/04/08/09)
+  const isMobile  = /^05\d{8}$/.test(local);      // 10 ספרות
+  const isLand9  = /^0[23489]\d{7}$/.test(local); // 9 ספרות (02/03/04/08/09)
   const isLand10 = /^0[57]\d{8}$/.test(local);    // 10 ספרות (07x/075 וכו')
   return isMobile || isLand9 || isLand10;
 }
@@ -42,7 +42,7 @@ export function updateInputValidationStyle(input, isValid) {
   input.classList.remove('border-gray-300', 'border-red-500', 'border-green-500');
   input.classList.add(isValid ? 'border-green-500' : 'border-red-500');
 
-  // שים סטטוס לשימוש פנימי
+  // לשימוש פנימי
   input.dataset.valid = isValid ? 'true' : 'false';
 
   // HTML5 validity (לטובת form.checkValidity אם נדרש)
@@ -69,7 +69,6 @@ function validateFieldAndStyle(input) {
   return ok;
 }
 
-
 function refreshSubmitStateFor(input) {
   const form = input?.closest('form');
   if (!form) return;
@@ -77,7 +76,7 @@ function refreshSubmitStateFor(input) {
   const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
   if (!submitBtn) return;
 
-  // כל השדות required + צ'קבוקסים required בטופס
+  // כל השדות required בטופס
   const requiredFields = Array.from(
     form.querySelectorAll('input[required], textarea[required], select[required]')
   );
@@ -108,39 +107,42 @@ export function attachValidationListeners(phoneSelector, emailSelector, institut
   const emailInput = emailSelector ? document.querySelector(emailSelector) : null;
   const instInput  = institutionSelector ? document.querySelector(institutionSelector) : null;
 
-  const inputs = [phoneInput, emailInput, instInput].filter(Boolean);
+  // אתר את הטופס (אם לא הועבר, קח מהשדות הקיימים)
+  const form = formSelector
+    ? document.querySelector(formSelector)
+    : (phoneInput?.form || emailInput?.form || instInput?.form || null);
 
-  // אתחול ראשוני (צבעים + מצב submit)
+  // אסוף אוטומטית כל שדות עם data-validate בתוך הטופס (כולל name)
+  const autoInputs = form
+    ? Array.from(form.querySelectorAll('[data-validate]'))
+    : [];
+
+  // מיזוג כל השדות, ללא nulls וללא כפילויות
+  const inputs = [...new Set([phoneInput, emailInput, instInput, ...autoInputs].filter(Boolean))];
+
+  // אם חסר data-validate לשדות הידועים — הוסף
   inputs.forEach(input => {
-    // אם חסר data-validate—נגדיר לפי הסלקטור
     if (input === phoneInput && !input.dataset.validate) input.dataset.validate = 'phone';
     if (input === instInput  && !input.dataset.validate) input.dataset.validate = 'institution';
-
-    validateFieldAndStyle(input);
-    refreshSubmitStateFor(input);
   });
 
-  // מאזינים
+  // אתחול ראשוני
   inputs.forEach(input => {
-    input.addEventListener('input', () => {
-      validateFieldAndStyle(input);
-      refreshSubmitStateFor(input);
-    });
-    input.addEventListener('change', () => {
-      validateFieldAndStyle(input);
-      refreshSubmitStateFor(input);
-    });
+    validateFieldAndStyle(input);
+  });
+  refreshSubmitStateFor(inputs[0] || form);
+
+  // מאזינים לכל השדות (כולל שם)
+  inputs.forEach(input => {
+    input.addEventListener('input', () => { validateFieldAndStyle(input); refreshSubmitStateFor(input); });
+    input.addEventListener('change', () => { validateFieldAndStyle(input); refreshSubmitStateFor(input); });
     input.addEventListener('blur', () => validateFieldAndStyle(input));
   });
 
-  // לטפל גם ב־checkbox required בטופס (למשל terms)
-  const form = formSelector ? document.querySelector(formSelector) : (phoneInput?.form || emailInput?.form || instInput?.form);
+  // צ'קבוקסים required
   if (form) {
     const requiredChecks = Array.from(form.querySelectorAll('input[type="checkbox"][required]'));
-    requiredChecks.forEach(chk => {
-      chk.addEventListener('change', () => refreshSubmitStateFor(chk));
-    });
-
+    requiredChecks.forEach(chk => chk.addEventListener('change', () => refreshSubmitStateFor(chk)));
     // רענון מצב submit בהתחלה
     refreshSubmitStateFor(requiredChecks[0] || inputs[0] || form);
   }
