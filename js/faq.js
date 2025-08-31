@@ -1,10 +1,8 @@
-// app.js — root
 (function () {
   const faqContainer = document.getElementById('faq-accordion');
   if (!faqContainer) return;
 
-  // אם האתר לא נטען מהשורש, זה ימנע 404
-  const faqUrl = './faq.html';
+  const faqUrl = './faq.html'; // עובד גם מקבצים סטטיים / GitHub Pages
 
   fetch(faqUrl, { cache: 'no-cache' })
     .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
@@ -18,33 +16,35 @@
     let openItem = null;
 
     root.querySelectorAll('.faq-item').forEach((item) => {
-      const btn   = item.querySelector('button[aria-controls]');
+      const btn = item.querySelector('button[aria-controls]');
       const panel = item.querySelector('.faq-panel');
       if (!btn || !panel) return;
 
-      const iconPath = btn.querySelector('svg path'); // ייתכן שאין – נבדוק לפני שימוש
+      const iconPath = btn.querySelector('svg path'); // יכול להיות null
 
       const setOpen = (open) => {
         btn.setAttribute('aria-expanded', String(open));
         panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0px';
 
-        // עדכון האייקון רק אם יש path
+        // פלוס = שני קווים, מינוס = קו אחד
         if (iconPath) {
-          // פתוח = מינוס; סגור = פלוס
-          iconPath.setAttribute('d', open ? 'M20 12H4' : 'M12 4v16M20 12H4');
+          iconPath.setAttribute('d',
+            open
+              ? 'M4 12 H20'                  // מינוס
+              : 'M12 4 V20 M4 12 H20'       // פלוס
+          );
         }
       };
 
       btn.addEventListener('click', () => {
-        // סגור את הפריט הפתוח הקודם
         if (openItem && openItem !== item) {
-          const prevBtn   = openItem.querySelector('button[aria-controls]');
-          const prevPanel = openItem.querySelector('.faq-panel');
-          const prevPath  = prevBtn?.querySelector('svg path');
-          if (prevBtn && prevPanel) {
-            prevBtn.setAttribute('aria-expanded', 'false');
-            prevPanel.style.maxHeight = '0px';
-            if (prevPath) prevPath.setAttribute('d', 'M12 4v16M20 12H4');
+          const pb = openItem.querySelector('button[aria-controls]');
+          const pp = openItem.querySelector('.faq-panel');
+          const ip = pb?.querySelector('svg path');
+          if (pb && pp) {
+            pb.setAttribute('aria-expanded', 'false');
+            pp.style.maxHeight = '0px';
+            if (ip) ip.setAttribute('d', 'M12 4 V20 M4 12 H20');
           }
           openItem = null;
         }
@@ -54,9 +54,8 @@
         openItem = !isOpen ? item : null;
       });
 
-      // התחל סגור כברירת מחדל
-      btn.setAttribute('aria-expanded', 'false');
-      panel.style.maxHeight = '0px';
+      // מצב התחלתי: סגור
+      setOpen(false);
     });
   }
 })();
