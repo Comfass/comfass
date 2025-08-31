@@ -308,7 +308,11 @@ html {
   .disqus-sandbox { color: #111827; background: #ffffff; }
   .dark .disqus-sandbox { color: #e5e7eb; background: #0b1220; }
 
+   .faq-panel { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+
+
 }
+
 
 
 
