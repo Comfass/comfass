@@ -328,11 +328,8 @@
 <section class="max-w-6xl mx-auto px-4 py-10" dir="rtl">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-    <!-- LEFT: FAQ card (loaded by js/faq.js from faq.html) -->
-    <aside>
-      <div class="bg-white dark:bg-neutral-900 rounded-3xl shadow-xl ring-1 ring-black/5 dark:ring-white/10 h-[500px] flex flex-col">
-            <!-- RIGHT: Carousel card -->
-    <div>
+    <!-- RIGHT (on lg): Carousel card -->
+    <div class="lg:order-2">
       <div 
         x-data="() => ({
           active: 0, t: null, paused: false,
@@ -386,7 +383,7 @@
           <button type="button" class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow ring-1 ring-black/5 dark:ring-white/10 hover:bg-white dark:hover:bg-neutral-800 transition"
                   aria-label="תמונה הבאה" @click="next()">
             <svg class="h-5 w-5 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6ל6 6-6 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
         </div>
@@ -403,16 +400,18 @@
         <span x-init="$root.addEventListener('alpine:destroy', () => { stop() })"></span>
       </div>
     </div>
-        
+
+    <!-- LEFT (on lg): FAQ card -->
+    <aside class="lg:order-1">
+      <div class="bg-white dark:bg-neutral-900 rounded-3xl shadow-xl ring-1 ring-black/5 dark:ring-white/10 h-[500px] flex flex-col">
         <h2 class="text-xl font-semibold px-5 pt-5 pb-2 text-gray-900 dark:text-gray-100 shrink-0">
-          שאלות ותשובות נפוצות - Comfass
+          שאלות ותשובות נפוצות – Comfass
         </h2>
 
-        <!-- הסקריפט שלך יזריק לכאן את תוכן ה-FAQ -->
+        <!-- js/faq.js יזריק לפה את התוכן מ-/faq.html -->
         <div id="faq-accordion"
              class="divide-y divide-gray-200/80 dark:divide-white/10 overflow-y-auto px-2 sm:px-3 pb-3 grow"
              aria-label="רשימת שאלות ותשובות">
-          <!-- placeholder לאקססיביליות במקרה ש-JS כבוי -->
           <p class="sr-only">טוען שאלות…</p>
         </div>
       </div>
