@@ -352,10 +352,15 @@
         class="relative w-full h-[500px] overflow-hidden rounded-3xl bg-white dark:bg-neutral-900 shadow-xl ring-1 ring-black/5 dark:ring-white/10"
         role="region" aria-label="קרוסלת תמונות ComfAss">
 
-        <!-- Caption -->
-        <div class="absolute inset-x-0 top-0 bg-white/70 dark:bg-neutral-900/70 text-gray-900 dark:text-gray-100 text-base sm:text-lg font-semibold py-3 text-center z-20 backdrop-blur-sm">
-          <span x-text="slides[active].caption"></span>
-        </div>
+       <!-- Caption -->
+<div class="absolute inset-x-0 top-0 px-4 py-6 text-center z-20 
+            bg-gradient-to-b from-white/90 via-white/60 to-transparent 
+            dark:from-neutral-900/90 dark:via-neutral-900/60 dark:to-transparent
+            backdrop-blur-sm rounded-t-3xl">
+  <span x-text="slides[active].caption"
+        class="text-xl sm:text-2xl font-bold text-cyan-700 dark:text-cyan-400 drop-shadow-md tracking-wide">
+  </span>
+</div>
 
         <!-- Slides -->
 <template x-for="(slide, i) in slides" :key="i">
@@ -390,8 +395,8 @@
           class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-transparent transition-none"
           aria-label="תמונה קודמת"
           @click="prev()">
-    <svg class="h-6 w-6 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M15.41 7.41 14 6 8 12l6 6 1.41-1.41L10.83 12z"
+     <svg class="h-6 w-6 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </button>
@@ -402,7 +407,7 @@
           aria-label="תמונה הבאה"
           @click="next()">
     <svg class="h-6 w-6 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"
+      <path d="M15.41 7.41 14 6 8 12l6 6 1.41-1.41L10.83 12z"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </button>
