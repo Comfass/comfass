@@ -457,26 +457,24 @@
 
     <!-- כרטיסיית ביקורות/תגובות – תופיע משמאל במסכים רחבים -->
     <div class="md:order-first bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-      <h3 id="reviews" class="text-xl font-bold mb-4 text-right">⭐ ביקורות ותגובות</h3>
+  <h3 id="reviews" class="text-xl font-bold mb-4 text-right">⭐ ביקורות ותגובות</h3>
 
-      <div id="disqus_thread"></div>
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https://www.comfass.com/';  // כתובת הקנונית של הדף
-          this.page.identifier = 'comfass-reviews';             // מזהה ייחודי לשרשור
-           this.language = 'he'; // ל-UI בעברית
-        };
-        (function () { // אל לערוך מתחת לשורה זו
-          var d = document, s = d.createElement('script');
-          s.src = 'https://comfass-com.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-      <noscript class="text-sm text-gray-600 dark:text-gray-300">
-        אנא הפעילו JavaScript כדי לראות תגובות מ-Disqus.
-      </noscript>
-    </div>
+  <!-- המכל של דיסקאס עם צבעים בפורמט HEX/RGB -->
+  <div id="disqus_thread" class="disqus-sandbox"></div>
+
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://www.comfass.com/#reviews';
+      this.page.identifier = 'comfass-reviews';
+      this.language = 'he';
+    };
+    (function(){var d=document,s=d.createElement('script');
+      s.src='https://comfass-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp',+new Date());
+      (d.head||d.body).appendChild(s);
+    })();
+  </script>
+</div>
     
     <!-- טופס יצירת קשר -->
     <div class="flex flex-col justify-center">
