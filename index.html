@@ -644,58 +644,108 @@
 </section>
 
 
-  <footer class="bg-gray-200 py-6 text-center text-sm text-gray-600">
+<footer class="bg-gray-200 dark:bg-neutral-800 py-6 text-center text-sm text-gray-700 dark:text-gray-300">
   <div class="flex flex-col items-center gap-2">
-    <p>
-      <a href="#" onclick="openModal('termsModal', './modals/terms.html'); return false;"> תנאי השימוש</a>
-      <a href="#" onclick="openModal('privacyModal', './modals/privacy.html'); return false;">| מדיניות הפרטיות</a>
-      <a href="#" onclick="openModal('accessibilityModal', './modals/accessibility.html'); return false;">| הצהרת נגישות</a>
-
+    <p class="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+      <a id="link-terms" href="#" onclick="openModal('termsModal', './modals/terms.html'); return false;">תנאי השימוש</a>
+      <span aria-hidden="true">|</span>
+      <a id="link-privacy" href="#" onclick="openModal('privacyModal', './modals/privacy.html'); return false;">מדיניות הפרטיות</a>
+      <span aria-hidden="true">|</span>
+      <a id="link-access" href="#" onclick="openModal('accessibilityModal', './modals/accessibility.html'); return false;">הצהרת נגישות</a>
+      <span aria-hidden="true">|</span>
+      <!-- חדשים: -->
+      <a id="link-returns" href="#" onclick="openModal('returnsModal', './modals/returns.html'); return false;">מדיניות החזרות</a>
+      <span aria-hidden="true">|</span>
+      <a id="link-warranty" href="#" onclick="openModal('warrantyModal', './modals/warranty.html'); return false;">מדיניות אחריות</a>
     </p>
-    <p>© 2025 Comfass | כל הזכויות שמורות</p>
-    <p class="text-xs text-gray-500">עיצוב הלוגו נוצר באהבה על ידי ז'נה קולצ'ין</p>
-    <a href="#" title="ComfAss Home">
-      <img src="https://comfass.com/img/comfass-logo.jpg" alt="ComfAss Logo Small" class="w-28 opacity-80 hover:opacity-100 transition duration-300" />
+
+    <p>© 2025 ComfAss | כל הזכויות שמורות</p>
+    <p class="text-xs text-gray-500 dark:text-gray-400">עיצוב הלוגו נוצר באהבה על ידי ז'נה קולצ'ין</p>
+
+    <a id="homeLogo" href="/" title="ComfAss Home">
+      <img src="https://comfass.com/img/comfass-logo.jpg" alt="ComfAss Logo Small"
+           class="w-28 opacity-80 hover:opacity-100 transition duration-300" />
     </a>
   </div>
 </footer>
 
+<!-- ===== Modals ===== -->
+
 <!-- תנאי שימוש -->
-<div id="termsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-  <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl">
-    <div class="sticky top-0 bg-white z-10 flex justify-end">
-      <button onclick="closeModal('termsModal')" class="text-gray-600 hover:text-black text-xl">✖</button>
+<div id="termsModal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+  <div data-modal-panel
+       class="bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl ring-1 ring-black/5 dark:ring-white/10
+              max-w-3xl w-[92vw] sm:w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+    <div class="sticky top-0 -mx-6 -mt-6 px-6 pt-4 pb-3 bg-white/80 dark:bg-neutral-900/80 backdrop-blur flex items-center justify-between z-10">
+      <h3 id="termsTitle" class="text-base font-semibold">תנאי השימוש</h3>
+      <button data-close onclick="closeModal('termsModal')" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white text-xl" aria-label="סגירת חלון">✖</button>
     </div>
-    <div id="termsContent">
-      <!-- כאן נטען הקובץ terms.html -->
+    <div id="termsContent" class="prose prose-sm rtl:prose-h1:text-right rtl:prose-h2:text-right dark:prose-invert">
+      <!-- ייטען terms.html -->
     </div>
   </div>
 </div>
 
 <!-- מדיניות פרטיות -->
-<div id="privacyModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-  <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl">
+<div id="privacyModal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+  <div data-modal-panel
+       class="bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl ring-1 ring-black/5 dark:ring-white/10
+              max-w-3xl w-[92vw] sm:w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+    <div class="sticky top-0 -mx-6 -mt-6 px-6 pt-4 pb-3 bg-white/80 dark:bg-neutral-900/80 backdrop-blur flex items-center justify-between z-10">
+      <h3 id="privacyTitle" class="text-base font-semibold">מדיניות הפרטיות</h3>
+      <button data-close onclick="closeModal('privacyModal')" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white text-xl" aria-label="סגירת חלון">✖</button>
+    </div>
+    <div id="privacyContent" class="prose prose-sm dark:prose-invert">
+      <!-- ייטען privacy.html -->
+    </div>
+  </div>
+</div>
 
-    <div class="sticky top-0 bg-white z-10 flex justify-end">
-      <button onclick="closeModal('privacyModal')" class="text-gray-600 hover:text-black text-xl">✖</button>
+<!-- הצהרת נגישות -->
+<div id="accessibilityModal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+  <div data-modal-panel
+       class="bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl ring-1 ring-black/5 dark:ring-white/10
+              max-w-3xl w-[92vw] sm:w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="accessTitle">
+    <div class="sticky top-0 -mx-6 -mt-6 px-6 pt-4 pb-3 bg-white/80 dark:bg-neutral-900/80 backdrop-blur flex items-center justify-between z-10">
+      <h3 id="accessTitle" class="text-base font-semibold">הצהרת נגישות</h3>
+      <button data-close onclick="closeModal('accessibilityModal')" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white text-xl" aria-label="סגירת חלון">✖</button>
     </div>
-    <div id="privacyContent">
-      <!-- כאן ייכנס התוכן של privacy.html -->
-    </div>
-  </div>
-</div>
-<!-- Accessibility Modal (ריק – נטען דינמית) -->
-<div id="accessibilityModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-  <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl"
-       onclick="event.stopPropagation()">
-    <div class="sticky top-0 bg-white z-10 flex justify-end">
-      <button onclick="closeModal('accessibilityModal')" class="text-gray-600 hover:text-black text-xl">✖</button>
-    </div>
-    <div id="accessibilityContent">
-    <!-- כאן ייטען accessibility.html -->
+    <div id="accessibilityContent" class="prose prose-sm dark:prose-invert">
+      <!-- ייטען accessibility.html -->
     </div>
   </div>
 </div>
+
+<!-- מדיניות החזרות (חדש) -->
+<div id="returnsModal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+  <div data-modal-panel
+       class="bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl ring-1 ring-black/5 dark:ring-white/10
+              max-w-3xl w-[92vw] sm:w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="returnsTitle">
+    <div class="sticky top-0 -mx-6 -mt-6 px-6 pt-4 pb-3 bg-white/80 dark:bg-neutral-900/80 backdrop-blur flex items-center justify-between z-10">
+      <h3 id="returnsTitle" class="text-base font-semibold">מדיניות החזרות</h3>
+      <button data-close onclick="closeModal('returnsModal')" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white text-xl" aria-label="סגירת חלון">✖</button>
+    </div>
+    <div id="returnsContent" class="prose prose-sm dark:prose-invert">
+      <!-- ייטען returns.html -->
+    </div>
+  </div>
+</div>
+
+<!-- מדיניות אחריות (חדש) -->
+<div id="warrantyModal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+  <div data-modal-panel
+       class="bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl ring-1 ring-black/5 dark:ring-white/10
+              max-w-3xl w-[92vw] sm:w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="warrantyTitle">
+    <div class="sticky top-0 -mx-6 -mt-6 px-6 pt-4 pb-3 bg-white/80 dark:bg-neutral-900/80 backdrop-blur flex items-center justify-between z-10">
+      <h3 id="warrantyTitle" class="text-base font-semibold">מדיניות אחריות</h3>
+      <button data-close onclick="closeModal('warrantyModal')" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white text-xl" aria-label="סגירת חלון">✖</button>
+    </div>
+    <div id="warrantyContent" class="prose prose-sm dark:prose-invert">
+      <!-- ייטען warranty.html -->
+    </div>
+  </div>
+</div>
+  
 <!-- Floating Buttons -->
 <div class="floating-buttons fixed left-4 bottom-4 z-50 flex flex-col gap-3 items-center">
   <!-- WhatsApp Button -->
