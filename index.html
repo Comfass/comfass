@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Comfass, wherever you go</title>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <link href="./css/style.css?v=3" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
+
+  <!-- App CSS (ללא ?v=3; עדיף שם עם hash) -->
+  <link href="/css/style.css" rel="stylesheet">
+
+  <!-- SEO / OG -->
   <meta name="description" content="Comfass הפתרון החדשני והנוח לישיבה ממושכת" />
   <meta property="og:title" content="Comfass הפתרון הנוח שלך" />
   <meta property="og:description" content="הצטרפו למהפכת הנוחות עם Comfass פתרון חדשני לישיבה ממושכת" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.comfass.com/img/comfass-logo.jpg" />
   <link rel="icon" href="/img/comfass-logo.jpg" type="image/jpeg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="canonical" href="https://www.comfass.com/">
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
-    body{font-family: Heebo, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", Arial, "Apple Color Emoji","Segoe UI Emoji"}
+    body { font-family: Heebo, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", Arial, "Apple Color Emoji","Segoe UI Emoji" }
   </style>
 </head>
+
 
 <body class="bg-gray-50 text-gray-800 pt-10">
 <header>
@@ -715,29 +724,26 @@
 
  <!-- Language Button (EN) – מחליף את כפתור המוזיקה -->
 </div>   
-<!-- third-party -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer onload="AOS.init({ once: false });"></script>
-<script> nl_pos = "br"; nl_compact = "1"; </script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-<script id="dsq-count-scr" src="https://comfass-com.disqus.com/count.js" async></script>
-<script>
-nl_pos = "br";
-nl_compact = "1";
-nl_accordion = "1";
-nl_contact = "u:info";
-</script>
-<script src="https://www.comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
+
+<!-- third-party (defer) -->
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="module" defer src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script async id="dsq-count-scr" src="https://comfass-com.disqus.com/count.js"></script>
+  
 
 <!-- שלך -->
 <script src="/js/faq.js"></script>
-<script type="module" src="js/dom-fixes.js" defer></script>
-<script type="module" src="js/modals.js" defer></script>
-<script type="module" src="js/review.js" defer></script>
-<script type="module" src="js/typing.js" defer></script>
-<script type="module" src="js/validation.js" defer></script>
-<script type="module" src="js/main.js" defer></script>
-<script src="js/banner.js" defer></script>
+<script defer src="/js/boot.js"></script>
+<script defer src="https://www.comfass.com/nagishli.js"></script>
+<script defer type="module" src="js/dom-fixes.js" ></script>
+<script defer type="module" src="js/modals.js" ></script>
+<script defer type="module" src="js/review.js" ></script>
+<script defer type="module" src="js/typing.js" ></script>
+<script defer type="module" src="js/validation.js" ></script>
+<script defer type="module" src="js/main.js" ></script>
+<script defer src="js/banner.js" ></script>
 <!-- אל תטעין שוב model-viewer – הוא כבר נטען -->
 <script>
   function openWhatsApp() {
