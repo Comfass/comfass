@@ -42,3 +42,9 @@ from = "http://comfass.com/*"
 to = "https://www.comfass.com/:splat"
 status = 301
 force = true
+
+[[redirects]]
+from = "https://comfass.com/*"
+to = "https://www.comfass.com/:splat"
+status = 301
+force = true
