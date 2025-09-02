@@ -16,49 +16,71 @@
     let openItem = null;
 
     root.querySelectorAll('.faq-item').forEach((item) => {
-      const btn = item.querySelector('button[aria-controls]');
+      const btn   = item.querySelector('button[aria-controls]');
       const panel = item.querySelector('.faq-panel');
       if (!btn || !panel) return;
 
-      const iconPath = btn.querySelector('svg path'); // יכול להיות null
+      // יצירת/מציאת אייקון טקסטואלי: ▸ (סגור) / ▾ (פתוח)
+      let iconSpan = btn.querySelector('.faq-icon');
+      if (!iconSpan) {
+        iconSpan = document.createElement('span');
+        iconSpan.className = 'faq-icon';
+        iconSpan.setAttribute('aria-hidden', 'true');
+        // מיקום נוח ב-RTL: לפני הטקסט, עם רווח קטן
+        iconSpan.style.display = 'inline-block';
+        iconSpan.style.marginInlineStart = '0.5ch';
+        iconSpan.style.fontSize = '1.1em';
+        // מוסיפים בתחילת הכפתור
+        btn.prepend(iconSpan);
+      }
 
+      // פונקציית פתיחה/סגירה
       const setOpen = (open) => {
         btn.setAttribute('aria-expanded', String(open));
         panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0px';
-
-        // פלוס = שני קווים, מינוס = קו אחד
-        if (iconPath) {
-  if (open) {
-    // מינוס
-    iconPath.setAttribute('d', 'M4 12 H20');
-  } else {
-    // פלוס
-    iconPath.setAttribute('d', 'M12 4 V20 M4 12 H20');
-  }
-}
-
+        iconSpan.textContent = open ? '▾' : '▸';
       };
 
-      btn.addEventListener('click', () => {
+      // התנהגות קליק + סגירת פריט אחר
+      const toggle = () => {
         if (openItem && openItem !== item) {
-          const pb = openItem.querySelector('button[aria-controls]');
-          const pp = openItem.querySelector('.faq-panel');
-          const ip = pb?.querySelector('svg path');
-          if (pb && pp) {
-            pb.setAttribute('aria-expanded', 'false');
-            pp.style.maxHeight = '0px';
-            if (ip) ip.setAttribute('d', 'M12 4 V20 M4 12 H20');
+          const prevBtn   = openItem.querySelector('button[aria-controls]');
+          const prevPanel = openItem.querySelector('.faq-panel');
+          const prevIcon  = openItem.querySelector('.faq-icon');
+          if (prevBtn && prevPanel) {
+            prevBtn.setAttribute('aria-expanded', 'false');
+            prevPanel.style.maxHeight = '0px';
+            if (prevIcon) prevIcon.textContent = '▸';
           }
           openItem = null;
         }
-
         const isOpen = btn.getAttribute('aria-expanded') === 'true';
         setOpen(!isOpen);
         openItem = !isOpen ? item : null;
+      };
+
+      btn.addEventListener('click', toggle);
+
+      // נגישות מקלדת: Enter/Space
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle();
+        }
       });
 
-      // מצב התחלתי: סגור
-      setOpen(false);
+      // מצב התחלתי: סגור (או שמור אם כבר קיים aria-expanded="true")
+      const initial = btn.getAttribute('aria-expanded') === 'true';
+      setOpen(!!initial);
+      if (initial) openItem = item;
+    });
+
+    // תיקון גובה אם חלון משתנה (למשל רספונסיביות)
+    window.addEventListener('resize', () => {
+      const current = root.querySelector('.faq-item button[aria-expanded="true"]');
+      if (!current) return;
+      const panel = current.closest('.faq-item')?.querySelector('.faq-panel');
+      if (panel) panel.style.maxHeight = panel.scrollHeight + 'px';
     });
   }
 })();
