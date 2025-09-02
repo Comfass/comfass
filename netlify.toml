@@ -2,16 +2,21 @@
   command = "npm run build"
   publish = "."
 
-# === Security & Defaults ===
+# =========================
+# Security headers (global)
+# =========================
 [[headers]]
   for = "/*"
   [headers.values]
+  # אבטחה בסיסית
   X-Content-Type-Options = "nosniff"
   Referrer-Policy = "strict-origin-when-cross-origin"
   Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+  # הפעל HSTS רק אם כל האתר תמיד HTTPS (מומלץ בדומיין שלך)
   Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
 
-  # --- CSP מתוקן ---
+  # ---- Content Security Policy ----
+  # אל תשכפל ב-<meta http-equiv>. אם יש – מחק מה-HTML.
   Content-Security-Policy = """
     default-src 'self';
     script-src 'self' 'unsafe-inline' 'unsafe-eval'
@@ -19,39 +24,43 @@
       https://code.jquery.com
       https://cdn.tailwindcss.com
       https://comfass-com.disqus.com
+      https://*.disqus.com
       https://*.disquscdn.com
       https://www.gstatic.com;
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com https://cdn.tailwindcss.com;
-    font-src 'self' https://fonts.gstatic.com;
-    img-src 'self' data: blob: https:;
+    style-src  'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com https://cdn.tailwindcss.com;
+    font-src   'self' https://fonts.gstatic.com;
+    img-src    'self' data: blob: https:;
     connect-src 'self' blob: data:
       https://comfass-com.disqus.com
+      https://*.disqus.com
       https://*.disquscdn.com
+      https://links.services.disqus.com
       https://www.gstatic.com;
-    frame-src 'self' https://disqus.com https://*.disqus.com https://*.disquscdn.com;
+    frame-src  'self' https://disqus.com https://*.disqus.com https://*.disquscdn.com;
     worker-src 'self' blob:;
-    media-src 'self' blob: data: https:;
+    media-src  'self' blob: data: https:;
     object-src 'none';
-    frame-ancestors 'self';
     base-uri 'self';
-    form-action 'self'
+    form-action 'self';
+    frame-ancestors 'self'
   """
 
+# =========================
+# Caching policy
+# =========================
 
-# === Caching ===
-# HTML – קאש קצר/בדיקת עדכונים בכל טעינה
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-  Cache-Control = "no-cache"
-
-# זה יתפוס גם את index.html בשורש
+# HTML – תמיד לבדוק עדכון
 [[headers]]
   for = "/"
   [headers.values]
   Cache-Control = "no-cache"
 
-# סטטיים עם fingerprint — קאש ארוך
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+  Cache-Control = "no-cache"
+
+# נכסים סטטיים עם שמות יציבים/מופינגרפרינטים – קאש ארוך
 [[headers]]
   for = "/css/*"
   [headers.values]
@@ -77,15 +86,59 @@
   [headers.values]
   Cache-Control = "public, max-age=31536000, immutable"
 
-# === Redirects ===
+# סוגי קבצים בשורש (סמלים/פונטים/wasm וכו')
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webmanifest"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.wasm"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+# אם יש תיקיית פונטים ייעודית
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+# =========================
+# Redirects (www + https)
+# =========================
 [[redirects]]
   from = "http://comfass.com/*"
-  to = "https://www.comfass.com/:splat"
+  to   = "https://www.comfass.com/:splat"
   status = 301
-  force = true
+  force  = true
 
 [[redirects]]
   from = "https://comfass.com/*"
-  to = "https://www.comfass.com/:splat"
+  to   = "https://www.comfass.com/:splat"
   status = 301
-  force = true
+  force  = true
