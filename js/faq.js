@@ -20,17 +20,16 @@
       const panel = item.querySelector('.faq-panel');
       if (!btn || !panel) return;
 
-      // יצירת/מציאת אייקון טקסטואלי: ▸ (סגור) / ▾ (פתוח)
+      // יצירת/מציאת אייקון טקסטואלי: ◂ (סגור) / ▾ (פתוח)
       let iconSpan = btn.querySelector('.faq-icon');
       if (!iconSpan) {
         iconSpan = document.createElement('span');
         iconSpan.className = 'faq-icon';
         iconSpan.setAttribute('aria-hidden', 'true');
-        // מיקום נוח ב-RTL: לפני הטקסט, עם רווח קטן
         iconSpan.style.display = 'inline-block';
-        iconSpan.style.marginInlineStart = '0.5ch';
-        iconSpan.style.fontSize = '1.1em';
-        // מוסיפים בתחילת הכפתור
+        iconSpan.style.marginInlineEnd = '0.5ch'; // רווח אחרי האייקון
+        iconSpan.style.fontSize = '1.4em'; // חץ גדול יותר
+        // מוסיפים בתחילת הכפתור (RTL: החץ בצד ימין)
         btn.prepend(iconSpan);
       }
 
@@ -38,7 +37,7 @@
       const setOpen = (open) => {
         btn.setAttribute('aria-expanded', String(open));
         panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0px';
-        iconSpan.textContent = open ? '▾' : '▸';
+        iconSpan.textContent = open ? '▾' : '◂'; // סגור = חץ שמאלה, פתוח = חץ למטה
       };
 
       // התנהגות קליק + סגירת פריט אחר
@@ -50,7 +49,7 @@
           if (prevBtn && prevPanel) {
             prevBtn.setAttribute('aria-expanded', 'false');
             prevPanel.style.maxHeight = '0px';
-            if (prevIcon) prevIcon.textContent = '▸';
+            if (prevIcon) prevIcon.textContent = '◂';
           }
           openItem = null;
         }
@@ -69,13 +68,13 @@
         }
       });
 
-      // מצב התחלתי: סגור (או שמור אם כבר קיים aria-expanded="true")
+      // מצב התחלתי: סגור (או שמור אם aria-expanded="true")
       const initial = btn.getAttribute('aria-expanded') === 'true';
       setOpen(!!initial);
       if (initial) openItem = item;
     });
 
-    // תיקון גובה אם חלון משתנה (למשל רספונסיביות)
+    // עדכון גובה אם חלון משתנה
     window.addEventListener('resize', () => {
       const current = root.querySelector('.faq-item button[aria-expanded="true"]');
       if (!current) return;
