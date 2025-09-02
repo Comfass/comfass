@@ -4,23 +4,17 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Comfass, wherever you go</title>
-
-    <!-- Alpine.js -->
-
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
-  <!-- CSS שנבנה ב-PostCSS/Tailwind (פעם אחת) -->
   <link href="./css/style.css?v=3" rel="stylesheet">
   <meta name="description" content="Comfass הפתרון החדשני והנוח לישיבה ממושכת" />
   <meta property="og:title" content="Comfass הפתרון הנוח שלך" />
   <meta property="og:description" content="הצטרפו למהפכת הנוחות עם Comfass פתרון חדשני לישיבה ממושכת" />
-  <meta property="og:image" content="https://comfass.com/img/comfass-logo.jpg" />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="/img/comfass-logo.jpg" />
+  <link rel="icon" href="/img/comfass-logo.jpg" type="image/jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" href="https://comfass.com/img/comfass-logo.jpg" type="image/jpeg">
   <link rel="canonical" href="https://www.comfass.com/">
-  <!-- פונט + AOS (פעם אחת) -->
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
@@ -33,22 +27,24 @@
   <!-- Announcement Banner -->
 <div id="promoBanner" dir="rtl" class="promo-banner hidden" role="region" aria-label="הודעה חשובה">
   <div class="promo-inner">
-    <!-- תוכן גלול עדין; אם לא רוצים גלילה – הסר את המחלקה animate -->
     <div class="promo-track-wrapper" aria-live="polite">
       <div id="bannerTicker" class="promo-track animate">
-        <span class="promo-msg">Comfass: נוחות חכמה לשעות ישיבה ארוכות במכללות ובארגונים.</span>
+        <span class="promo-msg"> Comfass - פתרון נייד לישיבה נוחה בכל מקום </span>
         <span class="promo-sep">|</span>
-        <span class="promo-msg">משטיח לחץ, מפחית כאב, מעלה ריכוז – נבדק בפיילוטים.</span>
+        <span class="promo-msg"> קל להלבשה לכל תיק, מוכן לשימוש בשניות, ומעניק תמיכה בזמן לימודים או עבודה </span>
         <span class="promo-sep">|</span>
-        <span class="promo-msg">הצטרפו לרשימת המקדימים וקבלו תנאי השקה.</span>
+        <span class="promo-msg"> מתאים במיוחד לסטודנטים, מרצים ועובדים במשרדים ובכנסים </span>
+        <span class="promo-sep">|</span>
+        <span class="promo-msg"> הצטרפו עכשיו לרשימת המקדימים וקבלו עדיפות בהשקה </span>
 
         <!-- שכפול ללופ חלק -->
-        <span class="promo-gap"></span>
-        <span class="promo-msg">Comfass: נוחות חכמה לשעות ישיבה ארוכות במכללות ובארגונים.</span>
+        <span class="promo-msg"> Comfass - פתרון נייד לישיבה נוחה בכל מקום </span>
         <span class="promo-sep">|</span>
-        <span class="promo-msg">משטיח לחץ, מפחית כאב, מעלה ריכוז – נבדק בפיילוטים.</span>
+        <span class="promo-msg"> קל להלבשה לכל תיק, מוכן לשימוש בשניות, ומעניק תמיכה בזמן לימודים או עבודה </span>
         <span class="promo-sep">|</span>
-        <span class="promo-msg">הצטרפו לרשימת המקדימים וקבלו תנאי השקה.</span>
+        <span class="promo-msg"> מתאים במיוחד לסטודנטים, מרצים ועובדים במשרדים ובכנסים </span>
+        <span class="promo-sep">|</span>
+        <span class="promo-msg"> הצטרפו עכשיו לרשימת המקדימים וקבלו עדיפות בהשקה </span>
       </div>
     </div>
 
@@ -64,16 +60,9 @@
   <!-- משפט ראשון באפקט הקלדה -->
    <p id="line1" class="text-xl sm:text-2xl md:text-3xl font-light font-[Varela Round] text-center max-w-screen-md mx-auto px-4"></p>
   <!-- תמונת לוגו אחרי שני המשפטים -->
-   <img 
-    id="logo"
-    src="img/COMFASS-LOGO-No-BackGround.png" 
-    alt="ComfAss Logo" 
-    class="mx-auto w-72 sm:w-[26rem] md:w-[32rem] lg:w-[40rem] xl:w-[44rem] drop-shadow-2xl opacity-0 transition-opacity duration-700"
-  /> 
+   <img id="logo" src="img/COMFASS-LOGO-No-BackGround.png" alt="ComfAss Logo" class="mx-auto w-72 sm:w-[26rem] md:w-[32rem] lg:w-[40rem] xl:w-[44rem] drop-shadow-2xl opacity-0 transition-opacity duration-700" /> 
     <!-- משפט שני באפקט הקלדה (נפרד) -->
-  <p id="line2" class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 
-           font-light font-[Varela Round] 
-           text-center px-4 max-w-screen-md mx-auto"></p>
+  <p id="line2" class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light font-[Varela Round] text-center px-4 max-w-screen-md mx-auto"></p>
   
     <!-- מקום לכפתור פעולה -->
   <div id="cta-button-container"></div>
@@ -85,10 +74,10 @@
   <span class="absolute left-0 -bottom-1 w-full h-1 bg-cyan-500 rounded"></span>
 </h2>
     <p class="text-xl max-w-2xl mx-auto leading-relaxed">
-      כולנו מבלים שעות ארוכות בישיבה – בהרצאות, בלימודים, במשרד או בבית. <br>
-      רוב הכיסאות שסביבנו לא מיועדים לישיבה ממושכת, וכך חוסר הנוחות מתחיל להצטבר.
-      הגב כואב, הריכוז נעלם, והעייפות משתלטת על כל היום.<br><br>
-      התוצאה ברורה: גם הבריאות נפגעת וגם היכולת להישאר ממוקדים ויעילים. במקום להתקדם, אנחנו מתמודדים עם כאב ותסכול שניתן היה למנוע מראש.
+      .כולנו מבלים שעות ארוכות בישיבה בהרצאות, בלימודים, במשרד או בבית <br>
+      .רוב הכיסאות שסביבנו לא מיועדים לישיבה ממושכת, וכך חוסר הנוחות מתחיל להצטבר
+      .הגב כואב, הריכוז נעלם, והעייפות משתלטת על כל היום<br><br>
+      .התוצאה ברורה: גם הבריאות נפגעת וגם היכולת להישאר ממוקדים ויעילים. במקום להתקדם, אנחנו מתמודדים עם כאב עצבים ותסכול שניתן היה למנוע מראש
     </p>
   </section>
 <section class="py-20 px-6 transition-theme max-w-6xl mx-auto" data-aos="fade-up" dir="rtl" aria-label="יתרונות ComfAss">
@@ -99,15 +88,8 @@
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
     <!-- צד שמאל – מודל תלת־ממדי -->
     <div class="flex flex-col items-center">
-      <model-viewer
-  src="models/Product_3D_Model.glb"
-  alt="ComfAss Cushion 3D"
-  auto-rotate
-  camera-controls
-  shadow-intensity="1"
-  environment-image="neutral"
-  class="w-full max-w-sm h-[500px] rounded-2xl shadow-xl bg-gray-100 dark:bg-gray-900">
-</model-viewer>
+      <model-viewer src="models/Product_3D_Model.glb" alt="ComfAss Cushion 3D" auto-rotate camera-controls shadow-intensity="1" environment-image="neutral" class="w-full max-w-sm h-[500px] rounded-2xl shadow-xl bg-gray-100 dark:bg-gray-900">
+      </model-viewer>
       <small class="text-gray-500 dark:text-gray-400 mt-2 text-sm">* המודל להמחשה בלבד</small>
     </div>
 
@@ -189,13 +171,11 @@
             <thead class="bg-gray-50 dark:bg-white/5">
               <tr class="text-sm sm:text-base text-gray-500 dark:text-gray-300">
                 <!-- תא כותרת ראשי -->
-               <th scope="col"
-                  class="sticky right-0 z-20 w-20 sm:w-32 bg-gray-50/95 dark:bg-white/5 backdrop-blur py-3 sm:py-5 ps-3 sm:ps-6 pe-2 sm:pe-3 font-semibold text-gray-700 dark:text-gray-100 text-start">
+               <th scope="col" class="sticky right-0 z-20 w-20 sm:w-32 bg-gray-50/95 dark:bg-white/5 backdrop-blur py-3 sm:py-5 ps-3 sm:ps-6 pe-2 sm:pe-3 font-semibold text-gray-700 dark:text-gray-100 text-start">
                   תכונות\מוצר
                 </th>
 
-                <th scope="col"
-                  class="sticky right-[5rem] sm:right-[8rem] z-10 bg-gray-50/95 dark:bg-white/5 backdrop-blur py-5 px-3 font-semibold text-blue-600 dark:text-blue-400 text-center">
+                <th scope="col" class="sticky right-[5rem] sm:right-[8rem] z-10 bg-gray-50/95 dark:bg-white/5 backdrop-blur py-5 px-3 font-semibold text-blue-600 dark:text-blue-400 text-center">
                   Comfass
                 </th>
 
@@ -208,8 +188,7 @@
             <tbody class="divide-y divide-gray-200/80 dark:divide-white/10">
               <!-- שורה 1 -->
               <tr class="hover:bg-gray-50/60 dark:hover:bg-white/5">
-                <th scope="row"
-                    class="sticky right-0 z-10 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
+                <th scope="row" class="sticky right-0 z-10 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
                   מתלבש על כל תיק
                 </th>
                 <td class="sticky right-[5rem] sm:right-[8rem] bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-5 px-3 text-center">
@@ -236,8 +215,7 @@
 
               <!-- שורה 2 -->
               <tr class="hover:bg-gray-50/60 dark:hover:bg-white/5">
-                <th scope="row"
-                    class="sticky right-0 z-10 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
+                <th scope="row" class="sticky right-0 z-10 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
                   נוח לנשיאה בכל מקום
                 </th>
                 <td class="sticky right-[5rem] sm:right-[8rem] bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-5 px-3 text-center">
@@ -378,12 +356,8 @@
         role="region" aria-label="קרוסלת תמונות ComfAss">
 
        <!-- Caption -->
-<div class="absolute inset-x-0 top-0 px-4 py-6 text-center z-20
-            bg-gradient-to-b from-white/90 via-white/60 to-transparent
-            dark:from-neutral-900/90 dark:via-neutral-900/60 dark:to-transparent
-            backdrop-blur-sm rounded-t-3xl">
-  <span x-text="slides[active].caption"
-        class="text-xl sm:text-2xl font-bold !text-cyan-700 dark:!text-cyan-400 drop-shadow-md tracking-wide"></span>
+<div class="absolute inset-x-0 top-0 px-4 py-6 text-center z-20 bg-gradient-to-b from-white/90 via-white/60 to-transparent dark:from-neutral-900/90 dark:via-neutral-900/60 dark:to-transparent backdrop-blur-sm rounded-t-3xl">
+  <span x-text="slides[active].caption" class="text-xl sm:text-2xl font-bold !text-cyan-700 dark:!text-cyan-400 drop-shadow-md tracking-wide"></span>
 </div>
 
 
@@ -401,13 +375,7 @@
   >
     <!-- קונטיינר ביחס 4:3 -->
     <div class="w-full max-w-md aspect-[4/3]">
-      <img 
-        :src="slide.src" 
-        :alt="`תמונה ${i+1}: ${slide.caption}`"
-        loading="lazy"
-        draggable="false"
-        class="w-full h-full object-contain rounded-xl bg-white dark:bg-neutral-900"
-      />
+      <img :src="slide.src" :alt="`תמונה ${i+1}: ${slide.caption}`" loading="lazy" draggable="false" class="w-full h-full object-contain rounded-xl bg-white dark:bg-neutral-900"/>
     </div>
   </div>
 </template>
@@ -416,39 +384,27 @@
 <div class="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 sm:px-4 z-30">
   
   <!-- Previous (שמאל) -->
-  <button type="button"
-          class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-transparent transition-none"
-          aria-label="תמונה קודמת"
-          @click="prev()">
+  <button type="button" class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-transparent transition-none" aria-label="תמונה קודמת" @click="prev()">
      <svg class="h-6 w-6 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </button>
 
   <!-- Next (ימין) -->
-  <button type="button"
-          class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-transparent transition-none"
-          aria-label="תמונה הבאה"
-          @click="next()">
+  <button type="button" class="pointer-events-auto grid place-items-center h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-transparent transition-none" aria-label="תמונה הבאה" @click="next()">
     <svg class="h-6 w-6 text-gray-700 dark:text-gray-200" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M15.41 7.41 14 6 8 12l6 6 1.41-1.41L10.83 12z"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M15.41 7.41 14 6 8 12l6 6 1.41-1.41L10.83 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </button>
 
 </div>
 
-
-
         <!-- Dots -->
-        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-30" role="tablist" aria-label="בחירת שקופית">
-          <template x-for="(slide, i) in slides" :key="i">
-            <button role="tab" :aria-selected="active === i ? 'true' : 'false'" @click="active = i"
-                    :class="active === i ? 'bg-cyan-600 dark:bg-cyan-400' : 'bg-gray-300 dark:bg-gray-600'"
-                    class="w-3 h-3 rounded-full transition-colors"></button>
-          </template>
-        </div>
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-30" role="tablist" aria-label="בחירת שקופית">
+        <template x-for="(slide, i) in slides" :key="i">
+          <button role="tab" :aria-selected="active === i ? 'true' : 'false'" @click="active = i" :class="active === i ? 'bg-cyan-600 dark:bg-cyan-400' : 'bg-gray-300 dark:bg-gray-600'" class="w-3 h-3 rounded-full transition-colors"></button>
+        </template>
+     </div>
 
         <span x-init="$root.addEventListener('alpine:destroy', () => { stop() })"></span>
       </div>
@@ -462,9 +418,7 @@
         </h2>
 
         <!-- js/faq.js יזריק לפה את התוכן מ-/faq.html -->
-        <div id="faq-accordion"
-             class="divide-y divide-gray-200/80 dark:divide-white/10 overflow-y-auto px-2 sm:px-3 pb-3 grow"
-             aria-label="רשימת שאלות ותשובות">
+        <div id="faq-accordion" class="divide-y divide-gray-200/80 dark:divide-white/10 overflow-y-auto px-2 sm:px-3 pb-3 grow" aria-label="רשימת שאלות ותשובות">
           <p class="sr-only">טוען שאלות…</p>
         </div>
       </div>
@@ -475,7 +429,6 @@
   
 <section id="contact" class="py-20 px-6 bg-gray-100" transition-theme data-aos="fade-up" data-aos-duration="1000">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start md:items-stretch">
-
     
     <!-- עמודת הטופס – עטופה בכרטיס -->
     <div class="flex flex-col justify-center">
@@ -486,29 +439,25 @@
           <!-- שם מלא -->
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
             שם מלא <span class="text-red-500">*</span>
-            <input type="text" name="name" autocomplete="name" required data-validate="name"
-                   class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm" />
+            <input type="text" name="name" autocomplete="name" required data-validate="name" class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm" />
           </label>
 
           <!-- אימייל -->
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
             אימייל <span class="text-red-500">*</span>
-            <input type="email" name="email" autocomplete="email" dir="ltr" required
-                   class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm" />
+            <input type="email" name="email" autocomplete="email" dir="ltr" required class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm" />
           </label>
 
           <!-- טלפון -->
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
             מספר טלפון <span class="text-red-500">*</span>
-            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" dir="ltr" required data-validate="phone"
-                   class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm" />
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" dir="ltr" required data-validate="phone" class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm" />
           </label>
 
           <!-- מוסד/חברה -->
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
             שם מוסד / חברה <span class="text-red-500">*</span>
-            <input type="text" name="company" autocomplete="organization" required data-validate="institution"
-                   class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm" />
+            <input type="text" name="company" autocomplete="organization" required data-validate="institution" class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm" />
           </label>
 
           <!-- הודעה -->
@@ -516,14 +465,12 @@
             טקסט חופשי
             <textarea name="message" rows="4" class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm"></textarea>
           </label>
-
+          
           <!-- תנאים -->
           <div class="checkbox-wrapper flex items-start mb-1">
             <input id="terms" name="terms" type="checkbox" required aria-required="true" class="mt-1" />
             <label class="terms-label ml-3 cursor-pointer select-none" for="terms">
-              <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 200 200"
-                   class="checkbox-svg text-violet-600 dark:text-violet-400 inline-block align-middle"
-                   aria-hidden="true" focusable="false" style="width:30px;height:30px;">
+              <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 200 200" class="checkbox-svg text-violet-600 dark:text-violet-400 inline-block align-middle" aria-hidden="true" focusable="false" style="width:30px;height:30px;">
                 <mask id="cb" fill="white"><rect width="200" height="200"/></mask>
                 <rect class="checkbox-box" width="200" height="200" mask="url(#cb)" stroke-width="40"></rect>
                 <path class="checkbox-tick" d="M52 111.018L76.9867 136L149 64" stroke-width="15"></path>
@@ -540,8 +487,7 @@
             <button type="button" class="text-blue-600 underline" onclick="openModal && openModal('privacyModal','./modals/privacy.html')">מדיניות הפרטיות</button>
           </div>
 
-          <button id="submit-btn" type="submit" disabled
-                  class="w-full py-3 rounded-lg shadow-lg transition bg-orange-500 cursor-not-allowed">
+          <button id="submit-btn" type="submit" disabled class="w-full py-3 rounded-lg shadow-lg transition bg-orange-500 cursor-not-allowed">
             שלח פנייה
           </button>
         </form>
@@ -667,8 +613,7 @@
     <p class="text-xs text-gray-500 dark:text-gray-400">עיצוב הלוגו נוצר באהבה על ידי ז'נה קולצ'ין</p>
 
     <a id="homeLogo" href="/" title="ComfAss Home">
-      <img src="https://comfass.com/img/comfass-logo.jpg" alt="ComfAss Logo Small"
-           class="w-28 opacity-80 hover:opacity-100 transition duration-300" />
+      <img src="https://comfass.com/img/comfass-logo.jpg" alt="ComfAss Logo Small" class="w-28 opacity-80 hover:opacity-100 transition duration-300" />
     </a>
   </div>
 </footer>
@@ -774,9 +719,9 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer onload="AOS.init({ once: false });"></script>
 <script> nl_pos = "br"; nl_compact = "1"; </script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://comfass.com/nagishli.js?v=2.3" charset="utf-8" defer></script>
+<script src="/nagishli.js?v=2.3" charset="utf-8" defer></script>
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-<script id="dsq-count-scr" src="//comfass-com.disqus.com/count.js" async></script>
+<script id="dsq-count-scr" src="https://comfass-com.disqus.com/count.js" async></script>
 
 <!-- שלך -->
 <script src="/js/faq.js"></script>
