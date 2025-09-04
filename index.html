@@ -177,10 +177,10 @@
       <!-- גלילה אופקית במובייל עד קצה המסך -->
       <div class="-mx-4 sm:mx-0 relative">
         <!-- שכבות רמז גלילה (fade) – נעלמות במסכים רחבים -->
-        <div class="pointer-events-none absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-white dark:from-neutral-900 to-transparent sm:hidden rounded-tr-3xl"></div>
-        <div class="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white dark:from-neutral-900 to-transparent sm:hidden rounded-bl-3xl"></div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-white dark:from-neutral-900 to-transparent sm:hidden rounded-tr-3xl z-0"></div>
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white dark:from-neutral-900 to-transparent sm:hidden rounded-bl-3xl z-0"></div>
 
-        <div class="overflow-x-auto sm:rounded-3xl">
+        <div class="overflow-x-auto sm:rounded-3xl relative z-10">
           <!-- min-w מונע מעיכה של עמודות; במסכים רחבים w-full -->
           <table class="min-w-[680px] w-full text-right">
             <thead class="bg-gray-50 dark:bg-white/5">
@@ -207,7 +207,7 @@
                 <th scope="row" class="sticky right-0 z-10 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
                   מתלבש על כל תיק
                 </th>
-                 <td class="sticky right-[5rem] sm:right-[8rem] relative z-10 bg-cyan-100/85 dark:bg-cyan-900/50 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
+                 <td class="sticky right-[5rem] sm:right-[8rem] z-10 bg-cyan-50/95 dark:bg-cyan-900/40 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
                   <svg class="inline h-6 w-6 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" aria-label="כן">
                     <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
@@ -235,7 +235,7 @@
                   נוח לנשיאה בכל מקום
                 </th>
                 
-                 <td class="sticky right-[5rem] sm:right-[8rem] relative z-10 bg-cyan-100/85 dark:bg-cyan-900/50 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
+                 <td class="sticky right-[5rem] sm:right-[8rem] z-10 bg-cyan-50/95 dark:bg-cyan-900/40 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
                   <svg class="inline h-6 w-6 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </td>
                 <td class="py-4 px-2 text-center">
@@ -255,7 +255,7 @@
                   תומך בגב בזמן הליכה
                 </th>
                 
-                 <td class="sticky right-[5rem] sm:right-[8rem] relative z-10 bg-cyan-100/85 dark:bg-cyan-900/50 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
+                 <td class="sticky right-[5rem] sm:right-[8rem] z-10 bg-cyan-50/95 dark:bg-cyan-900/40 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
                   <svg class="inline h-6 w-6 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </td>
                 <td class="py-4 px-2 text-center">
@@ -275,7 +275,7 @@
                   מבנה אורטופדי
                 </th>
                
-                 <td class="sticky right-[5rem] sm:right-[8rem] relative z-10 bg-cyan-100/85 dark:bg-cyan-900/50 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
+                 <td class="sticky right-[5rem] sm:right-[8rem] z-10 bg-cyan-50/95 dark:bg-cyan-900/40 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
                   <svg class="inline h-6 w-6 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </td>
                 <td class="py-4 px-2 text-center">
@@ -295,7 +295,7 @@
                   נוח ומרופד
                 </th>
                 
-                 <td class="sticky right-[5rem] sm:right-[8rem] relative z-10 bg-cyan-100/85 dark:bg-cyan-900/50 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
+                 <td class="sticky right-[5rem] sm:right-[8rem] z-10 bg-cyan-50/95 dark:bg-cyan-900/40 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
                   <svg class="inline h-6 w-6 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </td>
                 <td class="py-4 px-2 text-center">
@@ -315,7 +315,7 @@
                   מחיר נגיש
                 </th>
                 
-                 <td class="sticky right-[5rem] sm:right-[8rem] relative z-10 bg-cyan-100/85 dark:bg-cyan-900/50 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
+                <td class="sticky right-[5rem] sm:right-[8rem] z-10 bg-cyan-50/95 dark:bg-cyan-900/40 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
                   <svg class="inline h-6 w-6 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </td>
                 <td class="py-4 px-2 text-center">
@@ -335,7 +335,7 @@
                   השפעה חברתית (10% תרומה)
                 </th>
                 
-                 <td class="sticky right-[5rem] sm:right-[8rem] relative z-10 bg-cyan-100/85 dark:bg-cyan-900/50 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
+                 <td class="sticky right-[5rem] sm:right-[8rem] z-10 bg-cyan-50/95 dark:bg-cyan-900/40 ring-1 ring-cyan-200/60 dark:ring-cyan-800/40 backdrop-blur py-5 px-3 text-center">
                   <svg class="inline h-6 w-6 text-cyan-700 dark:text-cyan-300" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </td>
                 <td class="py-5 px-3 text-center">
