@@ -1,6 +1,8 @@
+<div align="center">
+
 # Comfass, wherever you sit 🎒💺
 
-![ComfAss Logo](./img/comfass-logo.jpg) <!-- עדכן את הנתיב ללוגו אם צריך -->
+![ComfAss Logo](./img/comfass-logo.png)
 
 ## 📌 מה זה Comfass?
 **Comfass** היא כרית ישיבה ניידת, קומפקטית וחדשנית שפותחה במיוחד לסטודנטים ולעובדים שיושבים שעות ארוכות.  
@@ -37,8 +39,8 @@
 ---
 
 ## 🔗 קישורים שימושיים
-- 🌐 אתר: [www.comfass.com](https://www.comfass.com)  
-- 📧 אימייל: info@comfass.com  
+🌐 אתר: [www.comfass.com](https://www.comfass.com)  
+📧 אימייל: info@comfass.com  
 
 ---
 
@@ -46,11 +48,13 @@
 אנחנו שני סטודנטים להנדסה, שפיתחו את **Comfass** מתוך צורך אמיתי של ישיבה ממושכת בכיתות ואוטובוסים.  
 **החזון שלנו:** להפוך את הנוחות לנגישה לכולם, בכל מקום.  
 
----## 📸 תמונות המוצר
+---
 
-<p align="center">
-  <img src="./img/Product1.jpg" alt="ComfAss Product 1" width="200"/>
-  <img src="./img/Product2.jpg" alt="ComfAss Product 2" width="200"/>
-  <img src="./img/Product3.jpg" alt="ComfAss Product 3" width="200"/>
-  <img src="./img/Product4.jpg" alt="ComfAss Product 4" width="200"/>
-</p>
+## 📸 תמונות המוצר
+
+<img src="./img/Product1.jpg" alt="ComfAss Product 1" width="200"/>
+<img src="./img/Product2.jpg" alt="ComfAss Product 2" width="200"/>
+<img src="./img/Product3.jpg" alt="ComfAss Product 3" width="200"/>
+<img src="./img/Product4.jpg" alt="ComfAss Product 4" width="200"/>
+
+</div>
