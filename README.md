@@ -2,7 +2,7 @@
 
 # Comfass, wherever you sit 🎒💺
 
-![ComfAss Logo](./img/comfass-logo.png)
+![ComfAss Logo](./img/comfass-logo.jpg)
 
 ## 📌 מה זה Comfass?
 **Comfass** היא כרית ישיבה ניידת, קומפקטית וחדשנית שפותחה במיוחד לסטודנטים ולעובדים שיושבים שעות ארוכות.  
