@@ -183,26 +183,26 @@
 
         <!-- גלילה אופקית במובייל -->
         <div class="overflow-x-auto sm:rounded-3xl relative z-10">
-          <table class="min-w-[680px] w-full text-right border-separate border-spacing-0">
+          <table class="cmp-table min-w-[680px] w-full text-right border-separate border-spacing-0">
             <thead class="bg-gray-50 dark:bg-white/5">
-              <tr class="text-sm sm:text-base text-gray-500 dark:text-gray-300">
-                <!-- כותרת עמודת התכונות (דביקה לימין) -->
+              <tr class="text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                <!-- תכונות\מוצר (דביק לימין) -->
                 <th scope="col"
-                    class="sticky right-0 z-30 w-24 sm:w-32 bg-gray-50/95 dark:bg-white/5 backdrop-blur py-3 sm:py-5 ps-3 sm:ps-6 pe-2 sm:pe-3 font-semibold text-gray-700 dark:text-gray-100 text-start">
+                    class="sticky right-0 z-40 w-24 sm:w-32 bg-gray-50/95 dark:bg-white/5 backdrop-blur py-3 sm:py-4 ps-3 sm:ps-6 pe-2 sm:pe-3 font-semibold text-gray-800 dark:text-gray-100 text-start">
                   תכונות\מוצר
                 </th>
 
-                <!-- עמודת Comfass (דביקה + מודגשת) -->
+                <!-- Comfass (כותרת עמודה דביקה ורוחב קבוע) -->
                 <th scope="col"
-                    class="sticky right-[6rem] sm:right-[8rem] z-30 backdrop-blur py-5 px-3 font-semibold
-                           bg-cyan-100 dark:bg-cyan-900/40 ring-1 ring-cyan-200 dark:ring-cyan-800
-                           text-cyan-800 dark:text-cyan-300 text-center">
-                  <img src="/img/COMFASS-LOGO-No-BackGround.png" alt="Comfass" class="inline-block h-6 w-auto align-middle" />
+                    class="cmp-sticky-head cmp-col-w z-50 font-semibold text-center">
+                  <div class="cmp-col-head-bg">
+                    <img src="/img/COMFASS-LOGO-No-BackGround.png" alt="Comfass" class="inline-block h-6 w-auto align-middle" />
+                  </div>
                 </th>
 
-                <th scope="col" class="py-4 px-2 font-semibold text-gray-700 dark:text-gray-300 text-center">כיסא מרופד</th>
-                <th scope="col" class="py-4 px-2 font-semibold text-gray-700 dark:text-gray-300 text-center">כיסא רגיל</th>
-                <th scope="col" class="py-4 px-2 sm:pe-4 font-semibold text-gray-700 dark:text-gray-300 text-center">כרית רגילה</th>
+                <th scope="col" class="py-3 sm:py-4 px-2 font-semibold text-gray-700 dark:text-gray-300 text-center">כיסא מרופד</th>
+                <th scope="col" class="py-3 sm:py-4 px-2 font-semibold text-gray-700 dark:text-gray-300 text-center">כיסא רגיל</th>
+                <th scope="col" class="py-3 sm:py-4 px-2 sm:pe-4 font-semibold text-gray-700 dark:text-gray-300 text-center">כרית רגילה</th>
               </tr>
             </thead>
 
@@ -214,46 +214,76 @@
 
   </div>
 
-  <!-- CSS מקומי שמבטיח מראה תקין גם בלי כיתות Tailwind בתוך ה-JS -->
+  <!-- CSS לוגיקה קבועה – עובד גם אם Tailwind לא בונה מחלקות מתוך JS -->
   <style>
-    /* תא עמודת Comfass הדביקה בגוף הטבלה (כולל right מותאם למובייל/דסקטופ) */
-    .cmp-sticky { position: sticky; right: 6rem; z-index: 20; padding: 0; }
-    @media (min-width: 640px) { .cmp-sticky { right: 8rem; } }
+    /* ===== פרמטרים ===== */
+    :root {
+      --cmp-col-w-m: 9.5rem;      /* רוחב עמודת Comfass במובייל */
+      --cmp-col-w-d: 10.5rem;     /* רוחב בדסקטופ */
+      --cmp-right-m: 6rem;        /* רוחב עמודת 'תכונות\מוצר' במובייל (w-24) */
+      --cmp-right-d: 8rem;        /* רוחב בדסקטופ (w-32) */
+    }
 
-    /* תוכן התא של Comfass (רקע וטבעת) */
+    /* טבלה קומפקטית יותר */
+    .cmp-table { font-size: .95rem; }
+    @media (min-width: 640px) { .cmp-table { font-size: 1rem; } }
+
+    /* רוחב אחיד לעמודת Comfass */
+    .cmp-col-w { width: var(--cmp-col-w-m); min-width: var(--cmp-col-w-m); }
+    @media (min-width:640px){ .cmp-col-w { width: var(--cmp-col-w-d); min-width: var(--cmp-col-w-d); } }
+
+    /* דביקות – אותו offset בכותרת ובגוף */
+    .cmp-sticky-head { position: sticky; right: var(--cmp-right-m); }
+    @media (min-width:640px){ .cmp-sticky-head { right: var(--cmp-right-d); } }
+
+    .cmp-sticky { position: sticky; right: var(--cmp-right-m); z-index: 30; padding: 0; }
+    @media (min-width:640px){ .cmp-sticky { right: var(--cmp-right-d); } }
+
+    /* רקע ותוחם לעמודת Comfass בגוף */
     .cmp-col-bg {
-      background-color: rgba(8,145,178,0.16);           /* cyan-600 ~16% */
-      box-shadow: inset 0 0 0 1px rgba(8,145,178,0.35); /* טבעת עדינה */
-      text-align: center; padding: 1.25rem .75rem;      /* דומה ל py-5 px-3 */
+      background-color: rgba(8,145,178,0.16);
+      box-shadow: inset 0 0 0 1px rgba(8,145,178,0.35);
+      text-align: center;
+      padding: .875rem .75rem;   /* symm spacing */
     }
     html.dark .cmp-col-bg {
       background-color: rgba(8,145,178,0.30);
-      box-shadow: inset 0 0 0 1px rgba(8,145,178,0.5);
+      box-shadow: inset 0 0 0 1px rgba(8,145,178,0.50);
     }
 
-    /* תא רגיל בשאר העמודות */
-    .cmp-td { padding: 1rem .5rem; text-align: center; }
+    /* רקע הכותרת של Comfass – כדי שלא יראו מה שמתחת */
+    .cmp-col-head-bg{
+      background-color: rgba(8,145,178,0.10);
+      box-shadow: inset 0 0 0 1px rgba(8,145,178,0.30);
+      padding: .75rem .75rem;
+      backdrop-filter: saturate(120%) blur(2px);
+      -webkit-backdrop-filter: saturate(120%) blur(2px);
+    }
+    html.dark .cmp-col-head-bg{
+      background-color: rgba(8,145,178,0.25);
+      box-shadow: inset 0 0 0 1px rgba(8,145,178,0.45);
+    }
 
-    /* הצ'יפים (עיגולים) לאייקונים */
-    .cmp-chip { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 9999px; }
-    .cmp-chip svg { width: 16px; height: 16px; }
+    /* תאים רגילים */
+    .cmp-td { padding: .875rem .5rem; text-align: center; }
 
-    .cmp-chip--yes { background: #16a34a; color: #fff; } /* ירוק חזק */
-    .cmp-chip--yesSoft { background: rgba(22,163,74,.12); color: #166534; } /* ירוק עדין */
-    .cmp-chip--no { background: #fee2e2; color: #dc2626; } /* אדום ברור */
+    /* צ'יפים (עיגולים) – קטנים ועדינים */
+    .cmp-chip { display:inline-grid; place-items:center; width:26px; height:26px; border-radius:9999px; }
+    .cmp-chip svg { width:14px; height:14px; }
+    @media (min-width:640px){ .cmp-chip{ width:28px; height:28px; } .cmp-chip svg{ width:16px; height:16px; } }
 
-    html.dark .cmp-chip--yesSoft { background: rgba(74,222,128,.12); color: #86efac; }
-    html.dark .cmp-chip--no { background: rgba(239,68,68,.15); color: #f87171; }
+    .cmp-chip--yes     { background:#16a34a; color:#fff; }                  /* ירוק חזק */
+    .cmp-chip--yesSoft { background:rgba(22,163,74,.12); color:#166534; }   /* ירוק עדין */
+    .cmp-chip--no      { background:#fee2e2; color:#dc2626; }               /* אדום ברור */
+
+    html.dark .cmp-chip--yesSoft { background:rgba(74,222,128,.12); color:#86efac; }
+    html.dark .cmp-chip--no      { background:rgba(239,68,68,.15); color:#f87171; }
   </style>
 </section>
 
 <script>
-  // ===== פונקציות פנימיות לקיצור – ללא תלות במחלקות Tailwind בתוך ה-JS =====
+  /* ===== בנייה דינמית של השורות (קוד קצר, לא תלוי במחלקות Tailwind) ===== */
 
-  // צ'יפ (עיגול) לאייקונים:
-  // yes  = ירוק חזק (✓)
-  // yesSoft = ירוק עדין (✓) לעמודות שאינן Comfass
-  // no   = אדום (✕)
   const chip = (type) => {
     if (type === 'yes') {
       return `
@@ -279,24 +309,21 @@
       </span>`;
   };
 
-  // תא של עמודת Comfass (דביק + מודגש)
   const tdComfass = (val) => `
-    <td class="cmp-sticky">
+    <td class="cmp-sticky cmp-col-w">
       <div class="cmp-col-bg">
         ${val ? chip('yes') : chip('no')}
       </div>
     </td>`;
 
-  // תא רגיל לשאר העמודות (כן עדין / לא)
   const td = (val) => `
     <td class="cmp-td">
       ${val ? chip('yesSoft') : chip('no')}
     </td>`;
 
-  // בניית שורה
   const row = ({ feature, comfass, padded, regular, pillow }) => `
     <tr class="hover:bg-gray-50/60 dark:hover:bg-white/5">
-      <th scope="row" class="sticky right-0 z-30 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
+      <th scope="row" class="sticky right-0 z-40 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-3 sm:py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium leading-relaxed">
         ${feature}
       </th>
       ${tdComfass(comfass)}
@@ -305,20 +332,19 @@
       ${td(pillow)}
     </tr>`;
 
-  // ===== נתוני הטבלה =====
   const data = [
     { feature: 'מתלבש על כל תיק',           comfass: true, padded: false, regular: false, pillow: false },
     { feature: 'נוח לנשיאה בכל מקום',       comfass: true, padded: false, regular: false, pillow: false },
-    { feature: 'תומך בגב בזמן הליכה',      comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'תומך בגב בחיבור עם תיק גב',      comfass: true, padded: false, regular: false, pillow: false },
     { feature: 'מבנה אורטופדי',            comfass: true, padded: true,  regular: false, pillow: false },
     { feature: 'נוח ומרופד',                comfass: true, padded: true,  regular: false, pillow: false },
     { feature: 'מחיר נגיש',                 comfass: true, padded: false, regular: false, pillow: true  },
     { feature: 'השפעה חברתית (10% תרומה)', comfass: true, padded: false, regular: false, pillow: false },
   ];
 
-  // הזרקה לטבלה
   document.getElementById('compare-body').innerHTML = data.map(row).join('');
 </script>
+
 
 <section class="py-20 px-6 transition-theme max-w-5xl mx-auto text-center" data-aos="fade-up">
   <h2 class="text-3xl font-bold mb-6">מי עומד מאחורי Comfass?</h2>
