@@ -178,7 +178,6 @@
 
     <div class="bg-white dark:bg-neutral-900 rounded-3xl shadow-xl ring-1 ring-black/5 dark:ring-white/10">
       <div class="-mx-4 sm:mx-0 relative">
-
         <!-- רמזי גלילה (fade) – מאחורי הטבלה -->
         <div class="pointer-events-none absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-white dark:from-neutral-900 to-transparent sm:hidden rounded-tr-3xl z-0"></div>
         <div class="pointer-events-none absolute inset-y-0 left-0  w-6 bg-gradient-to-r from-white dark:from-neutral-900 to-transparent sm:hidden rounded-bl-3xl z-0"></div>
@@ -208,226 +207,7 @@
               </tr>
             </thead>
 
-            <tbody class="divide-y divide-gray-200/80 dark:divide-white/10">
-
-              <!-- פונקציות אייקון לשימוש חוזר (וי/איקס) – העתקה ידנית לכל תא -->
-              <!-- ✓ -->
-              <!-- <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-cyan-600 text-white">
-                     <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" aria-hidden="true">
-                       <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                     </svg>
-                   </span> -->
-              <!-- ✕ -->
-              <!-- <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400">
-                     <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" aria-hidden="true">
-                       <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                     </svg>
-                   </span> -->
-
-              <!-- שורה 1 -->
-              <tr class="hover:bg-gray-50/60 dark:hover:bg-white/5">
-                <th scope="row" class="sticky right-0 z-30 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
-                  מתלבש על כל תיק
-                </th>
-                <td class="sticky right-[6rem] sm:right-[8rem] z-20 p-0">
-                  <div class="py-5 px-3 text-center bg-cyan-100 dark:bg-cyan-900/40 ring-1 ring-cyan-200 dark:ring-cyan-800">
-                    <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-cyan-600 text-white" aria-label="כן">
-                      <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                  </div>
-                </td>
-                <td class="py-4 px-2 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-4 px-2 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-4 px-2 sm:pe-5 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-              </tr>
-
-              <!-- שורה 2 -->
-              <tr class="hover:bg-gray-50/60 dark:hover:bg-white/5">
-                <th scope="row" class="sticky right-0 z-30 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
-                  נוח לנשיאה בכל מקום
-                </th>
-                <td class="sticky right-[6rem] sm:right-[8rem] z-20 p-0">
-                  <div class="py-5 px-3 text-center bg-cyan-100 dark:bg-cyan-900/40 ring-1 ring-cyan-200 dark:ring-cyan-800">
-                    <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-cyan-600 text-white" aria-label="כן">
-                      <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                  </div>
-                </td>
-                <td class="py-4 px-2 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-4 px-2 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg:white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-4 px-2 sm:pe-5 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg:white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-              </tr>
-
-              <!-- שורה 3 -->
-              <tr class="hover:bg-gray-50/60 dark:hover:bg-white/5">
-                <th scope="row" class="sticky right-0 z-30 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
-                  תומך בגב בזמן הליכה
-                </th>
-                <td class="sticky right-[6rem] sm:right-[8rem] z-20 p-0">
-                  <div class="py-5 px-3 text-center bg-cyan-100 dark:bg-cyan-900/40 ring-1 ring-cyan-200 dark:ring-cyan-800">
-                    <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-cyan-600 text-white" aria-label="כן">
-                      <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                  </div>
-                </td>
-                <td class="py-4 px-2 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-4 px-2 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-4 px-2 sm:pe-5 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-              </tr>
-
-              <!-- שורה 4 -->
-              <tr class="hover:bg-gray-50/60 dark:hover:bg-white/5">
-                <th scope="row" class="sticky right-0 z-30 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
-                  מבנה אורטופדי
-                </th>
-                <td class="sticky right-[6rem] sm:right-[8rem] z-20 p-0">
-                  <div class="py-5 px-3 text-center bg-cyan-100 dark:bg-cyan-900/40 ring-1 ring-cyan-200 dark:ring-cyan-800">
-                    <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-cyan-600 text-white" aria-label="כן">
-                      <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                  </div>
-                </td>
-                <td class="py-4 px-2 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-cyan-600/10 text-cyan-700 dark:bg-cyan-400/10 dark:text-cyan-300" aria-label="כן">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-4 px-2 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-4 px-2 sm:pe-5 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-              </tr>
-
-              <!-- שורה 5 -->
-              <tr class="hover:bg-gray-50/60 dark:hover:bg-white/5">
-                <th scope="row" class="sticky right-0 z-30 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
-                  נוח ומרופד
-                </th>
-                <td class="sticky right-[6rem] sm:right-[8rem] z-20 p-0">
-                  <div class="py-5 px-3 text-center bg-cyan-100 dark:bg-cyan-900/40 ring-1 ring-cyan-200 dark:ring-cyan-800">
-                    <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-cyan-600 text-white" aria-label="כן">
-                      <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                  </div>
-                </td>
-                <td class="py-4 px-2 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-cyan-600/10 text-cyan-700 dark:bg-cyan-400/10 dark:text-cyan-300" aria-label="כן">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-4 px-2 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-4 px-2 sm:pe-5 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-              </tr>
-
-              <!-- שורה 6 -->
-              <tr class="hover:bg-gray-50/60 dark:hover:bg-white/5">
-                <th scope="row" class="sticky right-0 z-30 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
-                  מחיר נגיש
-                </th>
-                <td class="sticky right-[6rem] sm:right-[8rem] z-20 p-0">
-                  <div class="py-5 px-3 text-center bg-cyan-100 dark:bg-cyan-900/40 ring-1 ring-cyan-200 dark:ring-cyan-800">
-                    <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-cyan-600 text-white" aria-label="כן">
-                      <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                  </div>
-                </td>
-                <td class="py-4 px-2 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-4 px-2 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-4 px-2 sm:pe-5 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-cyan-600/10 text-cyan-700 dark:bg-cyan-400/10 dark:text-cyan-300" aria-label="כן">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </span>
-                </td>
-              </tr>
-
-              <!-- שורה 7 -->
-              <tr class="hover:bg-gray-50/60 dark:hover:bg-white/5">
-                <th scope="row" class="sticky right-0 z-30 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
-                  השפעה חברתית (10% תרומה)
-                </th>
-                <td class="sticky right-[6rem] sm:right-[8rem] z-20 p-0">
-                  <div class="py-5 px-3 text-center bg-cyan-100 dark:bg-cyan-900/40 ring-1 ring-cyan-200 dark:ring-cyan-800">
-                    <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-cyan-600 text-white" aria-label="כן">
-                      <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                  </div>
-                </td>
-                <td class="py-5 px-3 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-5 px-3 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-                <td class="py-5 px-3 sm:pe-6 text-center">
-                  <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-gray-400" aria-label="לא">
-                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                  </span>
-                </td>
-              </tr>
-
-            </tbody>
+            <tbody id="compare-body" class="divide-y divide-gray-200/80 dark:divide-white/10"></tbody>
           </table>
         </div>
       </div>
@@ -436,7 +216,77 @@
   </div>
 </section>
 
+<script>
+  // ===== פונקציות פנימיות לקיצור =====
 
+  // צ'יפ (עיגול) לאייקונים:
+  // yes  = ירוק חזק (✓)
+  // yesSoft = ירוק עדין (✓) לעמודות שאינן Comfass
+  // no   = אדום (✕)
+  const chip = (type) => {
+    if (type === 'yes') {
+      return `
+        <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-green-600 text-white" aria-label="כן">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" aria-hidden="true">
+            <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>`;
+    }
+    if (type === 'yesSoft') {
+      return `
+        <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-green-600/10 text-green-700 dark:bg-green-400/10 dark:text-green-300" aria-label="כן">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" aria-hidden="true">
+            <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>`;
+    }
+    return `
+      <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-red-100 text-red-600 dark:bg-red-500/15 dark:text-red-400" aria-label="לא">
+        <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>`;
+  };
+
+  // תא של עמודת Comfass (דביק + מודגש)
+  const tdComfass = (val) => `
+    <td class="sticky right-[6rem] sm:right-[8rem] z-20 p-0">
+      <div class="py-5 px-3 text-center bg-cyan-100 dark:bg-cyan-900/40 ring-1 ring-cyan-200 dark:ring-cyan-800">
+        ${val ? chip('yes') : chip('no')}
+      </div>
+    </td>`;
+
+  // תא רגיל לשאר העמודות (כן עדין / לא)
+  const td = (val) => `
+    <td class="py-4 px-2 text-center">
+      ${val ? chip('yesSoft') : chip('no')}
+    </td>`;
+
+  // בניית שורה
+  const row = ({ feature, comfass, padded, regular, pillow }) => `
+    <tr class="hover:bg-gray-50/60 dark:hover:bg-white/5">
+      <th scope="row" class="sticky right-0 z-30 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium">
+        ${feature}
+      </th>
+      ${tdComfass(comfass)}
+      ${td(padded)}
+      ${td(regular)}
+      ${td(pillow)}
+    </tr>`;
+
+  // ===== נתוני הטבלה =====
+  const data = [
+    { feature: 'מתלבש על כל תיק',                 comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'נוח לנשיאה בכל מקום',             comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'תומך בגב בזמן הליכה',            comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'מבנה אורטופדי',                  comfass: true, padded: true,  regular: false, pillow: false },
+    { feature: 'נוח ומרופד',                      comfass: true, padded: true,  regular: false, pillow: false },
+    { feature: 'מחיר נגיש',                       comfass: true, padded: false, regular: false, pillow: true  },
+    { feature: 'השפעה חברתית (10% תרומה)',       comfass: true, padded: false, regular: false, pillow: false },
+  ];
+
+  document.getElementById('compare-body').innerHTML = data.map(row).join('');
+</script>
 
 <section class="py-20 px-6 transition-theme max-w-5xl mx-auto text-center" data-aos="fade-up">
   <h2 class="text-3xl font-bold mb-6">מי עומד מאחורי Comfass?</h2>
