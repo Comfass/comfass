@@ -164,7 +164,6 @@
     </div>
   </div>
 </section>
-
 <!-- השוואת תכונות – תואם RTL, רספונסיבי, עם עמודה דביקה במובייל -->
 <section class="py-12 px-4" dir="rtl" aria-label="השוואת תכונות ComfAss מול חלופות">
   <div class="max-w-6xl mx-auto">
@@ -214,99 +213,98 @@
 
   </div>
 
-  <!-- CSS לוגיקה קבועה – עובד גם אם Tailwind לא בונה מחלקות מתוך JS -->
+  <!-- CSS קבוע (לא תלוי בבניית Tailwind מתוך ה-JS) -->
   <style>
-    /* ===== פרמטרים ===== */
-    :root {
-      --cmp-col-w-m: 9.5rem;      /* רוחב עמודת Comfass במובייל */
-      --cmp-col-w-d: 10.5rem;     /* רוחב בדסקטופ */
-      --cmp-right-m: 6rem;        /* רוחב עמודת 'תכונות\מוצר' במובייל (w-24) */
-      --cmp-right-d: 8rem;        /* רוחב בדסקטופ (w-32) */
+    :root{
+      --cmp-col-w-m: 9.5rem;  /* רוחב עמודת Comfass במובייל */
+      --cmp-col-w-d: 10.5rem; /* רוחב בדסקטופ */
+      --cmp-right-m: 6rem;    /* רוחב "תכונות\מוצר" במובייל (w-24) */
+      --cmp-right-d: 8rem;    /* רוחב בדסקטופ (w-32) */
     }
 
-    /* טבלה קומפקטית יותר */
-    .cmp-table { font-size: .95rem; }
-    @media (min-width: 640px) { .cmp-table { font-size: 1rem; } }
+    /* טבלה קומפקטית וריווח סימטרי */
+    .cmp-table{ font-size:.95rem; }
+    @media (min-width:640px){ .cmp-table{ font-size:1rem; } }
 
-    /* רוחב אחיד לעמודת Comfass */
-    .cmp-col-w { width: var(--cmp-col-w-m); min-width: var(--cmp-col-w-m); }
-    @media (min-width:640px){ .cmp-col-w { width: var(--cmp-col-w-d); min-width: var(--cmp-col-w-d); } }
+    /* רוחב עמודת Comfass */
+    .cmp-col-w{ width:var(--cmp-col-w-m); min-width:var(--cmp-col-w-m); }
+    @media (min-width:640px){ .cmp-col-w{ width:var(--cmp-col-w-d); min-width:var(--cmp-col-w-d); } }
 
-    /* דביקות – אותו offset בכותרת ובגוף */
-    .cmp-sticky-head { position: sticky; right: var(--cmp-right-m); }
-    @media (min-width:640px){ .cmp-sticky-head { right: var(--cmp-right-d); } }
+    /* דביקות כותרת/גוף עם אותו offset */
+    .cmp-sticky-head{ position:sticky; right:var(--cmp-right-m); }
+    @media (min-width:640px){ .cmp-sticky-head{ right:var(--cmp-right-d); } }
 
-    .cmp-sticky { position: sticky; right: var(--cmp-right-m); z-index: 30; padding: 0; }
-    @media (min-width:640px){ .cmp-sticky { right: var(--cmp-right-d); } }
+    .cmp-sticky{ position:sticky; right:var(--cmp-right-m); z-index:30; padding:0; }
+    @media (min-width:640px){ .cmp-sticky{ right:var(--cmp-right-d); } }
 
-    /* רקע ותוחם לעמודת Comfass בגוף */
-    .cmp-col-bg {
-      background-color: rgba(8,145,178,0.16);
-      box-shadow: inset 0 0 0 1px rgba(8,145,178,0.35);
-      text-align: center;
-      padding: .875rem .75rem;   /* symm spacing */
+    /* פאנל הדביק בגוף – ריווח אנכי ו-rounded כדי שלא ייראה "צמוד" בין שורות */
+    .cmp-col-bg{
+      background-color:rgba(8,145,178,.16);
+      box-shadow:inset 0 0 0 1px rgba(8,145,178,.35);
+      text-align:center;
+      padding:.9rem .75rem;
+      margin-block:4px;       /* <<< זה פותר את "הצפוף" בין שורות 6–7 */
+      border-radius:.5rem;
     }
-    html.dark .cmp-col-bg {
-      background-color: rgba(8,145,178,0.30);
-      box-shadow: inset 0 0 0 1px rgba(8,145,178,0.50);
+    html.dark .cmp-col-bg{
+      background-color:rgba(8,145,178,.30);
+      box-shadow:inset 0 0 0 1px rgba(8,145,178,.50);
     }
 
-    /* רקע הכותרת של Comfass – כדי שלא יראו מה שמתחת */
+    /* רקע הכותרת של Comfass – מסתיר מה שמתחת */
     .cmp-col-head-bg{
-      background-color: rgba(8,145,178,0.10);
-      box-shadow: inset 0 0 0 1px rgba(8,145,178,0.30);
-      padding: .75rem .75rem;
-      backdrop-filter: saturate(120%) blur(2px);
-      -webkit-backdrop-filter: saturate(120%) blur(2px);
+      background-color:rgba(8,145,178,.10);
+      box-shadow:inset 0 0 0 1px rgba(8,145,178,.30);
+      padding:.6rem .75rem;
+      backdrop-filter:saturate(120%) blur(2px);
+      -webkit-backdrop-filter:saturate(120%) blur(2px);
+      border-radius:.5rem;
     }
     html.dark .cmp-col-head-bg{
-      background-color: rgba(8,145,178,0.25);
-      box-shadow: inset 0 0 0 1px rgba(8,145,178,0.45);
+      background-color:rgba(8,145,178,.25);
+      box-shadow:inset 0 0 0 1px rgba(8,145,178,.45);
     }
 
     /* תאים רגילים */
-    .cmp-td { padding: .875rem .5rem; text-align: center; }
+    .cmp-td{ padding:.9rem .5rem; text-align:center; }
 
-    /* צ'יפים (עיגולים) – קטנים ועדינים */
-    .cmp-chip { display:inline-grid; place-items:center; width:26px; height:26px; border-radius:9999px; }
-    .cmp-chip svg { width:14px; height:14px; }
+    /* צ'יפים */
+    .cmp-chip{ display:inline-grid; place-items:center; width:26px; height:26px; border-radius:9999px; }
+    .cmp-chip svg{ width:14px; height:14px; }
     @media (min-width:640px){ .cmp-chip{ width:28px; height:28px; } .cmp-chip svg{ width:16px; height:16px; } }
 
-    .cmp-chip--yes     { background:#16a34a; color:#fff; }                  /* ירוק חזק */
-    .cmp-chip--yesSoft { background:rgba(22,163,74,.12); color:#166534; }   /* ירוק עדין */
-    .cmp-chip--no      { background:#fee2e2; color:#dc2626; }               /* אדום ברור */
+    .cmp-chip--yes{ background:#16a34a; color:#fff; }
+    .cmp-chip--yesSoft{ background:rgba(22,163,74,.12); color:#166534; }
+    .cmp-chip--no{ background:#fee2e2; color:#dc2626; }
 
-    html.dark .cmp-chip--yesSoft { background:rgba(74,222,128,.12); color:#86efac; }
-    html.dark .cmp-chip--no      { background:rgba(239,68,68,.15); color:#f87171; }
+    html.dark .cmp-chip--yesSoft{ background:rgba(74,222,128,.12); color:#86efac; }
+    html.dark .cmp-chip--no{ background:rgba(239,68,68,.15); color:#f87171; }
   </style>
 </section>
 
 <script>
-  /* ===== בנייה דינמית של השורות (קוד קצר, לא תלוי במחלקות Tailwind) ===== */
+  /* ===== בנייה דינמית של השורות ===== */
 
   const chip = (type) => {
     if (type === 'yes') {
-      return `
-        <span class="cmp-chip cmp-chip--yes" aria-label="כן">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>`;
+      return `<span class="cmp-chip cmp-chip--yes" aria-label="כן">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>`;
     }
     if (type === 'yesSoft') {
-      return `
-        <span class="cmp-chip cmp-chip--yesSoft" aria-label="כן">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>`;
+      return `<span class="cmp-chip cmp-chip--yesSoft" aria-label="כן">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>`;
     }
-    return `
-      <span class="cmp-chip cmp-chip--no" aria-label="לא">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>`;
+    return `<span class="cmp-chip cmp-chip--no" aria-label="לא">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>`;
   };
 
   const tdComfass = (val) => `
@@ -316,14 +314,12 @@
       </div>
     </td>`;
 
-  const td = (val) => `
-    <td class="cmp-td">
-      ${val ? chip('yesSoft') : chip('no')}
-    </td>`;
+  const td = (val) => `<td class="cmp-td">${val ? chip('yesSoft') : chip('no')}</td>`;
 
   const row = ({ feature, comfass, padded, regular, pillow }) => `
     <tr class="hover:bg-gray-50/60 dark:hover:bg-white/5">
-      <th scope="row" class="sticky right-0 z-40 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-3 sm:py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium leading-relaxed">
+      <th scope="row"
+          class="sticky right-0 z-40 bg-white/95 dark:bg-neutral-900/95 backdrop-blur py-3 sm:py-4 ps-4 pe-2 text-gray-900 dark:text-gray-100 font-medium leading-relaxed">
         ${feature}
       </th>
       ${tdComfass(comfass)}
@@ -332,18 +328,22 @@
       ${td(pillow)}
     </tr>`;
 
+  /* נתוני הטבלה – כולל שתי שורות חדשות */
   const data = [
-    { feature: 'מתלבש על כל תיק',           comfass: true, padded: false, regular: false, pillow: false },
-    { feature: 'נוח לנשיאה בכל מקום',       comfass: true, padded: false, regular: false, pillow: false },
-    { feature: 'תומך בגב בחיבור עם תיק גב',      comfass: true, padded: false, regular: false, pillow: false },
-    { feature: 'מבנה אורטופדי',            comfass: true, padded: true,  regular: false, pillow: false },
-    { feature: 'נוח ומרופד',                comfass: true, padded: true,  regular: false, pillow: false },
-    { feature: 'מחיר נגיש',                 comfass: true, padded: false, regular: false, pillow: true  },
-    { feature: 'השפעה חברתית (10% תרומה)', comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'מתלבש על כל תיק',                       comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'נוח לנשיאה בכל מקום',                   comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'תומך בגב בחיבור עם תיק גב',             comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'מבנה אורטופדי',                        comfass: true, padded: true,  regular: false, pillow: false },
+    { feature: 'נוח ומרופד',                            comfass: true, padded: true,  regular: false, pillow: false },
+    { feature: 'מותאם לכל גיל',                        comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'מיתוג בהתאמה אישית (לוגו)',            comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'מחיר נגיש',                             comfass: true, padded: false, regular: false, pillow: true  },
+    { feature: 'תרומה חברתית',             comfass: true, padded: false, regular: false, pillow: false },
   ];
 
   document.getElementById('compare-body').innerHTML = data.map(row).join('');
 </script>
+
 
 
 <section class="py-20 px-6 transition-theme max-w-5xl mx-auto text-center" data-aos="fade-up">
