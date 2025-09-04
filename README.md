@@ -1,16 +1,56 @@
-## Hi there 👋
+# Comfass, wherever you sit 🎒💺
 
-<!--
-**Comfass/comfass** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+![ComfAss Logo](./img/comfass-logo.jpg) <!-- עדכן את הנתיב ללוגו אם צריך -->
 
-Here are some ideas to get you started:
+## 📌 מה זה Comfass?
+**Comfass** היא כרית ישיבה ניידת, קומפקטית וחדשנית שפותחה במיוחד לסטודנטים ולעובדים שיושבים שעות ארוכות.  
+הכרית מפחיתה כאבים, משפרת את הריכוז וניתנת לחיבור פשוט לכל תיק גב – כך שנוחות הופכת להיות חלק מהיום־יום שלך.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## 🚀 יתרונות המוצר
+- ✅ **ניידת וקלה** – נכנסת בקלות לכל תיק גב.  
+- ✅ **מפחיתה עומס וכאבים** – מבוסס על פיילוטים עם סטודנטים.  
+- ✅ **מתאימה לשימוש ממושך** – בכיתה, במשרד, באוטובוס או ברכבת.  
+- ✅ **ידידותית לסביבה** – חומרי גלם איכותיים, *Vegan Friendly*.  
+- ✅ **מותאמת אישית** – אפשרות למיתוג עם לוגו המוסד/החברה.  
+
+---
+
+## 📦 למי זה מתאים?
+- 🎓 **אגודות סטודנטים ומוסדות אקדמיים** – מתנה לסטודנטים.  
+- 🏢 **חברות וארגונים** – שי לעובדים שמחזק את המותג.  
+- ✈️ **נוסעים ומטיילים** – פתרון קומפקטי ונוח לנסיעות ארוכות.  
+
+---
+
+## 🛠️ איך זה עובד?
+1. מחברים את הכרית בקלות לתיק.  
+2. שולפים ומתיישבים – בכל מקום ובכל זמן.  
+3. נהנים מנוחות, פחות כאב ויותר ריכוז.  
+
+---
+
+## 🌍 הערך החברתי שלנו
+**10% מהרווחים נתרמים לילדים במצב סוציו־אקונומי קשה**, כחלק מהאני־מאמין של החברה שלנו.
+
+---
+
+## 🔗 קישורים שימושיים
+- 🌐 אתר: [www.comfass.com](https://www.comfass.com)  
+- 📧 אימייל: info@comfass.com  
+
+---
+
+## 🤝 היזמים
+אנחנו שני סטודנטים להנדסה, שפיתחו את **Comfass** מתוך צורך אמיתי של ישיבה ממושכת בכיתות ואוטובוסים.  
+**החזון שלנו:** להפוך את הנוחות לנגישה לכולם, בכל מקום.  
+
+---## 📸 תמונות המוצר
+
+<p align="center">
+  <img src="./img/Product1.jpg" alt="ComfAss Product 1" width="200"/>
+  <img src="./img/Product2.jpg" alt="ComfAss Product 2" width="200"/>
+  <img src="./img/Product3.jpg" alt="ComfAss Product 3" width="200"/>
+  <img src="./img/Product4.jpg" alt="ComfAss Product 4" width="200"/>
+</p>
