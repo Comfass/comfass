@@ -165,7 +165,6 @@
   </div>
 </section>
 
-  
 <!-- השוואת תכונות – תואם RTL, רספונסיבי, עם עמודה דביקה במובייל -->
 <section class="py-12 px-4" dir="rtl" aria-label="השוואת תכונות ComfAss מול חלופות">
   <div class="max-w-6xl mx-auto">
@@ -214,10 +213,42 @@
     </div>
 
   </div>
+
+  <!-- CSS מקומי שמבטיח מראה תקין גם בלי כיתות Tailwind בתוך ה-JS -->
+  <style>
+    /* תא עמודת Comfass הדביקה בגוף הטבלה (כולל right מותאם למובייל/דסקטופ) */
+    .cmp-sticky { position: sticky; right: 6rem; z-index: 20; padding: 0; }
+    @media (min-width: 640px) { .cmp-sticky { right: 8rem; } }
+
+    /* תוכן התא של Comfass (רקע וטבעת) */
+    .cmp-col-bg {
+      background-color: rgba(8,145,178,0.16);           /* cyan-600 ~16% */
+      box-shadow: inset 0 0 0 1px rgba(8,145,178,0.35); /* טבעת עדינה */
+      text-align: center; padding: 1.25rem .75rem;      /* דומה ל py-5 px-3 */
+    }
+    html.dark .cmp-col-bg {
+      background-color: rgba(8,145,178,0.30);
+      box-shadow: inset 0 0 0 1px rgba(8,145,178,0.5);
+    }
+
+    /* תא רגיל בשאר העמודות */
+    .cmp-td { padding: 1rem .5rem; text-align: center; }
+
+    /* הצ'יפים (עיגולים) לאייקונים */
+    .cmp-chip { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 9999px; }
+    .cmp-chip svg { width: 16px; height: 16px; }
+
+    .cmp-chip--yes { background: #16a34a; color: #fff; } /* ירוק חזק */
+    .cmp-chip--yesSoft { background: rgba(22,163,74,.12); color: #166534; } /* ירוק עדין */
+    .cmp-chip--no { background: #fee2e2; color: #dc2626; } /* אדום ברור */
+
+    html.dark .cmp-chip--yesSoft { background: rgba(74,222,128,.12); color: #86efac; }
+    html.dark .cmp-chip--no { background: rgba(239,68,68,.15); color: #f87171; }
+  </style>
 </section>
 
 <script>
-  // ===== פונקציות פנימיות לקיצור =====
+  // ===== פונקציות פנימיות לקיצור – ללא תלות במחלקות Tailwind בתוך ה-JS =====
 
   // צ'יפ (עיגול) לאייקונים:
   // yes  = ירוק חזק (✓)
@@ -226,23 +257,23 @@
   const chip = (type) => {
     if (type === 'yes') {
       return `
-        <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-green-600 text-white" aria-label="כן">
-          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" aria-hidden="true">
+        <span class="cmp-chip cmp-chip--yes" aria-label="כן">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </span>`;
     }
     if (type === 'yesSoft') {
       return `
-        <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-green-600/10 text-green-700 dark:bg-green-400/10 dark:text-green-300" aria-label="כן">
-          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" aria-hidden="true">
+        <span class="cmp-chip cmp-chip--yesSoft" aria-label="כן">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </span>`;
     }
     return `
-      <span class="inline-grid place-items-center w-7 h-7 rounded-full bg-red-100 text-red-600 dark:bg-red-500/15 dark:text-red-400" aria-label="לא">
-        <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" aria-hidden="true">
+      <span class="cmp-chip cmp-chip--no" aria-label="לא">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </span>`;
@@ -250,15 +281,15 @@
 
   // תא של עמודת Comfass (דביק + מודגש)
   const tdComfass = (val) => `
-    <td class="sticky right-[6rem] sm:right-[8rem] z-20 p-0">
-      <div class="py-5 px-3 text-center bg-cyan-100 dark:bg-cyan-900/40 ring-1 ring-cyan-200 dark:ring-cyan-800">
+    <td class="cmp-sticky">
+      <div class="cmp-col-bg">
         ${val ? chip('yes') : chip('no')}
       </div>
     </td>`;
 
   // תא רגיל לשאר העמודות (כן עדין / לא)
   const td = (val) => `
-    <td class="py-4 px-2 text-center">
+    <td class="cmp-td">
       ${val ? chip('yesSoft') : chip('no')}
     </td>`;
 
@@ -276,15 +307,16 @@
 
   // ===== נתוני הטבלה =====
   const data = [
-    { feature: 'מתלבש על כל תיק',                 comfass: true, padded: false, regular: false, pillow: false },
-    { feature: 'נוח לנשיאה בכל מקום',             comfass: true, padded: false, regular: false, pillow: false },
-    { feature: 'תומך בגב בזמן הליכה',            comfass: true, padded: false, regular: false, pillow: false },
-    { feature: 'מבנה אורטופדי',                  comfass: true, padded: true,  regular: false, pillow: false },
-    { feature: 'נוח ומרופד',                      comfass: true, padded: true,  regular: false, pillow: false },
-    { feature: 'מחיר נגיש',                       comfass: true, padded: false, regular: false, pillow: true  },
-    { feature: 'השפעה חברתית (10% תרומה)',       comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'מתלבש על כל תיק',           comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'נוח לנשיאה בכל מקום',       comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'תומך בגב בזמן הליכה',      comfass: true, padded: false, regular: false, pillow: false },
+    { feature: 'מבנה אורטופדי',            comfass: true, padded: true,  regular: false, pillow: false },
+    { feature: 'נוח ומרופד',                comfass: true, padded: true,  regular: false, pillow: false },
+    { feature: 'מחיר נגיש',                 comfass: true, padded: false, regular: false, pillow: true  },
+    { feature: 'השפעה חברתית (10% תרומה)', comfass: true, padded: false, regular: false, pillow: false },
   ];
 
+  // הזרקה לטבלה
   document.getElementById('compare-body').innerHTML = data.map(row).join('');
 </script>
 
