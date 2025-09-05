@@ -325,29 +325,27 @@
    .blur-bg {
         -webkit-backdrop-filter: blur(12px)saturate(120%);
     }
+}
 
-
-     /* מרווח עליון קבוע כדי שהתוכן לא ייכנס מתחת ל-header ה-sticky של המודאל */
+/* === מרווח עליון קבוע לתוכן המודאלים + עוגנים === */
+@layer components {
   #termsContent,
   #privacyContent,
   #accessibilityContent,
   #returnsContent,
   #warrantyContent {
-    @apply pt-14; /* אפשר להגדיל ל-pt-14 אם צריך עוד קצת מקום */
+    @apply pt-12; /* נסה pt-14 אם עדיין צמוד מדי */
   }
 
-  /* אם קופצים לעוגנים (id על כותרות), שלא יתחבאו מתחת ל-header */
   #termsContent [id],
   #privacyContent [id],
   #accessibilityContent [id],
   #returnsContent [id],
   #warrantyContent [id] {
-    scroll-margin-top: 3.5rem; /* בערך גובה ה-header */
+    scroll-margin-top: 3.5rem; /* בערך גובה ההדר ה-sticky */
   }
-
-
-
 }
+
 
 
 
