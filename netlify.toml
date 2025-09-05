@@ -37,13 +37,13 @@
       https://links.services.disqus.com
       https://www.gstatic.com
       https://formspree.io
-      https://*.formspree.io;              # ← הוספנו
+      https://*.formspree.io;             
     frame-src  'self' https://disqus.com https://*.disqus.com https://*.disquscdn.com;
     worker-src 'self' blob:;
     media-src  'self' blob: data: https:;
     object-src 'none';
     base-uri 'self';
-    form-action 'self' https://formspree.io https://*.formspree.io;  # ← הוספנו
+    form-action 'self' https://formspree.io https://*.formspree.io; 
     frame-ancestors 'self'
   """
 
