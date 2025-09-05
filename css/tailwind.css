@@ -327,8 +327,28 @@
     }
 
 
+     /* מרווח עליון קבוע כדי שהתוכן לא ייכנס מתחת ל-header ה-sticky של המודאל */
+  #termsContent,
+  #privacyContent,
+  #accessibilityContent,
+  #returnsContent,
+  #warrantyContent {
+    @apply pt-14; /* אפשר להגדיל ל-pt-14 אם צריך עוד קצת מקום */
+  }
+
+  /* אם קופצים לעוגנים (id על כותרות), שלא יתחבאו מתחת ל-header */
+  #termsContent [id],
+  #privacyContent [id],
+  #accessibilityContent [id],
+  #returnsContent [id],
+  #warrantyContent [id] {
+    scroll-margin-top: 3.5rem; /* בערך גובה ה-header */
+  }
+
+
 
 }
+
 
 
 
