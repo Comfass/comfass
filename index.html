@@ -642,7 +642,6 @@
   </div> <!-- /grid -->
 </section>
 
-
 <!-- Give Back / Donation strip – לפני ה-footer -->
 <section id="giveback" dir="rtl" class="py-16 md:py-20 transition-theme" aria-labelledby="giveback-title">
   <div class="max-w-6xl mx-auto px-6">
@@ -651,105 +650,107 @@
       <!-- עיטור גרפי עדין -->
       <div class="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full blur-3xl opacity-30 bg-gradient-to-br from-cyan-400 to-fuchsia-500 dark:opacity-20"></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-start">
-        <!-- תוכן -->
-        <div>
-          <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold
-                       bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
-            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor" aria-hidden="true">
-              <path d="M12 21s-6.716-4.418-9.193-7.028C1.41 12.493 1 10.77 1 9.5 1 6.462 3.462 4 6.5 4A5.49 5.49 0 0 1 12 6.166 5.49 5.49 0 0 1 17.5 4C20.538 4 23 6.462 23 9.5c0 1.27-.41 2.993-1.807 4.472C18.716 16.582 12 21 12 21z"/>
-            </svg>
-            שותפות חברתית מאושרת
-          </span>
+      <!-- תוכן ממורכז -->
+      <div class="max-w-3xl mx-auto text-center">
 
-          <h3 id="giveback-title" class="text-2xl md:text-3xl font-bold mt-3 mb-4">
-            יחד הופכים נוחות להשפעה
-          </h3>
+        <!-- Badge קטן ומדויק -->
+        <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs md:text-sm font-semibold
+                     bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 leading-none">
+          <svg viewBox="0 0 24 24" class="w-4 h-4 flex-none" fill="currentColor" aria-hidden="true">
+            <path d="M12 21s-6.716-4.418-9.193-7.028C1.41 12.493 1 10.77 1 9.5 1 6.462 3.462 4 6.5 4A5.49 5.49 0 0 1 12 6.166 5.49 5.49 0 0 1 17.5 4C20.538 4 23 6.462 23 9.5c0 1.27-.41 2.993-1.807 4.472C18.716 16.582 12 21 12 21z"/>
+          </svg>
+          שותפות חברתית מאושרת
+        </span>
 
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            בכל רכישה של <strong>Comfass</strong> אתם מסייעים לילדים במצבי קושי. אנו מקצים
-            <strong>10% מהרווחים</strong> לתמיכה ישירה בילדים ותלמידים הזקוקים לכך.
-          </p>
+        <h3 id="giveback-title" class="text-2xl md:text-3xl font-bold mt-3 mb-4">
+          יחד הופכים נוחות להשפעה
+        </h3>
 
-          <!-- קלפים קצרים -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div class="rounded-2xl p-5 bg-gray-50 dark:bg-gray-900/40 border border-gray-200/60 dark:border-white/10">
-              <div class="font-semibold mb-1">העמותה השותפה</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">
-                <strong>עמותת מסלולים</strong> – מצמצמת פערים רגשיים/חברתיים/לימודיים ומקדמת מוביליות חברתית לילדים.
-              </div>
-            </div>
-            <div class="rounded-2xl p-5 bg-gray-50 dark:bg-gray-900/40 border border-gray-200/60 dark:border-white/10">
-              <div class="font-semibold mb-1">איך התרומה פועלת</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">
-                הפניית 10% מהרווחים לטובת ציוד לימודי, חוגים, תמיכה רגשית ופעילות קהילתית.
-              </div>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+          בכל רכישה של <strong>Comfass</strong> אתם מסייעים לילדים במצבי קושי.
+          אנו מקצים <strong>10% מהרווחים</strong> לתמיכה ישירה בילדים ותלמידים הזקוקים לכך.
+        </p>
+
+        <!-- קלפים קצרים ממורכזים -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 text-right md:text-center">
+          <div class="rounded-2xl p-5 bg-gray-50 dark:bg-gray-900/40 border border-gray-200/60 dark:border-white/10">
+            <div class="font-semibold mb-1 text-center md:text-right">העמותה השותפה</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400 text-center md:text-right">
+              <strong>עמותת מסלולים</strong> – מצמצמת פערים רגשיים/חברתיים/לימודיים ומקדמת מוביליות חברתית לילדים.
             </div>
           </div>
-
-          <!-- תיאור מלא -->
-          <details class="mt-3 group">
-            <summary class="cursor-pointer select-none text-sm text-emerald-700 dark:text-emerald-300 hover:underline">
-              קרא/י את התיאור המלא
-            </summary>
-            <div class="mt-2 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-              <p><strong>מה צריך ילד?<br>
-              מקום שיוכל לגבוה בו ומבוגר אחד שיעזור לו עם התקרה</strong></p>
-
-              <p>
-                הפערים החברתיים-חינוכיים בישראל, בקרב אוכלוסיות מוחלשות, מהווים חסם מרכזי עבור ילדים במימוש הפוטנציאל שלהם.
-                ילדים אלו נתקלים בחסמים הכוללים מחסור במשאבים חינוכיים, תמיכה מוגבלת בבית הספר ובסביבה המשפחתית,
-                והסללה מוקדמת לחינוך פחות איכותי, ואלו יוצרים פערים המעמיקים את תחושת ההדרה ומשפיעים ישירות על
-                ההזדמנויות העתידיות של הילדים בתחומי ההשכלה הגבוהה והתעסוקה.
-              </p>
-
-              <p>
-                עמותת מסלולים הוקמה בשנת 2019 מתוך מטרה לסייע לילדים אלה לצמצם פערים רגשיים/חברתיים/לימודיים ולאפשר להם
-                מוביליות חברתית ומימוש הפוטנציאל הגלום בהם.
-              </p>
-
-              <p>
-                ייחודה של מסלולים טמון בגישתה המקיפה והמערכתית, היוצרת רצף גילי-חינוכי, מגיל לידה ועד גיל 14,
-                מהמסגרות הפורמליות בבוקר ועד למסגרות הבלתי פורמליות בשעות אחר הצהריים. אנו מתבססים על מודל הוליסטי
-                המשלב את כל מעגלי החיים של הילד – המשפחה, מערכת החינוך והקהילה, מתוך הכרה כי רק באמצעות שילוב כל
-                הכוחות ניתן ליצור שינוי בר קיימה בחיי הילדים, כזה שיוביל לרכישת השכלה גבוהה ומיצוי הפוטנציאל האישי
-                לחיים מיטביים.
-              </p>
-
-              <p>
-                כמו כן, התוכנית מתמקדת במניעה ולא בטיפול, מתוך ראייה כי השקעה מוקדמת במניעה מייצרת אפקט רחב יותר
-                ומשרישה הרגלים ותבניות לעתיד.
-              </p>
-
-              <p>
-                אנו עובדים ב-6 שכונות באור יהודה ובבת ים ועד תחילת שנת 2026 מיועדים להתרחב לעוד 3 רשויות מקומיות
-                ולתת לילדים רבים ככל האפשר לממש את חלומותיהם.
-              </p>
-
-              <p>
-                <a href="https://www.maslulim.org.il/" target="_blank" rel="noopener nofollow"
-                   class="text-emerald-700 dark:text-emerald-300 underline">
-                  לאתר עמותת מסלולים
-                </a>
-              </p>
+          <div class="rounded-2xl p-5 bg-gray-50 dark:bg-gray-900/40 border border-gray-200/60 dark:border-white/10">
+            <div class="font-semibold mb-1 text-center md:text-right">איך התרומה פועלת</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400 text-center md:text-right">
+              הפניית 10% מהרווחים לטובת ציוד לימודי, חוגים, תמיכה רגשית ופעילות קהילתית.
             </div>
-          </details>
+          </div>
         </div>
 
-        <!-- לוגו העמותה -->
-        <aside class="md:pt-2">
-          <figure class="flex flex-col items-center gap-3">
+        <!-- לוגו = קישור -->
+        <div class="mb-6">
+          <a href="https://www.maslulim.org.il/" target="_blank" rel="noopener nofollow" aria-label="לאתר עמותת מסלולים"
+             class="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-2xl">
             <img
               src="/img/maslulim-logo.png"
               alt="לוגו עמותת מסלולים"
               loading="lazy"
               decoding="async"
               width="160" height="160"
-              class="w-28 h-28 md:w-40 md:h-40 object-contain rounded-2xl bg-gray-50 dark:bg-gray-900/40 border border-gray-200/60 dark:border-white/10 p-3"
+              class="w-28 h-28 md:w-36 md:h-36 object-contain rounded-2xl bg-gray-50 dark:bg-gray-900/40 border border-gray-200/60 dark:border-white/10 p-3 transition-transform duration-150 hover:scale-[1.02]"
             />
-            <figcaption class="text-xs text-gray-500 dark:text-gray-400">שותפה חברתית של Comfass</figcaption>
-          </figure>
-        </aside>
+          </a>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mt-2">שותפה חברתית של Comfass</div>
+        </div>
+
+        <!-- תיאור מלא (מילה במילה) -->
+        <details class="mt-1 group inline-block text-right w-full md:w-auto">
+          <summary class="cursor-pointer select-none text-sm text-emerald-700 dark:text-emerald-300 hover:underline text-center md:text-right">
+            קרא/י את התיאור המלא
+          </summary>
+          <div class="mt-2 text-sm text-gray-700 dark:text-gray-300 space-y-2">
+            <p><strong>מה צריך ילד?<br>
+            מקום שיוכל לגבוה בו ומבוגר אחד שיעזור לו עם התקרה</strong></p>
+
+            <p>
+              הפערים החברתיים-חינוכיים בישראל, בקרב אוכלוסיות מוחלשות, מהווים חסם מרכזי עבור ילדים במימוש הפוטנציאל שלהם.
+              ילדים אלו נתקלים בחסמים הכוללים מחסור במשאבים חינוכיים, תמיכה מוגבלת בבית הספר ובסביבה המשפחתית,
+              והסללה מוקדמת לחינוך פחות איכותי, ואלו יוצרים פערים המעמיקים את תחושת ההדרה ומשפיעים ישירות על
+              ההזדמנויות העתידיות של הילדים בתחומי ההשכלה הגבוהה והתעסוקה.
+            </p>
+
+            <p>
+              עמותת מסלולים הוקמה בשנת 2019 מתוך מטרה לסייע לילדים אלה לצמצם פערים רגשיים/חברתיים/לימודיים ולאפשר להם
+              מוביליות חברתית ומימוש הפוטנציאל הגלום בהם.
+            </p>
+
+            <p>
+              ייחודה של מסלולים טמון בגישתה המקיפה והמערכתית, היוצרת רצף גילי-חינוכי, מגיל לידה ועד גיל 14,
+              מהמסגרות הפורמליות בבוקר ועד למסגרות הבלתי פורמליות בשעות אחר הצהריים. אנו מתבססים על מודל הוליסטי
+              המשלב את כל מעגלי החיים של הילד – המשפחה, מערכת החינוך והקהילה, מתוך הכרה כי רק באמצעות שילוב כל
+              הכוחות ניתן ליצור שינוי בר קיימה בחיי הילדים, כזה שיוביל לרכישת השכלה גבוהה ומיצוי הפוטנציאל האישי
+              לחיים מיטביים.
+            </p>
+
+            <p>
+              כמו כן, התוכנית מתמקדת במניעה ולא בטיפול, מתוך ראייה כי השקעה מוקדמת במניעה מייצרת אפקט רחב יותר
+              ומשרישה הרגלים ותבניות לעתיד.
+            </p>
+
+            <p>
+              אנו עובדים ב-6 שכונות באור יהודה ובבת ים ועד תחילת שנת 2026 מיועדים להתרחב לעוד 3 רשויות מקומיות
+              ולתת לילדים רבים ככל האפשר לממש את חלומותיהם.
+            </p>
+
+            <p>
+              <a href="https://www.maslulim.org.il/" target="_blank" rel="noopener nofollow"
+                 class="text-emerald-700 dark:text-emerald-300 underline">
+                לאתר עמותת מסלולים
+              </a>
+            </p>
+          </div>
+        </details>
+
       </div>
     </div>
   </div>
@@ -775,7 +776,6 @@
   }
   </script>
 </section>
-
 
 <footer class="bg-gray-200 dark:bg-neutral-800 py-6 text-center text-sm text-gray-700 dark:text-gray-300">
   <div class="flex flex-col items-center gap-2">
