@@ -15,36 +15,38 @@
   # הפעל HSTS רק אם כל האתר תמיד HTTPS (מומלץ בדומיין שלך)
   Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
 
-  # ---- Content Security Policy ----
-  # אל תשכפל ב-<meta http-equiv>. אם יש – מחק מה-HTML.
-   Content-Security-Policy = """
-    default-src 'self';
-    script-src 'self' 'unsafe-inline' 'unsafe-eval'
-      https://unpkg.com
-      https://code.jquery.com
-      https://comfass-com.disqus.com
-      https://*.disqus.com
-      https://*.disquscdn.com
-      https://www.gstatic.com;
-    style-src  'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
-    font-src   'self' https://fonts.gstatic.com;
-    img-src    'self' data: blob: https:;
-    connect-src 'self' blob: data:
-      https://comfass-com.disqus.com
-      https://*.disqus.com
-      https://*.disquscdn.com
-      https://links.services.disqus.com
-      https://www.gstatic.com
-      https://formspree.io
-      https://*.formspree.io;             
-    frame-src  'self' https://disqus.com https://*.disqus.com https://*.disquscdn.com;
-    worker-src 'self' blob:;
-    media-src  'self' blob: data: https:;
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self' https://formspree.io https://*.formspree.io; 
-    frame-ancestors 'self'
-  """
+# ---- Content Security Policy ----
+Content-Security-Policy = """
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' 'unsafe-eval'
+    https://unpkg.com
+    https://code.jquery.com
+    https://comfass-com.disqus.com
+    https://*.disqus.com
+    https://*.disquscdn.com
+    https://www.gstatic.com
+    https://bringthemhomenow.net;             /* ← חדש: סקריפט הבאנר */
+  style-src  'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
+  font-src   'self' https://fonts.gstatic.com;
+  img-src    'self' data: blob: https:;
+  connect-src 'self' blob: data:
+    https://comfass-com.disqus.com
+    https://*.disqus.com
+    https://*.disquscdn.com
+    https://links.services.disqus.com
+    https://www.gstatic.com
+    https://formspree.io
+    https://*.formspree.io
+    https://bringthemhomenow.net;             /* ← חדש: אם הסקריפט מושך נתונים */
+  frame-src  'self' https://disqus.com https://*.disqus.com https://*.disquscdn.com;
+  worker-src 'self' blob:;
+  media-src  'self' blob: data: https:;
+  object-src 'none';
+  base-uri 'self';
+  form-action 'self' https://formspree.io https://*.formspree.io;
+  frame-ancestors 'self'
+"""
+
 
 # =========================
 # Caching policy
