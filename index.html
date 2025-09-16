@@ -562,67 +562,44 @@
           <textarea id="message" name="message" rows="4"
                     class="mt-1 w-full border border-gray-300 p-3 rounded-lg shadow-sm"></textarea>
 
-         <!-- תנאים: checkbox נסתר, SVG שלך הוא ה"ויזואל" -->
-          <div class="flex items-start gap-3 mt-4">
-            <!-- ה־input נסתר לעין אבל נגיש -->
-            <input id="terms" name="terms" type="checkbox" value="yes"
-                   required aria-required="true"
-                   class="peer sr-only" />
-            <!-- הויזואל + הטקסט שמסמנים את ה־checkbox -->
-            <label for="terms" class="flex items-center gap-2 cursor-pointer select-none">
-              <!-- קופסה + סימון V: ה־V יופיע רק כשה־checkbox מסומן -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
-                   class="text-violet-600 dark:text-violet-400 inline-block align-middle"
-                   aria-hidden="true" focusable="false" style="width:30px;height:30px;">
-                <mask id="cb-terms" fill="white"><rect width="200" height="200"/></mask>
-                <rect class="checkbox-box" width="200" height="200" mask="url(#cb-terms)" stroke-width="40"></rect>
-                <!-- מוסתר כברירת מחדל, מופיע כשמסומן -->
-                <path class="checkbox-tick opacity-0 peer-checked:opacity-100 transition-opacity"
-                      d="M52 111.018L76.9867 136L149 64" stroke-width="15"></path>
-              </svg>
-          
-              <span class="label-text text-gray-900 dark:text-gray-100 align-middle">
-                אני מאשר/ת את <span class="text-red-500">*</span>
-              </span>
-            </label>
-          
-            <!-- הקישורים מחוץ ל-label כדי שלא יסמנו/יבטלו -->
-            <div class="flex items-center flex-wrap gap-x-1 text-sm text-gray-700 dark:text-gray-300">
-              <button type="button" class="text-blue-600 underline"
-                      onclick="openModal && openModal('termsModal','./modals/terms.html')">
-                תנאי השימוש
-              </button>
-              <span>ו־</span>
-              <button type="button" class="text-blue-600 underline"
-                      onclick="openModal && openModal('privacyModal','./modals/privacy.html')">
-                מדיניות הפרטיות
-              </button>
-            </div>
+         <!-- תנאים --> 
+          <div class="checkbox-wrapper flex items-start mb-1 mt-4"> 
+           <input id="terms" name="terms" type="checkbox" value="yes" required aria-required="true" class="mt-1" /> 
+           <label class="terms-label ml-3 cursor-pointer select-none" for="terms"> 
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="checkbox-svg text-violet-600 dark:text-violet-400 inline-block align-middle" aria-hidden="true" focusable="false" style="width:30px;height:30px;"> 
+               <mask id="cb-terms" fill="white"><rect width="200" height="200"/>
+               </mask> 
+               <rect class="checkbox-box" width="200" height="200" mask="url(#cb-terms)" stroke-width="40">
+               </rect> 
+               <path class="checkbox-tick" d="M52 111.018L76.9867 136L149 64" stroke-width="15"></path> 
+             </svg> <span class="label-text text-gray-900 dark:text-gray-100 align-middle ml-2">
+               אני מאשר/ת את התנאים 
+               <span class="text-red-500">*</span> 
+             </span> 
+           </label> 
+         </div> 
+          <div class="text-sm text-gray-700 dark:text-gray-300 -mt-1"> 
+            <button type="button" class="text-blue-600 underline" onclick="openModal && openModal('termsModal','./modals/terms.html')">
+              תנאי השימוש 
+            </button> 
+            <span>&nbsp;ו־&nbsp;</span> 
+            <button type="button" class="text-blue-600 underline" onclick="openModal && openModal('privacyModal','./modals/privacy.html')">
+              מדיניות הפרטיות 
+            </button> 
           </div>
-          
-          <!-- אישור חובה לקבלת דיוור/‏SMS – אותו עיקרון -->
-          <div class="flex items-start gap-3 mt-3">
-            <input id="marketingConsent" name="consent_marketing" type="checkbox" value="yes"
-                   required aria-required="true"
-                   class="peer sr-only" />
-            <label for="marketingConsent" class="flex items-center gap-2 cursor-pointer select-none">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
-                   class="text-orange-500 inline-block align-middle"
-                   aria-hidden="true" focusable="false" style="width:30px;height:30px;">
-                <mask id="cb-marketing" fill="white"><rect width="200" height="200"/></mask>
-                <rect class="checkbox-box" width="200" height="200" mask="url(#cb-marketing)" stroke-width="40"></rect>
-                <path class="checkbox-tick opacity-0 peer-checked:opacity-100 transition-opacity"
-                      d="M52 111.018L76.9867 136L149 64" stroke-width="15"></path>
-              </svg>
-          
-              <span class="label-text text-gray-900 dark:text-gray-100 align-middle">
-                אני מאשר/ת קבלת עדכונים, דברי דואר ו־SMS <span class="text-red-500">*</span>
-              </span>
-            </label>
-          
-            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              ניתן לבטל בכל עת בהודעת “הסר”.
-            </p>
+          <!-- אישור חובה לקבלת דיוור --> 
+          <div class="checkbox-wrapper flex items-start mb-1 mt-3"> 
+            <input id="marketingConsent" name="consent_marketing" type="checkbox" value="yes" required aria-required="true" class="mt-1" /> 
+            <label class="terms-label ml-3 cursor-pointer select-none" for="marketingConsent"> 
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="checkbox-svg text-orange-500 inline-block align-middle" aria-hidden="true" focusable="false" style="width:30px;height:30px;"> 
+                <mask id="cb-marketing" fill="white"><rect width="200" height="200"/></mask> 
+                <rect class="checkbox-box" width="200" height="200" mask="url(#cb-marketing)" stroke-width="40"></rect> 
+                <path class="checkbox-tick" d="M52 111.018L76.9867 136L149 64" stroke-width="15"></path> </svg> 
+              <span class="label-text text-gray-900 dark:text-gray-100 align-middle ml-2">
+                אני מאשר/ת קבלת עדכונים, דברי דואר ו־SMS 
+                <span class="text-red-500">*</span> 
+              </span> 
+            </label> 
           </div>
           
           <!-- כפתור שליחה – עומד לבד, עם ריווח מלמעלה -->
