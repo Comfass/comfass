@@ -37,6 +37,8 @@
     font-src   'self' https://fonts.gstatic.com;
     img-src    'self' data: blob: https:;
     connect-src 'self' blob: data:
+      https://unpkg.com
+      https://disqus.com
       https://comfass-com.disqus.com
       https://*.disqus.com
       https://*.disquscdn.com
