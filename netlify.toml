@@ -14,13 +14,15 @@
   Permissions-Policy = "geolocation=(), microphone=(), camera=()"
   # הפעל HSTS רק אם כל האתר תמיד HTTPS (מומלץ בדומיין שלך)
   Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+  # מומלץ (לא חובה)
+  Cross-Origin-Opener-Policy = "same-origin"
+  Cross-Origin-Resource-Policy = "same-site"
 
 [[headers]]
   for = "/*"
   [headers.values]
   Content-Security-Policy = """
     default-src 'self';
-
     script-src 'self' 'unsafe-inline' 'unsafe-eval'
       https://unpkg.com
       https://code.jquery.com
@@ -29,12 +31,9 @@
       https://*.disquscdn.com
       https://www.gstatic.com
       https://bringthemhomenow.net;
-
-    /* חשוב – לאפשר סגנונות אינליין גם ברמת אלמנט וגם ברמת מאפיין */
     style-src       'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
     style-src-elem  'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
     style-src-attr  'self' 'unsafe-inline';
-
     font-src   'self' https://fonts.gstatic.com;
     img-src    'self' data: blob: https:;
     connect-src 'self' blob: data:
@@ -62,14 +61,21 @@ package = "@netlify/plugin-sitemap"
 # Caching policy
 # =========================
 
-# HTML – תמיד לבדוק עדכון
+# HTML – שורש
 [[headers]]
   for = "/"
   [headers.values]
   Cache-Control = "no-cache"
 
+# HTML בקובץ בודד בשורש
 [[headers]]
   for = "/*.html"
+  [headers.values]
+  Cache-Control = "no-cache"
+
+# HTML במודלים (חשוב! אחרת יילכד בקאש)
+[[headers]]
+  for = "/modals/*"
   [headers.values]
   Cache-Control = "no-cache"
 
