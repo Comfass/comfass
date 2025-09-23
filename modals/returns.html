@@ -1,56 +1,120 @@
-<article dir="rtl"
-         class="policy-scope max-w-[920px] mx-auto text-[15px] leading-7 text-neutral-900 dark:text-neutral-100">
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <header>
-    <div role="heading" aria-level="1" class="text-xl font-bold mb-4">
-      מדיניות החזרות – Comfass (B2B)
-    </div>
-    <p class="mb-4 text-sm text-gray-600 dark:text-gray-300">
-      גרסה 1.0 | עודכן: 31/08/2025 | חל על עסקאות סיטונאיות (B2B) בלבד.
-    </p>
-  </header>
+  <title>מדיניות החזרות – Comfass</title>
+  <meta name="description" content="מדיניות החזרות לעסקאות סיטונאיות (B2B) באתר Comfass" />
+  <!-- דפי מדיניות – לא לאנדקס -->
+  <meta name="robots" content="noindex,follow" />
 
-  <div class="contents">
-    <h2 class="text-lg font-semibold mt-6 mb-2">1. תחולה</h2>
-    <p>מדיניות זו חלה על מכירות סיטונאיות למוסדות, ארגונים וחברות. אינה מהווה מדיניות לצרכן קצה בהתאם לחוק הגנת הצרכן.</p>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
 
-    <h2 class="text-lg font-semibold mt-6 mb-2">2. החזרות / זיכויים</h2>
-    <ul class="list-disc ps-5 space-y-1">
-      <li>ניתן לבקש החזרה/זיכוי בתוך <strong>14 יום</strong> מקבלת הסחורה, בכפוף לאישור מראש ובכתב מאתנו.</li>
-      <li>מוצרים חייבים להיות <strong>סגורים באריזה המקורית</strong>, חדשים, ללא שימוש, וללא פגיעה/לכלוך.</li>
-      <li>החזרה תתבצע על חשבון הלקוח, אלא אם אושר אחרת בכתב.</li>
-      <li>תיתכן <strong>עמלת החזרה</strong> של עד 10% לכיסוי עלויות לוגיסטיות, לפי שיקול דעתנו.</li>
-    </ul>
+  <!-- App CSS -->
+  <link href="/css/style.css" rel="stylesheet">
 
-    <h2 class="text-lg font-semibold mt-6 mb-2">3. מוצרים שלא ניתנים להחזרה</h2>
-    <ul class="list-disc ps-5 space-y-1">
-      <li>פריטים שנפתחו/שומשו.</li>
-      <li>מוצרים בהתאמה אישית, מיתוג/לוגו/הטבעה.</li>
-      <li>מוצרים שניזוקו עקב אחסון/שימוש לא תקין מצד הלקוח.</li>
-    </ul>
+  <!-- Favicon -->
+  <link rel="icon" href="/img/comfass-logo.jpg" type="image/jpeg">
 
-    <h2 class="text-lg font-semibold mt-6 mb-2">4. פגם/אי־התאמה בעת אספקה (DOA)</h2>
-    <ul class="list-disc ps-5 space-y-1">
-      <li>יש לדווח על פגם ייצור/אי־התאמה בכתב בתוך <strong>7 ימים</strong> מקבלת הסחורה בצירוף תמונות/מסמכים.</li>
-      <li>לאחר אימות, לפי שיקול דעתנו: החלפה, תיקון, זיכוי מלא/חלקי.</li>
-    </ul>
+  <style>
+    body{
+      font-family:"Varela Round",Comfortaa,system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",Arial,"Apple Color Emoji","Segoe UI Emoji";
+    }
+    .page-wrap{min-height:100vh;display:flex;flex-direction:column;background:#f9fafb}
+    .page-main{flex:1 1 auto}
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(120%) blur(4px);
+      -webkit-backdrop-filter:saturate(120%) blur(4px);
+      border-bottom:1px solid rgba(0,0,0,.05);
+    }
+  </style>
+</head>
 
-    <h2 class="text-lg font-semibold mt-6 mb-2">5. תהליך החזרה</h2>
-    <ol class="list-decimal ps-5 space-y-1">
-      <li>פנייה ל־<a href="mailto:Info@comfass.com" class="text-blue-600 dark:text-blue-400 underline">Info@comfass.com</a> עם מספר הזמנה/חשבונית ותיאור מלא.</li>
-      <li>קבלת אישור החזרה (RMA) והוראות שילוח.</li>
-      <li>אריזה בטוחה והחזרה לכתובת שתימסר.</li>
-      <li>בדיקה במחסן ואישור זיכוי/החלפה בהתאם.</li>
-    </ol>
+<body class="bg-gray-50 text-gray-800">
+  <div class="page-wrap">
+    <!-- כותרת קטנה לעמוד עצמאי -->
+    <header class="topbar">
+      <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="/" class="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900">
+          <img src="/img/comfass-logo-slogan.jpg" alt="Comfass" class="h-8 w-auto rounded">
+          <span class="text-sm">חזרה לאתר</span>
+        </a>
+        <a href="/#footer" class="text-sm text-blue-600 underline">סגירה</a>
+      </div>
+    </header>
 
-    <h2 class="text-lg font-semibold mt-6 mb-2">6. החזר כספי</h2>
-    <p>זיכוי יינתן באמצעי התשלום המקורי או כזיכוי עתידי, בתוך <strong>14 ימי עסקים</strong> מאישור סופי במחסן.</p>
+    <!-- *** זה מה שהמודאל יטען פנימה (#policy-root) *** -->
+    <main id="policy-root" class="page-main">
+      <section class="max-w-[920px] mx-auto px-4 py-8">
+        <article dir="rtl"
+                 class="policy-scope max-w-[920px] mx-auto text-[15px] leading-7 text-neutral-900 dark:text-neutral-100">
 
-    <h2 class="text-lg font-semibold mt-6 mb-2">7. דין ושיפוט</h2>
-    <p>כפוף לדין הישראלי. סמכות השיפוט הייחודית – בתי המשפט המוסמכים במחוז תל־אביב–יפו.</p>
+          <header>
+            <div role="heading" aria-level="1" class="text-xl font-bold mb-4">
+              מדיניות החזרות – Comfass (B2B)
+            </div>
+            <p class="mb-4 text-sm text-gray-600 dark:text-gray-300">
+              גרסה 1.0 | עודכן: 31/08/2025 | חל על עסקאות סיטונאיות (B2B) בלבד.
+            </p>
+          </header>
 
-    <p class="mt-6 text-sm text-gray-600 dark:text-gray-300">
-      לשאלות: <a href="mailto:Info@comfass.com" class="text-blue-600 dark:text-blue-400 underline">Info@comfass.com</a>
-    </p>
+          <div class="contents">
+            <h2 class="text-lg font-semibold mt-6 mb-2">1. תחולה</h2>
+            <p>מדיניות זו חלה על מכירות סיטונאיות למוסדות, ארגונים וחברות. אינה מהווה מדיניות לצרכן קצה בהתאם לחוק הגנת הצרכן.</p>
+
+            <h2 class="text-lg font-semibold mt-6 mb-2">2. החזרות / זיכויים</h2>
+            <ul class="list-disc ps-5 space-y-1">
+              <li>ניתן לבקש החזרה/זיכוי בתוך <strong>14 יום</strong> מקבלת הסחורה, בכפוף לאישור מראש ובכתב מאתנו.</li>
+              <li>מוצרים חייבים להיות <strong>סגורים באריזה המקורית</strong>, חדשים, ללא שימוש, וללא פגיעה/לכלוך.</li>
+              <li>החזרה תתבצע על חשבון הלקוח, אלא אם אושר אחרת בכתב.</li>
+              <li>תיתכן <strong>עמלת החזרה</strong> של עד 10% לכיסוי עלויות לוגיסטיות, לפי שיקול דעתנו.</li>
+            </ul>
+
+            <h2 class="text-lg font-semibold mt-6 mb-2">3. מוצרים שלא ניתנים להחזרה</h2>
+            <ul class="list-disc ps-5 space-y-1">
+              <li>פריטים שנפתחו/שומשו.</li>
+              <li>מוצרים בהתאמה אישית, מיתוג/לוגו/הטבעה.</li>
+              <li>מוצרים שניזוקו עקב אחסון/שימוש לא תקין מצד הלקוח.</li>
+            </ul>
+
+            <h2 class="text-lg font-semibold mt-6 mb-2">4. פגם/אי־התאמה בעת אספקה (DOA)</h2>
+            <ul class="list-disc ps-5 space-y-1">
+              <li>יש לדווח על פגם ייצור/אי־התאמה בכתב בתוך <strong>7 ימים</strong> מקבלת הסחורה בצירוף תמונות/מסמכים.</li>
+              <li>לאחר אימות, לפי שיקול דעתנו: החלפה, תיקון, זיכוי מלא/חלקי.</li>
+            </ul>
+
+            <h2 class="text-lg font-semibold mt-6 mb-2">5. תהליך החזרה</h2>
+            <ol class="list-decimal ps-5 space-y-1">
+              <li>פנייה ל־<a href="mailto:Info@comfass.com" class="text-blue-600 dark:text-blue-400 underline">Info@comfass.com</a> עם מספר הזמנה/חשבונית ותיאור מלא.</li>
+              <li>קבלת אישור החזרה (RMA) והוראות שילוח.</li>
+              <li>אריזה בטוחה והחזרה לכתובת שתימסר.</li>
+              <li>בדיקה במחסן ואישור זיכוי/החלפה בהתאם.</li>
+            </ol>
+
+            <h2 class="text-lg font-semibold mt-6 mb-2">6. החזר כספי</h2>
+            <p>זיכוי יינתן באמצעי התשלום המקורי או כזיכוי עתידי, בתוך <strong>14 ימי עסקים</strong> מאישור סופי במחסן.</p>
+
+            <h2 class="text-lg font-semibold mt-6 mb-2">7. דין ושיפוט</h2>
+            <p>כפוף לדין הישראלי. סמכות השיפוט הייחודית – בתי המשפט המוסמכים במחוז תל־אביב–יפו.</p>
+
+            <p class="mt-6 text-sm text-gray-600 dark:text-gray-300">
+              לשאלות: <a href="mailto:Info@comfass.com" class="text-blue-600 dark:text-blue-400 underline">Info@comfass.com</a>
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- פוטר קטן לעמוד העצמאי -->
+    <footer class="text-center text-xs text-gray-500 py-6">
+      © 2025 Comfass
+    </footer>
   </div>
-</article>
+</body>
+</html>
