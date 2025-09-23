@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Comfass/comfass#readme",
   "devDependencies": {
+    "@netlify/plugin-sitemap": "^0.8.1",
     "@tailwindcss/postcss": "^4.1.12",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
