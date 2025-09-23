@@ -43,6 +43,17 @@
       <div class="relative -mx-6 -mt-6 px-6 pt-8 pb-6 bg-animate rounded-t-2xl text-center shadow-sm">
         <!-- כפתורי פעולה -->
         <div class="absolute inset-x-0 top-2 flex items-center justify-between px-3">
+          <!-- חזרה לאתר (פשוט סוגר מודאל) -->
+          <button type="button"
+                  class="inline-flex items-center gap-2 rounded-full bg-white/90 dark:bg-neutral-800/90 text-gray-800 dark:text-gray-100 px-3 py-1.5 shadow-md hover:shadow-lg border border-black/5 dark:border-white/10 backdrop-blur-sm transition"
+                  onclick="closeModal('termsModal')"
+                  aria-label="חזרה לאתר">
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" aria-hidden="true">
+              <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            חזרה לאתר
+          </button>
+      
           <!-- סגירה -->
           <button type="button"
                   class="inline-flex items-center gap-2 rounded-full bg-white/90 dark:bg-neutral-800/90 text-gray-800 dark:text-gray-100 px-3 py-1.5 shadow-md hover:shadow-lg border border-black/5 dark:border-white/10 backdrop-blur-sm transition"
@@ -54,17 +65,16 @@
             </svg>
           </button>
         </div>
-
-          <!-- לוגו ממורכז -->
-          <img src="/img/COMFASS-LOGO-No-BackGround-SLOGAN.png"
-               alt="Comfass"
-               class="mx-auto w-40 sm:w-48 md:w-56 drop-shadow-2xl select-none"
-               draggable="false" />
-        
-          <!-- כותרת למסייעי נגישות (חבויה ויזואלית) -->
-          <h3 id="termsTitle" class="sr-only">תנאי השימוש</h3>
-        </div>
-
+      
+        <!-- לוגו ממורכז -->
+        <img src="/img/COMFASS-LOGO-No-BackGround-SLOGAN.png"
+             alt="Comfass"
+             class="mx-auto w-40 sm:w-48 md:w-56 drop-shadow-2xl select-none"
+             draggable="false" />
+      
+        <!-- כותרת למסייעי נגישות (חבויה ויזואלית) -->
+        <h3 id="termsTitle" class="sr-only">תנאי השימוש</h3>
+      </div>
     </header>
 
     <!-- תוכן המודאל -->
