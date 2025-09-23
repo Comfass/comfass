@@ -334,7 +334,7 @@
   #accessibilityContent,
   #returnsContent,
   #warrantyContent {
-    @apply pt-12; /* נסה pt-14 אם עדיין צמוד מדי */
+    @apply pt-10; /* נסה pt-14 אם עדיין צמוד מדי */
   }
 
   #termsContent [id],
@@ -345,6 +345,7 @@
     scroll-margin-top: 3.5rem; /* בערך גובה ההדר ה-sticky */
   }
 }
+
 
 
 
