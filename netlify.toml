@@ -55,7 +55,8 @@
     frame-ancestors 'self';
   """
 
-
+[[plugins]]
+package = "netlify-plugin-sitemap"
 
 # =========================
 # Caching policy
