@@ -1,90 +1,158 @@
-<article dir="rtl"
-         class="policy-scope max-w-[920px] mx-auto text-[15px] leading-7 text-neutral-900 dark:text-neutral-100">
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <header class="mb-6">
-    <div role="heading" aria-level="1" class="text-xl font-bold mb-1">
-      🔐 מדיניות פרטיות באתר Comfass.com
-    </div>
-    <p class="text-sm text-gray-600 dark:text-gray-300">
-      עודכן לאחרונה: 31 ביולי 2025
-    </p>
-  </header>
+  <title>מדיניות פרטיות – Comfass</title>
+  <meta name="description" content="מדיניות הפרטיות של Comfass" />
+  <!-- דפי מדיניות: עדיף לא לאנדקס -->
+  <meta name="robots" content="noindex,follow" />
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">1. מבוא</div>
-    <p>
-      חברת Comfass, המפעילה את אתר comfass.com (להלן: "החברה" או "אנחנו"), רואה חשיבות רבה בהגנה על פרטיות המשתמשים.
-      מדיניות זו מפרטת כיצד אנו אוספים, שומרים, משתמשים ומגנים על מידע אישי של המשתמשים באתר.
-    </p>
-  </section>
+  <!-- Fonts (כמו בעמוד הראשי) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">2. איזה מידע נאסף?</div>
-    <ul class="list-disc ps-5 space-y-1">
-      <li><strong>מידע אישי מזהה:</strong> שם, טלפון ודוא"ל – בעת מילוי טופס יצירת קשר.</li>
-      <li><strong>מידע טכני:</strong> כתובת IP, סוג מכשיר ודפדפן, עמודים נצפים וזמני שימוש.</li>
-      <li><strong>Cookies:</strong> קבצי טקסט קטנים לצורכי תפעול, ניתוח סטטיסטי והתאמה אישית. המשתמש יכול לחסום אותם דרך הגדרות הדפדפן.</li>
-    </ul>
-  </section>
+  <!-- App CSS (כמו בעמוד הראשי) -->
+  <link href="/css/style.css" rel="stylesheet">
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">3. מטרות השימוש במידע</div>
-    <ul class="list-disc ps-5 space-y-1">
-      <li>ליצירת קשר ומתן מידע או הצעת מחיר לפי בקשת המשתמש.</li>
-      <li>לשיפור חווית השימוש, ניתוח ביצועי האתר ואיתור תקלות.</li>
-      <li>לשליחת עדכונים – רק לאחר אישור אקטיבי ומפורש של המשתמש.</li>
-      <li>למילוי חובה חוקית או דרישות רגולטוריות.</li>
-    </ul>
-  </section>
+  <!-- Favicon (אופציונלי) -->
+  <link rel="icon" href="/img/comfass-logo.jpg" type="image/jpeg">
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">4. שיתוף מידע עם צדדים שלישיים</div>
-    <p>המידע לא יימסר לגורמים חיצוניים למעט במקרים הבאים:</p>
-    <ul class="list-disc ps-5 space-y-1">
-      <li>לספקי שירות (כגון אחסון או CRM) – בכפוף להסכם סודיות.</li>
-      <li>לפי צו שיפוטי או דרישה חוקית מחייבת.</li>
-      <li>במסגרת הליכים משפטיים או לשם הגנה על זכויות החברה.</li>
-      <li>במקרה של מיזוג, רכישה או שינוי מבני בעסק – בכפוף להתחייבות לשמירה על המדיניות.</li>
-    </ul>
-  </section>
+  <style>
+    /* שמירה על אותו פונט כמו בדף הראשי */
+    body{
+      font-family:"Varela Round",Comfortaa,system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",Arial,"Apple Color Emoji","Segoe UI Emoji";
+    }
+    /* מסגרת עדינה כעמוד עצמאי (לא נטען למודאל) */
+    .page-wrap{min-height:100vh;display:flex;flex-direction:column;background:#f9fafb}
+    .page-main{flex:1 1 auto}
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(120%) blur(4px);
+      -webkit-backdrop-filter:saturate(120%) blur(4px);
+      border-bottom:1px solid rgba(0,0,0,.05);
+    }
+  </style>
+</head>
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">5. אבטחת מידע</div>
-    <p>
-      האתר משתמש בפרוטוקול אבטחה (SSL) ובאמצעים סבירים לאבטחת המידע. יחד עם זאת, לא ניתן להבטיח אבטחה מוחלטת,
-      והחברה אינה אחראית לכל נזק שייגרם עקב גישה בלתי מורשית למידע.
-    </p>
-  </section>
+<body class="bg-gray-50 text-gray-800">
+  <div class="page-wrap">
+    <!-- כותרת קטנה לעמוד עצמאי (במודאל לא נטען) -->
+    <header class="topbar">
+      <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="/" class="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900">
+          <img src="/img/comfass-logo-slogan.jpg" alt="Comfass" class="h-8 w-auto rounded">
+          <span class="text-sm">חזרה לאתר</span>
+        </a>
+        <a href="/#footer" class="text-sm text-blue-600 underline">סגירה</a>
+      </div>
+    </header>
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">6. זכויות המשתמש על פי חוק</div>
-    <ul class="list-disc ps-5 space-y-1">
-      <li>המשתמש רשאי לבקש עיון במידע אישי המוחזק עליו.</li>
-      <li>ניתן לבקש תיקון או מחיקה של מידע שגוי או מיושן.</li>
-      <li>בקשות יש להגיש בכתב לכתובת הדוא"ל: <a href="mailto:ceo@comfass.com" class="text-blue-600 dark:text-blue-400 underline">ceo@comfass.com</a>.</li>
-    </ul>
-  </section>
+    <!-- *** זה מה שהמודאל טוען פנימה (#policy-root) *** -->
+    <main id="policy-root" class="page-main">
+      <section class="max-w-[920px] mx-auto px-4 py-8">
+        <!-- === התוכן שנשמר כפי שנתת === -->
+        <article dir="rtl"
+                 class="policy-scope max-w-[920px] mx-auto text-[15px] leading-7 text-neutral-900 dark:text-neutral-100">
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">7. שמירת מידע</div>
-    <p>
-      המידע יישמר רק כל עוד הוא נדרש לצורכי השירות או לפי דרישת החוק. לאחר מכן יימחק או יעבור אנונימיזציה.
-    </p>
-  </section>
+          <header class="mb-6">
+            <div role="heading" aria-level="1" class="text-xl font-bold mb-1">
+              🔐 מדיניות פרטיות באתר Comfass.com
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              עודכן לאחרונה: 31 ביולי 2025
+            </p>
+          </header>
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">8. שינויים במדיניות</div>
-    <p>
-      החברה רשאית לעדכן מדיניות זו בכל עת. תאריך העדכון האחרון מופיע בראש העמוד. מומלץ לעיין במדיניות זו מעת לעת.
-    </p>
-  </section>
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">1. מבוא</div>
+            <p>
+              חברת Comfass, המפעילה את אתר comfass.com (להלן: "החברה" או "אנחנו"), רואה חשיבות רבה בהגנה על פרטיות המשתמשים.
+              מדיניות זו מפרטת כיצד אנו אוספים, שומרים, משתמשים ומגנים על מידע אישי של המשתמשים באתר.
+            </p>
+          </section>
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">9. יצירת קשר</div>
-    <p>לשאלות, בקשות או פניות בנושא פרטיות ניתן לפנות אלינו:</p>
-    <ul class="list-disc ps-5 space-y-1">
-      <li>📧 בדוא"ל: <a href="mailto:info@comfass.com" class="text-blue-600 dark:text-blue-400 underline">info@comfass.com</a></li>
-      <li>📱 דרך טופס יצירת הקשר באתר</li>
-    </ul>
-  </section>
-</article>
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">2. איזה מידע נאסף?</div>
+            <ul class="list-disc ps-5 space-y-1">
+              <li><strong>מידע אישי מזהה:</strong> שם, טלפון ודוא"ל – בעת מילוי טופס יצירת קשר.</li>
+              <li><strong>מידע טכני:</strong> כתובת IP, סוג מכשיר ודפדפן, עמודים נצפים וזמני שימוש.</li>
+              <li><strong>Cookies:</strong> קבצי טקסט קטנים לצורכי תפעול, ניתוח סטטיסטי והתאמה אישית. המשתמש יכול לחסום אותם דרך הגדרות הדפדפן.</li>
+            </ul>
+          </section>
+
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">3. מטרות השימוש במידע</div>
+            <ul class="list-disc ps-5 space-y-1">
+              <li>ליצירת קשר ומתן מידע או הצעת מחיר לפי בקשת המשתמש.</li>
+              <li>לשיפור חווית השימוש, ניתוח ביצועי האתר ואיתור תקלות.</li>
+              <li>לשליחת עדכונים – רק לאחר אישור אקטיבי ומפורש של המשתמש.</li>
+              <li>למילוי חובה חוקית או דרישות רגולטוריות.</li>
+            </ul>
+          </section>
+
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">4. שיתוף מידע עם צדדים שלישיים</div>
+            <p>המידע לא יימסר לגורמים חיצוניים למעט במקרים הבאים:</p>
+            <ul class="list-disc ps-5 space-y-1">
+              <li>לספקי שירות (כגון אחסון או CRM) – בכפוף להסכם סודיות.</li>
+              <li>לפי צו שיפוטי או דרישה חוקית מחייבת.</li>
+              <li>במסגרת הליכים משפטיים או לשם הגנה על זכויות החברה.</li>
+              <li>במקרה של מיזוג, רכישה או שינוי מבני בעסק – בכפוף להתחייבות לשמירה על המדיניות.</li>
+            </ul>
+          </section>
+
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">5. אבטחת מידע</div>
+            <p>
+              האתר משתמש בפרוטוקול אבטחה (SSL) ובאמצעים סבירים לאבטחת המידע. יחד עם זאת, לא ניתן להבטיח אבטחה מוחלטת,
+              והחברה אינה אחראית לכל נזק שייגרם עקב גישה בלתי מורשית למידע.
+            </p>
+          </section>
+
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">6. זכויות המשתמש על פי חוק</div>
+            <ul class="list-disc ps-5 space-y-1">
+              <li>המשתמש רשאי לבקש עיון במידע אישי המוחזק עליו.</li>
+              <li>ניתן לבקש תיקון או מחיקה של מידע שגוי או מיושן.</li>
+              <li>בקשות יש להגיש בכתב לכתובת הדוא"ל: <a href="mailto:ceo@comfass.com" class="text-blue-600 dark:text-blue-400 underline">ceo@comfass.com</a>.</li>
+            </ul>
+          </section>
+
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">7. שמירת מידע</div>
+            <p>
+              המידע יישמר רק כל עוד הוא נדרש לצורכי השירות או לפי דרישת החוק. לאחר מכן יימחק או יעבור אנונימיזציה.
+            </p>
+          </section>
+
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">8. שינויים במדיניות</div>
+            <p>
+              החברה רשאית לעדכן מדיניות זו בכל עת. תאריך העדכון האחרון מופיע בראש העמוד. מומלץ לעיין במדיניות זו מעת לעת.
+            </p>
+          </section>
+
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">9. יצירת קשר</div>
+            <p>לשאלות, בקשות או פניות בנושא פרטיות ניתן לפנות אלינו:</p>
+            <ul class="list-disc ps-5 space-y-1">
+              <li>📧 בדוא"ל: <a href="mailto:info@comfass.com" class="text-blue-600 dark:text-blue-400 underline">info@comfass.com</a></li>
+              <li>📱 דרך טופס יצירת הקשר באתר</li>
+            </ul>
+          </section>
+        </article>
+        <!-- === /התוכן === -->
+      </section>
+    </main>
+
+    <!-- פוטר קטן לעמוד העצמאי (לא נטען למודאל) -->
+    <footer class="text-center text-xs text-gray-500 py-6">
+      © 2025 Comfass
+    </footer>
+  </div>
+</body>
+</html>
