@@ -1,82 +1,151 @@
-<article dir="rtl"
-         class="policy-scope max-w-[920px] mx-auto text-[15px] leading-7 text-neutral-900 dark:text-neutral-100">
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <header class="mb-6">
-    <div role="heading" aria-level="1" class="text-xl font-bold mb-1">
-      הצהרת נגישות – Comfass
-    </div>
-    <p class="text-sm text-gray-600 dark:text-gray-300">
-      עדכון אחרון: 4 בספטמבר 2025
-    </p>
-  </header>
+  <title>הצהרת נגישות – Comfass</title>
+  <meta name="description" content="הצהרת נגישות של Comfass" />
+  <!-- שלא ייאנדקס (רצוי בדפי מדיניות/מודאלים) -->
+  <meta name="robots" content="noindex,follow" />
 
-  <section class="space-y-3">
-    <p>
-      אנו ב־Comfass רואים חשיבות רבה בהנגשת האתר והשירותים שלנו לכלל הציבור, ובפרט לאנשים עם מוגבלות.
-    </p>
-    <p>
-      האתר פותח ועוצב בהתאם להנחיות התקן הישראלי לנגישות תכנים באינטרנט (תקן ת”י 5568) ולתקן הבינלאומי
-      WCAG 2.1 ברמה AA, במטרה לאפשר חוויית שימוש נוחה, פשוטה ושווה לכל המשתמשים.
-    </p>
-  </section>
+  <!-- Fonts (כמו בעמוד הראשי) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">
-      אמצעי הנגישות באתר
-    </div>
-    <p class="mb-2">באתר מופעלת מערכת נגישות חיצונית מבית "נגיש לי", המאפשרת בין היתר:</p>
-    <ul class="list-disc ps-5 space-y-1">
-      <li>שינוי גודל הטקסט</li>
-      <li>התאמת צבעי התצוגה, כולל ניגודיות גבוהה</li>
-      <li>הדגשת טקסטים וקישורים</li>
-      <li>שליטה בתצוגה ובהדגשות</li>
-      <li>התאמות נוספות המקלות על הגלישה עבור אנשים עם לקויות ראייה, קשיי קריאה או מוגבלויות אחרות</li>
-    </ul>
-  </section>
+  <!-- App CSS (כמו בעמוד הראשי) -->
+  <link href="/css/style.css" rel="stylesheet">
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">
-      תמיכה בדפדפנים ועזרים
-    </div>
-    <p>
-      האתר מותאם לשימוש בדפדפנים מודרניים ובמכשירים ניידים, ותומך בשימוש בקוראי מסך וניווט באמצעות מקלדת בלבד.
-    </p>
-  </section>
+  <!-- Favicon (אופציונלי) -->
+  <link rel="icon" href="/img/comfass-logo.jpg" type="image/jpeg">
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">
-      התאמות שבוצעו באתר
-    </div>
-    <ul class="list-disc ps-5 space-y-1">
-      <li>שימוש במבנה עמודים ברור והיררכי</li>
-      <li>הוספת טקסט חלופי לתמונות ותכנים גרפיים</li>
-      <li>אפשרות לשינוי פרמטרים ויזואליים בזמן אמת בהתאם לצרכי המשתמש</li>
-    </ul>
-  </section>
+  <style>
+    /* שמירה על אותו פונט ברמת body כמו בדף הראשי */
+    body{
+      font-family:"Varela Round",Comfortaa,system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",Arial,"Apple Color Emoji","Segoe UI Emoji";
+    }
+    /* מסגרת כללית עדינה לעמוד העצמאי (לא משפיע כשנטען למודאל) */
+    .page-wrap{min-height:100vh;display:flex;flex-direction:column;background:#f9fafb}
+    .page-main{flex:1 1 auto}
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(120%) blur(4px);
+      -webkit-backdrop-filter:saturate(120%) blur(4px);
+      border-bottom:1px solid rgba(0,0,0,.05);
+    }
+  </style>
+</head>
 
-  <section class="mt-6">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">
-      הסתייגות
-    </div>
-    <p>
-      אנו משקיעים מאמצים רבים כדי להנגיש את כלל הדפים באתר, אולם ייתכן שחלק מהתכנים עדיין אינם נגישים במלואם.
-    </p>
-    <p>
-      אם נתקלת בקושי כלשהו – נשמח לקבל את פנייתך ולטפל בכך בהקדם האפשרי.
-    </p>
-  </section>
+<body class="bg-gray-50 text-gray-800">
+  <div class="page-wrap">
 
-  <footer class="mt-8 border-t border-neutral-200 dark:border-neutral-800 pt-4">
-    <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">
-      פרטי רכז הנגישות
-    </div>
-    <p>צוות Comfass למענכם!</p>
-    <p class="text-sm text-gray-700 dark:text-gray-300">
-      דוא"ל:
-      <a href="mailto:info@comfass.com" class="text-blue-600 dark:text-blue-400 underline">
-        info@comfass.com
-      </a><br>
-      שעות מענה: בין השעות 08:00–16:00. ייתכנו עיכובים במענה.
-    </p>
-  </footer>
-</article>
+    <!-- כותרת קטנה לעמוד העצמאי בלבד (במודאל לא מוצג, כי נטען רק מה־#policy-root) -->
+    <header class="topbar">
+      <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="/" class="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900">
+          <img src="/img/comfass-logo-slogan.jpg" alt="Comfass" class="h-8 w-auto rounded">
+          <span class="text-sm">חזרה לאתר</span>
+        </a>
+        <a href="/#footer" class="text-sm text-blue-600 underline">סגירה</a>
+      </div>
+    </header>
+
+    <!-- *** זהו השורש שתוכנו יישאב לתוך המודאל *** -->
+    <main id="policy-root" class="page-main">
+      <section class="max-w-[920px] mx-auto px-4 py-8">
+        <!-- === התוכן שלך, ללא שינוי בעיצוב/מחלקות === -->
+        <article dir="rtl"
+                 class="policy-scope max-w-[920px] mx-auto text-[15px] leading-7 text-neutral-900 dark:text-neutral-100">
+
+          <header class="mb-6">
+            <div role="heading" aria-level="1" class="text-xl font-bold mb-1">
+              הצהרת נגישות – Comfass
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              עדכון אחרון: 4 בספטמבר 2025
+            </p>
+          </header>
+
+          <section class="space-y-3">
+            <p>
+              אנו ב־Comfass רואים חשיבות רבה בהנגשת האתר והשירותים שלנו לכלל הציבור, ובפרט לאנשים עם מוגבלות.
+            </p>
+            <p>
+              האתר פותח ועוצב בהתאם להנחיות התקן הישראלי לנגישות תכנים באינטרנט (תקן ת”י 5568) ולתקן הבינלאומי
+              WCAG 2.1 ברמה AA, במטרה לאפשר חוויית שימוש נוחה, פשוטה ושווה לכל המשתמשים.
+            </p>
+          </section>
+
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">
+              אמצעי הנגישות באתר
+            </div>
+            <p class="mb-2">באתר מופעלת מערכת נגישות חיצונית מבית "נגיש לי", המאפשרת בין היתר:</p>
+            <ul class="list-disc ps-5 space-y-1">
+              <li>שינוי גודל הטקסט</li>
+              <li>התאמת צבעי התצוגה, כולל ניגודיות גבוהה</li>
+              <li>הדגשת טקסטים וקישורים</li>
+              <li>שליטה בתצוגה ובהדגשות</li>
+              <li>התאמות נוספות המקלות על הגלישה עבור אנשים עם לקויות ראייה, קשיי קריאה או מוגבלויות אחרות</li>
+            </ul>
+          </section>
+
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">
+              תמיכה בדפדפנים ועזרים
+            </div>
+            <p>
+              האתר מותאם לשימוש בדפדפנים מודרניים ובמכשירים ניידים, ותומך בשימוש בקוראי מסך וניווט באמצעות מקלדת בלבד.
+            </p>
+          </section>
+
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">
+              התאמות שבוצעו באתר
+            </div>
+            <ul class="list-disc ps-5 space-y-1">
+              <li>שימוש במבנה עמודים ברור והיררכי</li>
+              <li>הוספת טקסט חלופי לתמונות ותכנים גרפיים</li>
+              <li>אפשרות לשינוי פרמטרים ויזואליים בזמן אמת בהתאם לצרכי המשתמש</li>
+            </ul>
+          </section>
+
+          <section class="mt-6">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">
+              הסתייגות
+            </div>
+            <p>
+              אנו משקיעים מאמצים רבים כדי להנגיש את כלל הדפים באתר, אולם ייתכן שחלק מהתכנים עדיין אינם נגישים במלואם.
+            </p>
+            <p>
+              אם נתקלת בקושי כלשהו – נשמח לקבל את פנייתך ולטפל בכך בהקדם האפשרי.
+            </p>
+          </section>
+
+          <footer class="mt-8 border-t border-neutral-200 dark:border-neutral-800 pt-4">
+            <div role="heading" aria-level="2" class="text-lg font-semibold mb-2">
+              פרטי רכז הנגישות
+            </div>
+            <p>צוות Comfass למענכם!</p>
+            <p class="text-sm text-gray-700 dark:text-gray-300">
+              דוא"ל:
+              <a href="mailto:info@comfass.com" class="text-blue-600 dark:text-blue-400 underline">
+                info@comfass.com
+              </a><br>
+              שעות מענה: בין השעות 08:00–16:00. ייתכנו עיכובים במענה.
+            </p>
+          </footer>
+        </article>
+        <!-- === /התוכן שלך === -->
+      </section>
+    </main>
+
+    <!-- פוטר קטן לעמוד העצמאי (לא נטען למודאל) -->
+    <footer class="text-center text-xs text-gray-500 py-6">
+      © 2025 Comfass
+    </footer>
+  </div>
+</body>
+</html>
