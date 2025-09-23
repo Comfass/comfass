@@ -126,11 +126,30 @@ export function closeModal(id) {
   }
 }
 
-// סגירה עם ESC (כל מודאל פתוח)
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    const openModals = document.querySelectorAll('[id$="Modal"]:not(.hidden)');
-    openModals.forEach(m => closeModal(m.id));
+// סגירה בלחיצה על כפתור עם data-close
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-close]');
+  if (!btn) return;
+  // אם יש פונקציית closeModal (באתר הראשי), נשתמש בה
+  const panel = btn.closest('[id$="Modal"]'); // תופס את המודאל העוטף אם יש
+  if (typeof closeModal === 'function' && panel?.id) {
+    closeModal(panel.id);
+  } else {
+    // דף עצמאי: fallback — נסגור פשוט את החלון/נחזור אחורה
+    if (history.length > 1) history.back(); else window.close();
+  }
+});
+
+// סגירה עם מקש Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    // נסה למצוא מודאל פתוח (data-modal-panel) ולסגור
+    const openModal = document.querySelector('[id$="Modal"]:not(.hidden)');
+    if (typeof closeModal === 'function' && openModal?.id) {
+      closeModal(openModal.id);
+    } else {
+      if (history.length > 1) history.back(); else window.close();
+    }
   }
 });
 
