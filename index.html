@@ -33,6 +33,9 @@
 
 
 <body id="top" class="bg-gray-50 text-gray-800 pt-10">
+<a class="skip-link" href="#main">דלג לתוכן הראשי</a>
+<h1 class="sr-only">Comfass - כרית ניידת לנוחות בישיבה ממושכת</h1>
+
 <header>
   <!-- Announcement Banner -->
 <div id="promoBanner" dir="rtl" class="promo-banner hidden" role="region" aria-label="הודעה חשובה">
@@ -66,6 +69,7 @@
   </div>
 </div>
 </header>
+  <main id="main" tabindex="-1">
   <section class="bg-animate min-h-[85vh] flex flex-col items-center justify-center px-4 text-center text-white space-y-6">
   <!-- משפט ראשון באפקט הקלדה -->
    <p id="line1" class="text-xl sm:text-2xl md:text-3xl font-light font-[Varela Round] text-center max-w-screen-md mx-auto px-4"></p>
@@ -98,7 +102,7 @@
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
     <!-- צד שמאל – מודל תלת־ממדי -->
     <div class="flex flex-col items-center">
-      <model-viewer src="models/Product_3D_Model.glb" alt="ComfAss Cushion 3D" auto-rotate camera-controls shadow-intensity="1" environment-image="neutral" class="w-full max-w-sm h-[500px] rounded-2xl shadow-xl bg-gray-100 dark:bg-gray-900">
+      <model-viewer src="models/Product_3D_Model.glb" alt="ComfAss Cushion 3D" aria-label="הדמיית כרית ComfAss בתלת־ממד" role="img" auto-rotate camera-controls shadow-intensity="1" environment-image="neutral" class="w-full max-w-sm h-[500px] rounded-2xl shadow-xl bg-gray-100 dark:bg-gray-900">
       </model-viewer>
       <small class="text-gray-500 dark:text-gray-400 mt-2 text-sm">* המודל להמחשה בלבד</small>
    </div>
@@ -109,7 +113,7 @@
        <!-- התחברות מושלמת לכל תיק -->
       <article class="flex flex-col items-center p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
       <span class="grid place-items-center w-16 h-16 mb-3 rounded-xl bg-sky-50 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300">
-        <img src="/img/Clips.png" alt="התאמה מושלמת לכל תיק" class="w-10 h-10 object-contain" />
+        <img src="/img/Clips.png" alt="התאמה מושלמת לכל תיק" aria-hidden="true" class="w-10 h-10 object-contain" />
       </span>
         <h3 class="text-lg font-semibold">התאמה מושלמת לכל תיק</h3>
         <p class="text-gray-700 dark:text-gray-300">חיבור ייחודי לנשיאה נוחה</p>
@@ -118,7 +122,7 @@
       <!-- ארטופדי ונוח במיוחד -->
       <article class="flex flex-col items-center p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
        <span class="grid place-items-center w-16 h-16 mb-3 rounded-xl bg-sky-50 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300">
-        <img src="/img/Ortopedi.png" alt="אורטופדי ונוח במיוחד" class="w-10 h-10 object-contain" />
+        <img src="/img/Ortopedi.png" alt="אורטופדי ונוח במיוחד" aria-hidden="true" class="w-10 h-10 object-contain" />
       </span>
         <h3 class="text-lg font-semibold">אורטופדי ונוח במיוחד</h3>
         <p class="text-gray-700 dark:text-gray-300">שתי שכבות ספוג איכותי, מפחית עומס ועייפות</p>
@@ -127,7 +131,7 @@
       <!-- קומפקטי וקל לנשיאה -->
       <article class="flex flex-col items-center p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
       <span class="grid place-items-center w-16 h-16 mb-3 rounded-xl bg-sky-50 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300">
-        <img src="/img/Easy.png" alt="קומפקטי וקל לנשיאה" class="w-10 h-10 object-contain" />
+        <img src="/img/Easy.png" alt="קומפקטי וקל לנשיאה" aria-hidden="true" class="w-10 h-10 object-contain" />
       </span>
         <h3 class="text-lg font-semibold">קומפקטי וקל לנשיאה</h3>
         <p class="text-gray-700 dark:text-gray-300">36×25 ס״מ בלבד, שוקל רק 400 גרם</p>
@@ -136,7 +140,7 @@
       <!-- בד דוחה לכלוך ומים -->
       <article class="flex flex-col items-center p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
       <span class="grid place-items-center w-16 h-16 mb-3 rounded-xl bg-sky-50 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300">
-        <img src="/img/Perfect-Fabric.png" alt="בד איכותי ועמיד" class="w-10 h-10 object-contain" />
+        <img src="/img/Perfect-Fabric.png" alt="בד איכותי ועמיד" aria-hidden="true" class="w-10 h-10 object-contain" />
       </span>
         <h3 class="text-lg font-semibold">בד איכותי ועמיד</h3>
         <p class="text-gray-700 dark:text-gray-300">דוחה לכלוך ומים, ושומר על מראה יוקרתי לאורך זמן</p>
@@ -145,7 +149,7 @@
       <!-- מיתוג בהתאמה אישית -->
       <article class="flex flex-col items-center p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
       <span class="grid place-items-center w-16 h-16 mb-3 rounded-xl bg-sky-50 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300">
-        <img src="/img/Logo-Ishi.png" alt="מיתוג בהתאמה אישית" class="w-10 h-10 object-contain" />
+        <img src="/img/Logo-Ishi.png" alt="מיתוג בהתאמה אישית" aria-hidden="true" class="w-10 h-10 object-contain" />
       </span>
         <h3 class="text-lg font-semibold">מיתוג בהתאמה אישית</h3>
         <p class="text-gray-700 dark:text-gray-300">אופציה להוספת לוגו בעיצוב אישי</p>
@@ -154,7 +158,7 @@
       <!-- איכות במחיר לכל כיס -->
       <article class="flex flex-col items-center p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
       <span class="grid place-items-center w-16 h-16 mb-3 rounded-xl bg-sky-50 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300">
-        <img src="/img/Star-Of-David.png" alt="חדשנות ישראלית" class="w-10 h-10 object-contain" />
+        <img src="/img/Star-Of-David.png" alt="חדשנות ישראלית" aria-hidden="true" class="w-10 h-10 object-contain" />
       </span>
         <h3 class="text-lg font-semibold">חדשנות ישראלית</h3>
         <p class="text-gray-700 dark:text-gray-300">פותח בעיצוב ייחודי עם דגש על איכות ותשומת לב לפרטים</p>
@@ -604,9 +608,12 @@
           
           <!-- כפתור שליחה – עומד לבד, עם ריווח מלמעלה -->
           <button id="submit-btn" type="submit" disabled
-                  class="w-full mt-6 py-3 rounded-lg shadow-lg transition bg-orange-500 cursor-not-allowed">
+            class="w-full mt-6 py-3 rounded-lg shadow-lg transition bg-orange-500 text-white
+                   focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400
+                   disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-disabled="true">
             שלח פנייה
-          </button>
+         </button>
 
         </form>
 
@@ -842,7 +849,6 @@
               max-w-3xl w-[92vw] sm:w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
     <div class="sticky top-0 -mx-6 -mt-6 px-6 pt-4 pb-3 bg-white/80 dark:bg-neutral-900/80 backdrop-blur flex items-center justify-between z-10">
       <h3 id="termsTitle" class="text-base font-semibold">תנאי השימוש</h3>
-      <button data-close onclick="closeModal('termsModal')" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white text-xl" aria-label="סגירת חלון">✖</button>
     </div>
     <div id="termsContent" class="prose prose-sm rtl:prose-h1:text-right rtl:prose-h2:text-right dark:prose-invert">
       <!-- ייטען terms.html -->
@@ -858,7 +864,6 @@
               max-w-3xl w-[92vw] sm:w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
     <div class="sticky top-0 -mx-6 -mt-6 px-6 pt-4 pb-3 bg-white/80 dark:bg-neutral-900/80 backdrop-blur flex items-center justify-between z-10">
       <h3 id="privacyTitle" class="text-base font-semibold">מדיניות הפרטיות</h3>
-      <button data-close onclick="closeModal('privacyModal')" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white text-xl" aria-label="סגירת חלון">✖</button>
     </div>
     <div id="privacyContent" class="prose prose-sm dark:prose-invert">
       <!-- ייטען privacy.html -->
@@ -874,7 +879,6 @@
               max-w-3xl w-[92vw] sm:w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="accessTitle">
     <div class="sticky top-0 -mx-6 -mt-6 px-6 pt-4 pb-3 bg-white/80 dark:bg-neutral-900/80 backdrop-blur flex items-center justify-between z-10">
       <h3 id="accessTitle" class="text-base font-semibold">הצהרת נגישות</h3>
-      <button data-close onclick="closeModal('accessibilityModal')" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white text-xl" aria-label="סגירת חלון">✖</button>
     </div>
     <div id="accessibilityContent" class="prose prose-sm dark:prose-invert">
       <!-- ייטען accessibility.html -->
@@ -890,7 +894,6 @@
               max-w-3xl w-[92vw] sm:w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="returnsTitle">
     <div class="sticky top-0 -mx-6 -mt-6 px-6 pt-4 pb-3 bg-white/80 dark:bg-neutral-900/80 backdrop-blur flex items-center justify-between z-10">
       <h3 id="returnsTitle" class="text-base font-semibold">מדיניות החזרות</h3>
-      <button data-close onclick="closeModal('returnsModal')" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white text-xl" aria-label="סגירת חלון">✖</button>
     </div>
     <div id="returnsContent" class="prose prose-sm dark:prose-invert">
       <!-- ייטען returns.html -->
@@ -906,7 +909,6 @@
               max-w-3xl w-[92vw] sm:w-full max-h-[90vh] overflow-y-auto p-6 relative" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="warrantyTitle">
     <div class="sticky top-0 -mx-6 -mt-6 px-6 pt-4 pb-3 bg-white/80 dark:bg-neutral-900/80 backdrop-blur flex items-center justify-between z-10">
       <h3 id="warrantyTitle" class="text-base font-semibold">מדיניות אחריות</h3>
-      <button data-close onclick="closeModal('warrantyModal')" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white text-xl" aria-label="סגירת חלון">✖</button>
     </div>
     <div id="warrantyContent" class="prose prose-sm dark:prose-invert">
       <!-- ייטען warranty.html -->
@@ -917,16 +919,18 @@
 <!-- Floating Buttons -->
 <div class="floating-buttons fixed left-4 bottom-4 z-50 flex flex-col gap-3 items-center">
 <!-- WhatsApp Button -->
-<a href="javascript:void(0)" onclick="openWhatsApp()"
-   class="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg"
-   title="צ'אט בוואטסאפ">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-       alt="WhatsApp" class="w-6 h-6">
-</a>
+<button type="button" onclick="openWhatsApp()"
+  class="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg
+         focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
+  aria-label="פתיחת שיחה בוואטסאפ">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" aria-hidden="true" class="w-6 h-6">
+</button>
+
 
   <!-- פופ־אפ בסיסי -->
-<div id="waModal" class="fixed inset-0 bg-black bg-opacity-40 hidden items-center justify-center z-50">
+<div id="waModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50" role="dialog" aria-modal="true" aria-labelledby="waTitle">
   <div class="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-sm text-center shadow-xl">
+    <h2 id="waTitle" class="sr-only">אישור יצירת קשר בוואטסאפ</h2>
     <p class="text-gray-800 dark:text-gray-200 mb-4">
       בלחיצה על "המשך" אני מאשר/ת יצירת קשר בוואצאפ.
     </p>
@@ -940,12 +944,21 @@
 </div>
 
   
-  <button id="theme-toggle" 
-          title="מצב כהה/בהיר" 
-          aria-label="הפעלת מצב כהה או בהיר"
-          class="w-12 h-12 rounded-full bg-white dark:bg-gray-700 text-xl shadow-lg flex items-center justify-center">
-    <span id="theme-icon">🌙</span>
-  </button>
+<button id="theme-toggle" aria-pressed="false" aria-label="החלפת מצב תצוגה: כהה/בהיר" …>
+  <span id="theme-icon" aria-hidden="true">🌙</span>
+  <span class="sr-only" id="theme-state">מצב כהה כבוי</span>
+</button>
+
+<script>
+  const tBtn = document.getElementById('theme-toggle');
+  const tState = document.getElementById('theme-state');
+  function updateThemeA11y(isDark){
+    tBtn.setAttribute('aria-pressed', String(isDark));
+    tState.textContent = isDark ? 'מצב כהה פעיל' : 'מצב כהה כבוי';
+  }
+  // קרא ל-updateThemeA11y בכל החלפה
+</script>
+
 
  <!-- Language Button (EN) – מחליף את כפתור המוזיקה -->
 </div>   
@@ -994,6 +1007,12 @@
     closeWaModal();
   }
 </script>
-  
+<style>
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .skip-link{position:absolute;inset-inline-start:0;top:0;transform:translateY(-150%);background:#111;color:#fff;padding:.5rem .75rem;z-index:1000}
+  .skip-link:focus{transform:translateY(0)}
+</style>
+
+</main>
 </body>
 </html>
