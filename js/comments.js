@@ -14,6 +14,9 @@
     loaded = true;
 
     const btn = document.getElementById('load-comments');
+    btn.addEventListener('click', ()=>{
+    btn.setAttribute('aria-expanded','true');
+    document.getElementById('comments-loading').classList.remove('hidden');
     const loading = document.getElementById('comments-loading');
     if (btn) {
       btn.setAttribute('aria-expanded', 'true');
