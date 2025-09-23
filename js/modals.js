@@ -126,32 +126,46 @@ export function closeModal(id) {
   }
 }
 
-// סגירה בלחיצה על כפתור עם data-close
+// יעד ברירת־מחדל כשאין היסטוריה
+const HOME_URL = 'https://www.comfass.com/';
+
+// פונקציית עזר: חזרה אחורה או מעבר לעמוד הראשי
+function goBackOrHome() {
+  if (history.length > 1) {
+    history.back();
+  } else {
+    // לא טען מחדש את אותו דף: מחליף כתובת
+    window.location.replace(HOME_URL);
+  }
+}
+
+// סגירה בלחיצה על data-close
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('[data-close]');
   if (!btn) return;
-  // אם יש פונקציית closeModal (באתר הראשי), נשתמש בה
-  const panel = btn.closest('[id$="Modal"]'); // תופס את המודאל העוטף אם יש
-  if (typeof closeModal === 'function' && panel?.id) {
+
+  // אל תיתן לכפתור בתוך טופס לעשות submit בטעות
+  if (btn.tagName === 'BUTTON') e.preventDefault();
+
+  const panel = btn.closest('[id$="Modal"]');
+  if (typeof closeModal === 'function' && panel?.id && !panel.classList.contains('hidden')) {
     closeModal(panel.id);
   } else {
-    // דף עצמאי: fallback — נסגור פשוט את החלון/נחזור אחורה
-    if (history.length > 1) history.back(); else window.close();
+    goBackOrHome();
   }
 });
 
-// סגירה עם מקש Escape
+// סגירה עם ESC
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    // נסה למצוא מודאל פתוח (data-modal-panel) ולסגור
-    const openModal = document.querySelector('[id$="Modal"]:not(.hidden)');
-    if (typeof closeModal === 'function' && openModal?.id) {
-      closeModal(openModal.id);
-    } else {
-      if (history.length > 1) history.back(); else window.close();
-    }
+  if (e.key !== 'Escape') return;
+  const openModalEl = document.querySelector('[id$="Modal"]:not(.hidden)');
+  if (typeof closeModal === 'function' && openModalEl?.id) {
+    closeModal(openModalEl.id);
+  } else {
+    goBackOrHome();
   }
 });
+
 
 // חשיפה ל-onclick ב-HTML (type="module" יוצר scope נפרד)
 window.openModal = openModal;
