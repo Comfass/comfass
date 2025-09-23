@@ -70,25 +70,35 @@ export function openModal(id, url) {
   }
   modal.addEventListener('keydown', onKeydownTrap);
 
-  // טעינת תוכן חיצוני (אם הועבר URL)
-  if (url) {
-    const contentId = id.replace('Modal', 'Content'); // e.g. privacyModal -> privacyContent
-    const contentEl = modal.querySelector('#' + contentId);
-    if (contentEl) {
-      contentEl.innerHTML = '<p class="text-gray-500 dark:text-gray-300 text-sm">טוען…</p>';
-      const finalUrl = new URL(url, document.baseURI).toString();
-      fetch(finalUrl, { cache: 'no-store' })
-        .then(res => {
-          if (!res.ok) throw new Error(`HTTP ${res.status} for ${finalUrl}`);
-          return res.text();
-        })
-        .then(html => { contentEl.innerHTML = html; })
-        .catch(err => {
-          console.error('שגיאה בטעינת תוכן:', err);
-          contentEl.innerHTML = '<p class="text-red-600 dark:text-red-400">⚠️ לא הצלחתי לטעון את התוכן. בדוק את הנתיב/השמות.</p>';
-        });
-    }
+// ... בתוך openModal, אחרי if (url) { ... }
+if (url) {
+  const contentId = id.replace('Modal', 'Content'); // e.g. privacyModal -> privacyContent
+  const contentEl = modal.querySelector('#' + contentId);
+  if (contentEl) {
+    contentEl.innerHTML = '<p class="text-gray-500 dark:text-gray-300 text-sm">טוען…</p>';
+    const finalUrl = new URL(url, document.baseURI).toString();
+
+    fetch(finalUrl, { cache: 'no-store' })
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status} for ${finalUrl}`);
+        return res.text();
+      })
+      .then(html => {
+        // אם הקובץ הוא דף מלא – ניקח רק את #policy-root
+        try {
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const root = doc.querySelector('#policy-root');
+          contentEl.innerHTML = root ? root.innerHTML : html; // אם זה חלקי – נכניס as-is
+        } catch {
+          contentEl.innerHTML = html;
+        }
+      })
+      .catch(err => {
+        console.error('שגיאה בטעינת תוכן:', err);
+        contentEl.innerHTML = '<p class="text-red-600 dark:text-red-400">⚠️ לא הצלחתי לטעון את התוכן. בדוק את הנתיב/השמות.</p>';
+      });
   }
+}
 
   // שמירת מאזין כדי להסירו בסגירה (מלכודת פוקוס)
   modal.__trapListener = onKeydownTrap;
