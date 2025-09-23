@@ -39,12 +39,19 @@
   <div class="page-wrap">
     <!-- כותרת לעמוד עצמאי -->
     <header class="topbar">
-      <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="/" class="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900">
-          <img src="/img/comfass-logo-slogan.jpg" alt="Comfass" class="h-8 w-auto rounded">
-          <span class="text-sm">חזרה לאתר</span>
-        </a>
-        <a href="/#footer" class="text-sm text-blue-600 underline">סגירה</a>
+      <div class="relative -mx-6 -mt-6 px-6 pt-8 pb-6 bg-animate rounded-t-2xl text-center shadow-sm">
+        <div class="absolute inset-x-0 top-2 flex items-center justify-between px-3">
+          <button type="button" class="inline-flex items-center gap-2 rounded-full bg-white/90 dark:bg-neutral-800/90 text-gray-800 dark:text-gray-100 px-3 py-1.5 shadow-md hover:shadow-lg border border-black/5 dark:border-white/10 backdrop-blur-sm transition" onclick="closeModal('warrantyModal')" aria-label="חזרה לאתר">
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            חזרה לאתר
+          </button>
+          <button type="button" class="inline-flex items-center gap-2 rounded-full bg-white/90 dark:bg-neutral-800/90 text-gray-800 dark:text-gray-100 px-3 py-1.5 shadow-md hover:shadow-lg border border-black/5 dark:border-white/10 backdrop-blur-sm transition" onclick="closeModal('warrantyModal')" aria-label="סגירת חלון">
+            סגירה
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <img src="/img/COMFASS-LOGO-No-BackGround-SLOGAN.png" alt="Comfass" class="mx-auto w-40 sm:w-48 md:w-56 drop-shadow-2xl select-none" draggable="false" />
+        <h3 id="warrantyTitle" class="sr-only">מדיניות אחריות</h3>
       </div>
     </header>
 
